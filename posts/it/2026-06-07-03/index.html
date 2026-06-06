@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컴퓨터 유즈 에이전트, 일하는 방식을 바꾸는 AI 정리</title>
+<style>
+  :root {
+    --text: #2e2e2e;
+    --muted: #767676;
+    --line: #e5e5e5;
+    --accent: #1a7f64;
+    --table-head: #f5f7f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #ffffff;
+  }
+  .post h1 {
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 28px;
+    color: #1a1a1a;
+  }
+  .post h2 {
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin: 48px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #1a1a1a;
+  }
+  .post p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    letter-spacing: -0.2px;
+  }
+  .post ul, .post ol {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    padding-left: 22px;
+    letter-spacing: -0.2px;
+  }
+  .post li { margin-bottom: 8px; }
+  .post img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 8px;
+  }
+  .post hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .post th, .post td {
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .post th {
+    background: var(--table-head);
+    font-weight: 700;
+  }
+  .post td:first-child, .post th:first-child {
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .lead {
+    color: var(--muted);
+  }
+  .closing {
+    font-size: 16.5px;
+    line-height: 1.85;
+    letter-spacing: -0.2px;
+  }
+  .tags {
+    margin-top: 36px;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--accent);
+    word-break: keep-all;
+  }
+  @media (max-width: 600px) {
+    .post { padding: 32px 18px 60px; }
+    .post h1 { font-size: 24px; }
+    .post h2 { font-size: 19px; }
+    .post p, .post ul, .post ol { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<article class="post">
+
+  <h1>[IT] 컴퓨터 유즈 에이전트, 일하는 방식을 바꾸는 AI 정리</h1>
+
+  <p>이번 글에서는 컴퓨터 유즈 에이전트를 정리해 보겠습니다.<br>
+  사람처럼 화면을 보고 마우스와 키보드로 소프트웨어를 직접 다루는 AI입니다.<br>
+  무엇이고, 어떻게 일하며, 어디까지 왔는지 차분히 짚어보겠습니다.</p>
+
+  <p>먼저 세 줄로 요약하면 이렇습니다.</p>
+
+  <ul>
+    <li>컴퓨터 유즈 에이전트는 화면을 "보고" 클릭·입력·스크롤로 작업을 끝까지 수행하는 AI입니다.</li>
+    <li>2024년 말 처음 공개된 뒤, 2026년 들어 ChatGPT·Gemini·Copilot·Claude 같은 주력 제품에 흡수되는 흐름입니다.</li>
+    <li>성능은 빠르게 오르고 있지만, 속도와 신뢰성, 그리고 보안이 여전히 큰 숙제입니다.</li>
+  </ul>
+
+  <img src="./images/thumbnail.png" alt="화면을 직접 보고 클릭하는 AI, 컴퓨터 유즈 에이전트">
+
+  <hr>
+
+  <h2>컴퓨터 유즈 에이전트란 무엇인가</h2>
+
+  <p>핵심은 한 문장으로 정리됩니다.<br>
+  사람 직원이 쓰는 도구 — 브라우저, 화면, 키보드 — 를 그대로 받아, 화면을 읽고 다음 행동을 스스로 정하는 AI입니다.</p>
+
+  <p>기존 자동화와의 차이가 여기서 갈립니다.<br>
+  예전 자동화(RPA나 API 연동)는 미리 정해둔 셀렉터에 의존했습니다.<br>
+  지금은 비전과 추론으로 살아 있는 화면을 직접 탐색합니다.</p>
+
+  <p>그래서 화면(UI)만 있으면 거의 모든 프로그램을 다룰 수 있습니다.<br>
+  API가 없는 오래된 데스크톱 앱도 예외가 아닙니다.<br>
+  "시각적 인터페이스가 있는 어떤 소프트웨어와도 동작한다"는 점이 가장 큰 차별점인 셈입니다.</p>
+
+  <hr>
+
+  <h2>어떻게 작동하나 — 스크린샷과 행동의 반복</h2>
+
+  <p>작동 방식은 의외로 단순한 루프입니다.</p>
+
+  <ol>
+    <li>화면을 스크린샷으로 찍어 자신의 "눈"으로 삼습니다.</li>
+    <li>비전 모델로 버튼·메뉴·입력창을 이해하고, 지금 무엇을 해야 할지 판단합니다.</li>
+    <li>실제로 클릭·타이핑·스크롤·창 전환을 실행합니다.</li>
+    <li>다시 화면을 찍어 결과를 확인하고, 작업이 끝날 때까지 이 과정을 반복합니다.</li>
+  </ol>
+
+  <p>실행에는 격리된 샌드박스 환경이 필요합니다.<br>
+  예컨대 Claude는 가상 디스플레이 서버 위에 리눅스 데스크톱을 띄우고, 브라우저와 문서 편집기 같은 프로그램을 미리 깔아 둔다고 합니다.</p>
+
+  <p>다만 이 루프는 한 단계마다 약 2~5초가 걸립니다.<br>
+  API 기반 자동화보다는 느립니다.<br>
+  범용성을 얻은 대가라고 보시면 되겠습니다.</p>
+
+  <img src="./images/body-1.png" alt="스크린샷 캡처에서 비전 분석, 행동 실행, 결과 확인으로 이어지는 4단계 작동 루프 다이어그램">
+
+  <hr>
+
+  <h2>누가 만들고 있나</h2>
+
+  <p>흥미로운 점은 흐름의 방향입니다.<br>
+  2025년만 해도 단독 실험 제품이 줄지어 나왔습니다.<br>
+  2026년에는 그 제품들이 대부분 정리되고, 기능만 주력 제품으로 흡수되고 있습니다.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>회사</th>
+        <th>현황 (2026년 6월 기준)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OpenAI</td>
+        <td>Operator(2025.1 공개)는 2025.8.31 종료, ChatGPT Agent로 흡수</td>
+      </tr>
+      <tr>
+        <td>Anthropic</td>
+        <td>2024.10 업계 최초 공개, Claude Opus 4.6이 OSWorld 72.7%</td>
+      </tr>
+      <tr>
+        <td>Google</td>
+        <td>Project Mariner 종료 후 Gemini로 이전, 퍼블릭 프리뷰</td>
+      </tr>
+      <tr>
+        <td>Microsoft</td>
+        <td>2026.5.13 Copilot Studio에서 엔터프라이즈 정식 출시(GA)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>성능 지표도 짚어둘 만합니다.<br>
+  대표 벤치마크인 OSWorld에서 2025년 초 38.1%였던 점수가 2026년 2월 72.7%까지 올랐습니다.<br>
+  1년 남짓한 사이의 변화입니다.</p>
+
+  <p>특히 Microsoft는 감사 로깅과 자격증명 격리를 갖춰, 기업이 실제 운영에 투입할 수 있는 첫 단계를 열었다는 평가를 받습니다.</p>
+
+  <img src="./images/body-2.png" alt="OSWorld 벤치마크 점수가 2025년 초 38.1%에서 2026년 2월 72.7%로 상승한 막대 그래프">
+
+  <hr>
+
+  <h2>일하는 방식은 어떻게 바뀌나</h2>
+
+  <p>추상적인 이야기보다 실제 사례가 와닿습니다.<br>
+  글로벌 인재 이동 기업 Graebel은 Copilot Studio로 서비스 주문 처리 에이전트를 만들었습니다.</p>
+
+  <p>이 에이전트는 메일함을 지켜보다가, 비정형 주문 이메일을 해석해 핵심 데이터를 정리합니다.<br>
+  그다음 사내 시스템을 API 없이 화면을 통해 직접 조작해 거래를 끝냅니다.<br>
+  숙련된 사람 운영자와 똑같은 방식으로 말입니다.</p>
+
+  <img src="./images/body-3.png" alt="이메일 감시에서 데이터 정리, 사내 시스템 직접 입력으로 이어지는 에이전트의 업무 처리 흐름">
+
+  <p>효과를 보여주는 조사도 있습니다.<br>
+  PwC 서베이에 따르면 AI 에이전트를 쓰는 기업의 66%가 생산성 향상을 경험했습니다.<br>
+  지식 노동자는 주당 중앙값 6.4시간을 되찾았다고 합니다.</p>
+
+  <p>다만 고용 영향은 의견이 갈립니다.<br>
+  Gartner는 2026년까지 일자리 영향이 중립적일 것으로 봅니다.<br>
+  World Economic Forum은 2030년까지 신규 1억 7천만 개, 소멸 9천 2백만 개로 순증을 전망합니다.</p>
+
+  <p>공통된 결론은 하나로 모입니다.<br>
+  "AI는 일자리를 없애기보다 일을 변형시킨다."</p>
+
+  <hr>
+
+  <h2>아직 남은 한계</h2>
+
+  <p>좋은 점만 적으면 균형이 맞지 않겠지요.<br>
+  가장 솔직한 약점부터 말씀드립니다.</p>
+
+  <p>첫째, 속도와 신뢰성입니다.<br>
+  앞서 본 스크린샷-행동 루프는 대량·실시간 작업에 비효율적입니다.<br>
+  OSWorld 70%대라는 점수도 뒤집어 보면 "10번 중 3번은 실패"한다는 뜻입니다.</p>
+
+  <p>둘째, 보안입니다. 이쪽이 더 무겁습니다.<br>
+  OWASP는 프롬프트 인젝션을 LLM 1위 취약점으로 지정했습니다.<br>
+  공격자가 문서나 이메일, 웹사이트 안에 악성 지시를 숨겨 에이전트를 조종할 수 있기 때문입니다.</p>
+
+  <p>심각성을 보여주는 연구도 있습니다.<br>
+  OpenAI·Anthropic·Google DeepMind 연구자들의 공동 연구에서, 적응형 공격 앞에서는 공개된 방어책 대부분이 90% 이상 우회되었습니다.</p>
+
+  <p>그래서 현장의 권고는 일관됩니다.<br>
+  최소 권한 부여, 입출력 필터링, 그리고 고위험 행동에는 사람의 승인을 두는 것.<br>
+  아직 완전히 풀린 문제는 아닙니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다.<br>
+  컴퓨터 유즈 에이전트는 분명 일하는 방식을 바꾸고 있습니다.<br>
+  화면만 있으면 무엇이든 다룬다는 가능성과, 느림·보안이라는 숙제를 동시에 안고 있습니다.</p>
+
+  <p>기대만큼 두려움도 함께 자라는 기술입니다.</p>
+
+  <p class="closing">— 결국 중요한 것은 "맡길 일과 지켜볼 일을 가르는 분별"이 아닐까 합니다.</p>
+
+  <p class="closing">이 에이전트에게 무엇을 맡기시겠냐고 물으신다면, 저는 먼저 지켜보는 일부터 시작하겠다고 답하겠습니다.</p>
+
+  <hr>
+
+  <p class="tags">#컴퓨터유즈에이전트 #AI에이전트 #컴퓨터유즈 #ChatGPT에이전트 #ClaudeAI #CopilotStudio #프롬프트인젝션 #AI자동화 #IT트렌드 #일하는방식</p>
+
+</article>
+</body>
+</html>
