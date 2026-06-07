@@ -10,19 +10,28 @@
   * { box-sizing:border-box; }
   body { margin:0; font-family:'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;
     background:var(--bg); color:var(--text); }
+  a { color:inherit; }
   .hero { text-align:center; padding:64px 20px 40px; border-bottom:1px solid var(--line);
     background:linear-gradient(160deg,#161a2b,#0f1117); }
+  .hero.sub { padding:44px 20px 30px; }
   .hero h1 { margin:0; font-size:34px; letter-spacing:-.5px; }
+  .hero.sub h1 { font-size:24px; }
+  .hero h1 a { text-decoration:none; }
   .hero p { margin:12px 0 0; color:var(--muted); font-size:15px; }
   main { max-width:760px; margin:0 auto; padding:32px 20px 80px; }
   .cat-section { margin-bottom:40px; }
+  .cat-bar { display:flex; align-items:center; justify-content:space-between; margin:0 0 16px; }
   .cat-head { font-size:15px; font-weight:700; display:inline-block; padding:5px 14px;
-    border-radius:20px; margin:0 0 16px; color:#fff; }
+    border-radius:20px; color:#fff; }
   .cat-head[data-cat=it]{background:var(--it);}
   .cat-head[data-cat=philosophy]{background:var(--philosophy);}
   .cat-head[data-cat=economy]{background:var(--economy);}
   .cat-head[data-cat=bio]{background:var(--bio);}
   .cat-head[data-cat=counseling]{background:var(--counseling);}
+  .more-link { font-size:13px; color:var(--muted); text-decoration:none; white-space:nowrap; }
+  .more-link:hover { color:var(--text); }
+  .back { display:inline-block; margin-bottom:20px; color:var(--muted); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--text); }
   .post-list { display:flex; flex-direction:column; gap:10px; }
   .post { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--text);
     background:var(--card); border:1px solid var(--line); border-radius:12px;
@@ -31,6 +40,12 @@
   .post-cat { font-size:12px; color:var(--muted); flex:0 0 64px; }
   .post-title { flex:1; font-size:16px; font-weight:600; line-height:1.4; }
   .post-date { font-size:13px; color:var(--muted); flex:0 0 auto; }
+  .pager { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:32px; }
+  .pager a, .pager span { min-width:38px; text-align:center; padding:8px 12px; border-radius:9px;
+    border:1px solid var(--line); font-size:14px; text-decoration:none; color:var(--text);
+    background:var(--card); }
+  .pager a:hover { border-color:#3a4050; }
+  .pager .cur { background:#3a4050; border-color:#3a4050; font-weight:700; }
   @media(max-width:560px){ .post{flex-wrap:wrap;} .post-cat{flex-basis:auto;} .post-title{flex-basis:100%;} }
   footer { text-align:center; color:var(--muted); font-size:13px; padding:24px; border-top:1px solid var(--line); }
 </style>
@@ -38,11 +53,14 @@
 <body>
   <div class="hero">
     <h1>SevenPeaks 블로그</h1>
-    <p>IT · 철학/인문 · 경제 · 바이오 · 상담 — 매일 두 편씩, AI가 리서치하고 쓴 글</p>
+    <p>IT · 철학/인문 · 경제 · 바이오 · 상담 — AI가 매일 리서치하고 쓴 글</p>
   </div>
   <main>
     <section class="cat-section">
-      <h2 class="cat-head" data-cat="it">IT</h2>
+      <div class="cat-bar">
+        <h2 class="cat-head" data-cat="it">IT</h2>
+      <a class="more-link" href="./posts/it/">전체 보기 →</a>
+      </div>
       <div class="post-list">
       <a class="post" href="./posts/it/2026-06-07-03/index.html">
         <span class="post-cat">IT</span>
@@ -62,7 +80,10 @@
       </div>
     </section>
     <section class="cat-section">
-      <h2 class="cat-head" data-cat="philosophy">철학/인문</h2>
+      <div class="cat-bar">
+        <h2 class="cat-head" data-cat="philosophy">철학/인문</h2>
+      <a class="more-link" href="./posts/philosophy/">전체 보기 →</a>
+      </div>
       <div class="post-list">
       <a class="post" href="./posts/philosophy/2026-06-07-03/index.html">
         <span class="post-cat">철학/인문</span>
@@ -82,7 +103,10 @@
       </div>
     </section>
     <section class="cat-section">
-      <h2 class="cat-head" data-cat="economy">경제</h2>
+      <div class="cat-bar">
+        <h2 class="cat-head" data-cat="economy">경제</h2>
+      <a class="more-link" href="./posts/economy/">전체 보기 →</a>
+      </div>
       <div class="post-list">
       <a class="post" href="./posts/economy/2026-06-07-03/index.html">
         <span class="post-cat">경제</span>
@@ -102,7 +126,10 @@
       </div>
     </section>
     <section class="cat-section">
-      <h2 class="cat-head" data-cat="bio">바이오</h2>
+      <div class="cat-bar">
+        <h2 class="cat-head" data-cat="bio">바이오</h2>
+      <a class="more-link" href="./posts/bio/">전체 보기 →</a>
+      </div>
       <div class="post-list">
       <a class="post" href="./posts/bio/2026-06-07-03/index.html">
         <span class="post-cat">바이오</span>
@@ -122,7 +149,10 @@
       </div>
     </section>
     <section class="cat-section">
-      <h2 class="cat-head" data-cat="counseling">상담</h2>
+      <div class="cat-bar">
+        <h2 class="cat-head" data-cat="counseling">상담</h2>
+      <a class="more-link" href="./posts/counseling/">전체 보기 →</a>
+      </div>
       <div class="post-list">
       <a class="post" href="./posts/counseling/2026-06-07-03/index.html">
         <span class="post-cat">상담</span>
@@ -147,6 +177,6 @@
       </div>
     </section>
   </main>
-  <footer>© 2026 SevenPeaks · 자동 생성 블로그</footer>
+<footer>© 2026 SevenPeaks · 자동 생성 블로그</footer>
 </body>
 </html>
