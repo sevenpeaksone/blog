@@ -19,8 +19,8 @@
   .hero.sub h1 { font-size:24px; }
   .hero h1 a { text-decoration:none; }
   .hero p { margin:12px 0 0; color:var(--muted); font-size:15px; }
-  main { max-width:1080px; margin:0 auto; padding:36px 20px 80px; }
-  .cat-section { margin-bottom:48px; }
+  main { max-width:1200px; margin:0 auto; padding:36px 20px 80px; }
+  .cat-section { margin-bottom:46px; }
   .cat-bar { display:flex; align-items:center; justify-content:space-between; margin:0 0 18px; }
   .cat-head { font-size:15px; font-weight:700; display:inline-block; padding:5px 14px;
     border-radius:20px; color:#fff; }
@@ -34,8 +34,8 @@
   .back { display:inline-block; margin-bottom:22px; color:var(--muted); text-decoration:none; font-size:14px; }
   .back:hover { color:var(--text); }
 
-  /* 카드 그리드 */
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+  /* 카드 그리드 (홈: 한 줄 5개 / 자동 반응형) */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:18px; }
   .card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line);
     border-radius:14px; overflow:hidden; text-decoration:none; color:var(--text);
     transition:transform .14s ease, border-color .14s, box-shadow .14s; }
@@ -48,16 +48,16 @@
   .thumb.ph[data-cat=economy]{background:linear-gradient(135deg,#10301f,var(--economy));}
   .thumb.ph[data-cat=bio]{background:linear-gradient(135deg,#3a1b1b,var(--bio));}
   .thumb.ph[data-cat=counseling]{background:linear-gradient(135deg,#3a2c12,var(--counseling));}
-  .card-body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .card-body { padding:13px 15px 15px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .badge { align-self:flex-start; font-size:11px; font-weight:700; color:#fff; padding:3px 10px; border-radius:20px; }
   .badge[data-cat=it]{background:var(--it);}
   .badge[data-cat=philosophy]{background:var(--philosophy);}
   .badge[data-cat=economy]{background:var(--economy);}
   .badge[data-cat=bio]{background:var(--bio);}
   .badge[data-cat=counseling]{background:var(--counseling);}
-  .card-title { margin:0; font-size:15.5px; font-weight:600; line-height:1.46;
+  .card-title { margin:0; font-size:15px; font-weight:600; line-height:1.45;
     display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-  .card-date { margin-top:auto; font-size:12.5px; color:var(--muted); }
+  .card-date { margin-top:auto; font-size:12px; color:var(--muted); }
 
   .pager { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:40px; }
   .pager a, .pager span { min-width:38px; text-align:center; padding:8px 12px; border-radius:9px;
@@ -78,7 +78,7 @@
         <h2 class="cat-head" data-cat="it">IT</h2>
         <a class="more-link" href="./posts/it/">전체 10편 보기 →</a>
       </div>
-      <div class="grid">
+      <div class="grid home">
       <a class="card" href="./posts/it/2026-06-10-20/index.html">
         <img class="thumb" src="./posts/it/2026-06-10-20/images/thumbnail.png" alt="[IT] 양자컴퓨터 2026 상용화 어디까지 왔나 — 변곡점과 한계 정리" loading="lazy">
         <div class="card-body">
@@ -126,7 +126,7 @@
         <h2 class="cat-head" data-cat="philosophy">철학/인문</h2>
         <a class="more-link" href="./posts/philosophy/">전체 10편 보기 →</a>
       </div>
-      <div class="grid">
+      <div class="grid home">
       <a class="card" href="./posts/philosophy/2026-06-10-20/index.html">
         <img class="thumb" src="./posts/philosophy/2026-06-10-20/images/thumbnail.png" alt="잊혀질 권리, 모든 것이 기록되는 디지털 사회에서 우리는 무엇을 잊을 수 있나" loading="lazy">
         <div class="card-body">
@@ -174,7 +174,7 @@
         <h2 class="cat-head" data-cat="economy">경제</h2>
         <a class="more-link" href="./posts/economy/">전체 10편 보기 →</a>
       </div>
-      <div class="grid">
+      <div class="grid home">
       <a class="card" href="./posts/economy/2026-06-10-20/index.html">
         <img class="thumb" src="./posts/economy/2026-06-10-20/images/thumbnail.png" alt="코리아 밸류업 2026 코스피 전망과 개인투자자 대응 정리" loading="lazy">
         <div class="card-body">
@@ -222,7 +222,7 @@
         <h2 class="cat-head" data-cat="bio">바이오</h2>
         <a class="more-link" href="./posts/bio/">전체 10편 보기 →</a>
       </div>
-      <div class="grid">
+      <div class="grid home">
       <a class="card" href="./posts/bio/2026-06-10-20/index.html">
         <img class="thumb" src="./posts/bio/2026-06-10-20/images/thumbnail.png" alt="[바이오] 이종장기이식 2026 — 유전자 편집 돼지 장기로 사람을 살린다" loading="lazy">
         <div class="card-body">
@@ -270,7 +270,7 @@
         <h2 class="cat-head" data-cat="counseling">상담</h2>
         <a class="more-link" href="./posts/counseling/">전체 11편 보기 →</a>
       </div>
-      <div class="grid">
+      <div class="grid home">
       <a class="card" href="./posts/counseling/2026-06-10-20/index.html">
         <img class="thumb" src="./posts/counseling/2026-06-10-20/images/thumbnail.png" alt="분노 조절, 화가 날 때 건강하게 다스리는 법— 억누르지도 터뜨리지도 않고" loading="lazy">
         <div class="card-body">

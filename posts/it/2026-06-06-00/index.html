@@ -108,8 +108,23 @@
     line-height: 2;
   }
 </style>
+
+<style id="site-nav-css">
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-list{margin-left:auto;color:#555;font-weight:500;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+</style>
 </head>
 <body>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a></nav>
   <article class="post">
     <div class="post-meta">
       <span class="category">IT</span>
@@ -204,5 +219,12 @@
 
     <div class="hashtags">#온디바이스AI #AI스마트폰 #AIPC #NPU #갤럭시S26 #코파일럿PC #에이전틱AI #2026IT트렌드</div>
   </article>
+
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script>
+(function(){var b=document.getElementById('to-top');if(!b)return;
+ window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>400);});
+ b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
+</script>
 </body>
 </html>
