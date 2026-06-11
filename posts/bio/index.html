@@ -64,15 +64,48 @@
     border:1px solid var(--line); font-size:14px; text-decoration:none; color:var(--text); background:var(--card); }
   .pager a:hover { border-color:#3a4050; }
   .pager .cur { background:#3a4050; border-color:#3a4050; font-weight:700; }
+  .pager .dots { border:none; background:none; color:var(--muted); min-width:auto; padding:8px 4px; }
+
+  /* 상단 카테고리 탭 + 검색 */
+  .topnav { position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding:10px 20px; background:rgba(15,17,23,.92); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line); }
+  .topnav .tn-brand { font-weight:800; font-size:16px; text-decoration:none; letter-spacing:-.3px; }
+  .topnav .tn-cats { display:flex; gap:4px; flex-wrap:wrap; }
+  .topnav .tn-cats a { font-size:14px; text-decoration:none; color:var(--muted); padding:5px 10px; border-radius:8px; }
+  .topnav .tn-cats a:hover { color:var(--text); background:var(--card); }
+  .topnav #site-search { margin-left:auto; background:var(--card); border:1px solid var(--line); border-radius:9px;
+    color:var(--text); padding:8px 12px; font-size:14px; min-width:150px; outline:none;
+    font-family:inherit; }
+  .topnav #site-search:focus { border-color:#3a4050; }
+  #search-meta { color:var(--muted); font-size:14px; margin:0 0 18px; }
+
   footer { text-align:center; color:var(--muted); font-size:13px; padding:24px; border-top:1px solid var(--line); }
 </style>
 </head>
 <body>
+  <nav class="topnav">
+    <a class="tn-brand" href="/blog/index.html">SevenPeaks</a>
+    <div class="tn-cats">
+      <a href="/blog/index.html">홈</a>
+      <a href="/blog/posts/it/index.html" data-cat="it">IT</a>
+      <a href="/blog/posts/philosophy/index.html" data-cat="philosophy">철학/인문</a>
+      <a href="/blog/posts/economy/index.html" data-cat="economy">경제</a>
+      <a href="/blog/posts/bio/index.html" data-cat="bio">바이오</a>
+      <a href="/blog/posts/counseling/index.html" data-cat="counseling">상담</a>
+    </div>
+    <input id="site-search" type="search" placeholder="제목·카테고리 검색…" autocomplete="off" aria-label="검색">
+  </nav>
   <div class="hero sub">
     <h1><a href="../../index.html">SevenPeaks 블로그</a></h1>
     <p><span class="cat-head" data-cat="bio">바이오</span> 전체 12편 · 1/1 페이지</p>
   </div>
   <main>
+    <div id="search-wrap" hidden>
+      <p id="search-meta"></p>
+      <div id="search-results" class="grid"></div>
+    </div>
+    <div id="page-content">
     <a class="back" href="../../index.html">← 홈으로</a>
     <div class="grid">
       <a class="card" href="./2026-06-11-20/index.html">
@@ -173,7 +206,42 @@
       </a>
     </div>
 
+    </div>
   </main>
+<script id="site-search-js">
+(function(){
+  var input=document.getElementById('site-search');
+  if(!input) return;
+  var wrap=document.getElementById('search-wrap'),
+      content=document.getElementById('page-content'),
+      meta=document.getElementById('search-meta'),
+      results=document.getElementById('search-results');
+  var BASE="/blog", data=null;
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
+  function load(cb){ if(data){cb();return;}
+    fetch(BASE+'/search.json').then(function(r){return r.json();}).then(function(j){data=j;cb();}).catch(function(){data=[];cb();}); }
+  function card(it){
+    var cover = it.thumb ? '<img class="thumb" src="'+BASE+it.thumb+'" alt="" loading="lazy">'
+      : '<div class="thumb ph" data-cat="'+it.cslug+'"><span>'+esc(it.cat)+'</span></div>';
+    return '<a class="card" href="'+BASE+it.url+'">'+cover+
+      '<div class="card-body"><span class="badge" data-cat="'+it.cslug+'">'+esc(it.cat)+'</span>'+
+      '<h3 class="card-title">'+esc(it.title)+'</h3><span class="card-date">'+esc(it.label)+'</span></div></a>';
+  }
+  function run(q){
+    q=(q||'').trim().toLowerCase();
+    if(!q){ wrap.hidden=true; if(content) content.hidden=false; return; }
+    load(function(){
+      var hits=data.filter(function(it){
+        return (it.title||'').toLowerCase().indexOf(q)>=0 || (it.cat||'').toLowerCase().indexOf(q)>=0;
+      });
+      meta.textContent='“'+q+'” 검색결과 '+hits.length+'편';
+      results.innerHTML = hits.length ? hits.map(card).join('') : '<p style="color:var(--muted)">결과가 없습니다.</p>';
+      if(content) content.hidden=true; wrap.hidden=false;
+    });
+  }
+  input.addEventListener('input',function(){run(input.value);});
+})();
+</script>
 <footer>© 2026 SevenPeaks · 자동 생성 블로그</footer>
 </body>
 </html>
