@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>초연결 시대의 외로움 — 더 연결될수록 외로워지는 역설</title>
+<style>
+  body{
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    background:#ffffff;color:#222;margin:0;padding:0;
+    line-height:1.8;font-size:17px;
+  }
+  .wrap{max-width:700px;margin:0 auto;padding:40px 20px 80px;}
+  h1{
+    font-size:28px;font-weight:700;line-height:1.45;color:#1a1a2e;
+    margin:0 0 28px;letter-spacing:-0.5px;
+  }
+  h2{
+    font-size:21px;font-weight:700;color:#1a1a2e;
+    margin:48px 0 18px;padding-left:14px;
+    border-left:5px solid #7c83fd;line-height:1.4;
+  }
+  p{margin:0 0 20px;}
+  img{max-width:100%;height:auto;border-radius:12px;display:block;margin:28px auto;}
+  hr{border:none;border-top:1px solid #e6e6ee;margin:40px 0;}
+  .quote{
+    background:#f5f6fb;border-left:4px solid #7c83fd;
+    padding:16px 20px;border-radius:8px;color:#333;font-style:normal;
+    margin:0 0 20px;
+  }
+  .lead{color:#555;}
+  .tags{margin-top:48px;color:#7c83fd;font-size:15px;line-height:2;}
+  .closing{font-weight:700;color:#1a1a2e;}
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="wrap">
+
+  <h1>초연결 시대의 외로움 — 더 연결될수록 외로워지는 역설</h1>
+
+  <img src="./images/thumbnail.png" alt="초연결 시대의 외로움 대표 이미지">
+
+  <p class="lead">손안의 화면은 늘 누군가와 이어져 있습니다. 그런데 외롭다는 사람은 오히려 늘었습니다.<br>
+  이번 글에서는 '초연결 시대의 외로움'이라는 역설을 사회학과 철학의 눈으로 정리해 보겠습니다.<br>
+  숫자와 진단, 그리고 진짜 연결을 회복하는 길까지 함께 살펴보려 합니다.</p>
+
+  <hr>
+
+  <h2>외로움은 이제 '유행병'으로 불립니다</h2>
+
+  <p>세계보건기구(WHO)는 2025년 6월, 사회적 연결 위원회의 기함 보고서를 내놓았습니다.<br>
+  진단은 무거웠습니다. 전 세계 6명 중 1명이 외로움의 영향을 받고 있다는 것입니다.</p>
+
+  <p>외로움·고립과 연관된 사망은 매시간 약 100명, 연간 약 87만 명으로 추정됩니다.<br>
+  미국 의무총감은 사회적 연결의 결핍이 하루 담배 15개비를 피우는 것에 맞먹는 위험이라고 경고했습니다.<br>
+  실제로 한 대규모 연구는 외로움이 조기 사망 위험을 26% 높인다고 밝혔습니다.</p>
+
+  <p>한국도 예외는 아닙니다.<br>
+  2024년 1인 가구는 처음으로 800만을 넘어 전체의 36.1%에 이르렀습니다.<br>
+  사회적 고립도는 약 33%, 고독사 사망자는 한 해 3,924명으로 늘었습니다.<br>
+  외로움은 더 이상 개인의 기분이 아니라 사회가 함께 풀어야 할 과제가 된 셈입니다.</p>
+
+  <img src="./images/body-1.png" alt="초연결 시대 외로움의 역설 핵심 포인트 카드">
+
+  <hr>
+
+  <h2>더 연결될수록 더 외로워지는 까닭</h2>
+
+  <p>가장 많이 연결된 세대가 가장 고립감을 느낍니다.<br>
+  이것이 '외로움의 역설'입니다.</p>
+
+  <p>연구들은 한 방향을 가리킵니다.<br>
+  하루 두 시간 넘게 소셜미디어를 수동적으로 들여다보는 사람일수록 외로움이 더 컸습니다.<br>
+  독일의 한 종단 연구에서도 SNS 사용이 많을수록 외로움은 줄기는커녕 늘었습니다.</p>
+
+  <p>MIT의 셰리 터클은 이를 한 문장으로 압축했습니다.</p>
+  <p class="quote">"소셜미디어는 우정의 요구 없이 동반의 환상만 제공한다."</p>
+  <p>친밀함 없는 수다, 따뜻함 없는 호출, 몸 없는 교환이 쌓일 뿐이라는 것입니다.<br>
+  접속은 늘었지만, 정작 마음이 머무는 자리는 줄었습니다.</p>
+
+  <hr>
+
+  <h2>고독과 외로움은 다릅니다</h2>
+
+  <p>같은 '혼자 있음'이라도 결이 다릅니다.</p>
+
+  <img src="./images/body-2.png" alt="고독과 외로움의 차이 비교 표">
+
+  <p>철학자 한나 아렌트는 둘을 분명히 갈라 보았습니다.<br>
+  고독은 스스로 택한 혼자 있음입니다. 사색하고 성찰하는, 나와 나 자신이 대화하는 시간입니다.<br>
+  아렌트에게 고독은 '사유'의 필수 전제였습니다.</p>
+
+  <p>외로움은 다릅니다.<br>
+  세계와 타인으로부터 버려진 채, 자기 자신과도 함께 있지 못하는 상태입니다.<br>
+  아렌트는 이 외로움이야말로 전체주의가 자라는 토양이라고 보았습니다.</p>
+
+  <p>고독은 나를 채우고, 외로움은 나를 비웁니다.<br>
+  초연결 사회의 곤경은 여기에 있습니다.<br>
+  홀로 사색할 시간도, 깊이 연결된 느낌도 함께 사라졌다는 점입니다.</p>
+
+  <hr>
+
+  <h2>AI 동반자는 위로가 되지만, 거기까지입니다</h2>
+
+  <p>요즘은 사람이 아닌 AI에게 속내를 털어놓는 이들이 늘고 있습니다.</p>
+
+  <p>하버드 비즈니스스쿨 연구는 AI 동반자가 외로움을 줄여 준다고 보고했습니다.<br>
+  많은 이에게 챗봇은 정서적 인정을 구하고 어려운 대화를 연습하는 공간이 됩니다.<br>
+  단기적 위안은 분명히 있습니다.</p>
+
+  <p>그러나 한계도 또렷합니다.<br>
+  2025년 한 연구는 AI 동반자를 쓴 사람들의 글에서 외로움·우울의 신호가 비교군보다 더 많았다고 전합니다.<br>
+  과도한 의존이 진짜 인간관계를 밀어내기 때문입니다.<br>
+  이 시스템들은 실제로 염려하거나 돌보지 못합니다. 공감처럼 보이는 언어를 생성할 뿐입니다.</p>
+
+  <p>위로의 도구로는 쓸 만합니다.<br>
+  다만 그것이 사람을 대신하는 순간, 외로움은 오히려 깊어질 수 있습니다.</p>
+
+  <hr>
+
+  <h2>진짜 연결은 어떻게 회복할까</h2>
+
+  <img src="./images/body-3.png" alt="진짜 연결을 회복하는 세 층위 다이어그램">
+
+  <p>WHO 보고서는 해법이 개인·공동체·국가 세 층위에 걸쳐 있다고 말합니다.</p>
+
+  <p>개인 차원에서는 심리적 개입과 집단 기반 활동이 효과가 확인되었습니다.<br>
+  흥미롭게도 'SNS 줄이기'만으로는 뚜렷한 효과가 없었습니다.<br>
+  무엇을 덜어내느냐보다, 무엇으로 채우느냐가 중요하다는 뜻입니다.</p>
+
+  <p>공동체 차원에서는 공원·도서관·카페 같은 사회적 인프라가 거론됩니다.<br>
+  사람이 자연스럽게 마주칠 자리를 늘리는 일입니다.<br>
+  국가 차원에서는 영국·일본·한국이 '외로움 담당' 자리를 두기 시작했습니다.</p>
+
+  <p>결국 관건은 연결의 양이 아니라 질입니다.<br>
+  수백 개의 알림보다, 한 번의 깊은 대화가 우리를 덜 외롭게 합니다.</p>
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.<br>
+  <span class="closing">외로움의 반대말은 '많은 연결'이 아니라 '닿는 연결'입니다.</span></p>
+
+  <p>화면을 잠시 내려놓고 곁의 한 사람에게 안부를 건네 보시길 권합니다.<br>
+  더 연결될수록 외로운 시대에, 우리를 구하는 것은 여전히 사람과 사람 사이의 온기일 것입니다.</p>
+
+  <p class="tags">#초연결시대 #외로움 #외로움의역설 #고독과외로움 #사회적고립 #AI동반자 #한나아렌트 #사회적연결 #1인가구 #디지털시대</p>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 버블 논쟁 2026 — 지금 증시는 거품인가, 혁명인가</title>
+<style>
+  body{
+    margin:0;background:#f5f6f8;
+    font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif;
+    color:#222;-webkit-font-smoothing:antialiased;
+  }
+  .post{
+    max-width:700px;margin:0 auto;background:#fff;
+    padding:48px 28px 64px;line-height:1.85;font-size:16.5px;
+  }
+  h1{
+    font-size:27px;line-height:1.4;font-weight:700;color:#1a1a2e;
+    margin:0 0 28px;letter-spacing:-0.4px;
+  }
+  h2{
+    font-size:21px;font-weight:700;color:#16213e;
+    margin:46px 0 16px;letter-spacing:-0.3px;
+  }
+  p{margin:0 0 20px;word-break:keep-all;}
+  img{max-width:100%;height:auto;display:block;margin:30px auto;border-radius:12px;}
+  hr{border:none;border-top:1px solid #e9ecef;margin:34px 0;}
+  .lead{
+    background:#f0f2f9;border-left:4px solid #6366f1;
+    padding:18px 22px;border-radius:0 8px 8px 0;margin:0 0 30px;
+    font-size:16.5px;color:#33384d;
+  }
+  .quote{
+    text-align:center;font-size:19px;font-weight:700;color:#1a1a2e;
+    margin:34px 0;line-height:1.6;
+  }
+  .disclaimer{
+    background:#fef2f4;border:1px solid #f7d4dc;border-radius:10px;
+    padding:18px 22px;margin:30px 0 0;font-size:15px;color:#9f4456;line-height:1.7;
+  }
+  .tags{margin-top:40px;font-size:14.5px;color:#5b6bd6;line-height:1.9;}
+  .tags span{margin-right:8px;display:inline-block;}
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/economy/index.html">경제 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="post">
+
+  <h1>AI 버블 논쟁 2026 — 지금 증시는 거품인가, 혁명인가</h1>
+
+  <img src="./images/thumbnail.png" alt="AI 버블 논쟁 2026 거품 대 혁명 대표 이미지">
+
+  <p class="lead">2026년 증시의 가장 뜨거운 질문은 하나입니다. "지금의 AI 랠리는 거품인가, 혁명의 초입인가." 이번 글에서는 거품론과 혁명론 양쪽 논거를 수치로 정리하고, 한국 증시와 개인투자자에게 어떤 의미인지 균형 있게 짚어봅니다. 결론부터 말씀드리면, 양쪽 모두 진지한 근거를 갖고 있습니다.</p>
+
+  <hr>
+
+  <h2>■ 투자붐의 규모부터 짚습니다</h2>
+  <p>먼저 숫자입니다. 아마존·구글·메타·마이크로소프트, 이른바 빅4의 2026년 합산 설비투자는 4,000억 달러대로 전망됩니다. 메타 단독으로도 전년의 약 두 배를 쏟아붓겠다고 선언했습니다.</p>
+  <p>엔비디아 시가총액은 2026년 2월 기준 약 4.3조 달러로 세계 1위에 올랐습니다. 지난해 AI 스타트업에 유입된 돈은 전 세계 벤처투자의 61%에 달합니다. 자본이 한 방향으로 거대하게 쏠려 있는 셈입니다.</p>
+  <p>엔비디아는 칩을 파는 공급자이면서, 동시에 AI 기업에 직접 투자하는 투자자이자 채권자 역할까지 겸합니다. 한 회사가 생태계의 여러 길목을 동시에 쥔 구조는 전에 보기 어려웠던 풍경입니다.</p>
+
+  <img src="./images/body-1.png" alt="2026 AI 투자붐 규모 핵심 포인트 카드">
+
+  <hr>
+
+  <h2>■ 거품이라는 쪽의 근거</h2>
+  <p>거품론의 핵심은 '쏠림'과 '값'입니다.</p>
+  <p>2025년 말 기준 S&amp;P500 시총의 약 30%를 상위 5개 기업이 차지했습니다. 반세기 만의 최고 집중도입니다. 상위 10개 비중은 닷컴 버블 당시보다 오히려 높습니다. 미국 증시 CAPE는 약 38배로 역사적 고점권에 있습니다.</p>
+  <p>모건스탠리는 "AI 설비투자가 닷컴 버블을 넘어섰다"고 경고했습니다. 빅테크의 영업현금흐름 대비 설비투자 비율이 2025년 54%에서 올해 100%를 넘을 수 있다는 전망도 함께 나왔습니다. 골드만삭스 CEO는 "많은 자본이 수익을 내지 못할 것"이라 했고, 아마존 베이조스조차 "일종의 산업적 거품"이라 인정했습니다.</p>
+  <p>여기에 한 가지가 더 얹힙니다. 기관의 영향력이 줄고, 빚을 낸 개인투자자들이 시장을 끌고 가는 흐름입니다. 과거 거품의 끝자락에서 자주 보이던 신호이기도 합니다.</p>
+
+  <hr>
+
+  <h2>■ 혁명이라는 쪽의 근거</h2>
+  <p>반론도 만만치 않습니다. 핵심은 '실적'과 '체력'입니다.</p>
+  <p>알파벳의 2026년 1분기 매출은 전년 대비 22% 늘었고, 구글 클라우드는 63% 성장했습니다. 특히 클라우드 수주잔고가 4,600억 달러로 쌓였습니다. 이는 투기가 아니라 이미 계약된 실수요라는 신호입니다.</p>
+  <p>재무 체력도 다릅니다. 닷컴 시기 기업들이 영업현금흐름의 140%를 투자에 쏟던 것과 달리, 지금 빅테크는 60% 수준입니다. 빚으로 쌓은 거품이 아니라 벌어들인 돈으로 짓는 투자라는 반박입니다.</p>
+  <p>엔비디아 PER은 약 47배로 분명 높습니다. 다만 닷컴 극단치에 비하면 낮고, 이익이 실제로 따라오고 있다는 점이 그때와 다릅니다. 수익화 우려가 2026년에 정점을 찍고, 이후 잉여현금흐름이 회복될 것이라는 시나리오도 제시됩니다.</p>
+
+  <img src="./images/body-2.png" alt="거품론 대 혁명론 핵심 논거 비교 표">
+
+  <hr>
+
+  <h2>■ 한국 증시와 반도체는 어떤가</h2>
+  <p>이 논쟁은 한국에도 그대로 닿습니다. 코스피 시총은 7,000조 원을 넘어 사상 최고를 기록했고, 삼성전자 시총은 2,000조 원을 돌파했습니다.</p>
+  <p>SK하이닉스는 2026년 1분기 영업이익률 약 72%라는 기록적 수치를 냈습니다. HBM 부족이 2028년까지 이어질 것이라는 전망도 나옵니다. 다만 외국인 비중이 높은 만큼, 미국 AI 투자심리가 흔들리면 한국 증시도 함께 출렁입니다. 수혜의 통로가 곧 리스크의 통로이기도 한 셈입니다.</p>
+
+  <hr>
+
+  <h2>■ 개인투자자는 무엇을 점검할까</h2>
+  <p>전망은 엇갈립니다. 강세를 보는 운용사가 많지만, JP모건 다이먼은 "향후 2년 의미 있는 하락 가능성"을 경고합니다.</p>
+  <p>예전엔 분산이 답답한 선택처럼 보였습니다. 지금은 소수 종목에 지수가 좌우되는 구조에서, 분산이 가장 현실적인 방어막이 됐습니다. 감당 가능한 변동성의 범위를 먼저 정하고, 한 테마에 전부를 거는 일은 피하시길 권합니다.</p>
+
+  <img src="./images/body-3.png" alt="개인투자자 점검 체크리스트 단계 다이어그램">
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다. 거품이냐 혁명이냐는 사실 양자택일이 아닐지도 모릅니다. 역사 속 기술 혁명은 거품과 진보가 한 몸으로 움직였습니다.</p>
+
+  <p class="quote">"거대한 변화일수록, 검증의 시간은 길고 변동은 큽니다."</p>
+
+  <p>거품인지 혁명인지 묻는다면, 저는 "지금은 그 답을 시장이 천천히 적어가는 중"이라 답하겠습니다.</p>
+
+  <p class="disclaimer">이 글은 정보 제공을 위한 정리일 뿐, 특정 종목의 매수나 매도를 권하지 않습니다. 투자 판단과 책임은 결국 투자자 본인의 몫입니다.</p>
+
+  <div class="tags">
+    <span>#AI버블</span><span>#AI버블논쟁2026</span><span>#엔비디아</span><span>#빅테크capex</span><span>#코스피</span><span>#SK하이닉스</span><span>#HBM</span><span>#닷컴버블</span><span>#분산투자</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

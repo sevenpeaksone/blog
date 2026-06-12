@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 코딩 에이전트 2026, 개발자의 일은 어떻게 바뀌나</title>
+<style>
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    background: #ffffff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.5px;
+    margin: 0 0 28px;
+    color: #111;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+    margin: 44px 0 18px;
+    color: #1a1a2e;
+  }
+  p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 20px;
+    color: #2a2a2a;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 28px auto;
+    border-radius: 10px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 40px 0;
+  }
+  blockquote {
+    margin: 28px 0;
+    padding: 18px 22px;
+    background: #f4f6fb;
+    border-left: 4px solid #3b82f6;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.7;
+    color: #1a1a2e;
+  }
+  .tags {
+    margin-top: 36px;
+    font-size: 15px;
+    line-height: 2;
+    color: #3b6fb5;
+  }
+  .tags span { margin-right: 6px; white-space: nowrap; }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="post">
+
+  <h1>AI 코딩 에이전트 2026, 개발자의 일은 어떻게 바뀌나</h1>
+
+  <img src="./images/thumbnail.png" alt="AI 코딩 에이전트 2026 - 바이브 코딩 시대 개발자의 일은 어떻게 바뀌나">
+
+  <p>2026년 개발 현장의 절반은 이미 AI가 쓴 코드로 채워지고 있습니다. 바이브 코딩이라는 말이 1년 만에 유행어에서 일하는 방식으로 자리 잡았습니다. 오늘은 이 변화의 실제 수치와, 개발자의 일이 어디로 향하는지를 정리해 보겠습니다.</p>
+
+  <p>먼저 결론부터 말씀드립니다. AI는 코드를 빠르게 만들어 내지만, 그 코드를 믿고 맡길지는 여전히 사람의 몫입니다. 도구는 강력해졌고, 책임의 무게는 그대로 남았습니다.</p>
+
+  <hr>
+
+  <h2>■ 바이브 코딩이란 무엇인가</h2>
+
+  <p>바이브 코딩은 만들고 싶은 것을 평범한 말로 설명하면 AI가 코드를 자동으로 짜 주는 방식입니다. 이 표현은 2025년 2월, OpenAI 공동창업자 안드레이 카파시가 처음 썼습니다.</p>
+
+  <p>처음엔 가벼운 농담에 가까웠습니다. "시켜 보고 나오는 대로 즐긴다"는 정도였습니다.</p>
+
+  <p>지금은 다릅니다. 자연어로 사양을 적으면 AI가 사람의 감독 아래 코드를 만들어 내는, 하나의 개발 방법론으로 굳었습니다.</p>
+
+  <p>가장 큰 변화는 자동완성이 아니라 '에이전트'입니다. 이제 AI는 한 줄을 제안하는 데 그치지 않습니다. 여러 파일을 고치고, 터미널 명령을 실행하고, 테스트가 통과할 때까지 스스로 반복합니다.</p>
+
+  <hr>
+
+  <h2>■ 2026년 주요 도구 — Cursor·Claude Code·Copilot·Devin</h2>
+
+  <p>지금 시장을 이끄는 도구는 세 가지입니다. Claude Code, GitHub Copilot, Cursor입니다.</p>
+
+  <img src="./images/body-1.png" alt="2026 주요 AI 코딩 에이전트 도구 비교 표 - Cursor, Claude Code, GitHub Copilot, Devin">
+
+  <p>Cursor는 사용자 100만 명을 넘기고 연 환산 매출 약 20억 달러로, 상업적으로 가장 성공한 도구입니다. Cursor 3.0은 에이전트 8개를 동시에 돌리는 창을 더했습니다.</p>
+
+  <p>Claude Code는 가장 유능한 자율 에이전트로 꼽힙니다. 100만 토큰 컨텍스트를 정식 공개했습니다.</p>
+
+  <p>GitHub Copilot은 접근성이 가장 넓습니다. 유료 코딩 도구 시장의 42%를 차지합니다.</p>
+
+  <p>Devin은 완전 자율 계열로, 2026년 2월 월 500달러 요금제를 정리했습니다.</p>
+
+  <p>다만 모든 상황에서 이기는 도구는 없습니다. 용도에 따라 답이 달라지는 셈입니다.</p>
+
+  <hr>
+
+  <h2>■ 정말 생산성이 오를까 — 엇갈리는 실측</h2>
+
+  <p>여기서 한 가지 짚고 넘어가야 합니다. '체감'과 '실측'이 다릅니다.</p>
+
+  <p>비영리 연구단체 METR가 2025년 7월 발표한 무작위대조시험 결과는 의외였습니다. 숙련 개발자가 AI를 쓸 때, 안 쓸 때보다 오히려 19% 더 오래 걸렸습니다.</p>
+
+  <p>더 흥미로운 점은 따로 있습니다. 정작 개발자 본인들은 그 사실을 몰랐습니다. AI가 자신을 더 빠르게 해준다고 믿고 있었습니다.</p>
+
+  <p>물론 도구는 계속 진화합니다. METR의 2026년 5월 후속 설문에서는 작업 가치가 1.4~2배 늘었다는 자기보고가 나왔습니다.</p>
+
+  <p>숫자를 곧이곧대로 받기보다, 어떤 환경에서 측정했는지를 함께 보시길 권합니다.</p>
+
+  <hr>
+
+  <h2>■ 개발자의 일자리는 사라지는가</h2>
+
+  <p>가장 뜨거운 논쟁입니다. 신호는 양쪽으로 갈립니다.</p>
+
+  <img src="./images/body-2.png" alt="개발자 역할 변화 핵심 포인트 카드 - 신입 채용 감소, 시니어 가치 유지, 역할 재편">
+
+  <p>위축은 분명합니다. 2026년 신입 개발자 공고는 2022년 정점 대비 28% 줄었습니다. 스탠퍼드 연구에 따르면 22~25세 개발자 고용은 정점 대비 약 20% 감소했습니다.</p>
+
+  <p>반대 흐름도 있습니다. IBM은 미국 내 신입 채용을 오히려 3배로 늘렸습니다. CNN은 "엔지니어링 일자리의 종말은 크게 과장됐다"고 전했습니다.</p>
+
+  <p>핵심은 대체가 아니라 재편입니다. 코드를 '쓰는 사람'에서 '설계하고 검증하고 감독하는 사람'으로 무게중심이 옮겨갑니다. AI는 아키텍처와 보안의 어려운 판단까지 대신하지는 못합니다.</p>
+
+  <hr>
+
+  <h2>■ 빠름의 대가 — 보안과 품질 리스크</h2>
+
+  <p>빠르게 얻은 것에는 대가가 따릅니다.</p>
+
+  <img src="./images/body-3.png" alt="AI 생성 코드 보안 리스크 핵심 수치 강조 박스 - 보안 통과율 55%, 취약점 1.88배">
+
+  <p>AI 코딩 도구의 문법 정확도는 95%를 넘습니다. 하지만 보안 통과율은 약 55%에 머뭅니다. 별도 보안 지침이 없으면 생성된 코드의 절반 가까이가 알려진 취약점을 품고 있다는 뜻입니다.</p>
+
+  <p>수치는 더 구체적입니다. AI 생성 코드는 사람이 쓴 코드보다 취약점을 만들 가능성이 1.88배 높습니다. 개발자의 67%는 디버깅 시간이 늘었다고 답했습니다.</p>
+
+  <p>기업의 약 75%는 AI 가속 개발로 기술 부채가 커질 것을 우려합니다.</p>
+
+  <p>빠르게 만드는 것과 안전하게 만드는 것은 다른 문제입니다.</p>
+
+  <hr>
+
+  <h2>■ 그래도 기업은 빠르게 도입한다</h2>
+
+  <p>리스크에도 도입 속도는 가파릅니다.</p>
+
+  <p>GitHub Copilot은 활성 사용자가 쓰는 코드의 평균 46%를 만들어 냅니다. 2022년 27%에서 크게 올랐습니다. Fortune 500의 78%는 이미 AI 보조 개발을 실제 운영에 적용하고 있습니다.</p>
+
+  <p>2026년 초 GitHub에 올라온 전체 코드의 51% 이상이 AI로 생성되거나 상당 부분 AI의 도움을 받았습니다.</p>
+
+  <p>흥미로운 긴장도 있습니다. 채택률은 84%로 높지만, 이 도구를 신뢰한다는 응답은 29%에 그칩니다. '쓰지만 다 믿지는 않는다'는 태도가 현장의 솔직한 모습입니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다. AI 코딩 에이전트는 더 이상 선택의 영역이 아니라 기본값이 되어가고 있습니다. 그러나 빠른 생성이 곧 좋은 소프트웨어를 뜻하지는 않습니다.</p>
+
+  <blockquote>"코드를 짜는 손은 AI에게 넘겨도, 무엇을 왜 만드는지 판단하는 자리는 사람이 지킨다."</blockquote>
+
+  <p>AI 시대에 개발자가 사라지겠냐고 물으신다면, 일이 바뀔 뿐 사라지지는 않는다고 답하겠습니다.</p>
+
+  <div class="tags">
+    <span>#AI코딩에이전트</span> <span>#바이브코딩</span> <span>#ClaudeCode</span> <span>#Cursor</span> <span>#GitHubCopilot</span> <span>#개발자일자리</span> <span>#AI개발도구</span> <span>#2026IT트렌드</span> <span>#소프트웨어개발</span> <span>#코드보안</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
