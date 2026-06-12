@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오가노이드 2026 — 실험실에서 키운 미니 장기, 어디까지 왔나</title>
+<style>
+  body {
+    margin: 0;
+    background: #fff;
+    font-family: 'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;
+    color: #222;
+    line-height: 1.8;
+    font-size: 16.5px;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 22px 80px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0 0 28px;
+    color: #111;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 44px 0 16px;
+    padding-left: 12px;
+    border-left: 5px solid #2e7d6b;
+    color: #1a1a1a;
+  }
+  p {
+    margin: 0 0 18px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 26px auto;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 38px 0;
+  }
+  .lead {
+    color: #555;
+  }
+  .quote {
+    font-weight: 600;
+    color: #2e7d6b;
+  }
+  .tags {
+    margin-top: 36px;
+    color: #999;
+    font-size: 13.5px;
+    line-height: 1.9;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/bio/index.html">바이오 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="post">
+
+  <h1>오가노이드 2026 — 실험실에서 키운 미니 장기, 어디까지 왔나</h1>
+
+  <img src="./images/thumbnail.png" alt="오가노이드 2026 — 실험실에서 키운 미니 장기">
+
+  <p>이번 글에서는 오가노이드가 2026년 현재 어디까지 왔는지 정리해 보겠습니다.</p>
+
+  <p>오가노이드는 줄기세포로 실험실에서 키운 '미니 장기'입니다. 신약 개발, 환자 맞춤 치료, 심지어 컴퓨팅까지 쓰임새가 넓어지고 있습니다. 다만 기대만큼 조심해야 할 지점도 분명합니다. 핵심부터 짧게 짚고, 분야별로 살펴보겠습니다.</p>
+
+  <hr>
+
+  <h2>오가노이드란 무엇인가</h2>
+
+  <p>오가노이드는 3차원 배양 기술로 만든 작은 장기 모델입니다.</p>
+
+  <p>쉽게 말해, 줄기세포를 접시 위에서 키워 실제 장기의 구조와 기능 일부를 재현한 덩어리입니다. 환자에게서 떼어낸 조직을 유전적·구조적 수준에서 충실히 닮게 만들 수 있습니다.</p>
+
+  <p>재료가 되는 줄기세포는 세 종류입니다. 배아줄기세포(ESC), 유도만능줄기세포(iPSC), 그리고 성체줄기세포(ASC)입니다.</p>
+
+  <p>지금까지 뇌, 폐, 장, 위, 간, 췌장, 신장, 망막, 심장까지 다양한 장기가 오가노이드로 만들어졌습니다. 최근에는 면역·혈관·미생물을 함께 배양하고 AI를 결합해 실제 조직의 복잡성에 점점 가까워지는 흐름입니다.</p>
+
+  <img src="./images/body-1.png" alt="오가노이드 제작 4단계 흐름도: 줄기세포 채취 → 3D 배양 → 미니 장기 형성 → 약물검사·이식">
+
+  <hr>
+
+  <h2>신약 개발과 독성 평가</h2>
+
+  <p>오가노이드의 가장 실용적인 무대는 신약 개발입니다.</p>
+
+  <p>3D 오가노이드와 '오간온칩' 기술은 사람과 더 가까운 실험 환경을 제공합니다. 오간온칩은 칩 위에 세포를 배양해 장기 환경을 흉내 내는 장치입니다.</p>
+
+  <p>임상 연구에서는 90%를 넘는 예측 정확도가 보고되기도 했습니다. 다만 이 수치는 일반론적 서술에 가깝고, 암종과 연구에 따라 편차가 큽니다. 단정해서 받아들이기보다 참고치로 보시는 편이 좋겠습니다.</p>
+
+  <p>산업 전환도 빠릅니다. 2025년 중반 기준 180개 이상의 오가노이드 관련 임상 연구가 등록됐습니다.</p>
+
+  <p>시장 규모는 추정 기관마다 다릅니다. 한 곳은 2025년 약 14.2억 달러로, 다른 곳은 약 12억 달러로 봅니다. 성장률 전망도 15%에서 23%까지 폭이 넓습니다. 그래서 하나의 숫자보다는 "12~14억 달러대 시장, 두 자릿수 고성장" 정도로 이해하시는 편이 안전합니다.</p>
+
+  <hr>
+
+  <h2>환자 맞춤 치료와 이식</h2>
+
+  <p>환자에게서 직접 떼어낸 조직으로 만든 오가노이드를 PDO라 부릅니다.</p>
+
+  <p>이 기술의 매력은 분명합니다. 어떤 항암제가 그 환자에게 들을지를 미리 시험해 볼 수 있습니다. 진행성 위암 임상시험에서는 오가노이드 약물 감수성 검사와 실제 치료 반응이 87% 일치했습니다.</p>
+
+  <p>물론 한계도 있습니다. 대장암 연구에서는 예측 가치를 확정하려면 더 큰 전향적 연구가 필요하다는 단서가 붙었습니다.</p>
+
+  <p>이식 분야에서도 진전이 있습니다. 2022년 7월 일본 연구팀이 궤양성 대장염 환자의 장 줄기세포로 키운 오가노이드를 본인에게 다시 이식하는 데 세계 최초로 성공했습니다.</p>
+
+  <img src="./images/body-2.png" alt="오가노이드의 네 가지 활용 분야: 신약개발·독성평가·환자맞춤치료·재생이식">
+
+  <hr>
+
+  <h2>미니 뇌로 만든 컴퓨터</h2>
+
+  <p>가장 낯선 영역은 '오가노이드 인텔리전스'입니다.</p>
+
+  <p>뇌세포 덩어리를 칩 위에 올려 계산에 쓰는 시도입니다. 예전엔 공상에 가까웠습니다. 지금은 상용 제품이 나오고 있습니다.</p>
+
+  <p>호주의 코티컬랩스는 사람 세포에서 전환한 약 20만 개의 뉴런을 실리콘 칩에 배양한 생물학적 컴퓨터 'CL1'을 공개했습니다. 스위스의 핀랄스파크는 원격으로 뇌 오가노이드 실험을 할 수 있는 '웨트웨어 서비스'를 내놨습니다.</p>
+
+  <p>이들이 내세우는 건 에너지 효율입니다. 핀랄스파크는 자사 바이오프로세서가 디지털 프로세서보다 100만 배 적은 전력을 쓴다고 주장합니다.</p>
+
+  <p>다만 이 주장은 신중히 봐야 합니다. 에너지 효율 수치는 기업과 언론 출처에 기댄 것으로, 독립적으로 검증된 표준 벤치마크는 확인되지 않았습니다. 2026년의 한 학술지는 이런 기대에 "과장을 넘어서"라는 제목으로 회의론을 내놓기도 했습니다.</p>
+
+  <img src="./images/body-3.png" alt="검증되지 않은 주장에 유의 — 바이오컴퓨팅 에너지 효율 수치는 독립 검증된 벤치마크가 아직 없음">
+
+  <hr>
+
+  <h2>규제와 윤리</h2>
+
+  <p>흐름을 키우는 또 하나의 축은 규제 변화입니다.</p>
+
+  <p>2025년 4월 미국 FDA는 동물실험을 줄이는 로드맵을 발표하고, 오가노이드를 사람 기반의 대안으로 명시했습니다. 같은 해 12월에는 상원이 FDA 현대화법 3.0을 만장일치로 통과시켰습니다.</p>
+
+  <p>윤리 문제도 함께 떠올랐습니다. 특히 뇌 오가노이드는 감각이나 의식을 가질 가능성이 거론됩니다. 만약 의식을 지닌다면, 일부 실험은 윤리적으로 다시 따져봐야 합니다.</p>
+
+  <p>2025년 4월 중국은 세계 최초의 포괄적 인간 오가노이드 연구 윤리 지침을 발표했습니다. 의식 출현을 막기 위한 실시간 뇌파 모니터링과 복잡성 상한을 핵심에 담았습니다.</p>
+
+  <p>기술은 빠르고 규제는 뒤따릅니다. 이 간극을 어떻게 메우느냐가 다음 과제입니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다.</p>
+
+  <p>오가노이드는 신약 개발과 환자 치료에서 이미 실질적인 성과를 내고 있습니다. 동시에 바이오컴퓨팅의 부풀려진 기대와 윤리 공백이라는 숙제도 안고 있습니다.</p>
+
+  <p class="quote">— "실험실의 미니 장기는, 가능성과 신중함을 함께 키우는 중입니다."</p>
+
+  <p>이 작은 덩어리들이 의학을 어디까지 바꿔놓을지, 그 답은 아직 자라는 중입니다.</p>
+
+  <div class="tags">
+    #오가노이드 #미니장기 #줄기세포 #신약개발 #오간온칩 #환자맞춤치료 #바이오컴퓨팅 #오가노이드인텔리전스 #FDA동물실험 #바이오테크
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
