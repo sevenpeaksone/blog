@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>분노 조절, 욱하는 마음 다스리기 — 건강한 감정 표현법</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --sub: #555;
+    --accent: #c0392b;
+    --line: #e2e2e2;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f5f5f5;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: var(--bg);
+  }
+  h1 {
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+  }
+  h2 {
+    font-size: 21px;
+    line-height: 1.45;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 48px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+  }
+  p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    color: var(--text);
+  }
+  ul {
+    padding-left: 22px;
+    margin: 0 0 22px;
+  }
+  li {
+    font-size: 16.5px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 6px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .lead {
+    color: var(--sub);
+  }
+  .quote {
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .tags {
+    margin-top: 40px;
+    font-size: 14.5px;
+    line-height: 2;
+    color: #777;
+  }
+  .tags span {
+    display: inline-block;
+    margin-right: 6px;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/counseling/index.html">상담 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>[심리] 분노 조절, 욱하는 마음 다스리기 — 건강한 감정 표현법</h1>
+
+  <img src="./images/thumbnail.png" alt="분노 조절 — 욱하는 마음 다스리기 썸네일">
+
+  <p>분노 조절에 관해 그동안 정리해 둔 내용을 적어봅니다.<br>
+  욱하는 마음을 다스리는 일은 화를 무조건 참는 것과는 다릅니다.<br>
+  이 글에서는 분노가 일어나는 심리·뇌의 원리, 건강한 분노와 파괴적인 분노의 차이, 그리고 오늘 바로 해볼 수 있는 감정 표현법을 차례로 짚어보겠습니다.</p>
+
+  <p class="lead">먼저 한 가지만 분명히 해두겠습니다.<br>
+  이 글은 일반적인 정보 제공을 위한 것이며, 전문적인 상담·진단·치료를 대체하지 않습니다.<br>
+  지속적이거나 심한 분노 문제로 힘드시다면 정신건강의학과 전문의나 임상심리·상담 전문가의 도움을 받으시길 권합니다.</p>
+
+  <hr>
+
+  <h2>욱하는 것은 의지가 약해서가 아닙니다</h2>
+
+  <p>분노는 위협을 느꼈을 때 작동하는 투쟁-도피 반응의 한 형태입니다.<br>
+  위협을 이길 수 있다고 판단되면 '투쟁' 쪽으로 기울어 분노와 공격으로 드러나고, 이길 수 없다고 느끼면 '도피', 즉 공포 쪽으로 기웁니다.<br>
+  화가 날 때 심장이 빨리 뛰고, 혈압이 오르고, 땀이 나거나 근육이 굳는 것도 이 반응에 따라오는 몸의 변화입니다.</p>
+
+  <p>뇌 안에서는 감정을 담당하는 편도체와 이성적 판단을 맡는 전두엽이 서로 줄다리기를 합니다.<br>
+  욱하는 순간에는 편도체가 과하게 흥분하고 전두엽의 통제력이 약해집니다.</p>
+
+  <p>그러니 욱하는 것은 의지박약의 증거가 아닙니다.<br>
+  뇌가 자동으로 켜는 방어 반응에 가깝습니다.</p>
+
+  <p>다만 "그러니 어쩔 수 없다"는 말은 아닙니다.<br>
+  잠깐의 멈춤으로 전두엽을 다시 켤 수 있다는 점이 중요합니다.</p>
+
+  <hr>
+
+  <h2>참는 것이 건강한 것은 아닙니다</h2>
+
+  <p>흔히 분노 조절을 '화를 잘 참는 능력'으로 오해합니다.<br>
+  그러나 분노 자체는 누구나 느끼는 정상적이고 건강한 감정입니다.<br>
+  문제가 되는 것은 분노가 너무 강하게, 너무 자주, 부적절한 방식으로 표현될 때입니다.</p>
+
+  <p>심리학에서는 분노를 표현하는 방식을 크게 세 가지로 나눕니다.</p>
+
+  <img src="./images/body-1.png" alt="분노 표출·억제·통제 세 가지 방식 비교">
+
+  <ul>
+    <li>분노 표출(외적 분노): 밖으로 터뜨리는 방식입니다. 대인 갈등이나 공격적 행동으로 이어지기 쉽습니다.</li>
+    <li>분노 억제(내적 분노): 안으로 삼키고 참는 방식입니다. 우울증, 자살위험성과 높은 연관을 보입니다.</li>
+    <li>분노 통제: 분노를 인식하면서도 진정시키려 애쓰고, 냉정을 유지하며 갈등을 풀어가려는 방식입니다.</li>
+  </ul>
+
+  <p>여기서 한 가지가 눈에 들어옵니다.<br>
+  참는 것, 곧 억제 역시 건강한 방법이 아니라는 점입니다.<br>
+  밖으로 터뜨리는 것만 해로운 줄 알았는데, 안으로 삼키는 것도 그만큼 해롭다는 사실은 새로운 관점이 됩니다.</p>
+
+  <p>결국 건강한 길은 셋째, 분노 통제입니다.<br>
+  <span class="quote">"분노 조절은 화를 참는 법이 아니라, 나와 타인에게 해를 끼치지 않으면서 적절히 표현하고 풀어내는 법을 익히는 것"</span>입니다.</p>
+
+  <hr>
+
+  <h2>왜 알면서도 또 욱할까</h2>
+
+  <p>화가 가라앉은 뒤에 후회해 본 분이라면 이런 의문이 들 것입니다.<br>
+  "알면서도 왜 또 그랬을까."</p>
+
+  <p>답은 속도에 있습니다.<br>
+  분노의 몸·뇌 반응은 이성적 판단보다 빠릅니다.<br>
+  편도체가 전두엽을 압도하는 순간, 사람은 성급히 결론을 내리고 머릿속에 가장 먼저 떠오른 말을 그대로 내뱉기 쉽습니다.</p>
+
+  <p>그래서 사후 후회가 반복됩니다.<br>
+  바꿔 말하면, 기법의 핵심은 단 하나로 모입니다.<br>
+  <span class="quote">반응과 행동 사이에 시간을 버는 것.</span></p>
+
+  <hr>
+
+  <h2>근거 있는 방법들 — 멈춤, 호흡, 생각 다시 보기</h2>
+
+  <p>다행히 분노 관리는 효과가 검증된 영역입니다.<br>
+  여러 메타분석을 종합하면 분노 관리 치료를 받은 사람의 약 75%가 개선되는 것으로 나타났습니다.</p>
+
+  <p>미국심리학회(APA)는 분노 관련 문제에 대한 일차적 근거기반 치료로 인지행동치료(CBT)를 인정합니다.<br>
+  APA에 따르면 매우 화가 많은 사람도 보통 8~10회기 정도면 건강한 중간 수준으로 옮겨갈 수 있다고 합니다.<br>
+  다만 이런 수치는 참고용 지표이며, 사람마다 다르게 나타날 수 있다는 점은 염두에 두시는 편이 좋겠습니다.</p>
+
+  <img src="./images/body-2.png" alt="욱하기 전 진정 4단계 다이어그램">
+
+  <p>근거가 가장 많은 방법은 이완, 인지치료, 기술 개발 세 가지입니다.<br>
+  하나씩 풀어보겠습니다.</p>
+
+  <ul>
+    <li>10초 호흡으로 멈추기: 욱하기 전에 호흡으로 10초만 멈추면 편도체의 과잉 반응이 가라앉고 전두엽이 다시 켜집니다. 얕은 호흡은 '화난 호흡'입니다. 가슴이 아니라 배에서 천천히 올라오는 느린 숨을 조절하며 쉬어 보시길 권합니다.</li>
+    <li>점진적 근육 이완: 발끝부터 시작해 머리와 목까지 한 근육씩 천천히 긴장시켰다가 풀어줍니다.</li>
+    <li>트리거 파악: 어떤 상황과 생각이 화를 부르는지 찾아냅니다. 이것이 인지행동치료의 출발점입니다.</li>
+    <li>생각 다시 보기(인지 재구성): 화를 키우는 자동적 생각을 점검하고, 더 현실에 가까운 대안적 사고로 바꿉니다.</li>
+    <li>타임아웃: 짜증이 올라오는 초기 신호를 알아차리면 그 자리에서 한 발 물러섭니다.</li>
+  </ul>
+
+  <hr>
+
+  <h2>오늘 바로 해볼 수 있는 것</h2>
+
+  <p>거창한 결심은 필요 없습니다.<br>
+  작은 습관 하나가 반응과 행동 사이의 틈을 넓혀 줍니다.</p>
+
+  <img src="./images/body-3.png" alt="너 전달법과 나 전달법 비교">
+
+  <ul>
+    <li>욱하기 전 10초만 버티기. 분노의 생리적 정점은 의외로 짧습니다.</li>
+    <li>트리거 일지 쓰기. 어떤 상황과 생각이 화를 불렀는지 짧게 적어 패턴을 봅니다.</li>
+    <li>미리 규칙 정하기. "화가 나면 자리에서 5분 떨어진다" 같은 나만의 약속을 둡니다.</li>
+    <li>몸을 움직이기. 운동이 정서 조절에 도움이 된다는 연구 근거가 있습니다.</li>
+    <li>과장 표현 점검하기. "절대", "항상", "최악" 같은 말을 사실에 가깝게 고쳐 말합니다.</li>
+    <li>'나' 전달법으로 말하기. "너는 늘…"처럼 상대를 비난하기보다, 내 감정을 중심으로 표현하면 갈등이 덜 격해집니다.</li>
+  </ul>
+
+  <p>예전에는 화가 나면 곧장 가시 돋친 말부터 나왔다면, 이제는 한 호흡 쉬고 내 감정을 먼저 말해 보는 것입니다.<br>
+  요점은 "참아라"가 아닙니다.<br>
+  시간을 벌고, 건강하게 표현하는 것입니다.</p>
+
+  <hr>
+
+  <h2>이런 신호가 보이면 전문가와 상의하시길</h2>
+
+  <p>분노가 일상과 관계를 자주 무너뜨린다면 혼자 끌어안지 않으셔도 됩니다.</p>
+
+  <p>'분노조절장애'의 정식 의학 용어는 간헐적 폭발성 장애입니다.<br>
+  사소한 일에도 상황에 맞지 않게 분노가 폭발하고, 때로 폭력이 동반되는 행동 장애입니다.</p>
+
+  <p>다음과 같은 양상이 반복된다면 자가 판단하지 말고 전문가와 상의하시길 권합니다.</p>
+
+  <ul>
+    <li>공격적인 언어나 사람·동물을 향한 물리적 공격성이 한동안 꾸준히 나타난다.</li>
+    <li>분노로 인해 관계, 직장, 법적 문제가 반복된다.</li>
+    <li>화를 낸 뒤 깊은 후회나 죄책감이 거듭된다.</li>
+    <li>분노가 우울이나 불안과 함께 온다.</li>
+    <li>스스로 통제가 되지 않는다고 느낀다.</li>
+  </ul>
+
+  <p>치료는 원인에 따라 달라집니다.<br>
+  생물학적 요인이 크면 약물치료가, 외부 요인 중심이면 상담치료가 이뤄집니다.<br>
+  비약물 치료로는 인지행동치료, 노출 치료 등이 쓰입니다.</p>
+
+  <p class="lead">다시 한번 말씀드립니다.<br>
+  이 글의 내용은 진단이 아니며 전문 상담을 대신하지 않습니다.<br>
+  혼자 버겁다면 정신건강의학과나 전문 상담 기관, 국립정신건강센터 같은 공공 자원의 문을 두드려 보시길 권합니다.</p>
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.<br>
+  분노 조절의 핵심을 한 줄로 압축하면 이렇습니다.</p>
+
+  <p><span class="quote">"화를 없애는 것이 아니라, 화와 행동 사이에 잠깐의 틈을 두는 것."</span></p>
+
+  <p>도움을 청하는 일은 약함이 아니라 적극적인 대처입니다.<br>
+  오늘 한 번, 욱하는 순간에 10초만 멈춰 보시겠다면 — 그것으로 이미 시작입니다.</p>
+
+  <div class="tags">
+    <span>#분노조절</span><span>#감정조절</span><span>#욱하는마음</span><span>#분노조절장애</span><span>#감정표현법</span><span>#스트레스관리</span><span>#마음건강</span><span>#인지행동치료</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

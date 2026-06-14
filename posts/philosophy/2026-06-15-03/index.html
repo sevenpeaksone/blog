@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>딥페이크 시대의 진실, 무엇을 믿을 것인가 — AI가 흔드는 인식론의 위기</title>
+<style>
+  :root {
+    --text: #222;
+    --muted: #555;
+    --line: #e5e5e5;
+    --accent: #1a5fb4;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f5f7;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 48px 32px 64px;
+    line-height: 1.8;
+    font-size: 16.5px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0 0 28px;
+    color: #111;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #111;
+    letter-spacing: -0.01em;
+  }
+  p {
+    margin: 0 0 18px;
+    word-break: keep-all;
+  }
+  .lead p { color: var(--muted); }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 6px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  ul {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+  li {
+    margin-bottom: 10px;
+    word-break: keep-all;
+  }
+  strong { color: #111; font-weight: 700; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 28px;
+    font-size: 15px;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+    word-break: keep-all;
+  }
+  th {
+    background: #f7f8fa;
+    font-weight: 700;
+    color: #111;
+  }
+  tbody tr:nth-child(even) td { background: #fafbfc; }
+  .hashtags {
+    margin-top: 32px;
+    color: var(--accent);
+    font-size: 15px;
+    line-height: 2;
+  }
+  .hashtags span { margin-right: 8px; display: inline-block; }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>딥페이크 시대의 진실, 무엇을 믿을 것인가 — AI가 흔드는 인식론의 위기</h1>
+
+  <img src="./images/thumbnail.png" alt="딥페이크 시대의 진실, 무엇을 믿을 것인가 — AI가 흔드는 인식론의 위기 대표 이미지">
+
+  <div class="lead">
+    <p>이번 글에서는 딥페이크가 만든 진실의 위기를 정리해 보겠습니다.<br>
+    핵심부터 말씀드립니다. 딥페이크의 진짜 위협은 가짜 영상이 늘어나는 것이 아니라, 우리가 무엇을 진실로 받아들일지 그 기준 자체가 흔들린다는 데 있습니다.<br>
+    그래서 기술적 대응만으로는 부족하고, 결국 시민 개개인의 태도와 사회적 약속이 함께 가야 합니다.</p>
+  </div>
+
+  <hr>
+
+  <h2>'아는 것'이 흔들린다</h2>
+
+  <p>문제는 가짜의 양이 아닙니다.<br>
+  인간이 무엇을 어떻게 진실로 확정하느냐, 그 토대가 무너지는 것이 핵심입니다.<br>
+  유네스코는 이를 "아는 것의 위기(crisis of knowing)"라고 불렀습니다.</p>
+
+  <p>합성 콘텐츠가 존재할 수 있다는 가능성 하나만으로도, 우리가 콘텐츠를 받아들이는 방식 전체가 바뀝니다.<br>
+  진짜를 보면서도 "이것도 가짜일 수 있다"는 의심이 기본값이 되는 것입니다.</p>
+
+  <p>규모에 대한 전망도 가볍지 않습니다.<br>
+  유럽 경찰기구(Europol)는 2026년까지 온라인 콘텐츠의 최대 90%가 합성될 수 있다고 내다본 바 있습니다.<br>
+  다만 이 수치는 실측이 아니라 예측이며, 여러 매체가 재인용해 온 전망치라는 점은 함께 기억해 둘 필요가 있습니다.</p>
+
+  <hr>
+
+  <h2>'거짓말쟁이의 배당'이라는 역설</h2>
+
+  <p>여기서 한 가지 개념을 짚고 가겠습니다.<br>
+  '거짓말쟁이의 배당(liar's dividend)'입니다.<br>
+  법학자 보비 체스니와 다니엘 시트론이 2019년 논문에서 처음 이름 붙인 말입니다.</p>
+
+  <p>뜻은 이렇습니다.<br>
+  진짜 딥페이크가 존재한다는 사실 때문에, 사람들이 진짜 정보까지 의심하게 되는 현상.<br>
+  나아가 누군가 이 불확실성을 악용해, 자신이 실제로 한 말과 행동의 책임을 회피하는 것까지 가리킵니다.<br>
+  이때 회피로 얻는 이득이 곧 '배당'입니다.</p>
+
+  <p>핵심은 비대칭성에 있습니다.<br>
+  "그거 딥페이크 아니냐"고 말하는 데에는 증거도, 전문성도, 비용도 들지 않습니다.<br>
+  반면 어떤 영상이 진짜임을 입증하려면 포렌식 분석, 메타데이터 검증, 기술 자문이 필요합니다.</p>
+
+  <img src="./images/body-1.png" alt="거짓말쟁이의 배당 비대칭 저울 — 가짜라고 우기기는 가볍고 진짜임을 입증하기는 무겁다">
+
+  <p>역설이 여기서 나옵니다.<br>
+  대중이 딥페이크 위협을 잘 알게 될수록, 거짓 부인의 신빙성도 함께 올라갑니다.<br>
+  책임을 피하려는 거짓말쟁이가 점점 더 그럴듯해지는 셈입니다.</p>
+
+  <p>실제로 2026년 이란 전쟁 국면에서는 AI 생성 영상이 범람하면서, 진짜 영상까지 가짜로 오인되는 일이 벌어졌습니다.<br>
+  이스라엘 총리의 실제 영상이 가짜로 잘못 지목된 사례가 보도되기도 했습니다.</p>
+
+  <hr>
+
+  <h2>숫자로 보는 딥페이크의 현재</h2>
+
+  <p>딥페이크는 이미 추상적 위협이 아닙니다.<br>
+  집계 사이트(Brightdefense)에 따르면, 딥페이크 사기 시도는 지난 3년간 2,137% 늘었습니다.<br>
+  전체 사기에서 차지하는 비중도 0.1%에서 6.5%로 올랐습니다.</p>
+
+  <p>특히 사람의 눈을 믿기 어려워졌습니다.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>수치</th>
+        <th>출처</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>고품질 영상 딥페이크 탐지 정확도(사람)</td>
+        <td>약 24.5%</td>
+        <td>Brightdefense</td>
+      </tr>
+      <tr>
+        <td>진짜·가짜를 모두 맞힌 참가자 비율</td>
+        <td>0.1%</td>
+        <td>iProov 2025</td>
+      </tr>
+      <tr>
+        <td>최근 1년간 딥페이크 공격 경험 조직</td>
+        <td>62%</td>
+        <td>Gartner 2025-09</td>
+      </tr>
+      <tr>
+        <td>딥페이크 사기 1건당 평균 피해</td>
+        <td>약 50만 달러</td>
+        <td>Brightdefense</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>피해는 회의실 안에서도 일어났습니다.<br>
+  홍콩의 한 다국적기업(Arup)에서는, 재무 담당 직원이 CFO를 포함한 참가자 전원이 딥페이크였던 화상회의를 거친 뒤 총 2,560만 달러를 송금했습니다.<br>
+  영국의 한 에너지 기업에서는 CEO 목소리를 똑같이 흉내 낸 음성 전화 한 통에 22만 유로가 빠져나갔습니다.</p>
+
+  <p>정치 영역도 예외가 아닙니다.<br>
+  2025년 4월 캐나다 연방선거를 앞두고는, 자유당 대표 마크 카니의 딥페이크 인터뷰를 이용한 암호화폐 사기가 유포되었습니다.</p>
+
+  <img src="./images/body-2.png" alt="딥페이크 사기 사고 건수 증가 추이 막대그래프 (2023년 42건, 2024년 150건, 2025년 1분기 179건)">
+
+  <hr>
+
+  <h2>철학자들의 두 갈래 — 받침대가 무너지는가, 아니면 과장인가</h2>
+
+  <p>이 지점에서 철학자들의 생각이 갈립니다.<br>
+  어느 한쪽이 정답이라고 말하기는 어렵습니다.<br>
+  두 입장을 나란히 놓고 보는 편이 정직합니다.</p>
+
+  <p>먼저 비관 쪽입니다.<br>
+  요크대학교의 레지나 리니는 영상과 음성 기록이 우리의 '증언'을 떠받쳐 온 '인식론적 받침대' 역할을 해 왔다고 봅니다.<br>
+  언제든 녹화가 존재할 수 있다는 가능성이, 사람들이 성실하게 말하도록 만드는 압력으로 작동해 왔다는 것입니다.<br>
+  딥페이크가 이 받침대를 침식하면, 영상 한두 개가 의심받는 데 그치지 않습니다.<br>
+  타인의 말을 신뢰하는 관행 자체가 흔들린다는 경고입니다.</p>
+
+  <p>반대편에는 완화 쪽이 있습니다.<br>
+  리즈대학교의 조슈아 햅굿코트는 딥페이크를 '인식론적 종말'의 전조로 보는 서사가 과장되었다고 말합니다.<br>
+  그는 세 가지를 짚습니다.<br>
+  첫째, 기록을 둘러싼 사회적 규범의 역할을 인정하면 위협은 생각보다 작습니다.<br>
+  둘째, 19세기 말 초상 보정이나 신문 사진 수정처럼 사진 조작의 역사는 이미 있었고, 사회는 그때마다 규범을 만들어 대응해 왔습니다.<br>
+  셋째, 제안된 해법들이 기술적 개입에만 지나치게 쏠려 있습니다.</p>
+
+  <p>그의 경고는 다소 뜻밖입니다.<br>
+  종말론적 서사 자체가 우리가 두려워하는 불신과 '공유된 현실의 붕괴'를 스스로 불러오는 자기실현적 예언이 될 수 있다는 것입니다.</p>
+
+  <p>예전엔 기록이 곧 증거였습니다.<br>
+  지금은 그 기록조차 의심의 대상이 되었습니다.<br>
+  두 사람의 진단은 다르지만, 한 가지에서는 만납니다.<br>
+  순수한 기술 해법만으로는 부족하고, 사회적 규범과 관행이 핵심이라는 점입니다.</p>
+
+  <hr>
+
+  <h2>기술적 대응은 어디까지 왔나</h2>
+
+  <p>대응이 손을 놓고 있는 것은 아닙니다.<br>
+  업계는 두 겹의 표준으로 수렴하고 있습니다.</p>
+
+  <ul>
+    <li><strong>C2PA 콘텐츠 자격증명</strong> — 작성자와 편집 이력을 암호서명으로 담은 메타데이터 매니페스트</li>
+    <li><strong>비가시 워터마크(SynthID 등)</strong> — 픽셀에 신호를 심어, 스크린샷이나 압축 같은 변환에도 일부 살아남게 하는 방식</li>
+  </ul>
+
+  <p>2026년 5월 19일, 오픈AI는 C2PA 표준에 공식 합류하고 자사 이미지 출력물에 구글의 비가시 워터마크 SynthID를 적용한다고 밝혔습니다.<br>
+  두 방식을 함께 쓰면, 공격자는 메타데이터를 지우는 동시에 워터마크까지 훼손하면서도 그럴듯한 화질을 유지해야 하므로 난도가 크게 올라갑니다.</p>
+
+  <p>규제도 움직입니다.<br>
+  EU AI법의 투명성 의무(제50조)는 2026년 8월 2일부터 적용됩니다.<br>
+  딥페이크를 만든 배포자는 그 콘텐츠가 인공적으로 생성·조작되었음을 공개해야 하며, 속일 의도가 없어도 규칙은 적용됩니다.<br>
+  위반 시 최대 1,500만 유로 또는 전 세계 연매출의 3% 중 큰 금액이 부과됩니다.</p>
+
+  <p>다만 한계도 분명합니다.<br>
+  C2PA 메타데이터는 스크린샷 한 번, SNS 업로드 한 번, 파일 변환 한 번이면 쉽게 사라집니다.<br>
+  어느 단일 방식도 만능은 아닙니다.<br>
+  기술은 필요조건이지만 충분조건은 아닌 셈입니다.</p>
+
+  <hr>
+
+  <h2>결국 남는 것은 '품성'입니다</h2>
+
+  <p>그래서 마지막 열쇠는 사람에게 돌아옵니다.<br>
+  미디어 리터러시와 비판적 사고 '기술'만으로는 부족하다는 지적이 최근 덕 인식론에서 나옵니다.<br>
+  논리와 논증을 가르치는 데 치중하다, 개방성이나 진리에 대한 사랑 같은 '품성'을 놓쳤다는 것입니다.</p>
+
+  <p>핵심 덕목으로는 호기심, 진실성, 지적 겸손, 끈기가 꼽힙니다.<br>
+  여기에 지적 용기와 신중함, 인내가 더해집니다.<br>
+  가짜뉴스 문제를 단순한 정보 유통의 문제가 아니라, 폐쇄적 사고나 게으른 믿음 같은 '인식론적 악덕'의 문제로 보는 시각도 있습니다.</p>
+
+  <img src="./images/body-3.png" alt="호기심·지적 겸손·진실성·끈기 네 가지 인식론적 덕목 카드형 인포그래픽">
+
+  <p>요컨대 이것은 '능력'의 문제를 넘어 '태도'의 문제입니다.<br>
+  좋은 도구를 갖추되, 그 도구를 쓰는 마음의 결을 함께 길러야 한다는 뜻입니다.</p>
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.<br>
+  딥페이크 시대의 진실은 더 이상 화면이 저절로 보증해 주지 않습니다.<br>
+  기술은 의심의 비용을 낮춰 주고, 규제는 최소한의 선을 그어 줍니다.<br>
+  그러나 그 위에서 무엇을 믿고 무엇을 의심할지 가늠하는 일은, 끝내 우리 각자의 몫으로 남습니다.</p>
+
+  <p>"무엇을 믿을 것인가"라는 물음에 답하는 힘은, 더 좋은 탐지기가 아니라 더 단단한 태도에서 나옵니다.</p>
+
+  <p>화면을 의심할 줄 알되 세상을 냉소하지는 않는 사람으로 남을 수 있겠냐고 물으신다면, 저는 그 길을 함께 연습해 보자고 답하겠습니다.</p>
+
+  <hr>
+
+  <div class="hashtags">
+    <span>#딥페이크</span><span>#딥페이크시대의진실</span><span>#인식론의위기</span><span>#거짓말쟁이의배당</span><span>#AI가짜영상</span><span>#미디어리터러시</span><span>#C2PA</span><span>#EUAI법</span><span>#딥페이크사기</span><span>#지적겸손</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
