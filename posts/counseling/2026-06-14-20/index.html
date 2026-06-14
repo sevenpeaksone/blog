@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>성인 ADHD 증상과 대처법 — 산만함 뒤에 가려진 어른의 어려움</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --text-soft: #4a4a4a;
+    --accent: #3a6ea5;
+    --line: #e3e6ea;
+    --note-bg: #f5f7fa;
+    --note-border: #c9d6e5;
+    --tag: #5b7a9d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafbfc;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #ffffff;
+    line-height: 1.8;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin: 0 0 28px;
+    color: #1c1c1c;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 5px solid var(--accent);
+    color: #1c1c1c;
+  }
+  p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    color: var(--text);
+  }
+  strong { font-weight: 700; color: #1c1c1c; }
+  ul, ol {
+    font-size: 16.5px;
+    line-height: 1.8;
+    padding-left: 22px;
+    margin: 0 0 22px;
+    color: var(--text-soft);
+  }
+  li { margin: 0 0 8px; }
+  blockquote {
+    margin: 0 0 28px;
+    padding: 18px 22px;
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-left: 5px solid var(--accent);
+    border-radius: 6px;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text-soft);
+  }
+  blockquote p { font-size: 15.5px; margin: 0 0 8px; }
+  blockquote p:last-child { margin-bottom: 0; }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 8px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .tags {
+    margin-top: 36px;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--tag);
+    font-weight: 600;
+  }
+  .tags span { margin-right: 6px; white-space: nowrap; }
+  .closing {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin: 28px 0;
+    color: var(--accent);
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/counseling/index.html">상담 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>성인 ADHD 증상과 대처법<br>— 산만함 뒤에 가려진 어른의 어려움</h1>
+
+  <p>오늘은 성인 ADHD에 대해 이야기해 보려 합니다.<br>
+  어른이 되어서도 집중이 흩어지고, 마감을 놓치고, 정리가 버거운 분들이 적지 않습니다.<br>
+  그 어려움이 의지의 문제가 아니라 무엇 때문인지, 어떻게 대처하면 좋을지 차분히 정리해 보겠습니다.</p>
+
+  <blockquote>
+    <p><strong>먼저 한 가지 안내드립니다.</strong></p>
+    <p>이 글은 일반적인 정보 제공을 위한 글이며, <strong>전문적 진단·상담·치료를 대체하지 않습니다.</strong>
+    성인 ADHD 여부의 판단과 치료는 반드시 정신건강의학과 전문의의 진료를 통해 이뤄져야 합니다.
+    자가 체크리스트는 선별을 돕는 도구일 뿐, <strong>그 자체로 진단이 아닙니다.</strong></p>
+  </blockquote>
+
+  <img src="./images/thumbnail.png" alt="책상 위에 흩어진 메모와 미처 끝내지 못한 할 일 목록 — 성인 ADHD 증상과 대처법">
+
+  <hr>
+
+  <h2>성인 ADHD란 무엇인가</h2>
+
+  <p>ADHD는 주의력 결핍, 과잉행동, 충동성을 특징으로 하는 신경발달질환입니다.<br>
+  게으름이나 의지의 문제가 아닙니다.<br>
+  도파민 같은 신경전달물질의 처리 방식과 실행기능에서 비롯되는, 뇌의 구조·기능 차이와 관련됩니다.</p>
+
+  <p>성인기에 갑자기 생기는 병이 아니라는 점도 중요합니다.<br>
+  아동기에 시작된 증상이 어른이 되어서까지 이어지는 경우입니다.<br>
+  국제 진단 기준(DSM-5)도 12세 이전에 일부 증상이 있었을 것을 요건으로 둡니다.</p>
+
+  <p>겉으로 드러나는 모습은 나이에 따라 달라집니다.<br>
+  어린 시절엔 가만히 있지 못하고 뛰어다니는 과잉행동이 두드러집니다.<br>
+  어른이 되면 그런 모습은 줄고, 대신 주의력 결핍과 내적인 초조감, 시간관리·정리의 어려움이 더 앞으로 나옵니다.</p>
+
+  <p>그래서 진단 기준도 성인에 맞춰 일부 조정됐습니다.<br>
+  발병 연령 기준을 7세에서 12세로 옮겼고, 진단에 필요한 증상 개수도 성인은 영역별 6개에서 5개로 낮췄습니다.</p>
+
+  <hr>
+
+  <h2>흔한 증상, 그리고 가장 해로운 오해</h2>
+
+  <p>성인 ADHD에서 자주 나타나는 어려움은 이렇습니다.</p>
+
+  <ul>
+    <li>집중을 시작하고 유지하기 어려워 간단한 일도 끝까지 마치기 힘듦</li>
+    <li>부주의로 인한 실수, 마감 놓침, 자주 잊어버림</li>
+    <li>우선순위 정하기와 정리·물건 관리의 어려움</li>
+    <li>내적 초조감, 충동적인 결정이나 말, 감정 조절의 어려움</li>
+  </ul>
+
+  <p>여기서 가장 흔하고 가장 해로운 오해가 하나 있습니다.<br>
+  "ADHD는 결국 게으름 아니냐"는 시선입니다.</p>
+
+  <p>실제로는 그렇지 않습니다.<br>
+  계획·정리·집중 유지를 담당하는 뇌의 인지 기능, 곧 <strong>실행기능</strong>의 어려움에서 비롯됩니다.<br>
+  일을 시작하고 끝내기 어려운 것은 의지가 없어서가 아니라, 과제가 충분히 자극적이지 않을 때 주의를 스스로 조절하기 어렵기 때문입니다.</p>
+
+  <p>오히려 ADHD가 있는 사람은 같은 일을 해내기 위해 남들보다 더 많은 노력을 들이는 경우가 많습니다.<br>
+  해야 할 일을 알면서도 시작하지 못하고 얼어붙는 "ADHD 마비"라는 상태 역시 게으름이 아니라 증상의 일부로 설명됩니다.</p>
+
+  <img src="./images/body-1.png" alt="게으르다는 외부의 오해와 실제로는 더 애쓰는 내면을 대비한 이미지">
+
+  <p>문제는 이 오해의 비용이 작지 않다는 점입니다.<br>
+  "조금만 더 노력하면 된다"는 자기·타인의 비난이 반복되면 번아웃과 만성 스트레스, 자존감 저하로 이어집니다.<br>
+  가정이나 직장이 이를 성격 탓으로만 돌리면, 정작 진짜 어려움은 가려지고 맙니다.</p>
+
+  <hr>
+
+  <h2>일·관계·일상에 미치는 영향</h2>
+
+  <p>실행기능의 어려움은 직장에서 종종 "업무 능력 부족"이나 "성의 없음"으로 오해됩니다.<br>
+  마감을 놓치거나 잦은 확인이 필요한 모습이 헌신 부족으로 비쳐지기도 합니다.</p>
+
+  <p>관계에서도 마찰이 생길 수 있습니다.<br>
+  약속을 잊거나, 충동적으로 반응하거나, 감정을 다스리기 어려운 순간들이 갈등의 씨앗이 되곤 합니다.<br>
+  그래서 ADHD는 본인만의 문제가 아니라 가족 전체와 맞물린 일로 다뤄지기도 합니다.</p>
+
+  <p>어려움을 감추기 위해 계속 괜찮은 척, 잘 해내는 척하는 "가면 쓰기"는 피로와 스트레스를 키웁니다.</p>
+
+  <p>한 가지 더 기억할 점이 있습니다.<br>
+  성인 ADHD는 우울·불안 같은 다른 정신적 어려움을 함께 겪는 경우가 매우 흔합니다.<br>
+  동반되는 비율은 자료마다 다르게 보고되지만, 함께 나타나는 일이 드물지 않다는 사실만큼은 분명합니다.</p>
+
+  <hr>
+
+  <h2>진단은 어떻게 이뤄지는가</h2>
+
+  <p>먼저 분명히 해 둘 것이 있습니다.<br>
+  <strong>진단은 임상적 판단입니다.</strong><br>
+  선별 검사나 자가 평가 척도만으로는 진단할 수 없으며, 전문의의 임상 면담과 함께 종합적으로 평가합니다.</p>
+
+  <p>평가의 기본 틀은 대체로 이렇습니다.</p>
+
+  <ol>
+    <li>현재 증상 평가</li>
+    <li>12세 이전부터 증상이 있었는지 확인</li>
+    <li>일·관계·일상에 실제 지장이 있는지 확인</li>
+    <li>다른 원인이나 동반 질환을 함께 살핌</li>
+  </ol>
+
+  <p>성인이 처음 진단받을 때는 어린 시절을 더듬어 확인하는 과정이 중요합니다.<br>
+  발달력, 가족력, 학교생활, 친구 관계 등을 면담으로 살피고, 필요하면 보호자 면담이나 학교 생활기록부를 참고하기도 합니다.</p>
+
+  <p>자가 보고 척도로는 ASRS(성인 ADHD 자가 보고 척도) v1.1이 알려져 있습니다.<br>
+  18세 이상 성인을 위한 18문항 설문으로, 선별과 진단을 돕는 보조 도구입니다.<br>
+  다시 강조하면, 이 척도는 임상 면담과 함께 쓰여야 하며 <strong>단독으로 진단을 내리는 도구가 아닙니다.</strong></p>
+
+  <p>우울이나 불안에서도 비슷한 집중 저하가 나타날 수 있습니다.<br>
+  그래서 증상이 ADHD 때문인지, 다른 질환 때문인지, 혹은 둘 다인지를 신중히 구분하는 일이 필요합니다.</p>
+
+  <img src="./images/body-2.png" alt="성인 ADHD 진단이 이뤄지는 4단계 평가 틀">
+
+  <hr>
+
+  <h2>대처와 관리 — 함께 쓰는 다면적 접근</h2>
+
+  <p>국제 가이드라인은 약물치료와 심리사회적 치료를 함께 쓰는 다면적 접근을 권고합니다.<br>
+  하나의 해법에 기대기보다 여러 갈래를 엮는 방식입니다.</p>
+
+  <p><strong>약물치료.</strong><br>
+  지속되는 성인 ADHD 증상에서는 약물치료가 1차 치료로 고려됩니다.<br>
+  크게 자극제와 비자극제 두 계열이 쓰입니다.<br>
+  한국에서는 식약처가 성인 ADHD에 허가한 약물로 지속형 메틸페니데이트와 아토목세틴이 있습니다.<br>
+  약물은 반드시 전문의의 처방과 관리 아래 사용해야 합니다.</p>
+
+  <p><strong>인지행동치료(CBT).</strong><br>
+  CBT는 성인 ADHD에 근거가 잘 갖춰진 비약물 치료입니다.<br>
+  부적응적인 사고 패턴을 알아차려 바로잡고, 정리·계획·시간관리·감정조절 전략을 연습합니다.<br>
+  약물과 함께 진행하면 증상 완화와 기술 습득 양쪽에서 도움이 될 수 있습니다.</p>
+
+  <p><strong>환경 조정과 생활 전략.</strong><br>
+  ADHD용 CBT는 "환경을 설계하는" 작업과 실행기능 훈련을 포함합니다.<br>
+  일상에서 시도해 볼 만한 전략을 정리하면 다음과 같습니다.</p>
+
+  <ul>
+    <li>매일 저녁 다음 날 일정을 적고 우선순위를 표시해 체크리스트로 쓰기</li>
+    <li>포모도로, 타임블로킹 같은 시간관리 기법 활용하기</li>
+    <li>화가 날 때 감정을 말로 표현하며 다스리는 연습하기</li>
+    <li>짧은 명상이나 야외 시간으로 스트레스 줄이기</li>
+    <li>보상이 적은 지루한 일은 즉각적인 보상을 주는 활동과 짝지어 견디기 쉽게 만들기</li>
+  </ul>
+
+  <img src="./images/body-3.png" alt="약물·인지행동치료·환경 조정·생활 전략 네 갈래의 다면적 접근 인포그래픽">
+
+  <p>예전에는 "정신력으로 버텨라"는 말이 흔했습니다.<br>
+  지금은 환경을 바꾸고 시스템을 만들어 어려움 자체를 줄이는 쪽으로 무게가 옮겨가고 있습니다.</p>
+
+  <p>다만 이 전략들이 모두에게 똑같이 들어맞지는 않습니다.<br>
+  무엇이 나에게 맞는지는 전문가와 함께 찾아가는 편이 안전합니다.</p>
+
+  <hr>
+
+  <h2>자기돌봄, 그리고 주변의 이해</h2>
+
+  <p>스트레스는 ADHD 증상을 악화시키고, 악화된 증상은 다시 스트레스를 키웁니다.<br>
+  이 악순환을 끊기 위해 자기돌봄이 필요합니다.<br>
+  전문가와 함께 대처 전략을 세우고, 시간관리와 감정 인식, 생활 구조를 다듬는 일이 도움이 됩니다.</p>
+
+  <p>주변의 이해도 큰 힘이 됩니다.<br>
+  지지가 없을 때 부담은 기하급수적으로 커집니다.</p>
+
+  <p>곁에 있는 사람을 위한 작은 원칙 몇 가지를 적어 봅니다.</p>
+
+  <ul>
+    <li>인내심을 갖고, 행동을 고의가 아니라 증상의 결과로 이해하기</li>
+    <li>짧고 직접적으로 말하고, 중요한 내용은 글로 한 번 더 정리해 전하기</li>
+    <li>압도되기 쉬운 일은 돕되, 스스로 쓸 수 있는 기술을 키우도록 격려하기</li>
+    <li>가족도 ADHD를 함께 공부하며 지지 모임이나 자료를 활용하기</li>
+  </ul>
+
+  <p>비판하지 않는 태도 하나가, 때로는 어떤 조언보다 더 멀리 갑니다.</p>
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.</p>
+
+  <p class="closing">성인 ADHD는 "노력의 부족"이 아니라 "조절의 어려움"입니다.</p>
+
+  <p>산만함 뒤에는 게으른 사람이 아니라, 남들보다 더 애쓰며 하루를 버텨 온 어른이 있습니다.<br>
+  혹시 스스로의 어려움이 오래 이어진다고 느끼신다면, 자책 대신 전문의의 문을 두드려 보시길 권합니다.<br>
+  이해는 거기서부터 시작됩니다.</p>
+
+  <hr>
+
+  <p class="tags">
+    <span>#성인ADHD</span> <span>#성인ADHD증상</span> <span>#ADHD대처법</span> <span>#실행기능</span>
+    <span>#성인ADHD진단</span> <span>#ADHD치료</span> <span>#자기돌봄</span> <span>#정신건강</span>
+  </p>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

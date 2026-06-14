@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오픈소스 AI 모델 2026, 딥시크·라마·큐원은 폐쇄형을 따라잡았나</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --sub: #555;
+    --accent: #03c75a;
+    --line: #e5e5e5;
+    --tag: #1a73e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #fff;
+  }
+  h1.title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #111;
+  }
+  h2.section {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    margin: 48px 0 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #111;
+  }
+  p {
+    font-size: 16.5px;
+    margin: 0 0 16px;
+    word-break: keep-all;
+  }
+  ul {
+    margin: 0 0 16px;
+    padding-left: 20px;
+  }
+  li {
+    font-size: 16.5px;
+    margin-bottom: 8px;
+    word-break: keep-all;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 8px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .lead {
+    font-size: 16.5px;
+    color: var(--sub);
+  }
+  .wrapup {
+    background: #f5f9f6;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 32px 0;
+  }
+  .wrapup p:last-child { margin-bottom: 0; }
+  .tags {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 2;
+  }
+  .tags span {
+    color: var(--tag);
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1 class="title">[AI] 오픈소스 AI 모델 2026, 딥시크·라마·큐원은 폐쇄형을 따라잡았나</h1>
+
+  <img src="./images/thumbnail.png" alt="오픈소스 AI 모델 2026 대표 이미지 - 딥시크, 라마, 큐원, 키미, GLM">
+
+  <p class="lead">오픈소스 AI 모델이 2026년 들어 어디까지 왔는지 정리해 보겠습니다. 딥시크, 라마, 큐원 같은 공개 모델이 GPT나 클로드 같은 폐쇄형을 얼마나 따라잡았는지가 핵심입니다. 결론부터 말씀드리면, 단일 텍스트·코딩·수학에서는 사실상 동급에 이르렀고 멀티모달과 복합 에이전트 영역은 아직 폐쇄형이 앞섭니다.</p>
+
+  <hr>
+
+  <h2 class="section">2026년 오픈소스 AI 모델 지형, 세 줄 요약</h2>
+
+  <p>먼저 큰 그림을 정리합니다.</p>
+
+  <p>첫째, 단일 벤치마크 점수에서 폐쇄형과의 격차가 한 자릿수 수준으로 좁혀졌습니다. 여러 매체는 프런티어 폐쇄형과의 격차를 약 6~9개월로 보고, 오픈 웨이트만으로 대부분의 프로덕션 작업을 처리할 수 있다고 평가합니다.</p>
+
+  <p>둘째, 거의 모든 주요 모델이 MoE(전문가 혼합) 구조를 채택했습니다. 전체 파라미터는 크지만 추론할 때는 일부 전문가만 켜서 연산 비용을 줄이는 방식입니다.</p>
+
+  <p>셋째, 라이선스 장벽이 크게 낮아졌습니다. 딥시크는 MIT, 큐원·젬마·미스트랄은 아파치 2.0을 택해 상업 배포 시 법적 위험이 사실상 없다는 평을 받습니다.</p>
+
+  <img src="./images/body-1.png" alt="2026년 주요 오픈소스 AI 모델 비교 표 - 개발사, 라이선스, 아키텍처">
+
+  <hr>
+
+  <h2 class="section">딥시크·라마·큐원, 각 모델은 지금 어디쯤</h2>
+
+  <p>세 모델을 차례로 짚어보겠습니다.</p>
+
+  <p>딥시크는 2026년 4월 24일 V4 패밀리(V4-Pro, V4-Flash)를 내놨습니다. 한 매체는 V4-Pro가 코딩·수학에서 GPT-5.5와 같거나 앞서면서 출력 토큰당 비용은 8.6배 저렴하다고 평가합니다. 다만 소비자급 추론 모델인 R2는 2026년 6월 현재 미출시 상태입니다. CEO가 성능에 만족하지 못해 출시를 미뤘다는 보도가 있습니다.</p>
+
+  <p>라마는 2025년 4월 라마 4 패밀리로 처음 MoE를 도입했습니다. 변종으로는 약 400B 규모의 매버릭, 1000만 토큰 컨텍스트의 초장문 특화 스카웃이 있습니다. 플래그십 비히모스(2T급)는 학습 도중 문제로 사실상 보류된 상태입니다.</p>
+
+  <p>큐원은 2026년 3월 1일 큐원 3.5를 공개했습니다. 주목할 점은 소형 모델의 약진입니다. 9B 모델이 GPQA 다이아몬드에서 81.7로 gpt-oss-120b(80.1)를 넘어섰습니다. 한 매체는 큐원3.5-미디엄이 일반 노트북에서 소넷 4.5급 성능을 낸다고 보도했습니다.</p>
+
+  <p>여기에 문샷의 키미 K2.6도 빼놓을 수 없습니다. 총 1조 파라미터이지만 추론 시 32B만 켜는 구조로, 한 리더보드에서 오픈소스 1위에 올랐습니다.</p>
+
+  <img src="./images/body-2.png" alt="딥시크·라마·큐원·키미 출시 타임라인 카드 - 출시일과 핵심 특징">
+
+  <hr>
+
+  <h2 class="section">폐쇄형과의 격차, 숫자로 보면</h2>
+
+  <p>가장 궁금한 대목은 결국 격차입니다.</p>
+
+  <p>한 분석은 대부분의 벤치마크에서 최상위 오픈 모델이 최상위 폐쇄형과 5~15점 이내로 좁혀졌다고 봅니다.</p>
+
+  <p>구체적인 수치를 보겠습니다.</p>
+
+  <ul>
+    <li>SWE-Bench Verified: 소넷 5 92.4% vs 딥시크 V4-Pro 82.6% — 약 10점 차</li>
+    <li>MMLU-Pro: GPT-5.5 90.1% vs V4-Pro 86.3% — 약 4점 차</li>
+    <li>ARC-AGI-2: 제미나이 3.1 Pro 77.1% vs V4-Pro 59.8% — 약 17점 차</li>
+  </ul>
+
+  <p>예전엔 폐쇄형이 전 영역에서 앞섰습니다. 지금은 텍스트·코딩·수학에서 사실상 어깨를 나란히 합니다.</p>
+
+  <p>다만 멀티모달 추론과 긴 도구 사용 체인에서는 여전히 폐쇄형이 우위입니다. 격차가 좁혀지고 있으나 완전히 닫히지는 않았다는 것이 공통된 평가입니다.</p>
+
+  <img src="./images/body-3.png" alt="폐쇄형 vs 오픈 웨이트 벤치마크 격차 막대그래프 - SWE-Bench, MMLU-Pro, ARC-AGI-2">
+
+  <hr>
+
+  <h2 class="section">비용·주권, 그리고 분명한 한계</h2>
+
+  <p>오픈 모델이 매력적인 이유는 성능만이 아닙니다.</p>
+
+  <p>비용입니다. GPT-5.5급 성능을 8.6배 저렴하게 쓸 수 있다면, 품질 때문에 폐쇄형을 써야 한다는 명분은 옅어집니다.</p>
+
+  <p>주권 AI 흐름도 있습니다. 데이터 거주성과 관할권 통제를 위해 하이브리드·소버린 클라우드로 옮겨가는 움직임이 뚜렷합니다. 자체 데이터로 모델을 파인튜닝해 조직에 맞추는 방식도 늘고 있습니다.</p>
+
+  <p>물론 좋기만 한 것은 아닙니다.</p>
+
+  <p>오픈소스 LLM은 상용 모델보다 보안·지원 인프라가 덜 성숙합니다. 공개 코드 특성상 익스플로잇에 더 취약하고 보안 업데이트가 늦는 경향이 있습니다. 프롬프트 인젝션, 모델 웨이트 유출 같은 공격면도 신경 써야 합니다. 커스터마이징 없이는 GDPR·HIPAA 같은 규제를 못 맞출 수 있고, 운영에는 상당한 기술 전문성이 필요합니다.</p>
+
+  <p>라마를 쓰려는 분이라면 한 가지 더 유의하실 점이 있습니다. 라마 4는 EU 소재 개인·기업의 멀티모달 모델 권리를 사실상 제약하는 조항이 있습니다.</p>
+
+  <hr>
+
+  <h2 class="section">한국은 어떤가 — 소버린 AI와 국산 모델</h2>
+
+  <p>마지막으로 국내 상황을 짚겠습니다.</p>
+
+  <p>네이버는 상업적 활용이 가능한 하이퍼클로바X 시드를 공개했습니다. 시드 3B는 한국어와 한국 문화 관련 이미지 이해에 특화됐습니다.</p>
+
+  <p>LG AI연구원은 엑사원으로 통신·제조 등 산업용 모델을 개발하고 있습니다. 국가 소버린 AI 사업에서는 LG AI연구원, 업스테이지, SK텔레콤이 다음 라운드 진출을 확정했습니다.</p>
+
+  <p>다만 논란도 함께 있습니다. 일부 보도는 소버린 AI 원조 격인 네이버가 독자성 평가에서 탈락했다고 전합니다. 국산 모델의 독자성과 주권을 어떻게 정의할지를 둘러싼 쟁점은 아직 진행형입니다.</p>
+
+  <hr>
+
+  <div class="wrapup">
+    <p>정리하면 이렇습니다. 2026년의 오픈소스 AI 모델은 "이제 품질 때문에 폐쇄형을 써야 하는 시대는 지났다"는 한 문장으로 요약됩니다.</p>
+    <p>다만 완전히 따라잡았느냐고 물으신다면, 영역에 따라 다르다고 답하겠습니다. 텍스트와 코딩은 거의 닿았고, 멀티모달은 아직 한 걸음 남았습니다. 그 한 걸음이 언제 좁혀질지를 지켜보는 것이, 올해 가장 흥미로운 관전 포인트일 것입니다.</p>
+  </div>
+
+  <div class="tags">
+    <span>#오픈소스AI모델</span><span>#딥시크</span><span>#라마4</span><span>#큐원3.5</span><span>#키미K2</span><span>#소버린AI</span><span>#하이퍼클로바X</span><span>#엑사원</span><span>#2026AI트렌드</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

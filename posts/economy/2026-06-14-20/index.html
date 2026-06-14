@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원화 스테이블코인 제도화 2026 — 디지털 화폐 경쟁과 51% 룰 쟁점 정리</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --sub: #555;
+    --line: #e5e5e5;
+    --accent: #1a6dff;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f5f6f8;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: var(--bg);
+    line-height: 1.8;
+    font-size: 16.5px;
+  }
+  .category {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #1a1a1a;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #1a1a1a;
+  }
+  p { margin: 0 0 18px; }
+  .post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 28px auto;
+    border-radius: 8px;
+  }
+  ul {
+    margin: 0 0 20px;
+    padding-left: 0;
+    list-style: none;
+  }
+  li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 10px;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  strong { font-weight: 700; color: #111; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 44px 0;
+  }
+  blockquote {
+    margin: 32px 0;
+    padding: 20px 24px;
+    background: #f4f7ff;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: #243b66;
+    line-height: 1.7;
+  }
+  .notice {
+    font-size: 14.5px;
+    color: var(--sub);
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 24px 0;
+  }
+  .tags {
+    margin-top: 36px;
+    font-size: 14.5px;
+    color: var(--accent);
+    line-height: 2;
+    word-break: keep-all;
+  }
+  .tags span { margin-right: 8px; white-space: nowrap; }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/economy/index.html">경제 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <span class="category">금융·정책</span>
+  <h1>원화 스테이블코인 제도화 2026 — 디지털 화폐 경쟁과 51% 룰 쟁점 정리</h1>
+
+  <p>이번 글에서는 2026년 원화 스테이블코인 제도화와 디지털 화폐 경쟁을 정리해 보겠습니다. 세 줄로 먼저 답을 드립니다.</p>
+
+  <ul>
+    <li>미국은 2025년 7월 GENIUS법으로 스테이블코인 규제 체계를 먼저 세웠습니다.</li>
+    <li>한국은 디지털자산기본법 정부안이 이르면 2026년 1월 발의 예정이며, 원화 스테이블코인 법적 근거 마련을 추진 중입니다.</li>
+    <li>가장 큰 쟁점은 "누가 발행하느냐", 곧 한국은행이 주장하는 '51% 룰'입니다.</li>
+  </ul>
+
+  <div class="notice">미리 한 가지만 말씀드립니다. 이 글은 정보 제공을 목적으로 한 정리이며, 투자 권유가 아닙니다.</div>
+
+  <img src="./images/thumbnail.png" alt="원화 스테이블코인 제도화 2026 핵심 쟁점: 원화 스테이블코인 vs CBDC">
+
+  <hr>
+
+  <h2>스테이블코인이란 무엇인가</h2>
+
+  <p>스테이블코인은 가치를 안정적으로 유지하도록 설계된 암호자산입니다. 보통 미국 달러 같은 법정화폐 1단위에 1:1로 가치를 고정합니다.</p>
+
+  <p>변동성이 큰 비트코인·이더리움과는 결이 다릅니다. 결제·송금·거래 정산에 쓰는 "디지털 달러"에 가깝습니다.</p>
+
+  <p>종류는 크게 네 가지로 나뉩니다.</p>
+
+  <ul>
+    <li><strong>법정화폐 담보형</strong>: 현금·국채 등을 1:1로 예치해 가치를 받칩니다. 시장 대부분을 차지합니다. 대표적으로 USDT, USDC가 있습니다.</li>
+    <li><strong>암호자산 담보형</strong>: 1달러를 발행하려면 이더리움 같은 자산을 1달러 이상 초과담보로 잠급니다. 대표적으로 Sky의 USDS, DAI가 있습니다.</li>
+    <li><strong>상품 담보형</strong>: 금 같은 실물에 연동합니다. 대표적으로 PAXG가 있습니다.</li>
+    <li><strong>알고리즘형</strong>: 담보 없이 공급량을 자동 조절해 가치를 유지합니다. 2022년 5월 테라·UST가 무너지면서 위험성이 크게 부각됐습니다.</li>
+  </ul>
+
+  <p>규모도 가볍지 않습니다. 2026년 4월 기준 전체 스테이블코인은 약 3,196억 달러 자산군으로 평가됩니다. 연간 거래량은 이미 비자와 마스터카드를 합친 것을 넘어선 결제 레일로 꼽힙니다.</p>
+
+  <img src="./images/body-1.png" alt="스테이블코인 4가지 유형 비교: 법정화폐 담보형·암호자산 담보형·상품 담보형·알고리즘형">
+
+  <hr>
+
+  <h2>글로벌은 어디까지 왔나 — 미국 GENIUS법과 EU MiCA</h2>
+
+  <p>먼저 미국을 보겠습니다. 2025년 7월 18일 발효된 GENIUS법이 출발점입니다.</p>
+
+  <p>이 법은 "지급결제용 스테이블코인"과 그 발행자에 대한 연방 규제 체계를 처음으로 세웠습니다. 핵심 요건은 두 가지입니다. 달러나 국채 등 동등물로 1:1 완전 준비금을 보유해야 합니다. 시장 공급이 500억 달러를 넘는 발행자는 연간 회계감사를 받아야 합니다.</p>
+
+  <p>시행 시점은 다소 유동적입니다. 제정일로부터 18개월, 곧 2027년 1월이거나, 주요 연방 규제당국이 최종 시행규칙을 낸 뒤 120일 중 빠른 날입니다. 2026년 들어 통화감독청(OCC)이 시행 규칙안을 발표했고, 재무부도 자금세탁방지·제재 준수 규칙안을 제안하며 속도를 냈습니다.</p>
+
+  <p>발행사 현황도 짚어 두겠습니다. 테더(USDT)는 시총 약 1,896억 달러로, 신흥국 송금과 역외 거래소 정산 수요가 큽니다. 서클(USDC)은 시총 약 776억 달러로, 20개 이상 체인을 지원하고 뉴욕 DFS와 EU MiCA 규제를 준수합니다.</p>
+
+  <p>유럽은 사정이 조금 다릅니다. MiCA의 스테이블코인 조항이 전면 시행되면서, 비준수 코인이 주요 거래소에서 상장폐지됐습니다. USDT도 MiCA 비준수로 EU 주요 거래소에서 퇴출됐습니다.</p>
+
+  <p>여기서 흥미로운 대목이 있습니다. EU에서 퇴출됐는데도 USDT 시총은 오히려 늘었습니다. 거래량의 약 80%가 아시아발이었기 때문입니다. 규제가 곧 시장 위축으로 이어지지는 않는다는 사례인 셈입니다.</p>
+
+  <img src="./images/body-2.png" alt="미국 GENIUS법과 EU MiCA의 규제 시점·핵심 요건 비교">
+
+  <hr>
+
+  <h2>한국은 지금 — 디지털자산기본법과 '51% 룰'</h2>
+
+  <p>이제 한국 차례입니다. 원화 스테이블코인 법제화 등을 담은 디지털자산기본법 정부안이 이르면 2026년 1월 중 국회 발의를 앞두고 있습니다. 연내 통과되면 원화 스테이블코인과 국내 ICO 제도화가 본격화됩니다.</p>
+
+  <p>금융위원회 정부안 초안에는 세 가지가 담깁니다. 원화 스테이블코인을 제도권에 편입하고, 해외 스테이블코인의 국내 유통 요건을 명시하며, 국내 ICO를 허용하는 내용입니다.</p>
+
+  <p>다만 일정은 당초 예상보다 늦어지고 있습니다. 2단계 입법이 지연되고 있다는 지적이 있습니다. 그래도 2026년 안에 '한국형 원화 스테이블코인'의 법적 근거가 마련될 것이라는 전망이 우세합니다.</p>
+
+  <p>가장 뜨거운 쟁점은 발행 주체입니다. 한국은행과 금융당국이 이견을 좁히지 못하고 있습니다.</p>
+
+  <p>한국은행은 이른바 '51% 룰'을 주장합니다. 스테이블코인 발행 컨소시엄에서 은행이 50%+1주, 곧 51% 이상 지분을 가져야 한다는 입장입니다. 통화 안정성과 안정적 운영을 위해 은행 주도 관리가 필수라는 근거입니다.</p>
+
+  <p>반면 금융위는 핀테크 같은 기술기업에도 발행의 길을 열어야 한다고 봅니다. 거래소와 빅테크 진영은 한발 더 나아가 51% 룰을 "갈라파고스 규제"로 비판하며 입법 재검토를 요구합니다.</p>
+
+  <p>배경에는 헌법이 있습니다. 화폐 발행 권한은 한국은행에만 있어, 현재 민간의 원화 스테이블코인 발행은 사실상 금지 상태입니다. 그래서 '누가, 어떤 자격으로 발행하느냐'가 입법의 핵심으로 떠오른 것입니다.</p>
+
+  <p>기업들도 움직이고 있습니다. 카카오뱅크는 발행·수탁 등 여러 방안을 검토 중이고, 카카오그룹은 스테이블코인 TF를 꾸려 매주 논의한다고 알려졌습니다. 은행권도 블록체인 기반 디지털 결제 진출을 위해 예금 토큰 결제 시험에 나서고 있습니다.</p>
+
+  <hr>
+
+  <h2>CBDC와 스테이블코인, 경쟁인가 공존인가</h2>
+
+  <p>한국은행은 다른 한 축도 쥐고 있습니다. CBDC, 곧 중앙은행 디지털화폐입니다.</p>
+
+  <p>한국은행은 CBDC 상용화를 위한 '프로젝트 한강' 2단계 실험에 본격 착수했습니다. 기존 7개 은행에 경남은행과 아이엠뱅크가 추가로 참여했습니다.</p>
+
+  <p>여기서 한 가지 관측이 나옵니다. 예금 토큰과 원화 스테이블코인 등 디지털 원화 발행이 은행 중심으로 돌아갈 가능성이 크다는 것입니다. 만약 51% 룰이 통과되면, 은행이 CBDC와 스테이블코인을 모두 주도하게 되는 그림입니다.</p>
+
+  <p>용어를 잠깐 정리하겠습니다. CBDC는 중앙은행이 직접 발행하는 법정 디지털화폐로, 중앙집권적입니다. 스테이블코인은 민간이 발행하고 준비금으로 담보하는, 상대적으로 분산된 형태입니다. 예금 토큰은 은행 예금을 토큰화한 중간 형태입니다.</p>
+
+  <p>이 둘의 관계를 두고는 견해가 갈립니다.</p>
+
+  <ul>
+    <li><strong>CBDC 중심론</strong>: 신현송 한국은행 총재 후보자의 본래 입장으로, 중앙집권적 통화가 디지털 통화 생태계의 중심이 돼야 한다는 시각입니다.</li>
+    <li><strong>보완·공존론</strong>: 신현송 후보자가 스테이블코인에 긍정적으로 선회하며 언급한 시각으로, CBDC와 민간 스테이블코인이 보완적·경쟁적으로 공존할 수 있다는 입장입니다.</li>
+  </ul>
+
+  <p>한편 전략 부재를 지적하는 목소리도 있습니다. 한국은 CBDC·예금 토큰 분야는 빠르게 움직이지만, 민간 발행 원화 스테이블코인 구상은 사실상 백지 상태라는 비판입니다.</p>
+
+  <hr>
+
+  <h2>개인과 기업에는 어떤 의미인가 — 기대와 리스크</h2>
+
+  <p>먼저 기대되는 부분입니다.</p>
+
+  <p>미국에서 달러 스테이블코인이 결제·송금에 빠르게 퍼지자, 원화로도 제도 안에서 같은 수단을 만들자는 논의가 정부·정치권에서 나왔습니다. 기업 입장에서는 스테이블코인이 개별 실험을 넘어 인프라로 통합되는 흐름입니다. 규제를 충족한 자금 이동, ERP·회계·컴플라이언스 연결, 감사·추적성 확보가 관건으로 꼽힙니다.</p>
+
+  <p>더 큰 맥락도 있습니다. 미국에 스테이블코인은 단순 투기자산이 아니라, 달러 패권을 디지털 영역으로 넓히는 금융 수단으로 평가됩니다. 한국으로선 원화의 영향력과 통화주권을 지키는 차원의 대응 필요성이 제기됩니다.</p>
+
+  <p>물론 좋은 점만 있는 것은 아닙니다. 리스크도 분명합니다.</p>
+
+  <ul>
+    <li><strong>디페깅 리스크</strong>: 페그가 무너질 가능성입니다. 알고리즘형 UST(2022)가 대표적 실패 사례이며, 담보형도 준비금 부실이나 뱅크런 시 위험합니다.</li>
+    <li><strong>은행 자금중개 약화</strong>: 스테이블코인이 예금을 대규모로 대체하면 은행의 자금중개 기능이 약해지고 통화정책에 영향을 줄 수 있습니다. 한국은행이 우려하는 핵심입니다.</li>
+    <li><strong>규제·상장 리스크</strong>: MiCA 사례처럼 규제를 지키지 못한 코인은 상장폐지 위험이 있습니다.</li>
+    <li><strong>AML·제재 준수 부담</strong>: 미국 GENIUS법은 자금세탁·제재 준수를 요구합니다. 발행과 유통 과정에 컴플라이언스 부담이 따릅니다.</li>
+  </ul>
+
+  <p>기대와 리스크가 이렇게 한자리에 놓여 있습니다. 어느 한쪽만 보고 판단하기는 아직 이른 단계라고 생각합니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다. 미국과 유럽은 규제의 틀을 먼저 세웠고, 한국은 2026년을 분기점 삼아 원화 스테이블코인의 자리를 만들려 하고 있습니다. 그 한가운데에 '누가 발행하느냐'라는 질문이 놓여 있습니다.</p>
+
+  <blockquote>"제도가 화폐를 따라가는 시대에, 원화는 어떤 모습으로 디지털 위에 설 것인가."</blockquote>
+
+  <p>답은 아직 열려 있습니다. 다만 그 답이 정해지는 과정을 지켜보는 일만으로도, 지금은 충분히 의미가 있다고 생각합니다.</p>
+
+  <div class="notice">다시 한번 말씀드립니다. 이 글은 현재 시점의 정보를 정리한 것이며, 투자 판단의 근거가 아닙니다. 제도와 수치는 빠르게 바뀌므로, 실제 결정 전에는 반드시 최신 정보를 확인해 보시길 권합니다.</div>
+
+  <div class="tags">
+    <span>#원화스테이블코인</span><span>#스테이블코인제도화</span><span>#디지털자산기본법</span><span>#51퍼센트룰</span><span>#CBDC</span><span>#디지털화폐</span><span>#GENIUS법</span><span>#프로젝트한강</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

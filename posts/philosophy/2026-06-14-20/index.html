@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일의 의미, AI 자동화 시대에 인간은 왜 일하는가</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --sub: #555;
+    --line: #e5e5e5;
+    --accent: #1f6feb;
+    --quote-bg: #f6f8fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fafafa;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #fff;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.4;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #1a1a1a;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #1a1a1a;
+  }
+  p {
+    font-size: 16.5px;
+    margin: 0 0 20px;
+    word-break: keep-all;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 28px auto;
+    border-radius: 6px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  blockquote {
+    margin: 32px 0;
+    padding: 20px 24px;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.7;
+  }
+  blockquote p { margin: 0; font-size: inherit; }
+  .lead {
+    font-size: 17px;
+    color: var(--sub);
+  }
+  .tags {
+    margin-top: 36px;
+    font-size: 15px;
+    color: var(--accent);
+    line-height: 2;
+    word-break: keep-all;
+  }
+  .tags span { margin-right: 6px; white-space: nowrap; }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>일의 의미, AI 자동화 시대에 인간은 왜 일하는가</h1>
+
+  <img src="./images/thumbnail.png" alt="일의 의미 — AI 자동화 시대, 인간은 왜 일하는가">
+
+  <p class="lead">일의 의미를 두고 그동안 생각해 온 것을 정리해 봅니다.</p>
+
+  <p>AI 자동화가 일자리를 빠르게 바꾸는 지금, "인간은 왜 일하는가"라는 오래된 질문이 다시 떠올랐습니다. 이 글에서는 일에 대한 철학적 관점부터 AI가 바꾸는 일자리 풍경, 그리고 의미 있는 일이란 무엇인지까지 차분히 짚어보겠습니다. 결론을 먼저 말씀드리면, 일의 의미는 일자리 그 자체보다 그 일을 바라보는 방식에 더 가깝습니다.</p>
+
+  <hr>
+
+  <h2>철학자들은 일을 어떻게 보았나</h2>
+
+  <p>세 사람의 관점이 좋은 출발점이 됩니다.</p>
+
+  <p>한나 아렌트는 『인간의 조건』(1958)에서 인간의 활동적 삶을 셋으로 나눴습니다. 생존을 위한 '노동(labor)', 내구성 있는 사물을 만드는 '작업(work)', 사람들 사이에서 자신을 표현하는 '행위(action)'입니다. 노동의 산물은 곧 소비되어 사라지고, 작업은 세계를 인간이 만든 인공물의 영역으로 바꿉니다. 아렌트는 정치적 맥락의 행위를 가장 자유로운 표현으로 보았습니다. 그녀가 던진 경고는 지금 더 무겁게 들립니다 — 생산성이 의미를 대체하면서 인간 활동이 점점 생존과 소비의 순환, 즉 '노동' 차원으로 환원된다는 것입니다.</p>
+
+  <p>마르크스는 다른 각도에서 봤습니다. 『1844년 경제학·철학 수고』에서 그는 자본주의 노동자가 자기 인간성으로부터 소외된다고 말합니다. 생산물로부터, 노동 과정으로부터, 인간의 창조적 본질로부터, 그리고 타인으로부터의 소외입니다. 노동이 오직 생존 수단이 될 때 인간을 규정하는 창조적 능력이 좌절된다는 진단입니다.</p>
+
+  <p>베버는 일에 신성함을 부여한 역사를 짚었습니다. 1905년 『프로테스탄트 윤리와 자본주의 정신』에서 그는 세속적 소명 안에서의 근면·검약이 구원의 징표로 여겨졌고, 이 윤리가 근대 자본주의 확산의 한 요인이었다고 보았습니다. 우리가 일을 자아와 결부시키는 습관에는 이런 오래된 뿌리가 있는 셈입니다.</p>
+
+  <img src="./images/body-1.png" alt="일을 보는 세 철학자의 시선 — 아렌트의 노동·작업·행위, 마르크스의 네 가지 소외, 베버의 소명 비교">
+
+  <hr>
+
+  <h2>일은 우리의 정체성이 된다</h2>
+
+  <p>일은 정체성과 자아감을 만듭니다.</p>
+
+  <p>일 기반 정체성은 강한 목적의식과 고유성을 주는 동시에, 같은 직업군 사람들과의 소속감을 만듭니다. 이런 정체성이 강한 사람은 일에 깊이 몰입하고 숙련을 추구하는 경향이 있습니다. 사람들이 일과 삶을 의미 있다고 느낄 때 더 높은 웰빙과 동기를 경험합니다.</p>
+
+  <p>다만 균형이 중요합니다.</p>
+
+  <p>직무 역할이 자아의 너무 큰 부분을 차지하면 다른 요소를 압도하게 됩니다. "삶의 의미를 일에 두는 것"과 "일 안에서 의미를 만드는 것"은 다릅니다. 자신을 잃지 않으면서도 목적으로 채워진 일을 누리는 것 — 여기에 핵심이 있다고 생각합니다.</p>
+
+  <hr>
+
+  <h2>AI 자동화가 바꾸는 일의 풍경</h2>
+
+  <p>수치부터 보겠습니다. 다만 아래 숫자들은 대부분 추정치이며 출처에 따라 편차가 큽니다.</p>
+
+  <p>전 세계적으로 2026년 말까지 AI·자동화로 약 8,500만 개 일자리가 대체될 것으로 추정됩니다. 『Future of Jobs Report 2025』에 따르면 고용주의 40%가 인력 감축을 목표로 하고 있고, 고객 서비스 직무의 80%가 자동화될 것으로 전망됩니다. OECD 21개국 분석에서는 27%의 일자리가 자동화 고위험군으로 분류됐습니다.</p>
+
+  <p>하지만 이야기는 한쪽으로만 흐르지 않습니다.</p>
+
+  <p>같은 시기, 손실을 상쇄해 2030년까지 전 세계적으로 약 1억 7,000만 개의 새 일자리가 만들어질 것이라는 전망도 있습니다. 흥미롭게도 고위험 대체 위험에 처한 고용 비중이 6%에서 5.1%로 오히려 하락했다는 분석도 존재합니다. 현재 전 세계 과업의 절반을 완전히 자동화하는 데는 앞으로 20년이 더 걸릴 수 있다는 추정도 함께 봐야 합니다.</p>
+
+  <p>예전엔 자동화가 곧 대규모 실직이라는 단선적 그림이 지배적이었습니다. 지금은 대체와 창출, 위협과 보완이 뒤섞인 더 복잡한 풍경에 가깝습니다. 순효과가 부정적이라고 단정하기는 이릅니다.</p>
+
+  <img src="./images/body-2.png" alt="AI 자동화 일자리 저울 — 대체 전망 8,500만 개와 창출 전망 1억 7천만 개의 대비">
+
+  <hr>
+
+  <h2>일하지 않아도 되는 사회는 가능한가</h2>
+
+  <p>이 질문은 기본소득과 탈노동 담론으로 이어집니다.</p>
+
+  <p>기본소득(UBI)은 학술 이론에서 주류 정책 논쟁으로 옮겨왔습니다. 팬데믹의 경제 타격, 파일럿 프로그램의 증거 축적, AI 역량의 가속화가 동력입니다. 영국 투자담당 장관 Lord Jason Stockwood는 파이낸셜타임스에, AI가 일자리를 위협하는 산업의 노동자를 지원하기 위해 정부가 UBI 도입을 검토 중이라고 밝혔습니다.</p>
+
+  <p>탈노동 담론은 더 근본적인 질문을 던집니다.</p>
+
+  <p>인류학자 데이비드 그레이버는 "일의 존엄"이 무의미한 노역을 정당화하는 신화일 때가 많다고 주장했습니다. 그는 기본소득이 생산주의 강박을 넘어 인간이 돌봄·예술·공동체 구축에 종사하도록 자유롭게 한다고 보았습니다. 정책 입안자가 직면한 핵심 질문은 이것입니다 — AI가 생산성의 상당 부분을 끌고 가는 경제에서, '노동을 생존과 교환'하는 전통적 사회계약이 지속될 수 있는가.</p>
+
+  <p>여기서 케인스의 오래된 예언이 떠오릅니다. 그는 1930년 에세이에서 100년 안에, 즉 2030년경 인류가 생계 압박에서 해방되어 주 15시간만 일하게 될 것이라 내다봤습니다. 생산성 향상에 대해서는 그가 옳았습니다. 그러나 노동시간 예언은 빗나갔습니다. 불평등이 여전히 높아 많은 이들이 선택이 아니라 경제적 필요 때문에 장시간 일하기 때문입니다. 왜 빗나갔는지에 대한 단일한 합의는 아직 없습니다.</p>
+
+  <hr>
+
+  <h2>의미 있는 일이란 무엇인가</h2>
+
+  <p>연구는 의미 있는 일의 세 차원을 식별합니다 — 유의미성, 더 넓은 목적, 자아실현입니다.</p>
+
+  <p>일이 더 큰 선이나 친사회적 목표에 기여할 때, 그리고 일을 통해 자신을 진정성 있게 표현할 때 의미가 자랍니다. 긍정적인 직장 관계와 공동체 소속감도 의미 있는 일을 예측합니다. 종단 연구는 특히 자율성과 이로움이 중요함을 보였습니다.</p>
+
+  <p>여기서 한 가지 관점이 인상 깊습니다. MIT 슬론의 통찰처럼, 의미는 직무 자체가 아니라 그 일을 보는 방식에서 나올 수 있습니다. "달에 사람을 보내는 것이든 바닥을 쓰는 것이든" 말입니다.</p>
+
+  <p>물론 반대편도 솔직히 봐야 합니다.</p>
+
+  <p>그레이버는 사회 노동의 절반 이상이 무의미할 수 있다고 주장했습니다. 그는 무의미한 일을 다섯 유형으로 나눴습니다. 상사를 중요해 보이게 하는 아첨꾼, 타인에게 해를 끼치는 깡패, 임시로 문제를 메우는 땜빵공, 외양만 만드는 체크박스 채우는 사람, 남에게 일을 시키기만 하는 과업 분배자입니다. 다만 '절반 이상'이라는 비율은 그레이버 본인의 추정이며, 후속 실증 연구에서 과대평가라는 반론이 있다는 점도 덧붙입니다.</p>
+
+  <hr>
+
+  <h2>일을 잃을 때 무너지는 것</h2>
+
+  <p>마지막 조각은 일자리 상실의 심리입니다.</p>
+
+  <p>29개 연구 46개 표본을 종합한 메타분석은, 실업이 임금 손실을 넘어선 결과를 낳는다고 말합니다. 직장 내 관계, 자존감, 통제감, 삶의 의미, 그리고 하루의 시간 구조까지 함께 잃게 됩니다.</p>
+
+  <p>이를 설명하는 것이 '박탈 모델'입니다. 고용은 경제적 생계뿐 아니라 잠재적 기능을 충족합니다 — 시간 구조를 제공하고, 사회적 관계를 넓히고, 개인을 넘어서는 목적과 연결하며, 정체성을 규정합니다. 한 연구에서 실업 참가자 중 우울 증상이 없는 사람은 5.7%에 불과했고, 불안이 없는 사람은 41.3%였습니다.</p>
+
+  <p>일이 사라질 때 흔들리는 것은 통장만이 아니라는 뜻입니다.</p>
+
+  <img src="./images/body-3.png" alt="일을 잃을 때 함께 무너지는 다섯 가지 — 관계, 자존감, 통제감, 삶의 의미, 시간 구조">
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.</p>
+
+  <p>AI가 노동을 대신할수록, 우리는 일을 왜 하는지 더 자주 묻게 될 것입니다. 철학자들의 진단도, 최신 통계도 한 가지를 가리킵니다.</p>
+
+  <blockquote><p>"의미는 일자리에 깃드는 것이 아니라, 일을 바라보는 우리의 시선에 깃든다."</p></blockquote>
+
+  <p>그렇다면 AI 시대에도 인간은 일할 이유가 남느냐고 물으신다면, 저는 남는다고 답하겠습니다. 다만 그 이유는 생존이 아니라 의미 쪽으로 천천히 옮겨가는 중일 것입니다.</p>
+
+  <hr>
+
+  <div class="tags">
+    <span>#일의의미</span> <span>#AI자동화</span> <span>#일의미래</span> <span>#기본소득</span> <span>#한나아렌트</span> <span>#의미있는일</span> <span>#일과정체성</span> <span>#탈노동</span> <span>#AI일자리</span> <span>#자아실현</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
