@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 데이터센터 전력난 2026 — 전력이 AI 패권을 가른다</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6f7;
+    font-family: 'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;
+    color: #1a1a1a;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 48px 36px 64px;
+  }
+  @media (max-width: 740px) {
+    .post { padding: 28px 18px 48px; }
+  }
+  h1.title {
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #111;
+  }
+  .post p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 28px auto;
+    border-radius: 6px;
+  }
+  h2.subhead {
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    margin: 40px 0 18px;
+    padding-bottom: 10px;
+    color: #0d0d0d;
+    border-bottom: 2px solid #1a1a1a;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #e3e5e8;
+    margin: 36px 0;
+  }
+  ul {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+  ul li {
+    font-size: 16.5px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  blockquote {
+    margin: 22px 0;
+    padding: 14px 20px;
+    background: #f4f7fb;
+    border-left: 4px solid #3a6ea5;
+    color: #2a3b4d;
+    font-size: 16px;
+    line-height: 1.75;
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote p { margin: 0; font-size: 16px; }
+  .pullquote {
+    margin: 30px 0;
+    padding: 22px 24px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+    border-radius: 8px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .tags {
+    margin-top: 36px;
+    line-height: 2.1;
+  }
+  .tags span {
+    display: inline-block;
+    color: #2f6db5;
+    font-size: 15px;
+    margin-right: 8px;
+    font-weight: 500;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="post">
+
+  <h1 class="title">[IT] AI 데이터센터 전력난 2026 — 전력이 AI 패권을 가른다</h1>
+
+  <img src="./images/thumbnail.png" alt="AI 데이터센터 전력난 2026 — 전력이 AI 패권을 가른다, 2026년 전력 소비 전망 565TWh">
+
+  <p>오늘은 AI 데이터센터 전력난 2026을 정리해 보겠습니다.</p>
+
+  <p>먼저 핵심부터 세 줄로 요약합니다.</p>
+
+  <ul>
+    <li>전 세계 데이터센터 전력 소비량은 2025년 447TWh에서 2026년 565TWh로, 전년 대비 약 26% 늘어납니다(Gartner).</li>
+    <li>2026년의 진짜 병목은 수요 부족이 아니라 전력 부족입니다. 미국 계통 연결 대기는 4년을 넘겼습니다.</li>
+    <li>답은 결국 전원입니다. 빅테크와 각국은 원전·SMR·신재생으로 수요 곁의 전기를 확보하려 다투고 있습니다.</li>
+  </ul>
+
+  <p>2026년 AI 경쟁의 승부처는 반도체가 아니라 전기로 옮겨갔습니다. 그 풍경을 아래에서 하나씩 짚어 보겠습니다.</p>
+
+  <hr>
+
+  <h2 class="subhead">■ 숫자가 먼저 말한다 — 2026년 전력 수요</h2>
+
+  <p>먼저 규모를 가늠해 보겠습니다.</p>
+
+  <p>Gartner는 2026년 데이터센터 전력 소비를 565TWh로 전망합니다.<br>
+  전력 수요(power demand)로 보면 2025년 104GW에서 2026년 132GW, 약 27% 증가입니다.<br>
+  이 가운데 AI 최적화 서버가 전력 소비의 31%를 차지합니다.<br>
+  2027년에는 AI 서버가 일반 서버를 추월할 것으로 봅니다.</p>
+
+  <p>길게 보면 더 가파릅니다.<br>
+  Gartner는 2030년 소비량을 1,200TWh 이상으로 내다봅니다.<br>
+  IEA의 추정도 방향이 같습니다.<br>
+  2030년까지 데이터센터 전력 소비가 약 945TWh로 두 배가 되고, 그 기간 연 약 15%씩 성장한다는 것입니다.<br>
+  다른 모든 부문 전력 수요 성장의 4배가 넘는 속도입니다.</p>
+
+  <img src="./images/body-1.png" alt="데이터센터 전력 소비 추이 — 2025년 447TWh에서 2026년 565TWh(+26%)로 증가, 2030년 945TWh 전망(출처 Gartner / IEA)">
+
+  <p>기준연도와 시나리오가 달라 기관마다 절대 수치는 차이가 납니다.<br>
+  다만 한 가지는 분명합니다.</p>
+
+  <blockquote><p>"AI가 전기를 전례 없는 속도로 빨아들인다."</p></blockquote>
+
+  <hr>
+
+  <h2 class="subhead">■ 수요는 있는데 전기를 못 꽂는다</h2>
+
+  <p>흥미로운 대목은 여기입니다.</p>
+
+  <p>2026년의 진짜 문제는 수요 부족이 아니라 전력 부족입니다.<br>
+  마이크로소프트는 약 800억 달러 규모의 Azure 백로그가 수요 약세가 아니라 전력 가용성 때문에 생겼다고 밝혔습니다.<br>
+  고객은 살 준비가 됐지만, 전기를 연결하지 못해 가동하지 못하는 용량이라는 뜻입니다.</p>
+
+  <p>병목은 송전망에서 시작됩니다.<br>
+  미국 주요 데이터센터 시장의 평균 계통 연결 대기 시간은 4년을 넘습니다.<br>
+  그 결과 2026년 계획된 AI 데이터센터 용량의 30~50%가 2028년으로 밀릴 것으로 전망됩니다.</p>
+
+  <p>그래서 업계는 우회로를 찾습니다.<br>
+  공공 전력망을 기다리지 않고, 부지 안에 직접 발전 설비를 두는 비하인드-더-미터(behind-the-meter) 방식입니다.<br>
+  쉽게 말해 전력망 줄을 서는 대신 내 땅에서 직접 전기를 만들겠다는 겁니다.<br>
+  2025년에는 AI 데이터센터 전용으로 약 50GW 규모의 비하인드-더-미터 천연가스 발전 프로젝트가 발표됐습니다.</p>
+
+  <hr>
+
+  <h2 class="subhead">■ 공랭의 끝, 액체 냉각의 시대</h2>
+
+  <p>전기를 끌어왔다 해도 끝이 아닙니다.<br>
+  그 열을 식혀야 합니다.</p>
+
+  <p>예전엔 랙 하나에 15~40kW면 충분했습니다.<br>
+  지금은 100kW 랙이 야심작이 아니라 표준입니다.<br>
+  NVIDIA의 GB200 NVL72 시스템은 단일 랙에서 120~140kW로 작동합니다.<br>
+  로드맵상 차세대 Vera Rubin NVL144는 2026년 랙당 최대 600kW를 목표로 합니다.</p>
+
+  <p>이 정도 밀도에서는 선풍기 바람, 즉 공랭으로는 감당이 되지 않습니다.<br>
+  GB200 NVL72가 사실상 공랭 한계의 끝점이고, 여기서부터는 액체 냉각이 필수가 됩니다.</p>
+
+  <img src="./images/body-2.png" alt="랙당 전력 밀도의 진화 — 과거 15~40kW(공랭)에서 현재 약 130kW(GB200 NVL72), 2026년 Vera Rubin 최대 600kW로, 공랭 한계를 넘어 액체 냉각으로 전환">
+
+  <p>방식은 둘로 갈립니다.<br>
+  하나는 칩에 직접 냉각액을 흘리는 직접 칩 냉각(DLC)입니다.<br>
+  다른 하나는 서버를 통째로 절연 액체에 담그는 액침 냉각입니다.<br>
+  한 제품(Submer SmartPodX)은 2.4㎡ 바닥 면적에서 100kW를 처리하고, 팬을 없애 서버 전력을 10~15% 줄이며 고장률을 약 70% 낮춘 사례가 보고됐습니다.</p>
+
+  <p>다만 아직 완벽한 해법은 아닙니다.<br>
+  시장 전체로 보면 액체 냉각 채택률은 22% 수준에 머물러 있습니다.<br>
+  표준이 바뀌어 가는 과도기인 셈입니다.</p>
+
+  <hr>
+
+  <h2 class="subhead">■ 한국의 풍경 — 수도권 쏠림과 전력망 한계</h2>
+
+  <p>이 흐름이 한국에서는 더 압축적으로 나타납니다.</p>
+
+  <p>신청은 한쪽으로 쏠립니다.<br>
+  2024년 8월부터 2026년 3월까지 데이터센터 1차 기술검토 신청 736건 중 522건, 71%가 수도권에 집중됐습니다.<br>
+  전력망이 이를 감당하지 못해 절반 이상이 '공급불가' 판정을 받았습니다.</p>
+
+  <p>증가 속도도 가파릅니다.<br>
+  국내 데이터센터 계약전력 신청량은 2020년 이전 60MW 수준에서 2023년 3,091MW로, 3년 만에 50배 넘게 늘었습니다.</p>
+
+  <img src="./images/body-3.png" alt="한국 데이터센터 현황 — 1차 기술검토 신청 736건 중 수도권 522건(71%)·절반 이상 공급불가, 계약전력 신청량 2020년 이전 60MW에서 2023년 3,091MW로 50배 이상 증가(출처 머니투데이)">
+
+  <p>그래서 정부는 분산을 택했습니다.<br>
+  한전에 전기 공급 거부권을 부여하는 등 수도권 쏠림을 누그러뜨리는 정책을 추진합니다.<br>
+  '전력망 지연 시대'에는 부지 안에서 전원을 확보하는 능력이 곧 입지 경쟁력이라는 분석이 나오는 까닭입니다.</p>
+
+  <hr>
+
+  <h2 class="subhead">■ 해법은 결국 전원 — 원전·SMR·신재생·천연가스</h2>
+
+  <p>전력난의 답은 단순합니다.<br>
+  더 많은, 그리고 더 가까운 전원입니다.</p>
+
+  <p>가장 눈에 띄는 움직임은 원전입니다.<br>
+  2026년 5월 기준 주요 하이퍼스케일러는 모두 최소 한 건 이상 원전 딜을 맺었습니다.<br>
+  발표된 13개 프로젝트가 차세대 AI 인프라용으로 9.8GW 이상을 약정했습니다.</p>
+
+  <ul>
+    <li>마이크로소프트: Three Mile Island Unit 1 재가동에 160억 달러, 20년 PPA. 신규 건설 대신 기존 원자로 재가동을 택했습니다.</li>
+    <li>아마존(AWS): Susquehanna 원전에서 1.92GW, 17년 PPA.</li>
+    <li>구글: Kairos Power와 미국 첫 기업용 SMR 함대 딜(500MW).</li>
+    <li>메타: TerraPower·Oklo·Vistra·Constellation 등으로 최대 6.6GW.</li>
+  </ul>
+
+  <img src="./images/body-4.png" alt="빅테크 4사 원전·SMR 딜 — 마이크로소프트 160억 달러(Three Mile Island), 아마존 1.92GW(Susquehanna), 구글 500MW(Kairos Power SMR), 메타 최대 6.6GW">
+
+  <p>한국도 같은 방향입니다.<br>
+  14년 만에 신규 대형 원전과 SMR 부지를 확정했고, 2035년 국내 SMR 첫 상용화가 기대됩니다.<br>
+  SMR을 반도체 클러스터나 대규모 데이터센터 같은 수요 밀집지에 직접 두면, 장거리 송전망을 새로 깔지 않고도 고품질 전력을 공급할 수 있습니다.<br>
+  분산형 전원이 주목받는 이유입니다.</p>
+
+  <p>물론 원전만으로 다 채우진 못합니다.<br>
+  현재 전 세계 데이터센터 전력의 약 27%는 풍력·태양광·수력 같은 재생에너지가 공급합니다.<br>
+  여기에 배터리 저장을 묶는 조합이 가장 빠르게 확장 가능한 카드로 꼽힙니다.<br>
+  동시에 속도를 우선하는 진영은 탄소포집을 붙인 가스터빈을, 일부는 탄소포집 없는 천연가스까지 검토합니다.<br>
+  탈탄소와 속도 사이에서 업계의 선택이 갈리는 지점입니다.</p>
+
+  <hr>
+
+  <h2 class="subhead">■ 돈의 흐름 — 전력이 곧 패권인 이유</h2>
+
+  <p>마지막 퍼즐은 자본입니다.</p>
+
+  <p>Goldman Sachs는 2025~2027년 하이퍼스케일러 총 캡엑스를 1.15조 달러로 전망합니다.<br>
+  2022~2024년(4,770억 달러)의 2배가 넘습니다.<br>
+  2026년 한 해만 봐도 아마존 약 2,000억, 알파벳 1,750~1,850억, 메타 1,150~1,350억, 마이크로소프트 1,200억 달러 이상으로, 합계 약 6,900억 달러에 이릅니다.</p>
+
+  <p>전력 인프라 쪽도 함께 움직입니다.<br>
+  미국 유틸리티들은 AI 데이터센터 대응으로 1.4조 달러 규모 투자를 계획하고 있습니다.</p>
+
+  <p>이 모든 숫자가 한 곳을 가리킵니다.<br>
+  전력의 물리적 가용성이 AI 인프라 확장 속도를 결정한다는 사실입니다.<br>
+  칩을 아무리 쌓아도 전기를 꽂지 못하면 멈춥니다.<br>
+  전력 안보가 곧 국가 경쟁력의 척도가 되는 이유입니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다.<br>
+  2026년 AI의 승부처는 더 빠른 칩이 아니라, 그 칩을 돌릴 전기를 누가 먼저 확보하느냐로 옮겨갔습니다.<br>
+  수요는 565TWh를 향해 달리고, 송전망은 4년을 기다리게 하며, 그 틈을 원전·SMR·신재생이 메우려 다투고 있습니다.</p>
+
+  <div class="pullquote">— 전력을 쥔 쪽이 다음 10년의 AI를 쥡니다.</div>
+
+  <p>그렇다면 우리는 무엇을 준비해야 하느냐고 물으신다면, 답은 이미 나와 있다고 생각합니다.<br>
+  더 많은 전기가 아니라, 수요 곁에 둘 수 있는 깨끗한 전기입니다.</p>
+
+  <hr>
+
+  <div class="tags">
+    <span>#AI데이터센터</span><span>#전력난</span><span>#AI전력수요</span><span>#SMR</span><span>#데이터센터전력</span><span>#원전데이터센터</span><span>#2026IT트렌드</span><span>#액체냉각</span><span>#전력망</span><span>#하이퍼스케일러</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

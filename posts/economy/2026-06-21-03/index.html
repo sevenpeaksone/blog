@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>밸류업 프로그램 2026 — 코스피 상승과 주주환원, 내 투자 전략 정리</title>
+<style>
+  :root {
+    --text: #1f2329;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1f6feb;
+    --quote-bg: #f5f7fa;
+    --quote-border: #c7d2e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #ffffff;
+  }
+  .post h1 {
+    font-size: 28px;
+    line-height: 1.45;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #15191e;
+  }
+  .post h2 {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #15191e;
+  }
+  .post p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    word-break: keep-all;
+  }
+  .post ul, .post ol {
+    font-size: 16.5px;
+    line-height: 1.85;
+    padding-left: 22px;
+    margin: 0 0 18px;
+  }
+  .post li { margin-bottom: 8px; word-break: keep-all; }
+  .post strong { font-weight: 700; color: #15191e; }
+  .post img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 6px;
+  }
+  .post blockquote {
+    margin: 24px 0;
+    padding: 18px 20px;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-border);
+    border-radius: 4px;
+    color: #374151;
+  }
+  .post blockquote p { margin: 0 0 8px; font-size: 15.5px; line-height: 1.75; }
+  .post blockquote p:last-child { margin-bottom: 0; }
+  .post hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .post th, .post td {
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    word-break: keep-all;
+  }
+  .post th {
+    background: #f5f7fa;
+    font-weight: 700;
+    color: #15191e;
+  }
+  .post tr:nth-child(even) td { background: #fbfcfd; }
+  .hashtags {
+    margin-top: 36px;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--accent);
+    word-break: keep-all;
+  }
+  @media (max-width: 600px) {
+    .post { padding: 32px 18px 60px; }
+    .post h1 { font-size: 24px; }
+    .post h2 { font-size: 20px; }
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/economy/index.html">경제 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>[경제] 밸류업 프로그램 2026 — 코스피 상승과 주주환원, 내 투자 전략 정리</h1>
+
+  <img src="./images/thumbnail.png" alt="밸류업 프로그램 2026 — 코스피 상승·주주환원·내 투자 전략 썸네일">
+
+  <p>이번 글에서는 2026년 밸류업 프로그램과 코스피 상승, 그리고 주주환원이라는 흐름을 차근히 정리해 보겠습니다. 먼저 결론부터 말씀드리면, 밸류업은 한때의 테마가 아니라 상법·세법 개정으로 뒷받침되는 구조적 흐름으로 자리를 잡았습니다. 다만 이 글은 정보를 정리해 전해 드리는 데 목적이 있을 뿐, 특정 종목이나 업종을 사라고 권하는 글이 아닙니다.</p>
+
+  <blockquote>
+    <p><strong>먼저 짚어둘 것</strong></p>
+    <p>이 글은 정보 제공 목적입니다. 투자 권유나 종목 추천이 아닙니다.</p>
+    <p>모든 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.</p>
+  </blockquote>
+
+  <hr>
+
+  <h2>밸류업 프로그램이란 무엇인가</h2>
+
+  <p>밸류업 프로그램부터 짧게 짚겠습니다. 정식 명칭은 '기업가치 제고 프로그램'입니다. 오래 저평가받아 온 한국 증시, 이른바 '코리아 디스카운트'를 풀어 보려는 정책입니다.</p>
+
+  <p>정부와 한국거래소가 함께 추진합니다. 상장사가 스스로 '기업가치 제고 계획'을 공시하고, 주주환원과 자본효율성(ROE), 지배구조를 개선하도록 유도하는 제도입니다.</p>
+
+  <p>글로벌 투자자들은 이 흐름을 일본의 2022~2023년 자본효율 개선 사례와 겹쳐 봅니다. 예전엔 '한국 주식은 싸도 이유가 있다'는 인식이 강했습니다. 지금은 그 구조 자체를 바꿔 보려는 시도가 본격화되었습니다.</p>
+
+  <p>2026년의 가장 큰 변화는 한 줄로 요약됩니다. 밸류업이 '자율'에서 '사실상 의무'에 가까운 단계로 넘어갔다는 점입니다.</p>
+
+  <hr>
+
+  <h2>2026년, 숫자로 본 진행 상황</h2>
+
+  <p>말보다 숫자가 분명합니다. 2026년 4월말 기준으로 누적 718개사가 기업가치 제고 계획 공시를 마쳤습니다. 한국거래소 보도자료 기준 코스피 342사, 코스닥 376사입니다.</p>
+
+  <img src="./images/body-1.png" alt="2026년 4월말 밸류업 공시 현황 — 누적 718개사, 코스피 342사, 코스닥 376사, 4월 신규 130사">
+
+  <p>2026년 4월 한 달 동안만 신규 공시 기업이 130사 늘었습니다. 앞선 3월에는 신규 공시 기업이 409개에 달했는데, 이 가운데 405개가 고배당 기업이었습니다. 배당을 많이 주는 기업들이 먼저 움직였다는 뜻입니다.</p>
+
+  <p>성과도 확인됩니다. 공시에 참여한 기업은 그렇지 않은 기업보다 주가수익률과 자본효율성(ROE), PBR 같은 주요 지표에서 더 나은 흐름을 보이고 있습니다.</p>
+
+  <p>다만 시장별 온도차는 있습니다. 중대형주가 많은 코스피는 자사주 매입과 배당 확대가 실제 가치 상승으로 이어졌습니다. 반면 코스닥은 아직 저평가 해소의 초입에 머물러 있다는 평가입니다.</p>
+
+  <hr>
+
+  <h2>코스피 5,000 — 지수는 어디까지 왔나</h2>
+
+  <p>2026년 들어 코스피는 처음으로 5,000선을 넘어섰습니다. 2025년 한 해 코스피가 약 76% 올랐다는 점을 떠올리면, 이 흐름의 무게가 가늠됩니다. 2000년 이후 최고 상승률이었고, 기업가치 제고 정책과 AI 산업 성장이 함께 끌어올린 결과입니다.</p>
+
+  <img src="./images/body-2.png" alt="코스피 2025~2026년 흐름 — 2025년 +76%, 2026년 5,000선 돌파 및 밸류업 지수 상승">
+
+  <p>밸류업 공시·지수 편입 종목으로 구성된 지수는 산출 이후 130% 넘게 올랐습니다. 정책의 방향과 시장의 반응이 맞물린 셈입니다.</p>
+
+  <p>물론 한 방향만 있는 것은 아닙니다. 외국인은 2026년 1~2월 코스피에서 약 3조원을 순매수했습니다. 그러나 2026년 5월 기준으로는 약 2.48조원 순매도로 돌아섰습니다. 단기 차익 실현과 변동성은 늘 곁에 있다는 신호입니다.</p>
+
+  <p>밸류에이션도 양면으로 봐야 합니다. 코스피 PBR은 약 1.3배로, 글로벌 평균인 약 2.3배보다 여전히 낮습니다. 하지만 단기 급등 이후의 부담이 추가 상승을 제약할 수 있다는 진단도 함께 나옵니다.</p>
+
+  <p>KDI는 추가 상승 전망이 우세하다고 보면서도 한 가지를 강조했습니다. "코스피 5,000 이후 진짜 과제는 지수 레벨이 아니라, 기업가치가 공정하게 평가받는 구조를 만드는 것"이라는 진단입니다.</p>
+
+  <hr>
+
+  <h2>지배구조 개선 — 상법 개정과 자사주 소각</h2>
+
+  <p>밸류업을 뒷받침하는 제도의 변화가 핵심입니다. 3차 상법 개정안이 국회 본회의를 통과했고, 증권가는 이를 'K-디스카운트 종식 선언에 준한다'고 평가합니다. 코스피 재평가(리레이팅)에 대한 기대가 여기서 나옵니다.</p>
+
+  <p>바뀐 내용을 표로 정리하면 이렇습니다.</p>
+
+  <img src="./images/body-3.png" alt="상법 개정 핵심 4가지 비교 표 — 충실의무 확대·자기주식 의무소각·집중투표제 의무화·경영권 방어 차단">
+
+  <table>
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>무엇이 바뀌나</th>
+        <th>주주에게 주는 의미</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>이사의 충실의무 확대</td>
+        <td>충실의무 대상이 '회사'에서 '전체 주주'로 확대</td>
+        <td>경영진이 일부가 아닌 전체 주주의 이익을 고려</td>
+      </tr>
+      <tr>
+        <td>자기주식 의무소각</td>
+        <td>원칙적으로 취득 후 1년 이내 처분(소각) 의무화</td>
+        <td>사들인 자사주가 주주가치로 환원되는 구조</td>
+      </tr>
+      <tr>
+        <td>집중투표제 의무화</td>
+        <td>대형 상장사는 시행 후 첫 주총부터 적용</td>
+        <td>소수주주의 이사 선임 영향력 강화</td>
+      </tr>
+      <tr>
+        <td>경영권 방어 차단</td>
+        <td>백기사 활용 제한, 인적분할 시 신주 배정 금지</td>
+        <td>자사주의 편법적 활용 제한</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>시행은 한 번에 이뤄지지 않습니다. 단계적으로 시행되며, 자사주는 원칙적으로 취득 후 1년 안에 소각하도록 했습니다. 예외적으로 보유하거나 처분하려면 주주총회 승인을 받아야 합니다.</p>
+
+  <p>그래서 2026년 정기주주총회가 의미가 큽니다. 자기주식 의무소각이 처음 적용된 원년으로 평가됩니다. 현금배당과 자사주 소각 같은 주주환원 수단이 다양해지고, 규모도 커지는 정착 단계라는 것입니다.</p>
+
+  <hr>
+
+  <h2>주주환원과 배당소득 분리과세</h2>
+
+  <p>세제 인센티브도 함께 짚어야 합니다. 밸류업의 한 축으로 배당소득 분리과세가 신설되었습니다.</p>
+
+  <img src="./images/body-4.png" alt="배당소득 분리과세 세율 구간 — 2천만원 이하 15.4%, 2천만~3억원 22%, 3억~50억원 27.5%, 50억원 초과 33%">
+
+  <p>적용 시기부터 보겠습니다. 2026년 1월 1일 이후 지급되는 배당분부터, 2028년까지 3년간 한시적으로 시행됩니다. 2025 사업연도 이익에 대한 2026년 결산배당부터 적용되는 셈입니다.</p>
+
+  <p>세율은 지방세 포함 기준으로 다음과 같습니다.</p>
+
+  <ul>
+    <li>과세표준 2천만원 이하: 15.4%</li>
+    <li>2천만원 초과 ~ 3억원 이하: 22%</li>
+    <li>3억원 초과 ~ 50억원 이하: 27.5%</li>
+    <li>50억원 초과: 33%</li>
+  </ul>
+
+  <p>대상이 되는 고배당 기업 요건도 정해져 있습니다. '배당성향 40% 이상'이거나, '직전 사업연도 배당성향 25% 이상이면서 이익배당금액이 전년보다 10% 이상 늘어난 법인'입니다.</p>
+
+  <p>좋은 소식만 있는 것은 아닙니다. 금융소득종합과세 대상 금액과 합산해 2천만원을 넘으면, 분배금도 종합과세 대상이 될 수 있습니다. 혜택의 구조를 미리 살펴 두시길 권합니다.</p>
+
+  <hr>
+
+  <h2>어떤 업종이 거론되나</h2>
+
+  <p>여기서부터는 특히 조심스럽게 읽어 주셔야 합니다. 아래는 시장과 증권사 리서치가 '수혜 가능 업종'으로 언급한 내용을 정리한 것일 뿐, 종목 추천이 아닙니다.</p>
+
+  <p>가장 자주 거론되는 곳은 금융·지주입니다. 상법·세법 개정의 정책 수혜 업종으로, 주주환원 확대를 통한 가치 회복 모멘텀이 기대된다는 평가입니다.</p>
+
+  <ul>
+    <li><strong>보험</strong>: IFRS17 도입으로 배당가능재원이 늘어날 것으로 예상돼, 밸류업의 핵심 축으로 거론됩니다.</li>
+    <li><strong>지주회사</strong>: 자회사 가치 대비 저평가가 많아, 자사주 매입 시 주가 탄력이 클 수 있다는 시각입니다.</li>
+    <li><strong>자동차</strong>: 글로벌 경쟁력 대비 밸류에이션이 낮아, 외국인 자금의 꾸준한 유입이 기대되는 업종입니다.</li>
+  </ul>
+
+  <p>전통적으로 저PBR·고배당 성격이 강한 통신·유틸리티·철강 등도 함께 거론되곤 합니다. 다만 이들 업종을 명확한 '밸류업 수혜'로 단정하기에는 근거가 충분하지 않으니, 참고 수준으로만 보시면 좋겠습니다.</p>
+
+  <p>리서치가 권하는 확인 포인트는 세 가지입니다.</p>
+
+  <ol>
+    <li>한국거래소 KIND에서 '밸류업 공시 기업' 리스트를 직접 확인한다.</li>
+    <li>PBR 1배 미만이면서 ROE 10% 이상인 종목인지 살핀다.</li>
+    <li>자사주 매입이나 대규모 배당을 실제로 공시했는지 본다.</li>
+  </ol>
+
+  <hr>
+
+  <h2>개인 투자자가 참고할 점</h2>
+
+  <p>마지막 장은 일반론적인 정보 정리입니다. 매수나 매도 권유가 아닙니다.</p>
+
+  <p>여러 기관의 진단은 한 곳으로 모입니다. 밸류업은 단기 테마가 아니라 상법·세법 개정으로 뒷받침되는 구조적·중장기 흐름이라는 것입니다.</p>
+
+  <p>개별 종목 선별이 부담스럽다면 어떻게 할 수 있을까요. 밸류업 지수나 배당주 ETF처럼 분산된 상품이 검토 대상으로 거론됩니다. 다만 상품마다 과세 구조가 다르니, 이 점은 따로 확인이 필요합니다.</p>
+
+  <p>함께 새겨 둘 유의점도 적지 않습니다.</p>
+
+  <ul>
+    <li><strong>변동성</strong>: 단기 급등 뒤에는 밸류에이션 부담이 따릅니다. 외국인 수급도 월별로 순매수와 순매도를 오갑니다.</li>
+    <li><strong>세금 차이</strong>: 국내 상장주식 매매차익은 비과세지만, 해외주식을 기초로 한 국내 상장 ETF의 매매차익은 배당소득으로 과세되는 등 상품별 차이가 큽니다.</li>
+    <li><strong>한시성</strong>: 배당소득 분리과세는 2026~2028년 3년 한시입니다. 영구적 혜택이 아닙니다.</li>
+    <li><strong>이행의 불확실성</strong>: 공시와 소각이 실제로 이뤄지는지, 코스닥은 아직 초기 단계라는 점도 염두에 둬야 합니다.</li>
+  </ul>
+
+  <p>좋은 흐름과 남은 과제를 함께 봐야 균형이 잡힙니다. 정책은 방향을 제시할 뿐, 모든 기업이 같은 속도로 따라오는 것은 아닙니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다. 2026년의 밸류업은 분위기가 아니라 제도로 굳어지는 중입니다. 코스피의 상승, 상법 개정, 주주환원, 세제 인센티브가 한 방향을 가리키고 있습니다.</p>
+
+  <blockquote>
+    <p>"숫자보다 구조를 본다 — 밸류업이 남긴 진짜 메시지입니다."</p>
+  </blockquote>
+
+  <p>그래서 더더욱 서두를 이유는 없습니다. 공시와 이행을 직접 확인하고, 자신의 상황에 맞게 천천히 판단하는 것. 이 흐름에 어떻게 임할지 물으신다면, 저는 '조급함보다 꾸준한 관찰'이라고 답하겠습니다.</p>
+
+  <hr>
+
+  <blockquote>
+    <p>다시 한번 안내드립니다. 이 글은 정보 제공을 위한 정리이며, 특정 종목·업종에 대한 투자 권유가 아닙니다.</p>
+    <p>투자에는 원금 손실 위험이 따르며, 모든 판단과 책임은 투자자 본인에게 있습니다.</p>
+  </blockquote>
+
+  <p class="hashtags">#밸류업프로그램 #코스피5000 #주주환원 #배당소득분리과세 #상법개정 #자사주소각 #기업가치제고 #코리아디스카운트 #배당주투자 #경제공부</p>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

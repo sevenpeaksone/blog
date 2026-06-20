@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>노화 과학 2026 — 세놀리틱스·라파마이신, 늙음을 늦출 수 있을까</title>
+<style>
+  :root {
+    --text: #2e2e2e;
+    --text-soft: #555;
+    --line: #e5e5e5;
+    --accent: #2f6f4e;
+    --accent-soft: #f0f6f2;
+    --quote-bg: #f7f8f9;
+    --quote-bar: #2f6f4e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fafafa;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    background: #ffffff;
+  }
+  .category {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+  h1.title {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #1a1a1a;
+  }
+  p {
+    font-size: 16.5px;
+    margin: 0 0 20px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    margin: 52px 0 22px;
+    padding-left: 14px;
+    border-left: 5px solid var(--accent);
+    color: #1a1a1a;
+  }
+  .lead-quote {
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-bar);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 0 0 28px;
+  }
+  .lead-quote p { margin: 0; font-size: 15.5px; color: var(--text-soft); line-height: 1.75; }
+  .lead-quote p strong { color: var(--text); }
+  .summary {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 0 0 30px;
+  }
+  .summary .summary-title {
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0 0 12px;
+    color: var(--accent);
+  }
+  .summary ul { margin: 0; padding-left: 20px; }
+  .summary li { font-size: 16px; margin-bottom: 8px; line-height: 1.7; }
+  .summary li:last-child { margin-bottom: 0; }
+  figure { margin: 30px 0; text-align: center; }
+  img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  blockquote.pull {
+    margin: 36px 0;
+    padding: 24px 26px;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-bar);
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+  }
+  .tags {
+    margin-top: 44px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    line-height: 2.1;
+  }
+  .tags span {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/bio/index.html">바이오 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <span class="category">바이오</span>
+  <h1 class="title">노화 과학 2026 — 세놀리틱스·라파마이신, 늙음을 늦출 수 있을까</h1>
+
+  <p>오늘은 2026년 노화 과학이 어디까지 왔는지를 정리해 보겠습니다. 세놀리틱스, 라파마이신, NAD+ 같은 이름들이 '늙음을 늦춘다'는 말과 함께 자주 들립니다. 어디까지가 확인된 사실이고 어디부터가 아직 미확인인지, 한 번 차분히 짚어보려 합니다.</p>
+
+  <div class="lead-quote">
+    <p><strong>먼저 분명히 밝힙니다.</strong> 이 글은 의학적 조언이나 치료 권유가 아닙니다. 아래 어떤 물질도 "인간의 노화를 늦추거나 되돌린다"고 입증된 것은 없습니다. 복용이나 시술을 권하지 않으며, 실제 판단은 반드시 의료 전문가와 상의하시길 권합니다.</p>
+  </div>
+
+  <div class="summary">
+    <p class="summary-title">세 줄 요약</p>
+    <ul>
+      <li>2026년 현재, 인간의 노화 자체를 늦춘다고 임상에서 확실히 입증된 약은 없습니다.</li>
+      <li>동물에서는 유망하지만, 사람에서는 대부분 "안전성 확인" 단계까지입니다.</li>
+      <li>지금 가장 확실한 노화 대응은 여전히 운동·금연·식습관 같은 검증된 생활습관입니다.</li>
+    </ul>
+  </div>
+
+  <figure>
+    <img src="./images/thumbnail.png" alt="노화 과학 2026 — 약과 생활습관을 대비한 대표 이미지">
+  </figure>
+
+  <hr>
+
+  <h2>좀비세포를 청소한다 — 세놀리틱스</h2>
+
+  <p>세놀리틱스는 '좀비세포'를 노리는 약물입니다. 분열은 멈췄는데 죽지도 않고 남아, 염증 물질을 뿜어내는 노화세포를 뜻합니다. 가장 많이 연구된 조합은 다사티닙(항암제)과 퀘르세틴(식물 성분), 줄여서 'D+Q'입니다.</p>
+
+  <p>확인된 것부터 보겠습니다. 2026년 1월 발표된 시험에서, 당뇨병성 신장질환 환자에게 D+Q를 썼더니 전신 염증과 노화세포의 양이 줄었습니다. 사람의 몸에서 노화세포 부담을 실제로 낮춘다는 예비 증거인 셈입니다.</p>
+
+  <p>다만 한계가 분명합니다. "노화세포를 줄였다"는 것과 "그래서 더 건강하게 오래 산다"는 것은 다른 이야기입니다. 알츠하이머 위험군을 대상으로 한 인지·보행 개선 시험(STAMINA)은 참가자가 12명뿐이었고, 대조군조차 없었습니다. 표본이 작고 비교 대상이 없는 설계라, 효과를 결론짓기는 어렵습니다.</p>
+
+  <p>예전에는 동물 실험 결과가 전부였습니다. 지금은 사람의 조직에서도 신호가 잡히기 시작했습니다. 그러나 거기까지입니다.</p>
+
+  <figure>
+    <img src="./images/body-1.png" alt="세놀리틱스가 노화세포(좀비세포)만 선택적으로 제거하는 2단계 개념도">
+  </figure>
+
+  <hr>
+
+  <h2>동물에선 견고, 사람에선 절반 — 라파마이신</h2>
+
+  <p>라파마이신은 원래 장기이식 환자에게 쓰는 면역억제제입니다. 세포의 성장과 대사를 조절하는 mTOR라는 스위치를 누르는 약인데, 이 mTOR의 과활성이 노화와 연관된다고 알려져 있습니다.</p>
+
+  <p>동물 쪽 증거는 비교적 단단합니다. 효모, 선충, 초파리, 생쥐에서 라파마이신은 수명을 늘렸습니다. 노화 약물 분야에서 가장 재현이 잘 되는 결과 중 하나로 꼽힙니다.</p>
+
+  <p>사람에서는 어디까지 왔을까요. PEARL 시험은 50~85세 건강한 성인을 대상으로 1년간 진행한 이중맹검·위약대조 연구입니다. 완료자는 114명, 48주짜리였습니다. 결과는 "저용량 간헐 투여는 1년간 견딜 만하다", 그리고 생물학적 노화 지표에 '경미한' 변화 정도였습니다. 10mg을 복용한 여성에서 근육량과 통증이 나아졌다는 관찰도 있었습니다.</p>
+
+  <p>좋은 신호이긴 합니다. 하지만 연구진 스스로 선을 그었습니다. 수명이나 건강수명이 늘었다고 말하려면 훨씬 크고 긴 시험이 필요하다고요. 라파마이신군에서 위장관 증상이 위약군보다 다소 많았던 점도 짚어둘 대목입니다.</p>
+
+  <p>'경미한 변화'라는 표현에 주의가 필요합니다. 바이오마커가 조금 움직였다는 것이 곧 임상적 이득은 아니니까요.</p>
+
+  <figure>
+    <img src="./images/body-2.png" alt="PEARL 라파마이신 시험 핵심 정보 카드 인포그래픽">
+  </figure>
+
+  <hr>
+
+  <h2>올리는 건 맞다, 그래서? — NAD+ / NMN</h2>
+
+  <p>NAD+는 에너지 대사와 DNA 복구에 관여하는 보조효소입니다. 나이가 들수록 줄어든다고 알려져 있어, NMN 같은 전구체 보충제로 이를 끌어올리려는 시도가 많습니다.</p>
+
+  <p>사실 하나는 분명합니다. NMN은 사람의 몸에서 NAD+를 실제로 올립니다. 전당뇨 여성에게 NMN을 하루 250mg씩 10주간 줬더니 근육의 인슐린 민감성이 좋아졌다는 보고도 있습니다.</p>
+
+  <p>문제는 그다음입니다. 생쥐에서 보인 극적인 노화 역전 효과는, 장기간의 인간 시험에서 재현되지 않았습니다. 결과도 집단마다 엇갈립니다. 어떤 집단에선 유망한 데, 다른 시험에선 인상적인 효과가 나오지 않았습니다.</p>
+
+  <p>게다가 시판 보충제는 품질 편차가 큽니다. 라벨에 적힌 함량과 실제 함량이 다른 경우가 독립 검사에서 확인되기도 했습니다. NAD+ 정맥주사의 '항노화' 마케팅은 근거가 특히 빈약합니다.</p>
+
+  <p>"NAD+를 올린다"는 맞습니다. "그래서 노화를 늦춘다"는 아직 사람에서 미확인입니다. 마케팅이 근거를 앞서가는 대표적인 영역이라고 생각합니다.</p>
+
+  <hr>
+
+  <h2>돈은 모였지만, 결과는 아직 — 부분 리프로그래밍</h2>
+
+  <p>가장 야심찬 분야는 세포를 '젊은' 상태로 되돌리려는 부분 리프로그래밍입니다. 세포를 완전히 줄기세포로 되돌리지 않으면서, 후성유전 상태만 젊게 돌리려는 접근입니다.</p>
+
+  <p>자본은 이미 거대합니다. 알토스랩스는 2022년 30억 달러로 출범해, 누적 약 55억 달러를 모은 것으로 보도됩니다. 제프 베이조스가 주요 투자자 중 하나로 거론됩니다. 알파벳 자회사 칼리코도 이 분야를 연구하며 전용 랩을 시작했습니다.</p>
+
+  <p>2024년에는 알토스 과학자들이 부분 리프로그래밍으로 생쥐의 수명을 늘렸다는 논문을 냈습니다. 몸에서 떼어내 살아있게 유지한 장기에서 요법을 시험 중이라는 이야기도 나옵니다.</p>
+
+  <p>그러나 전부 동물과 체외 단계입니다. 사람에서 노화를 되돌렸다는 입증은 전혀 없습니다. 세포를 되돌리는 과정에서 생기는 암화 위험이 핵심 난제로 남아 있습니다. '완전'이 아니라 '부분'에 머무는 이유 자체가 안전성 때문입니다.</p>
+
+  <p>막대한 투자가 곧 임상 성공을 뜻하지는 않습니다.</p>
+
+  <figure>
+    <img src="./images/body-3.png" alt="노화 개입별 동물 확인 vs 인간 미확인 비교 표">
+  </figure>
+
+  <hr>
+
+  <h2>'노화'를 약으로? — 메트포르민과 규제의 벽</h2>
+
+  <p>메트포르민은 흔한 당뇨약입니다. 선충과 생쥐에서 수명을 늘렸고, 사람에서도 비슷한 가능성을 시사하는 관찰 데이터가 일부 있습니다.</p>
+
+  <p>여기서 TAME 시험이 등장합니다. 65~79세 3,000명 이상을 대상으로, 노화 관련 질환의 진행이 늦춰지는지를 보려는 6년짜리 설계입니다. 다만 이 시험의 진짜 목적은 효능 입증만이 아닙니다. '노화'를 FDA가 약으로 다룰 수 있는 대상으로 인정하게 하려는 개념증명입니다.</p>
+
+  <p>그런데 2026년 현재, TAME는 아직 효능 결과를 내놓지 못했습니다. 완전한 출범을 위한 자금이 여전히 필요한 상태로 제시됩니다. 무엇보다 FDA는 '노화'를 약물 적응증으로 지정하지 않았습니다. 즉, 노화를 겨냥한 약에는 아직 명확한 승인 경로 자체가 없습니다.</p>
+
+  <hr>
+
+  <h2>내 생물학적 나이는 믿을 만한가 — 노화시계</h2>
+
+  <p>요즘 '생물학적 나이'를 측정해 준다는 검사가 인기입니다. DNA 메틸화 패턴으로 노화 속도를 추정하는 노화시계 알고리즘입니다.</p>
+
+  <p>집단 수준에서는 쓸모가 있습니다. 흡연·높은 혈당·나쁜 혈압이 노화 가속과 연관되고, 가속 노화가 뇌졸중 위험과 이어진다는 메타분석도 있습니다.</p>
+
+  <p>문제는 '개인'에게 쓸 때입니다. 같은 사람을 반복 측정해도 기술적 잡음만으로 최대 9년까지 차이가 날 수 있습니다. 식사·스트레스·대기오염 같은 단기 요인에도 추정치가 크게 출렁입니다. 현재로선 일반 의료검사의 정확도 기준을 충족하지 못합니다.</p>
+
+  <p>그래서 "내 생물학적 나이가 몇 살 줄었다"는 식의 개인 마케팅은 조심해야 합니다. 숫자를 오해해 불필요한 불안으로 이어질 수 있습니다. 연구 도구로는 가치가 있지만, 개인 단위 결과는 아직 신중히 받아들이시길 권합니다.</p>
+
+  <hr>
+
+  <h2>그렇다면 지금 확실한 것은 무엇인가</h2>
+
+  <p>화려한 이름들 사이에서, 가장 단단한 결론은 의외로 익숙합니다. 규칙적인 운동과 신체활동, 금연, 적정 체중, 좋은 식습관. 이것들이 만성질환을 예방하고 늦춘다는 데에는 의사들의 합의가 있습니다. 특히 노인은 다른 어떤 개입보다 운동에서 더 큰 이득을 본다는 평가도 있습니다.</p>
+
+  <p>새로운 약들은 분명 흥미롭습니다. 다만 2026년의 솔직한 자리는 "유망하지만 아직 증명 전"입니다. 분야 안에서도 전임상 개념증명을 줄이고, 표준화된 임상 평가로 옮겨가는 중입니다.</p>
+
+  <figure>
+    <img src="./images/body-4.png" alt="검증된 생활습관 vs 아직 미확인 노화 개입 비교 인포그래픽">
+  </figure>
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.</p>
+
+  <p>노화 과학은 빠르게 움직이고 있고, 자본과 기대도 큽니다. 그러나 기대와 증명 사이에는 아직 넓은 간격이 있습니다.</p>
+
+  <blockquote class="pull">"지금 가장 확실한 항노화 처방은, 새로 나온 약이 아니라 오래된 습관입니다."</blockquote>
+
+  <p>늙음을 늦출 수 있겠냐고 물으신다면, 저는 이렇게 답하겠습니다. 약은 아직 기다리는 중이고, 검증된 길은 이미 우리 발밑에 있다고요.</p>
+
+  <p>다시 한번, 이 글은 의학적 조언이 아닙니다. 어떤 복용이나 시술도 시작하기 전에, 반드시 의료 전문가와 상의하시길 바랍니다.</p>
+
+  <div class="tags">
+    <span>#노화과학</span><span>#세놀리틱스</span><span>#라파마이신</span><span>#건강수명</span><span>#항노화</span><span>#노화연구</span><span>#장수과학</span><span>#생활습관</span><span>#NAD</span><span>#바이오</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
