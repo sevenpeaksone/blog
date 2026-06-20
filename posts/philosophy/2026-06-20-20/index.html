@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>니체 영원회귀와 운명애 — 다시 살아도 좋은 삶</title>
+<style>
+  body{
+    margin:0; padding:0; background:#f5f5f7;
+    font-family:'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;
+    color:#222; line-height:1.85;
+  }
+  .wrap{
+    max-width:700px; margin:0 auto; padding:48px 24px 80px;
+    background:#ffffff;
+  }
+  h1{
+    font-size:28px; font-weight:700; line-height:1.45;
+    color:#1a1a2e; margin:0 0 28px; letter-spacing:-0.5px;
+  }
+  h2{
+    font-size:21px; font-weight:700; color:#1a1a2e;
+    margin:46px 0 18px; letter-spacing:-0.3px;
+  }
+  p{ font-size:17px; margin:0 0 20px; }
+  img{ max-width:100%; height:auto; display:block; margin:30px auto; border-radius:10px; }
+  hr{ border:0; border-top:1px solid #e6e6ea; margin:40px 0; }
+  .summary{
+    background:#f0eefb; border-left:4px solid #6c5ce7;
+    padding:20px 22px; border-radius:8px; margin:0 0 32px;
+    font-size:16.5px; line-height:1.8; color:#33334d;
+  }
+  .lead{ color:#444; }
+  blockquote{
+    margin:24px 0; padding:14px 20px; background:#faf9ff;
+    border-left:3px solid #9b8cdc; border-radius:6px;
+    font-size:16.5px; color:#3a3a52;
+  }
+  .closing{ font-size:18px; font-weight:600; color:#1a1a2e; }
+  .tags{
+    margin-top:44px; padding-top:24px; border-top:1px solid #e6e6ea;
+    font-size:15px; color:#6c5ce7; line-height:2;
+  }
+  .tags span{ margin-right:6px; white-space:nowrap; }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="wrap">
+
+  <h1>니체 영원회귀와 운명애 — 다시 살아도 좋은 삶</h1>
+
+  <img src="./images/thumbnail.png" alt="니체 영원회귀와 운명애, 다시 살아도 좋은 삶이라는 제목의 대표 이미지">
+
+  <div class="summary">
+    세 줄 요약입니다.<br>
+    영원회귀는 "이 삶을 똑같이 무한히 반복해도 좋은가"를 묻는 니체의 사고실험입니다.<br>
+    운명애(아모르 파티)는 그 물음에 "그렇다"고 답하는 삶의 태도, 곧 견딤을 넘어 사랑하는 자세입니다.
+  </div>
+
+  <p class="lead">오늘은 니체의 영원회귀와 운명애를 일반 독자의 눈높이에서 풀어보려 합니다. 어려운 용어는 최대한 덜어내고, 한 사람의 물음으로 이야기를 시작하겠습니다.</p>
+
+  <hr>
+
+  <h2>어느 밤, 악령의 질문</h2>
+  <p>니체는 《즐거운 학문》 341절에서 한 장면을 그립니다.</p>
+  <p>가장 고독한 어느 밤, 악령 하나가 찾아옵니다. 그리고 이렇게 속삭입니다. "네가 지금 살고 있는 이 삶을, 너는 무수히 반복해서 다시 살아야 한다."</p>
+  <p>새로운 것은 없습니다. 모든 고통과 기쁨이, 모든 한숨과 생각이 똑같은 순서로 되돌아옵니다. 악령은 끝에 한 가지를 묻습니다. "너는 이것을 다시, 그리고 무수히 원하는가?"</p>
+  <p>니체는 이 질문에 "가장 무거운 짐"이라는 제목을 붙였습니다. 실제로 우주가 그렇게 돌아간다는 주장이 아닙니다. 이것은 나를 비추는 거울에 가깝습니다.</p>
+
+  <hr>
+
+  <h2>영원회귀는 사실이 아니라 시금석입니다</h2>
+  <p>이 사상은 흔히 오해를 받습니다. 끝없는 반복이 주는 권태나, 단 한 번뿐인 삶의 허무를 말한다고요. 그러나 한국 철학계의 논의도, 해외의 해석도 그 방향이 아닙니다.</p>
+  <p>핵심은 우주의 진실 여부가 아닙니다. "이 순간을 무한히 반복해도 좋은가"라는 물음에 내가 어떻게 반응하느냐입니다.</p>
+  <p>철학자 하이데거는 니체가 이를 단정이 아니라 가설적 질문으로 던졌다고 보았습니다. 그 질문 앞에서 내가 진저리를 치는지, 고개를 끄덕이는지. 그 반응이 곧 내가 지금 삶을 어떻게 살고 있는지를 드러냅니다.</p>
+
+  <img src="./images/body-1.png" alt="즐거운 학문 341절 인용 - 너는 이 삶을 다시, 그리고 무수히 원하는가">
+
+  <p>말하자면 삶을 재는 시금석인 셈입니다. 다시 살아도 좋을 만큼 지금을 살고 있는가. 이 물음은 무겁지만, 동시에 방향을 알려줍니다.</p>
+
+  <hr>
+
+  <h2>목동의 목을 막은 뱀</h2>
+  <p>니체는 《차라투스트라는 이렇게 말했다》에서 이 사상을 한 편의 환영으로 보여줍니다.</p>
+  <p>황량한 절벽 사이. 한 젊은 목동이 쓰러져 있습니다. 무거운 뱀 한 마리가 목구멍으로 기어들어가 그를 질식시킵니다.</p>
+  <p>차라투스트라는 외칩니다. "뱀의 대가리를 물어뜯어라." 목동은 그렇게 합니다. 대가리를 뱉어내고 벌떡 일어선 그는 더 이상 예전의 그가 아니었습니다.</p>
+  <p>목구멍의 뱀은 영원회귀가 처음 안기는 공포와 역겨움입니다. 대가리를 물어뜯는 일은 그 공포를 거부하고 넘어서는 결단입니다. 변모한 목동은 반복을 받아들여 다시 태어난 사람의 모습입니다.</p>
+
+  <hr>
+
+  <h2>"그랬었다"를 "내가 그것을 원했노라"로</h2>
+  <p>그렇다면 어떻게 넘어설까요. 니체의 답은 의지의 방향을 바꾸는 데 있습니다.</p>
+  <p>지난 일은 바꿀 수 없습니다. 이미 "그랬었다"고 끝난 과거입니다. 니체는 이 "그랬었다"를 "그러나 나는 그것을 원했노라"로 옮기라고 청합니다.</p>
+  <p>이것은 사후의 변명이 아닙니다. 일어난 일을 깎아내리지 않고 통째로 긍정하는 태도입니다. 의지를 소멸시키는 대신 의지를 확장하는 쪽입니다.</p>
+
+  <img src="./images/body-2.png" alt="그랬었다에서 나는 그것을 원했노라로 의지의 방향을 바꾸는 과정 다이어그램">
+
+  <p>여기서 운명애가 등장합니다.</p>
+
+  <hr>
+
+  <h2>운명애 — 견딤을 넘어 사랑하는 일</h2>
+  <p>운명애는 라틴어 아모르 파티, 곧 운명에 대한 사랑입니다.</p>
+  <p>니체는 마지막 해에 쓴 《이 사람을 보라》에서 이렇게 적습니다.</p>
+  <blockquote>"인간의 위대함에 대한 나의 공식은 운명애다. 앞으로도 뒤로도 영원토록, 그 무엇도 달라지기를 바라지 않는 것이다."</blockquote>
+  <p>여기서 한 가지를 짚고 싶습니다. 운명애는 그저 참고 견디는 체념이 아닙니다. 고통과 상실까지도 내 삶의 사실로 받아들여, 나아가 사랑하는 자세입니다.</p>
+  <p>영원회귀가 시험이라면, 운명애는 그 시험을 통과한 사람의 태도입니다. 지나간 괴로움이 영원히 되돌아온다 해도 다시 받아들이는 것. 니체는 이를 도달할 수 있는 최고의 긍정이라 불렀습니다.</p>
+  <p>다만 솔직히 인정할 부분도 있습니다. 모든 고통을 사랑하라는 말은 쉽게 닿지 않습니다. 부당한 상처 앞에서 이 태도는 자칫 자기기만으로 들릴 수도 있습니다.</p>
+
+  <hr>
+
+  <h2>오늘의 삶에 어떻게 닿는가</h2>
+  <p>이 오래된 사상은 지금도 쓸모가 있습니다.</p>
+  <p>운명애가 다루는 문제는 단순합니다. "지금 이러하다"와 "이러했으면"의 간극입니다. 우리는 그 간극에서 불안과 후회로 많은 힘을 흘려보냅니다.</p>
+  <p>운명애는 이미 일어난 일과 싸우느라 생기는 군더더기 고통을 걷어냅니다. 그리고 그 힘을 실제로 바꿀 수 있는 일로 돌립니다. 스토아 철학이 말한 "운명을 사랑하라"와 결이 같습니다.</p>
+  <p>현대 심리치료에도 비슷한 길이 있습니다. 수용전념치료(ACT)는 부정적 감정을 억누르지 않고 받아들이도록 돕습니다. 받아들임은 회복탄력성의 바탕이 됩니다.</p>
+  <p>예전에는 후회를 곱씹는 데 시간을 썼습니다. 지금은 바꿀 수 없는 것과 바꿀 수 있는 것을 나누어 봅니다. 물론 단번에 되지는 않습니다. 운명애는 한 번의 깨달음이 아니라 거듭 되돌아가는 연습이니까요.</p>
+
+  <hr>
+
+  <p>결국 남는 물음은 하나입니다.</p>
+  <p class="closing">"이 삶을 다시 살아도 좋은가."</p>
+  <p>오늘 하루를, 다시 살아도 좋겠냐고 묻는다면 — 망설임 없이 그렇다고 답할 수 있는 하루를 살고 싶습니다.</p>
+
+  <div class="tags">
+    <span>#니체</span> <span>#영원회귀</span> <span>#아모르파티</span> <span>#운명애</span> <span>#철학에세이</span> <span>#즐거운학문</span> <span>#차라투스트라</span> <span>#삶의긍정</span> <span>#인문학</span> <span>#스토아철학</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

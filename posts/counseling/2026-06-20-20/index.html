@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>거절이 어려운 마음 — 착한 사람 콤플렉스와 건강한 경계 세우기</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+    color: #2b2b2b;
+    background: #ffffff;
+    line-height: 1.8;
+    font-size: 16.5px;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 48px 24px 80px; }
+  .category {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #6a5acd;
+    letter-spacing: 1px;
+    background: #f0eefb;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.45;
+    color: #1a1a2e;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+  }
+  img { max-width: 100%; height: auto; display: block; border-radius: 12px; margin: 28px auto; }
+  .summary {
+    background: #f7f8fc;
+    border-left: 4px solid #8a7ce0;
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 30px 0;
+  }
+  .summary strong { display: block; font-size: 15px; color: #6a5acd; margin-bottom: 12px; font-weight: 700; }
+  .summary ul { list-style: none; }
+  .summary li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 15.5px; color: #444; }
+  .summary li::before { content: "·"; position: absolute; left: 4px; color: #8a7ce0; font-weight: 700; }
+  .lead { font-size: 16.5px; color: #383838; margin: 24px 0 8px; }
+  hr { border: none; border-top: 1px solid #ececec; margin: 40px 0; }
+  h2 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin: 14px 0 18px;
+    letter-spacing: -0.4px;
+  }
+  p { margin: 0 0 16px; }
+  .talk-list { margin: 8px 0 18px; }
+  .talk-list li {
+    list-style: none;
+    background: #f7f8fc;
+    border-radius: 8px;
+    padding: 13px 18px;
+    margin-bottom: 10px;
+    font-size: 15.5px;
+    color: #3a3a3a;
+  }
+  .step p { margin-bottom: 14px; }
+  .step b { color: #5a4cc0; }
+  blockquote {
+    border: none;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 32px 0;
+    padding: 22px 20px;
+    background: linear-gradient(135deg, #f4f2fc, #eef3fb);
+    border-radius: 12px;
+  }
+  .disclaimer {
+    font-size: 14px;
+    color: #8a8a8a;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 28px 0;
+    line-height: 1.7;
+  }
+  .closing { font-size: 16.5px; color: #2b2b2b; font-weight: 500; margin: 24px 0; }
+  .tags { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 9px; }
+  .tags span {
+    font-size: 14px;
+    color: #6a5acd;
+    background: #f0eefb;
+    padding: 7px 14px;
+    border-radius: 18px;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/counseling/index.html">상담 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="wrap">
+
+  <span class="category">상담</span>
+  <h1>거절이 어려운 마음 — 착한 사람 콤플렉스와 건강한 경계 세우기</h1>
+
+  <img src="./images/thumbnail.png" alt="거절이 어려운 마음, 착한 사람 콤플렉스와 건강한 경계 세우기 썸네일">
+
+  <div class="summary">
+    <strong>요약</strong>
+    <ul>
+      <li>거절을 못하는 마음 뒤에는 애착과 인정 욕구, 갈등 회피, 죄책감이 숨어 있습니다.</li>
+      <li>착한 사람 콤플렉스는 일시적으로 불안을 덜어 주지만, 끝내 원망과 소진을 남깁니다.</li>
+      <li>경계 세우기는 관계를 끊는 일이 아니라, 관계를 건강하게 지키는 안전장치입니다.</li>
+    </ul>
+  </div>
+
+  <p class="lead">오늘은 부탁을 거절하지 못하고 자신을 소진하는 마음에 대해 이야기해 보려 합니다. 흔히 '착한 사람 콤플렉스'라 부르는 패턴입니다. 왜 거절이 그토록 어려운지, 그리고 건강한 경계를 어떻게 세울 수 있는지 차분히 짚어 보겠습니다.</p>
+
+  <hr>
+
+  <h2>거절이 어려운 마음, 무엇이 문제일까</h2>
+  <p>착한 사람 콤플렉스는 "남의 말을 잘 들어야 착한 사람"이라는 생각이 강박이 된 상태입니다.</p>
+  <p>속으로는 동의하지 않으면서도 겉으로는 고분고분합니다. 내면과 외면이 어긋나기 시작합니다.</p>
+  <p>심리학에서는 이를 people-pleasing이라 부릅니다. 타인의 인정과 수용을 얻으려 자기 욕구보다 타인의 욕구를 습관처럼 앞세우는 패턴입니다.</p>
+  <p>문제는 거절 그 자체가 아닙니다. 거절하지 못한 채 쌓이는 모순과 피로가 문제입니다.</p>
+
+  <hr>
+
+  <h2>왜 우리는 거절하지 못할까</h2>
+  <p>거절이 어려운 마음 뒤에는 대체로 세 가지가 숨어 있습니다.</p>
+  <p>첫째, 애착과 인정 욕구입니다. 어린 시절의 애착 경험은 평생의 정서에 영향을 줍니다. 불안정 애착인 사람은 버림받을까 두려워, 타인을 먼저 챙기는 것을 관계를 지키는 유일한 방법처럼 느낍니다.</p>
+  <p>둘째, 갈등 회피입니다. "착하고 조용할 때만" 사랑받는 환경에서 자란 사람은 살얼음판을 걷는 감각을 익힙니다. 자기 욕구는 줄이고, 갈등은 피하는 데 에너지를 씁니다.</p>
+  <p>셋째, 죄책감입니다. 거절하면 상대를 실망시킨다는 생각, 모든 문제를 자기 몫으로 떠안는 책임감이 작동합니다.</p>
+  <p>이때 자기 가치는 내 안이 아니라 타인의 반응에 맡겨집니다. 마지막 대화가 좋았는지에 따라 마음이 흔들립니다.</p>
+
+  <img src="./images/body-1.png" alt="거절을 못하는 세 가지 마음 - 애착과 인정 욕구, 갈등 회피, 죄책감과 책임 과잉">
+
+  <hr>
+
+  <h2>착한 사람의 마음이 치르는 대가</h2>
+  <p>거절을 못하는 사람은 지치고 부담스러워도 "네"라고 답합니다.</p>
+  <p>지나치게 사과하고, 타인의 감정까지 자기 책임으로 떠안습니다. 자기 욕구를 앞세우면 도리어 불안해집니다.</p>
+  <p>예전에는 이런 배려가 관계를 지킨다고 믿었습니다. 그러나 알아주지 않고 보답받지 못한 채 자신을 내어주면, 마음에는 원망이 고입니다.</p>
+  <p>일시적으로 불안은 줄어듭니다. 그러나 끝에 남는 것은 분노와 번아웃, 그리고 "아무도 진짜 나를 모른다"는 외로움입니다.</p>
+  <p>배려가 나를 갉아먹기 시작한다면, 그것은 더 이상 배려가 아닙니다.</p>
+
+  <hr>
+
+  <h2>경계는 단절이 아니라 안전장치입니다</h2>
+  <p>여기서 오해 하나를 풀어야 합니다. 경계를 세우는 일은 관계를 끊는 일이 아닙니다.</p>
+  <p>상담과 대인관계 연구에서 경계는 관계를 건강하게 유지하는 최소한의 안전장치로 설명됩니다.</p>
+  <p>경계는 내가 무엇을 받아들이고 무엇을 받아들이지 않을지 분명히 해 줍니다. 그 덕에 죄책감이나 사과 없이 "아니오"를 말할 수 있게 됩니다.</p>
+
+  <hr>
+
+  <h2>건강한 경계를 세우는 네 단계</h2>
+  <div class="step">
+    <p>경계 세우기는 한 번에 완성되지 않습니다. 작은 단계로 나누어 연습하시길 권합니다.</p>
+    <p><b>1단계</b>, 내 한계를 먼저 압니다. "내가 정말 원하는가, 나는 거절할 자유가 있는가"를 스스로 묻습니다.</p>
+    <p><b>2단계</b>, 분명하되 다정하게 전합니다. 상대의 마음을 먼저 인정한 뒤, "하지 말라"가 아니라 "이렇게 했으면 한다"로 말합니다.</p>
+    <p><b>3단계</b>, 일관되게 지킵니다. 압박을 받아도 차분히 입장을 다시 말합니다. 정당화하거나 길게 변명하지 않습니다.</p>
+    <p><b>4단계</b>, 작게 시작합니다. 위험이 낮은 일부터 거절해 봅니다. "거절해도 재앙은 오지 않는다"는 경험이 쌓이면 자신감이 붙습니다.</p>
+  </div>
+
+  <img src="./images/body-2.png" alt="건강한 경계를 세우는 네 단계 - 한계 인식, 다정한 전달, 일관된 유지, 작게 시작">
+
+  <hr>
+
+  <h2>거절의 말, 이렇게 부드럽게</h2>
+  <p>거절은 차갑지 않아도 됩니다. 인정과 거절을 함께 담으면 됩니다.</p>
+  <ul class="talk-list">
+    <li>"마음 써 주셔서 고마워요. 다만 이번엔 어렵겠습니다."</li>
+    <li>"지금은 일정이 빠듯해서, 도와드리기 어려울 것 같아요."</li>
+    <li>상대가 거듭 청하면, 같은 말을 차분히 반복합니다. "말씀은 이해하지만, 이번엔 어렵습니다."</li>
+    <li>전부 어렵다면 일부를 제안합니다. "전체는 힘들지만, 이 부분까지는 도울 수 있어요."</li>
+  </ul>
+  <p>거절에 따라오는 죄책감은 자연스럽습니다. 그러나 "아니오"는 이기심이 아니라 자기 존중의 한 형태입니다.</p>
+  <p>자신을 존중받을 만한 사람으로 여길수록, 한계를 지키는 일이 한결 수월해집니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다. 거절은 관계를 깨는 칼이 아니라, 나와 관계를 함께 지키는 울타리입니다.</p>
+
+  <blockquote>"착한 사람이 되기 위해 나를 잃을 필요는 없습니다."</blockquote>
+
+  <div class="disclaimer">
+    이 글은 일반적인 정보를 위한 것이며, 전문적인 심리 상담이나 치료를 대체하지 않습니다. 어려움이 오래 이어진다면, 전문가의 도움을 받아 보시길 권합니다.
+  </div>
+
+  <p class="closing">거절이 두려운 당신에게 묻습니다. 모두에게 좋은 사람이 되려다, 정작 자신에게는 어떤 사람이었습니까.</p>
+
+  <div class="tags">
+    <span>#착한사람콤플렉스</span>
+    <span>#거절못하는성격</span>
+    <span>#건강한경계세우기</span>
+    <span>#자기주장</span>
+    <span>#피플플리저</span>
+    <span>#심리상담</span>
+    <span>#자존감</span>
+    <span>#갈등회피</span>
+    <span>#자기돌봄</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
