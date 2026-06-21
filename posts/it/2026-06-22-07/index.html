@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 코딩 에이전트 2026, 바이브 코딩이 개발을 바꾼다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#4f8cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#4f8cff;border-color:#4f8cff">IT</div>
+<h1>AI 코딩 에이전트 2026, 바이브 코딩이 개발을 바꾼다</h1>
+<p class="subtitle">빛과 그림자</p>
+<figure><img src="./images/thumbnail.png" alt="AI 코딩 에이전트 2026, 바이브 코딩&quot; 글 제목과 분위기를 담은 가로형 1200x630 대표 이미지"><figcaption>AI 코딩 에이전트 2026, 바이브 코딩&quot; 글 제목과 분위기를 담은 가로형 1200x630 대표 이미지</figcaption></figure>
+<p>이번 글에서는 2026년의 AI 코딩 에이전트와 &#x27;바이브 코딩&#x27; 흐름을 정리해 보겠습니다.</p>
+<p>먼저 결론부터 말씀드립니다. AI 코딩 에이전트는 개발 속도를 끌어올렸지만, 모두를 빠르게 만들지는 않았습니다. 숙련 개발자는 오히려 19% 느려졌다는 연구도 있습니다. 도구가 강해질수록, 사람의 설계 판단과 맥락 이해는 더 중요해졌습니다.</p>
+<p>이 변화를 하나씩 풀어보겠습니다.</p>
+<hr>
+<h2>바이브 코딩이란 무엇인가</h2>
+<p>용어부터 짚겠습니다.</p>
+<p>바이브 코딩(vibe coding)은 2025년 2월, AI 연구자 안드레이 카파시가 처음 쓴 말입니다. 코드를 한 줄씩 직접 쓰는 대신, AI에게 자연어로 지시하고 결과만 평가하는 방식입니다. 핵심은 &quot;코드가 어떻게 작성됐는지 깊이 파고들지 않는다&quot;는 태도에 있습니다.</p>
+<p>처음엔 가벼운 놀이에 가까웠습니다. 당시엔 모델 성능이 낮아 일회성 프로젝트나 데모에 주로 쓰였습니다. 카파시 본인도 &quot;재미있고, 거의 작동했다&quot;고 표현했습니다.</p>
+<p>그런데 1년 만에 무게가 완전히 달라졌습니다. 콜린스 사전은 이 단어를 올해의 단어로 선정했고, AI 코딩 에이전트는 신기한 장난감에서 개발의 기본 도구로 옮겨갔습니다.</p>
+<figure><img src="./images/body-1.png" alt="핵심포인트 카드 - &quot;바이브 코딩 vs 에이전틱 엔지니어링&quot; 비교 카드"><figcaption>핵심포인트 카드 - &quot;바이브 코딩 vs 에이전틱 엔지니어링&quot; 비교 카드</figcaption></figure>
+<hr>
+<h2>세 가지 도구, 세 가지 철학</h2>
+<p>2026년 현재 대표 주자는 Cursor, Claude Code, Codex입니다. 같은 &#x27;AI 코딩 에이전트&#x27;라도 일하는 방식이 다릅니다.</p>
+<p>Cursor는 IDE 우선입니다. 개발자가 운전대를 잡고, AI가 인라인으로 거듭니다. 시각적 피드백과 인라인 제어가 강점입니다.</p>
+<p>Claude Code는 에이전트 우선입니다. 사람이 지시하면 AI가 주도하고, 사람은 결과를 리뷰합니다. 100만 토큰 컨텍스트로 중형 코드베이스 전체를 한 번에 담는 점이 특징입니다.</p>
+<p>Codex는 OpenAI 계열로, 터미널 작업에 강합니다.</p>
+<p>성능 지표 한 줄만 덧붙이겠습니다. 2026년 4월 기준 Claude Code는 SWE-bench Verified에서 80.8%로 카테고리 최고치를 기록했습니다. 다만 어느 한 도구가 모든 상황에서 이기지는 않습니다. 실제로 숙련자들은 단계마다 도구를 갈아 쓰는 편입니다.</p>
+<p>시장의 화두도 바뀌었습니다. 예전엔 누가 더 좋은 문법을 쓰느냐였습니다. 지금은 자율성과 멀티파일 추론, 즉 &#x27;워크플로의 형태&#x27;가 승부처입니다.</p>
+<figure><img src="./images/body-2.png" alt="비교표 - Cursor·Claude Code·Codex 세 도구의 성격(IDE 우선/에이전트 우선/터미널…"><figcaption>비교표 - Cursor·Claude Code·Codex 세 도구의 성격(IDE 우선/에이전트 우선/터미널…</figcaption></figure>
+<hr>
+<h2>빨라졌다는 착각 — METR 연구가 던진 질문</h2>
+<p>여기서 한 박자 멈추겠습니다.</p>
+<p>생산성 데이터는 양면적입니다. 한쪽에는 통제 실험에서 코딩 속도가 55% 빨라졌다는 보고가 있습니다. 그런데 다른 쪽 결과가 의외였습니다.</p>
+<p>비영리 연구기관 METR이 2025년 7월 발표한 연구를 보겠습니다. 평균 22,000개 이상의 스타가 붙은 대형 오픈소스 저장소에, 다년간 기여해 온 숙련 개발자 16명이 246개 과제를 수행했습니다. 결과는 AI를 허용했을 때 오히려 19% 더 느려졌다는 것이었습니다.</p>
+<p>더 눈여겨볼 대목은 인식의 격차입니다. 개발자들은 AI가 완료 시간을 20% 줄였다고 추정했습니다. 실제로는 19% 늘었습니다. 빨라졌다고 느끼지만 실제로는 느려진 셈입니다.</p>
+<p>물론 조건을 봐야 합니다. 대상은 자기 저장소를 손바닥처럼 아는 숙련자였습니다. 후속 조사에서도 친숙도와 과제 성격에 따라 효과가 크게 갈렸습니다. 초급 개발자나 낯선 코드에서는 이야기가 달라질 수 있습니다.</p>
+<p>말하자면 &#x27;AI는 무조건 빠르다&#x27;는 단정은 위험합니다. 효과는 누가, 어떤 코드에서 쓰느냐에 달려 있습니다.</p>
+<hr>
+<h2>그림자 — 작동하지만 이해하지 못하는 코드</h2>
+<p>좋은 점만 적으면 정직하지 않습니다. 그늘도 함께 보겠습니다.</p>
+<p>속도가 붙으면서 품질 문제가 따라왔습니다. 한 분석에 따르면 AI 생성 코드의 45%가 보안 취약점을 품고 있었습니다. AI 보조 개발자는 동료보다 커밋을 3~4배 많이 했지만, 보안 결함은 10배 비율로 들어왔습니다.</p>
+<p>기술 부채는 선형이 아니라 복리로 쌓입니다. 인증 패턴이 살짝 어긋나고, 유틸 함수가 중복되고, 팀의 관례를 비껴가는 쿼리가 늘어납니다. 작은 불일치가 모여 큰 짐이 됩니다.</p>
+<p>가장 무서운 문장은 이것입니다. &quot;코드는 작동하지만, 왜 작동하는지 본인이 완전히 이해하지 못한다.&quot; 새벽 두 시에 장애가 나면, 배운 적 없는 로직을 디버깅하게 됩니다.</p>
+<p>AI 정확도에 대한 신뢰가 18개월 새 43%에서 29%로 떨어진 것도 같은 맥락이라고 생각합니다. 많이 쓰지만, 그만큼 믿지는 못하는 긴장입니다.</p>
+<figure><img src="./images/body-3.png" alt="강조박스 - AI 생성 코드 리스크 핵심 수치 강조"><figcaption>강조박스 - AI 생성 코드 리스크 핵심 수치 강조</figcaption></figure>
+<hr>
+<h2>그래서 사람의 일은 어떻게 바뀌는가</h2>
+<p>예전엔 개발자가 코드를 &#x27;쓰는 사람&#x27;이었습니다. 지금은 코드를 &#x27;설계하고 검증하고 감독하는 사람&#x27;으로 무게가 옮겨갑니다.</p>
+<p>카파시는 흥미로운 제안을 했습니다. &#x27;바이브 코딩&#x27;이라는 말 대신 &#x27;에이전틱 엔지니어링&#x27;을 쓰자는 것입니다. 원하는 것을 말하고 결과를 그냥 받는 것이 바이브 코딩이라면, 시스템을 설계하고 제약을 명시한 뒤 이미 충분히 추론한 구현을 AI로 가속하는 것이 에이전틱 엔지니어링입니다. 그는 2025년 12월, 자기 코드의 80%를 AI가 작성한다고 밝혔습니다.</p>
+<p>그래서 더 중요해진 역량은 따로 있습니다. AI 생성 코드를 비판적으로, 그리고 빠르게 읽어 취약점 패턴을 짚어내는 눈입니다. 시니어들의 조언도 한 방향을 가리킵니다. &quot;AI를 유능하지만 감독이 필요한 주니어처럼 다뤄라.&quot;</p>
+<p>도구가 똑똑해질수록, 무엇을 만들지 정하고 결과를 판단하는 사람의 몫은 오히려 커진다는 뜻입니다.</p>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>AI 코딩 에이전트는 분명 강력한 동료입니다. 그러나 핸들을 통째로 넘겨주는 도구는 아닙니다.</p>
+<p>&quot;코드를 쓰는 일은 줄지만, 코드를 책임지는 일은 줄지 않습니다.&quot;</p>
+<p>바이브 코딩이 개발을 바꾸겠냐고 물으신다면, 이미 바꾸고 있다고 답하겠습니다. 다만 그 방향키는 여전히 사람의 손에 남아 있습니다.</p>
+<div class="tags"><span>#AI코딩에이전트</span> <span>#바이브코딩</span> <span>#ClaudeCode</span> <span>#Cursor</span> <span>#Codex</span> <span>#에이전틱엔지니어링</span> <span>#METR연구</span> <span>#2026IT트렌드</span> <span>#소프트웨어개발</span> <span>#개발생산성</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>
