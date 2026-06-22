@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 브라우저 2026 정리 — 에이전트가 웹서핑을 대신하는 시대</title>
+<style>
+  body {
+    margin: 0;
+    background: #f7f7f8;
+    font-family: 'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;
+    color: #2b2b2b;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #ffffff;
+    box-sizing: border-box;
+  }
+  .post h1 {
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+    margin: 0 0 28px;
+    color: #1a1a1a;
+  }
+  .post h2 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid #03c75a;
+    color: #1a1a1a;
+  }
+  .post p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    letter-spacing: -0.2px;
+    margin: 0 0 20px;
+    word-break: keep-all;
+  }
+  .post img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 8px;
+  }
+  .post hr {
+    border: 0;
+    border-top: 1px solid #ececec;
+    margin: 40px 0;
+  }
+  .post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 28px;
+    font-size: 15px;
+  }
+  .post th, .post td {
+    border: 1px solid #e6e6e6;
+    padding: 11px 12px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .post th {
+    background: #f2faf5;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .post td:first-child {
+    font-weight: 600;
+  }
+  .post tr:nth-child(even) td {
+    background: #fafafa;
+  }
+  .post blockquote {
+    margin: 32px 0;
+    padding: 20px 24px;
+    background: #f4fbf6;
+    border-left: 4px solid #03c75a;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.7;
+    color: #1a3b28;
+  }
+  .post blockquote p { margin: 0; }
+  .hashtags {
+    margin-top: 36px;
+    font-size: 15px;
+    line-height: 2;
+    color: #03868f;
+    word-break: keep-all;
+  }
+  .hashtags span {
+    display: inline-block;
+    margin-right: 6px;
+    color: #1b8fa8;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="post">
+
+  <h1>AI 브라우저 2026 정리 — 에이전트가 웹서핑을 대신하는 시대</h1>
+
+  <p>이번 글에서는 2026년의 AI 브라우저 흐름을 정리해 보겠습니다.<br>
+  한 줄로 요약하면 이렇습니다. 검색 결과를 보여주던 브라우저가, 이제 사용자를 대신해 클릭하고 입력하고 결정하는 에이전트로 바뀌고 있습니다.<br>
+  다만 기대만 할 일은 아닙니다. 보안 취약점과 시장의 현실이 같은 속도로 따라붙고 있습니다.</p>
+
+  <img src="./images/thumbnail.png" alt="에이전트가 웹서핑을 대신하는 시대 — AI 브라우저 2026">
+
+  <hr>
+
+  <h2>에이전틱 브라우징은 무엇을 뜻하는가</h2>
+
+  <p>핵심은 자율성입니다.<br>
+  "항공권 예약해줘"라는 한마디를 주면, AI가 알아서 사이트를 돌며 일을 처리합니다.<br>
+  복잡한 목표를 작은 단계로 쪼개 순서대로 실행합니다. 예상 못 한 상황도 일일이 묻지 않고 스스로 판단합니다.</p>
+
+  <p>기술의 핵심은 AI가 웹페이지를 "보는" 방식에 있습니다.<br>
+  구글의 프로젝트 매리너는 페이지의 코드 구조(DOM)를 읽는 동시에 화면을 시각적으로 인식합니다.<br>
+  버튼과 입력창을 픽셀 단위로 식별해 클릭과 입력으로 옮깁니다.</p>
+
+  <p>처리 과정은 세 단계입니다. 관찰하고, 추론하고, 실행합니다.<br>
+  이 방식으로 매리너는 웹 자동화 벤치마크인 WebVoyager에서 83.5%의 성공률을 기록했습니다. 한 벤치마크 기준이라는 점은 짚어둡니다.</p>
+
+  <hr>
+
+  <h2>주요 AI 브라우저, 무엇이 다른가</h2>
+
+  <p>퍼플렉시티 Comet은 2025년 7월 데스크톱으로 시작해 2026년 3월 iOS까지 닿았습니다.<br>
+  같은 달 미국 iOS 앱스토어 전체 3위에 올랐습니다. 기본 무료라 진입 장벽이 가장 낮습니다.</p>
+
+  <p>오픈AI ChatGPT Atlas는 2025년 10월 macOS로 나왔습니다.<br>
+  에이전트 모드가 식단 리서치부터 장바구니 담기까지 한 번에 처리합니다. 중요한 행동 전에는 먼저 사용자에게 묻도록 훈련됐습니다.</p>
+
+  <p>구글 Gemini in Chrome은 2026년 1월부터 에이전틱 기능을 풀기 시작했습니다.<br>
+  별도 확장이 아니라 Chrome에 네이티브로 내장된 사이드 패널입니다. 71%라는 점유율 위에 얹혔다는 점이 가장 큰 무기입니다.</p>
+
+  <p>여기에 마이크로소프트 Edge Copilot Mode, 그리고 아틀라시안이 6억 1,000만 달러에 인수한 Dia가 더해집니다.</p>
+
+  <img src="./images/body-1.png" alt="주요 AI 브라우저 5종 출시 시기 비교">
+
+  <table>
+    <thead>
+      <tr><th>제품</th><th>출시</th><th>유형</th><th>가격</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Comet</td><td>2025.07</td><td>AI 네이티브</td><td>무료~</td></tr>
+      <tr><td>Atlas</td><td>2025.10</td><td>AI 네이티브</td><td>무료~</td></tr>
+      <tr><td>Gemini in Chrome</td><td>2026.01</td><td>기존+AI</td><td>무료~Pro</td></tr>
+      <tr><td>Edge Copilot</td><td>-</td><td>기존+AI</td><td>핵심 무료</td></tr>
+      <tr><td>Dia</td><td>2025.06</td><td>AI 네이티브</td><td>-</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>편리함 뒤에 남는 숙제, 프롬프트 인젝션</h2>
+
+  <p>가장 큰 위협은 프롬프트 인젝션입니다.<br>
+  공격자가 웹페이지나 이메일에 명령을 숨겨두면, 에이전트가 그것을 읽고 따라 버리는 공격입니다.<br>
+  AI가 개발자의 명령과 공격자의 명령을 안정적으로 구분하지 못하는 데서 비롯됩니다.</p>
+
+  <p>실제 사례도 있습니다.<br>
+  2025년 8월 Brave 보안팀은 숨긴 텍스트만으로 Comet이 사용자의 이메일과 일회용 비밀번호를 빼내도록 유도했습니다.</p>
+
+  <p>더 무거운 사실은 이것이 쉽게 고쳐질 버그가 아니라는 점입니다.<br>
+  오픈AI는 2025년 12월, 이 취약점이 "완전히 해결될 가능성이 낮다"고 스스로 밝혔습니다.<br>
+  구조적 한계라는 뜻입니다.</p>
+
+  <img src="./images/body-2.png" alt="프롬프트 인젝션 — 숨겨진 명령을 에이전트가 따라가는 공격">
+
+  <hr>
+
+  <h2>검색 산업은 흔들리는가, 버티는가</h2>
+
+  <p>충격은 분명합니다.<br>
+  1위 노출의 클릭률은 27%에서 11%로 내려앉았습니다. 구글 검색의 60%가 클릭 없이 끝나는 제로클릭입니다.</p>
+
+  <p>그러나 절대 규모는 아직 작습니다.<br>
+  AI 플랫폼에서 넘어오는 유입은 전체 유기적 트래픽의 1% 안팎에 머뭅니다.<br>
+  Chrome은 2026년 71.37% 점유율로 여전히 1위입니다. Gemini를 품으면서 오히려 더 공고해졌습니다.</p>
+
+  <p>예전엔 상위 10위 안에 드는 것이 목표였습니다.<br>
+  지금은 AI 답변에 인용되는 것이 더 큰 가치를 갖습니다. 인용된 사이트는 클릭이 35% 늘었습니다.</p>
+
+  <img src="./images/body-3.png" alt="검색 트래픽 변화 — 1위 클릭률 하락과 제로클릭 비중">
+
+  <p>한국 사용자에게는 변수가 하나 더 있습니다.<br>
+  Comet의 기능이 삼성 인터넷에 통합되며 삼성 생태계와 직접 맞닿았습니다.<br>
+  다만 국내 결제와 인증 환경에서 에이전트가 매끄럽게 작동할지는 아직 지켜봐야 할 관건입니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다.<br>
+  AI 브라우저는 분명 웹을 쓰는 방식을 바꾸고 있습니다. 그러나 보안의 빈틈과 시장의 관성도 함께 안고 있습니다.<br>
+  편리함과 위험을 같은 저울에 올려두는 일이 지금 우리에게 필요한 태도입니다.</p>
+
+  <blockquote><p>"대신 클릭해 주는 손이 편할수록, 무엇을 맡길지는 더 신중해야 합니다."</p></blockquote>
+
+  <p>맡겨도 좋겠냐고 물으신다면, 저는 작은 일부터 천천히 권하겠습니다.</p>
+
+  <div class="hashtags">
+    <span>#AI브라우저</span><span>#에이전틱브라우징</span><span>#Comet</span><span>#ChatGPTAtlas</span><span>#GeminiinChrome</span><span>#프롬프트인젝션</span><span>#제로클릭</span><span>#2026트렌드</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
