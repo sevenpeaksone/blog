@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>비트겐슈타인</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#a096ff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#a096ff;border-color:#a096ff">철학/인문</div>
+<h1>비트겐슈타인</h1>
+<p class="subtitle">말할 수 없는 것에는 침묵하라</p>
+<p>이번 글에서는 루트비히 비트겐슈타인을 정리해 보겠습니다. 한 사람이 평생에 걸쳐 서로 대립하는 두 개의 언어철학을 남긴, 흔치 않은 사상가입니다. 언어가 그릴 수 있는 세계의 한계는 어디까지인지, 그가 던진 질문을 따라가 봅니다.</p>
+<figure><img src="./images/thumbnail.png" alt="비트겐슈타인과 언어의 한계를 상징하는 가로형 썸네일 — 흐릿한 안개 너머로 이어지다 끊어진 사다리, 그…"><figcaption>비트겐슈타인과 언어의 한계를 상징하는 가로형 썸네일 — 흐릿한 안개 너머로 이어지다 끊어진 사다리, 그…</figcaption></figure>
+<hr>
+<h2>한 철학자, 두 개의 사상</h2>
+<p>비트겐슈타인은 1889년 빈에서 태어나 1951년 케임브리지에서 눈을 감았습니다.</p>
+<p>부유한 가문에서 자라 공학을 공부하다, 수학의 기초로 관심을 옮긴 사람입니다.</p>
+<p>1911년 케임브리지로 가 버트런드 러셀에게 배웠습니다.</p>
+<p>그가 남긴 주저는 두 권입니다.</p>
+<p>하나는 전쟁터에서 초고를 쓴 『논리철학논고』, 1921년의 책입니다.</p>
+<p>다른 하나는 세상을 떠난 뒤 1953년에야 나온 『철학적 탐구』입니다.</p>
+<p>흥미로운 점은 두 책이 같은 사람의 생각이라고 믿기 어려울 만큼 다르다는 것입니다.</p>
+<p>앞의 책에서 세운 것을 뒤의 책에서 그 자신이 허물었으니까요.</p>
+<figure><img src="./images/body-1.png" alt="전기와 후기를 좌우로 나눈 대비 카드 — 왼쪽 &#x27;논리철학논고(1921): 그림이론·언어의 한계&#x27;, 오른쪽…"><figcaption>전기와 후기를 좌우로 나눈 대비 카드 — 왼쪽 &#x27;논리철학논고(1921): 그림이론·언어의 한계&#x27;, 오른쪽…</figcaption></figure>
+<hr>
+<h2>그림이론 — 언어는 세계를 본뜬다</h2>
+<p>전기의 핵심은 &#x27;그림이론&#x27;이라 불립니다.</p>
+<p>세계는 서로 맞물린 사실들의 총체입니다.</p>
+<p>그리고 언어의 명제는 그 세계를 한 장의 그림처럼 본떠 보여줍니다.</p>
+<p>명제가 뜻을 갖는 까닭은, 그것이 일어날 수 있는 어떤 사태를 그려내기 때문입니다.</p>
+<p>『논고』는 1부터 7까지 번호 매겨진 일곱 개의 핵심 명제로 짜여 있습니다.</p>
+<p>나머지 문장들은 소수점을 달고 그 일곱 명제를 떠받칩니다.</p>
+<p>마치 한 그루 나무처럼, 굵은 줄기 일곱 개에 잔가지가 붙은 구조입니다.</p>
+<figure><img src="./images/body-2.png" alt="『논리철학논고』 7개 명제의 구조 다이어그램 — 1번부터 7번까지 굵은 줄기 명제를 세로로 배열하고, 각…"><figcaption>『논리철학논고』 7개 명제의 구조 다이어그램 — 1번부터 7번까지 굵은 줄기 명제를 세로로 배열하고, 각…</figcaption></figure>
+<hr>
+<h2>말할 수 없는 것에는 침묵하라</h2>
+<p>비트겐슈타인이 그림이론으로 하려던 일은 분명합니다.</p>
+<p>언어의 한계를 정확히 긋는 것이었습니다.</p>
+<p>무엇이 유의미하게 말해질 수 있고, 무엇이 그럴 수 없는지를 가르는 일입니다.</p>
+<p>말할 수 있는 것은 자연과학의 명제, 곧 사실에 관한 진술입니다.</p>
+<p>말할 수 없는 것은 윤리, 삶의 의미, 신비로운 것입니다.</p>
+<p>이것들은 사실의 세계 바깥에 있어, 명제로 붙잡히지 않습니다.</p>
+<p>그래서 일곱 번째 명제는 이렇게 책을 닫습니다.</p>
+<p>&quot;말할 수 없는 것에 관해서는 침묵해야 한다.&quot;</p>
+<p>오해하기 쉬운 대목이 하나 있습니다.</p>
+<p>침묵하라는 말은 그 영역이 하찮다는 뜻이 아닙니다.</p>
+<p>오히려 비트겐슈타인은 그것이 가장 중요하다고 보았습니다.</p>
+<p>말로 표현할 수 없는 것은, 다만 &#x27;보일&#x27; 뿐입니다.</p>
+<p>함부로 떠들어 망치지 말라는 청에 가깝습니다.</p>
+<hr>
+<h2>사다리를 버려라, 그리고 다시 시작하다</h2>
+<p>『논고』에는 묘한 자기부정이 담겨 있습니다.</p>
+<p>끝에서 두 번째 명제에서 그는 말합니다.</p>
+<p>이 책의 명제들을 제대로 이해한 사람은, 결국 그것들이 무의미함을 깨닫고 던져버려야 한다고요.</p>
+<p>그는 이 역설을 사다리에 빗댔습니다.</p>
+<p>세계를 올바로 보기 위해 딛고 올라간 사다리는, 정상에 닿으면 치워야 합니다.</p>
+<p>책이 스스로 자신을 부정하는 셈입니다.</p>
+<p>그리고 실제로 그는 한동안 철학을 떠났습니다.</p>
+<p>시골 학교 교사로 지내다, 1929년 케임브리지로 돌아옵니다.</p>
+<p>돌아온 그는 자신의 초기 생각이 근본적으로 틀렸다고 보았습니다.</p>
+<p>후기 철학은 그 반성에서 출발합니다.</p>
+<p>언어는 세계를 본뜬 그림이 아니라는 것입니다.</p>
+<p>언어는 삶 속에서 벌어지는 활동, 곧 &#x27;언어게임&#x27;입니다.</p>
+<p>명령하고 묘사하고 농담하는 무수한 놀이마다 규칙이 다릅니다.</p>
+<p>단어의 뜻은 사전 속 정의가 아니라, 그 쓰임에서 나옵니다.</p>
+<p>&quot;의미는 사용이다.&quot; — 후기를 한 줄로 압축한 명제입니다.</p>
+<p>&#x27;게임&#x27;이라는 말에 공통된 단 하나의 본질은 없습니다.</p>
+<p>한 가족이 눈매와 걸음걸이로 부분부분 닮듯, 유사성이 사슬처럼 이어질 뿐입니다.</p>
+<p>이것이 가족유사성입니다.</p>
+<p>또 하나, 그는 오직 나만 아는 &#x27;사적 언어&#x27;는 성립할 수 없다고 보았습니다.</p>
+<p>의미란 공유된 실천 위에서만 살아 있기 때문입니다.</p>
+<p>말이 뜻을 가지려면, 공동체가 함께 쓰는 공적 기준에 뿌리내려야 합니다.</p>
+<figure><img src="./images/body-3.png" alt="후기 철학 핵심 개념 카드 4개 — &#x27;언어게임: 삶 속의 활동&#x27;, &#x27;의미는 사용이다: 쓰임이 곧 뜻&#x27;,…"><figcaption>후기 철학 핵심 개념 카드 4개 — &#x27;언어게임: 삶 속의 활동&#x27;, &#x27;의미는 사용이다: 쓰임이 곧 뜻&#x27;,…</figcaption></figure>
+<hr>
+<p>정리하면 이렇습니다.</p>
+<p>전기의 비트겐슈타인은 언어가 그릴 수 있는 세계의 한계를 긋고, 그 너머를 침묵에 맡겼습니다.</p>
+<p>후기의 비트겐슈타인은 그 한계 자체를 다시 의심하며, 언어를 삶의 한복판으로 끌어내렸습니다.</p>
+<p>물론 그의 전기 사상은 후기의 그 자신에게마저 비판받았습니다.</p>
+<p>말할 수 없는 것의 경계가 정확히 어디인지도, 지금껏 논쟁거리로 남아 있습니다.</p>
+<p>그럼에도 한 가지는 분명합니다.</p>
+<p>우리가 언어를 어떻게 쓰느냐가, 우리가 세계를 어떻게 보느냐를 결정합니다.</p>
+<p>언어의 한계가 곧 내 세계의 한계라면, 우리는 그 한계를 어디까지 밀어볼 수 있을까요.</p>
+<div class="tags"><span>#비트겐슈타인</span> <span>#언어철학</span> <span>#논리철학논고</span> <span>#철학적탐구</span> <span>#언어게임</span> <span>#그림이론</span> <span>#서양철학</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>

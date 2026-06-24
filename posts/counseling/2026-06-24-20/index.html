@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>비교하는 마음</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#34b39e;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/counseling/index.html">상담 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#34b39e;border-color:#34b39e">상담</div>
+<h1>비교하는 마음</h1>
+<p class="subtitle">SNS 시대, 남과 견주는 마음을 다스리는 법</p>
+<p>이번 글에서는 SNS 시대에 남과 자꾸 견주게 되는 마음을 어떻게 다스릴지 정리해 보겠습니다. 비교가 왜 생기는지, 왜 SNS에서 유독 아픈지, 그리고 무엇이 도움이 되는지 차례로 살펴봅니다. 먼저 한 가지만 일러두겠습니다. 이 글은 일반적인 정보 제공이며 전문 상담을 대체하지 않습니다. 어려움이 크시다면 전문가의 도움을 권합니다.</p>
+<figure><img src="./images/thumbnail.png" alt="가로형 썸네일"><figcaption>가로형 썸네일</figcaption></figure>
+<hr>
+<h2>비교는 병이 아니라 본능입니다</h2>
+<p>먼저 마음을 조금 놓으셔도 됩니다.</p>
+<p>남과 비교하는 마음은 결함이 아닙니다.</p>
+<p>1954년 심리학자 레온 페스팅거는 사회비교이론을 내놓았습니다. 사람은 자신을 정확히 알고 싶어 하고, 객관적인 잣대가 없을 때 타인과 견주어 자신을 가늠한다는 것입니다.</p>
+<p>특히 기준이 모호한 영역일수록 비교는 강하게 작동합니다.</p>
+<p>내가 잘 살고 있는지, 충분한지 — 이런 질문에는 자(尺)가 없으니까요.</p>
+<p>그래서 우리는 옆 사람을 자 삼아 나를 잽니다. 비교는 그렇게 인간에게 깊이 새겨진 기능인 셈입니다.</p>
+<hr>
+<h2>위를 보는 비교, 아래를 보는 비교</h2>
+<p>비교에는 방향이 있습니다.</p>
+<p>나보다 나아 보이는 사람과 견주는 것을 상향비교라 합니다.</p>
+<p>반대로 나보다 처져 보이는 사람과 견주는 것을 하향비교라 합니다.</p>
+<p>상향비교가 늘 나쁜 것은 아닙니다. 더 나아지고 싶은 동기와 영감을 주기도 합니다.</p>
+<p>다만 같은 비교가 부족감과 열등감으로 기울 때 문제가 됩니다.</p>
+<p>하향비교는 잠시 위안을 줍니다. 그러나 거짓된 우월감으로 굳으면 그 또한 건강한 길은 아닙니다.</p>
+<p>결국 비교 자체가 약이냐 독이냐를 가르지 않습니다. 방향과 맥락이 가릅니다.</p>
+<figure><img src="./images/body-1.png" alt="상향비교와 하향비교를 좌우로 대비한 인포그래픽"><figcaption>상향비교와 하향비교를 좌우로 대비한 인포그래픽</figcaption></figure>
+<hr>
+<h2>SNS에서 유독 아픈 이유</h2>
+<p>비교는 오래된 본능이지만, SNS는 그 본능에 기름을 붓습니다.</p>
+<p>SNS를 오래 들여다볼수록 나보다 나아 보이는 사람과의 상향비교가 잦아집니다.</p>
+<p>그리고 여기서 상대적 박탈감이 자랍니다. 내 처지를 실제보다 더 나쁘게 느끼게 만드는 감정입니다. 한 국내 연구는 이 박탈감이 삶의 만족도를 떨어뜨린다고 보고합니다.</p>
+<p>핵심은 비교의 출발선이 공정하지 않다는 데 있습니다.</p>
+<p>사람들은 SNS에 자신의 가장 빛나는 장면만 골라 올립니다. 이른바 편집된 하이라이트입니다.</p>
+<p>예전에는 옆집과 비교했습니다. 지금은 전 세계의 편집본과 비교합니다.</p>
+<p>우리는 남의 &#x27;하이라이트&#x27;를 내 &#x27;편집되지 않은 일상&#x27;과 견줍니다. 애초에 이길 수 없는 시합입니다.</p>
+<figure><img src="./images/body-2.png" alt="비교의 악순환 5단계를 보여주는 순환 다이어그램"><figcaption>비교의 악순환 5단계를 보여주는 순환 다이어그램</figcaption></figure>
+<hr>
+<h2>곱씹는 마음이 더 깊은 상처를 냅니다</h2>
+<p>연구들은 한 가지를 일관되게 가리킵니다.</p>
+<p>소셜미디어 과사용은 불안·우울·외로움과 함께 가고, 자존감과는 반대로 움직입니다.</p>
+<p>다만 한 가지를 더 짚고 싶습니다.</p>
+<p>상처를 키우는 것은 비교 그 자체보다 그다음입니다.</p>
+<p>한 연구는 상향비교가 박탈감을 거쳐, 그 감정을 반복해 곱씹는 반추를 지나, 사회불안으로 이어지는 길을 보여줍니다.</p>
+<p>비교는 스칠 수 있습니다. 그러나 곱씹기 시작하면 마음에 고입니다.</p>
+<p>물론 균형도 필요합니다. 이런 영향은 분명하지만 대체로 완만하며, SNS가 모든 불행의 단일한 원인은 아닙니다.</p>
+<hr>
+<h2>견주는 마음을 다스리는 법</h2>
+<p>그렇다면 무엇이 도움이 될까요. 몇 가지를 정리합니다.</p>
+<p>첫째, 비교의 방아쇠를 알아차립니다. 어떤 계정, 어떤 순간에 마음이 흔들리는지 먼저 들여다보시길 권합니다.</p>
+<p>둘째, 사용 시간을 줄입니다. 끊으라는 말이 아닙니다. 한 연구에서는 하루 30분으로 양만 줄여도 외로움과 우울이 줄었습니다.</p>
+<p>셋째, 자기자비를 연습합니다. 누구나 불완전하다는 사실을 받아들이고 자신을 친절하게 대하는 태도입니다. 자존감을 억지로 높이는 것보다 더 안정적으로 마음을 지탱해 준다고 합니다.</p>
+<p>넷째, 감사로 시선을 돌립니다. 없는 것이 아니라 이미 가진 것으로 눈을 옮기는 일입니다.</p>
+<p>다섯째, 자(尺)를 바꿉니다. 남이 아니라 어제의 나와 견주고, 내가 중요하게 여기는 기준으로 나를 봅니다.</p>
+<figure><img src="./images/body-3.png" alt="대처 전략 5가지를 한눈에 보는 카드형 표"><figcaption>대처 전략 5가지를 한눈에 보는 카드형 표</figcaption></figure>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>비교를 완전히 없앨 수는 없습니다. 그것은 본능이니까요. 다만 그 잣대를 어디에 둘지는 고를 수 있습니다.</p>
+<p>&quot;비교의 기준을 다시 나에게 둘 때, SNS는 나를 흔드는 거울이 아니라 손에 쥔 도구가 됩니다.&quot;</p>
+<p>남의 편집된 화면이 부러워지는 밤이 있으실 겁니다. 그럴 때 화면을 잠시 내려놓고 내 하루를 돌아보시면 좋겠습니다. 거기, 편집되지 않은 진짜 삶이 있습니다.</p>
+<div class="tags"><span>#비교하는마음</span> <span>#SNS심리</span> <span>#사회비교이론</span> <span>#상대적박탈감</span> <span>#자기자비</span> <span>#디지털디톡스</span> <span>#자존감</span> <span>#마음챙김</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>
