@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쇼펜하우어 행복론 쉽게 정리</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#a096ff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#a096ff;border-color:#a096ff">철학/인문</div>
+<h1>쇼펜하우어 행복론 쉽게 정리</h1>
+<p class="subtitle">고통과 권태의 시계추, 어떻게 살 것인가</p>
+<p>오늘은 쇼펜하우어의 행복론을 차근차근 정리해 보려 합니다. 흔히 그는 염세주의자로만 알려져 있지만, 그가 남긴 글에는 &quot;어떻게 하면 삶을 덜 괴롭게 살 수 있는가&quot;에 대한 구체적인 조언이 담겨 있습니다. 어려운 철학 용어는 최대한 쉽게 풀어 설명하겠습니다.</p>
+<figure><img src="./images/thumbnail.png" alt="쇼펜하우어 행복론을 주제로 한 가로형 썸네일"><figcaption>쇼펜하우어 행복론을 주제로 한 가로형 썸네일</figcaption></figure>
+<hr>
+<h2>쇼펜하우어는 누구인가</h2>
+<p>아르투어 쇼펜하우어는 1788년에 태어나 1860년에 세상을 떠난 독일의 철학자입니다.</p>
+<p>스물다섯이던 1813년, 박사학위 논문을 쓰고 예나 대학에서 학위를 받습니다.</p>
+<p>그 논문의 씨앗을 키워 1818년에 대표작 『의지와 표상으로서의 세계』를 완성합니다.</p>
+<p>이 한 권에 그의 철학 거의 전부가 담겨 있습니다. 인식론부터 윤리학, 예술론, 삶의 의미까지.</p>
+<p>그는 칸트를 디딤돌로 삼았습니다. 다만 당대를 풍미하던 헤겔식 관념론은 단호히 거부했습니다.</p>
+<p>생전에는 거의 무명이었습니다. 명성은 그가 죽은 뒤에야 찾아왔습니다.</p>
+<hr>
+<h2>핵심 개념 — 표상과 의지</h2>
+<p>그의 사상을 이해하려면 두 단어부터 짚어야 합니다. &#x27;표상&#x27;과 &#x27;의지&#x27;입니다.</p>
+<p><strong>표상으로서의 세계</strong>는 우리가 눈으로 보고 시간·공간·인과 속에서 인식하는 현상 세계입니다.</p>
+<p>그런데 그 겉모습 너머에 본질이 따로 있다고 그는 말합니다. 그것이 바로 <strong>의지</strong>입니다.</p>
+<p>칸트가 &quot;물자체&quot;, 즉 만물의 속내라 불렀던 그것을 쇼펜하우어는 의지라고 못 박았습니다.</p>
+<p>이 의지는 우아한 이성이 아닙니다. &quot;맹목적이고, 무의식적이며, 목적 없는 충동&quot;입니다.</p>
+<p>종착점이 없습니다. 그래서 인간은 결코 완전히 채워지지 않는 끊임없는 갈망 속에 놓입니다.</p>
+<figure><img src="./images/body-1.png" alt="표상 vs 의지&#x27;를 좌우로 나눈 비교 카드 이미지"><figcaption>표상 vs 의지&#x27;를 좌우로 나눈 비교 카드 이미지</figcaption></figure>
+<hr>
+<h2>삶은 고통과 권태 사이를 오가는 시계추</h2>
+<p>그의 가장 유명한 명제가 여기 있습니다.</p>
+<blockquote><p>&quot;삶은 고통과 권태 사이를 시계추처럼 앞뒤로 오간다.&quot;</p></blockquote>
+<p>원리는 이렇습니다.</p>
+<p>삶의 의지는 우리에게 끊임없이 무언가를 욕망하게 만듭니다. 결핍은 곧 고통입니다.</p>
+<p>어쩌다 그 욕망이 채워지면 잠깐의 쾌락이 옵니다.</p>
+<p>하지만 그 만족은 오래가지 않습니다. 곧 권태가 밀려옵니다.</p>
+<p>그러면 우리는 또 다른 것을 욕망하기 시작합니다. 그렇게 고통이 다시 시작됩니다.</p>
+<p>채워지지 않은 욕망의 날카로운 고통, 채워진 뒤의 공허한 권태.</p>
+<p>쇼펜하우어는 이 둘을 &quot;인간 행복의 두 적&quot;이라 불렀습니다.</p>
+<hr>
+<h2>행복은 &#x27;얻는 것&#x27;이 아니라 &#x27;없는 것&#x27;</h2>
+<p>여기서 그의 행복론이 독특해집니다.</p>
+<p>그는 행복을 적극적으로 정의하지 않습니다. <strong>소극적</strong>으로 정의합니다.</p>
+<p>쉽게 말하면 이렇습니다. 행복이란 무언가를 얻는 상태가 아니라, 고통이 잠시 사라진 상태일 뿐이라는 겁니다.</p>
+<p>그는 고통은 적극적(실재하는 것)이고, 즐거움은 소극적(고통의 부재)이라고 보았습니다.</p>
+<p>그래서 분별 있는 사람은 &#x27;즐거움&#x27;이 아니라 &#x27;고통 없음&#x27;을 목표로 삼아야 한다고 권합니다.</p>
+<p>화려한 행복을 좇기보다, 괴로움을 덜어내는 쪽이 현명하다는 이야기입니다.</p>
+<p>가장 좋은 삶이란 결국 &quot;반쯤 만족된 삶&quot;이라고 그는 말합니다.</p>
+<hr>
+<h2>행복을 위한 세 가지 처세</h2>
+<p>말년의 그는 『소품과 부록』이라는 에세이집을 냅니다. 1851년의 일입니다.</p>
+<p>이 책으로 그는 드디어 대중의 사랑을 받습니다. 본인도 &quot;지금까지의 모든 것보다 비교할 수 없이 대중적&quot;이라 평했습니다.</p>
+<p>그중 「삶의 지혜를 위한 잠언」에서 그는 행복의 조건을 세 가지로 나눕니다.</p>
+<figure><img src="./images/body-2.png" alt="행복의 처세 잠언을 담은 핵심 포인트 카드"><figcaption>행복의 처세 잠언을 담은 핵심 포인트 카드</figcaption></figure>
+<p>첫째는 <strong>무엇인가</strong>, 곧 그 사람의 됨됨이입니다. 건강, 기질, 도덕성 같은 인격 자체입니다.</p>
+<p>둘째는 <strong>무엇을 가졌는가</strong>, 곧 재산과 소유입니다.</p>
+<p>셋째는 <strong>남에게 어떻게 보이는가</strong>, 곧 명예와 지위입니다.</p>
+<p>그는 첫째가 가장 중요하다고 단언합니다.</p>
+<p>명랑한 기질, 건강한 몸, 풍부한 내면 같은 주관적 자질이 외적인 부나 명예보다 앞선다는 것입니다.</p>
+<p>특히 건강을 으뜸으로 꼽았습니다. &quot;우리 행복의 10분의 9는 오로지 건강에 달려 있다&quot;고 적었습니다.</p>
+<p>건강 다음으로는 고독을 권합니다. 마음의 평화는 타인과의 접촉으로 깨지기 쉽기 때문입니다.</p>
+<p>내면이 풍부한 사람일수록 밖에서 구하는 것이 적고, 그만큼 여가를 누릴 수 있다는 결론입니다.</p>
+<hr>
+<h2>고통에서 벗어나는 세 갈래 길</h2>
+<p>그렇다면 시계추에서 잠시라도 내려올 방법은 없을까요. 그는 세 가지 출구를 제시합니다.</p>
+<figure><img src="./images/body-3.png" alt="의지로부터 벗어나는 세 단계&#x27;를 보여주는 단계 다이어그램"><figcaption>의지로부터 벗어나는 세 단계&#x27;를 보여주는 단계 다이어그램</figcaption></figure>
+<p>첫째는 <strong>예술</strong>입니다.</p>
+<p>아름다운 작품을 깊이 감상할 때 우리는 잠시 욕망을 잊습니다.</p>
+<p>그 순간만큼은 &#x27;무엇을 원하는 나&#x27;에서 벗어나 순수하게 바라보는 자가 됩니다. 그는 이를 미적 관조라 불렀습니다.</p>
+<p>특히 음악을 높이 샀습니다. 음악은 의지 그 자체를 직접 그려낸다고 보았기 때문입니다.</p>
+<p>둘째는 <strong>연민</strong>입니다.</p>
+<p>타인의 고통을 내 일처럼 함께 아파하는 마음. 그는 이것을 도덕의 유일한 토대로 보았습니다.</p>
+<p>&quot;너를 움직이는 의지와 나를 움직이는 의지가 결국 하나&quot;라는 통찰에서 연민이 피어난다고 했습니다.</p>
+<p>셋째는 <strong>금욕</strong>, 곧 의지를 부정하는 길입니다.</p>
+<p>욕망 자체를 내려놓아 의지를 잠재우는 가장 급진적인 실천입니다. 그는 이것을 최고의 도덕적 성취로 꼽았습니다.</p>
+<p>앞의 두 길이 잠깐의 휴식이라면, 마지막 길은 항구적인 해방이라고 그는 정리했습니다.</p>
+<hr>
+<h2>동양 사상과의 만남</h2>
+<p>흥미로운 점이 하나 있습니다.</p>
+<p>쇼펜하우어는 우파니샤드에 깊이 빠진 최초의 서양 사상가였습니다.</p>
+<p>그는 &quot;온 세상에 우파니샤드 연구만큼 유익하고 고양시키는 것은 없다&quot;고까지 적었습니다.</p>
+<p>힌두 사상의 &#x27;마야의 베일&#x27; 개념을 자신의 표상 이론과 나란히 놓기도 했습니다. 우리가 보는 세계가 환상의 베일에 가려져 있다는 발상입니다.</p>
+<p>욕망을 비워 해탈에 이른다는 그의 구원론은 불교의 열반과도 구조가 닮았습니다.</p>
+<p>다만 영향의 정도를 두고는 학자마다 해석이 갈립니다.</p>
+<p>인도 사상에서 직접 길어 올렸다는 견해가 있는가 하면, 서양에서 독자적으로 얻은 결론을 인도 사상이 확증해 주었을 뿐이라는 견해도 있습니다.</p>
+<hr>
+<h2>오늘 우리에게 남기는 것</h2>
+<p>그의 통찰은 200년이 지난 지금 오히려 더 또렷하게 다가옵니다.</p>
+<p>&#x27;원하고 → 얻고 → 다시 원하는&#x27; 순환은 오늘의 소비 생활 그대로입니다.</p>
+<p>승진을 해도 새 책임과 새 불안이 따라옵니다. 사람들은 삶을 &#x27;드디어 고쳐줄&#x27; 다음 타이틀을 계속 좇습니다.</p>
+<p>심리학이 말하는 &#x27;쾌락의 쳇바퀴&#x27;를 그는 이미 한 세기 전에 짚어낸 셈입니다.</p>
+<p>예전엔 그를 그저 우울한 비관론자로만 읽었습니다. 지금은 다르게 보입니다.</p>
+<p>그는 고통을 직시하되, 예술과 연민과 절제라는 빠져나갈 길까지 함께 그려 둔 사람이었습니다.</p>
+<p>물론 그의 처방을 그대로 따르기는 쉽지 않습니다. 모두가 은둔자가 될 수도 없는 노릇입니다.</p>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>쇼펜하우어가 우리에게 건네는 조언은 결국 이 한 줄로 모입니다.</p>
+<blockquote><p>&quot;행복은 많이 얻는 데 있지 않고, 덜 괴로운 데 있다.&quot;</p></blockquote>
+<p>행복을 좇다 지친 날이 있으셨다면, 잠시 욕망을 내려놓고 고요 속에 머무는 연습부터 시작해 보시면 어떨까요.</p>
+<div class="tags"><span>#쇼펜하우어</span> <span>#행복론</span> <span>#철학</span> <span>#의지와표상으로서의세계</span> <span>#염세주의</span> <span>#인문학</span> <span>#삶의지혜</span> <span>#고통과권태</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>

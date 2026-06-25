@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세계 종교의 성지순례</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#b89455;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/religion/index.html">종교 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#b89455;border-color:#b89455">종교</div>
+<h1>세계 종교의 성지순례</h1>
+<p class="subtitle">메카·산티아고·바라나시로 떠나는 길</p>
+<p>성지순례는 거의 모든 종교 전통에서 나타나는 보편적 현상입니다. 이 글에서는 이슬람·기독교·힌두교를 비롯한 여러 전통의 대표 순례를 비교하고, 그 안에 흐르는 공통의 의미를 정리해 보겠습니다. 특정 종교를 높이거나 낮추려는 글이 아니라, 같은 인간의 마음이 길 위에서 어떻게 움직이는지 함께 살펴보려는 글입니다.</p>
+<figure><img src="./images/thumbnail.png" alt="가로형 1200x630 썸네일"><figcaption>가로형 1200x630 썸네일</figcaption></figure>
+<hr>
+<h2>순례란 무엇인가</h2>
+<p>순례는 한마디로 &quot;신성하다고 여겨지는 곳으로 향하는 영적 여정&quot;입니다.</p>
+<p>전통은 달라도 구조는 닮았습니다. 인류학자 빅터 터너는 순례를 통과의례의 한 형태로 보았습니다. 본래 통과의례는 &#x27;분리 → 경계 → 재통합&#x27;의 세 단계를 거칩니다.</p>
+<p>순례자는 일상의 지위를 잠시 내려놓습니다. 아직 새로운 자리에는 닿지 않은, 문턱 위의 상태에 머뭅니다. 터너는 이를 &#x27;리미널리티(경계성)&#x27;라 불렀습니다.</p>
+<p>이때 흥미로운 일이 벌어집니다. 출신도 신분도 다른 사람들이 똑같은 &#x27;순례자&#x27;로 어울립니다. 위계가 사라진 평등한 일체감을, 터너는 &#x27;코무니타스&#x27;라 이름 붙였습니다.</p>
+<blockquote><p>&quot;길 위에서는 모두가 같은 나그네입니다.&quot;</p></blockquote>
+<hr>
+<h2>이슬람의 하지 — 메카로 향하는 길</h2>
+<p>하지는 사우디아라비아 메카로 떠나는 이슬람의 대순례입니다. 이슬람의 다섯 기둥 가운데 하나로, 신체적·경제적으로 가능한 무슬림이 평생 한 번은 수행하는 의무로 여겨집니다.</p>
+<p>순례는 &#x27;이흐람&#x27;이라는 신성한 상태로 시작됩니다. 남성은 흰 천 두 장을 두릅니다. 사치와 신분의 표식을 벗고, 신 앞에서 모두가 같아지는 의미를 담고 있습니다.</p>
+<p>핵심 의식은 단계적으로 이어집니다.</p>
+<ul><li>타와프: 카바를 일곱 바퀴 도는 의식.</li><li>사이: 사파와 마르와 두 언덕 사이를 일곱 번 오갑니다.</li><li>우쿠프: 아라파트 평원에 서서 기도하고 회개하는, 하지의 절정.</li></ul>
+<p>규모도 현대 순례의 한 단면을 보여줍니다. 사우디 당국은 2024년 순례자가 200만 명을 넘을 것으로 내다봤습니다. 다만 그해 극심한 고온 속에서 당국 발표 기준 1,300명 이상이 목숨을 잃기도 했습니다. 신앙의 길에도 안전과 기후라는 현실의 과제가 따른다는 사실을, 조용히 떠올리게 됩니다.</p>
+<figure><img src="./images/body-1.png" alt="본문 이미지 1 — 종교별 대표 성지 비교 표(전통—성지—핵심)"><figcaption>본문 이미지 1 — 종교별 대표 성지 비교 표(전통—성지—핵심)</figcaption></figure>
+<hr>
+<h2>기독교의 순례 — 산티아고와 성지들</h2>
+<p>기독교 순례의 기록은 4세기까지 거슬러 올라갑니다. 현존 최古의 예루살렘 순례 기록은 333년경 방문을 적은 &#x27;보르도 순례자 여정기&#x27;입니다.</p>
+<p>교황 알렉산데르 6세는 산티아고 데 콤포스텔라를 예루살렘·로마와 함께 &#x27;3대 순례지&#x27;로 선언했습니다.</p>
+<p>그중 카미노 데 산티아고는 오늘날 가장 활기찬 길입니다. 사도 성 야고보의 유해가 안치되었다고 전해지는 곳으로 향합니다.</p>
+<p>2024년은 기록적인 해였습니다. &#x27;콤포스텔라&#x27; 증명서를 받은 순례자가 499,239명으로 역대 최고를 세웠습니다. 증명서를 받는 사람은 전체 도보자의 약 3분의 1로 추정되니, 실제로 걸은 사람은 150만 명을 넘었으리라 봅니다. (두 수치는 성격이 다르니 구분해 읽으시면 좋겠습니다.)</p>
+<p>처음으로 외국인 순례자가 스페인인을 앞질러 전체의 58%를 차지했고, 여성이 52%로 다수였습니다.</p>
+<p>이 밖에도 베드로와 바울의 도시 로마, 성모 발현지로 전해지는 프랑스 루르드가 주요 순례지로 이어집니다. 루르드는 시즌당 약 500만 명이 찾는다고 합니다.</p>
+<p>한 가지 역사적 맥락도 짚어 둡니다. 11세기 순례로의 교란이 십자군의 한 배경으로 거론되곤 합니다. 다만 이는 복잡한 역사의 한 단면일 뿐, 어느 종교의 정당성을 가르는 잣대는 아닙니다.</p>
+<hr>
+<h2>힌두교 — 바라나시와 갠지스강</h2>
+<p>힌두교에서 갠지스강의 의례적 목욕은 죄를 씻고 영적 해탈에 다가가는 길로 믿어집니다. 이 정화의 마음이 수천 년 전통의 중심에 있습니다.</p>
+<p>그 절정이 쿰브 멜라입니다. 지구상 최대 규모의 종교 집회로 불립니다.</p>
+<p>2025년 프라야그라지 마하 쿰브 멜라는 1월 13일부터 2월 26일까지, 세 강이 합류하는 트리베니 상감에서 열렸습니다. 144년 만의 별자리 정렬로 특별하게 여겨진 해였습니다.</p>
+<p>규모는 가늠하기 어려울 정도입니다. 2월 26일 발표 기준, 누적 6억 6천만 명 이상이 강에서 목욕했습니다. 다만 이는 기간 전체의 연인원입니다. 동시에 머물 수 있는 인원은 약 700만 명 규모였으니, 두 숫자를 혼동하지 않으시길 바랍니다.</p>
+<p>이를 위해 정부는 4,000헥타르의 임시 도시를 세우고, 수만 명의 보안 인력과 수천 대의 카메라를 배치했습니다. 신앙의 행사가 거대한 도시 운영의 과제이기도 하다는 점이 인상적입니다.</p>
+<figure><img src="./images/body-2.png" alt="본문 이미지 2 — 순례의 공통 단계 다이어그램"><figcaption>본문 이미지 2 — 순례의 공통 단계 다이어그램</figcaption></figure>
+<hr>
+<h2>그 밖의 전통들 — 불교·유대교·시코쿠</h2>
+<p>불교에는 붓다의 생애를 따르는 4대 성지가 있습니다. 탄생의 룸비니, 깨달음의 보드가야, 첫 설법의 사르나트, 입멸의 쿠시나가르입니다. 탄생에서 열반으로 이어지는 길 자체가 가르침의 이정표인 셈입니다.</p>
+<p>유대교에서는 예루살렘 통곡의 벽이 대표적입니다. 성전산 옹벽의 마지막 잔존물로, 가장 거룩한 지점에 가까이 다가설 수 있는 자리이기에 순례지가 되었습니다.</p>
+<p>다만 이곳은 조심스러운 설명이 필요합니다. 같은 공간을 유대교·기독교·이슬람이 모두 거룩하게 여깁니다. 벽 위의 평지에는 이슬람의 알아크사 사원과 바위돔이 자리합니다. 여러 전통이 한 장소를 신성하게 품고 있다는 사실 자체를, 어느 편도 들지 않고 전하고자 합니다.</p>
+<p>일본의 시코쿠 헨로도 빼놓을 수 없습니다. 진언종 고보 대사와 연관된 88개 사찰을 잇는 약 1,200km의 순환로입니다. 완주에 30~60일이 걸리고, 매년 약 15만 명이 나섭니다. 흰옷과 지팡이, 그리고 &#x27;늘 고보 대사와 함께 걷는다&#x27;는 동행이인의 마음이 이 길의 핵심입니다.</p>
+<hr>
+<h2>길은 달라도, 마음은 닮았습니다</h2>
+<p>예전에는 순례가 신앙인만의 일로 여겨졌습니다. 지금은 그 경계가 한결 흐려졌습니다.</p>
+<p>학계는 순례와 종교관광을 구분합니다. 앞은 영적 성장과 속죄를 향한 여정, 뒤는 신성·역사적 장소를 교육과 여가로 찾는 방문입니다.</p>
+<p>그러나 실제 길 위에서는 둘이 섞입니다. 카미노를 걷는 이의 다수가 종교 밖의 동기로 떠나고, 루르드는 해마다 수백만 관광객을 맞습니다. 학자들은 그 여정을 &#x27;특별하고 깊은 의미&#x27;로 느낀다면, 그 자체로 일종의 순례라 볼 수 있다고 말합니다. 공통분모는 결국 &#x27;신성함의 지각&#x27;입니다.</p>
+<p>전통을 가로질러 남는 공통점은 이렇습니다.</p>
+<ul><li>신성한 중심지로 향하는 공간의 이동.</li><li>정화와 영적 변화의 추구.</li><li>떠남–경계–돌아옴의 통과의례 구조.</li><li>흰 천, 흰옷, 인증서 같은 상징물.</li></ul>
+<figure><img src="./images/body-3.png" alt="본문 이미지 3 — 순례의 의미 핵심 카드 3장"><figcaption>본문 이미지 3 — 순례의 의미 핵심 카드 3장</figcaption></figure>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>메카로 모이든, 산티아고를 걷든, 갠지스에 몸을 담그든 — 사람들은 같은 것을 구합니다.</p>
+<p>&quot;길을 떠난다는 것은, 결국 자기 자신에게로 돌아오는 일입니다.&quot;</p>
+<p>당신에게도 떠나고 싶은 길이 있느냐고 묻는다면, 그 마음 또한 작은 순례의 시작일지 모릅니다.</p>
+<div class="tags"><span>#성지순례</span> <span>#세계종교</span> <span>#메카하지</span> <span>#산티아고순례길</span> <span>#카미노데산티아고</span> <span>#바라나시</span> <span>#비교종교</span> <span>#쿰브멜라</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>
