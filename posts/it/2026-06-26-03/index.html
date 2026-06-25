@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>첨단 패키징 2026, HBM 다음 병목은 어디인가</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#4f8cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#4f8cff;border-color:#4f8cff">IT</div>
+<h1>첨단 패키징 2026, HBM 다음 병목은 어디인가</h1>
+<figure><img src="./images/thumbnail.png" alt="첨단 패키징 2026 대표 이미지 - HBM 다음 병목"><figcaption>첨단 패키징 2026 대표 이미지 - HBM 다음 병목</figcaption></figure>
+<blockquote><p><strong>3줄 요약</strong></p><p>- 2026년 AI 반도체의 진짜 병목은 칩 제조가 아니라 <strong>첨단 패키징</strong>입니다.</p><p>- TSMC의 CoWoS는 캐파를 두 배로 늘려도 이미 사실상 완판 상태입니다.</p><p>- 병목은 멈추지 않고 <strong>웨이퍼 → HBM → CoWoS → ABF 기판</strong>으로 옮겨가고 있습니다.</p></blockquote>
+<p>이번 글에서는 2026년 반도체 산업의 가장 뜨거운 화두인 첨단 패키징을 정리해 보겠습니다. HBM 다음의 병목이 어디로 향하는지, 그리고 한국 반도체가 어디에 서 있는지를 함께 짚어보려 합니다.</p>
+<figure><img src="./images/body-1.png" alt="첨단 패키징 핵심 4가지 카드"><figcaption>첨단 패키징 핵심 4가지 카드</figcaption></figure>
+<hr>
+<h2>첨단 패키징이란 무엇인가</h2>
+<p>첨단 패키징은 완성된 칩들을 하나의 패키지 안에 고밀도로 연결하고 집적하는 후공정 기술입니다. 쉽게 말해 다 만든 칩들을 어떻게 쌓고 잇느냐의 문제입니다.</p>
+<p>예전에는 전공정이 칩 성능을 좌우했습니다. 웨이퍼 위에 트랜지스터를 얼마나 미세하게 새기느냐가 전부였습니다. 지금은 다릅니다. 다 만든 칩들을 어떻게 연결하느냐가 성능과 공급을 함께 결정합니다.</p>
+<p>2026년 현재 파운드리는 3nm와 2nm 로직 다이를 비교적 높은 수율로 양산합니다. AI 데이터센터 확장을 막는 진짜 병목은 실리콘 제조가 아닙니다. 첨단 패키징입니다.</p>
+<p>반도체 물량 확보는 이제 세 가지를 동시에 잠가야 하는 문제가 됐습니다. 웨이퍼 생산능력, 첨단 패키징 슬롯, 그리고 HBM 공급입니다. 이 셋 중 가장 결정적인 제약이 패키징입니다.</p>
+<hr>
+<h2>2.5D, 3D, 칩렛, 하이브리드 본딩</h2>
+<p>첨단 패키징을 떠받치는 네 가지 개념이 있습니다.</p>
+<p><strong>2.5D</strong>는 여러 다이를 인터포저 위에 나란히 배치하고, 그 안의 TSV(실리콘 관통 전극)로 측면 초고대역폭 통신을 합니다. <strong>3D</strong>는 다이를 수직으로 적층합니다. 배선이 짧아질수록 대역폭은 높아지고 지연은 낮아집니다.</p>
+<p><strong>칩렛</strong>은 거대한 단일 칩 대신 기능별 모듈로 시스템을 쪼개는 방식입니다. 로직, 메모리, I/O를 각각 최적의 공정에서 만들어 한 패키지에 조립합니다. 오늘날 AI 칩은 더 이상 모놀리식이 아니라 칩렛 기반입니다.</p>
+<p><strong>하이브리드 본딩</strong>은 마이크로범프 없이 칩과 칩을 구리-구리 접합으로 직접 잇는 기술입니다. 기생 성분이 훨씬 낮고, 더 얇은 적층과 우수한 열전도를 제공합니다. 성숙해질수록 전통적 마이크로범프를 대체할 주류 인터커넥트가 될 전망입니다.</p>
+<figure><img src="./images/body-2.png" alt="2.5D 패키징과 3D 패키징 비교 표"><figcaption>2.5D 패키징과 3D 패키징 비교 표</figcaption></figure>
+<div class="tablewrap"><table><thead><tr><th>구분</th><th>2.5D 패키징</th><th>3D 패키징</th></tr></thead><tbody><tr><td>배치 방식</td><td>다이를 인터포저 위에 나란히</td><td>다이를 수직으로 적층</td></tr><tr><td>연결 통로</td><td>인터포저 내부 TSV(측면 통신)</td><td>수직 인터커넥트(최단 배선)</td></tr><tr><td>강점</td><td>검증된 양산성, 고대역폭</td><td>더 높은 대역폭, 더 낮은 지연</td></tr><tr><td>대표 과제</td><td>거대 인터포저의 비용·결함</td><td>수직 적층 시 발열 집중</td></tr></tbody></table></div>
+<hr>
+<h2>CoWoS와 HBM — AI 가속기의 심장</h2>
+<p>CoWoS는 TSMC의 대표 2.5D 패키징입니다. 로직 칩인 GPU와 HBM을 하나의 실리콘 인터포저 위에 함께 집적해, AI 가속기가 요구하는 극한의 메모리 대역폭을 구현합니다.</p>
+<p>CoWoS에는 세 가지 변형이 있습니다. 실리콘 인터포저를 쓰는 CoWoS-S는 가장 미세한 피치를 제공하지만 패키지 크기가 실리콘 제조 한계에 묶입니다. 유기 RDL을 쓰는 CoWoS-R은 가장 저렴하고 신뢰성이 우수합니다. 하이브리드 방식인 CoWoS-L은 레티클 한계를 넘는 초대형 패키지를 가능하게 합니다. JP모건은 2027년까지 CoWoS 생산의 압도적 다수를 CoWoS-L이 차지할 것으로 내다봤습니다.</p>
+<p>CoWoS-L은 2026년 AI 칩에서 최대 12개의 HBM3E/HBM4 스택을 지원합니다. 엔비디아 Blackwell B200은 다이 풋프린트가 800mm²를 넘는, 생산 역사상 최대급 패키지입니다.</p>
+<p>다만 CoWoS 캐파만으로는 충분하지 않습니다. SK하이닉스, 삼성, 마이크론의 HBM 공급이 함께 따라줘야 합니다. HBM 할당이 없는 CoWoS 캐파는 완전한 해결책이 아닙니다.</p>
+<hr>
+<h2>병목은 HBM에서 기판으로 이동 중</h2>
+<p>숫자가 상황을 분명히 보여줍니다. TSMC의 CoWoS 생산능력은 2024년 월 35,000장에서 2025년 약 70,000장, 2026년 약 110,000장으로 늘어날 전망입니다. 그러나 2026년 캐파를 두 배로 키워도 수요를 못 채워 이미 사실상 완판입니다.</p>
+<p>엔비디아 단독으로 2026년 CoWoS 캐파의 약 60%를 쥐고 있다는 추정이 있습니다. 상위 세 고객이 85% 이상을 차지합니다. HBM3E 역시 8단과 12단 모두 2026년 사실상 완판이며 가격은 두 자릿수로 올랐습니다.</p>
+<p>그렇다면 다음 병목은 어디일까요. <strong>ABF 기판</strong>입니다. AI는 공급망의 다음 제약을 웨이퍼와 HBM에서 ABF 기판(아지노모토 빌드업 필름)으로 옮기고 있습니다. 복잡한 구성에서는 이 고층 유기 기판이 패키지 원가의 30~40%를 차지합니다. 그런데 ABF 필름은 일본 아지노모토가 사실상 독점 공급합니다. 한 소재의 단일 의존이 산업 전체의 발목을 잡는 구조입니다.</p>
+<p>결국 병목은 한 지점이 아닙니다. 웨이퍼에서 HBM으로, CoWoS 패키징으로, 다시 ABF 기판으로 연쇄 이동하는 다단계 구조입니다. 한 곳을 풀면 다음 곳이 막힙니다.</p>
+<hr>
+<h2>한국 반도체는 어디에 서 있나</h2>
+<p>한국의 무기는 HBM과 하이브리드 본딩입니다.</p>
+<p>SK하이닉스는 7세대 HBM인 HBM4E부터 하이브리드 본딩을 도입할 예정이며, 2026년 양산을 바라봅니다. TSMC와 협력해 HBM4 베이스 다이를 제작합니다. 삼성전자는 2026년 2월 12일 세계 최초로 HBM4 양산 출하를 발표했고, 20단 적층부터 하이브리드 구리 본딩을 적용할 계획입니다.</p>
+<p>특히 HBM4부터는 베이스 다이를 DRAM 노드가 아니라 TSMC N3 같은 첨단 로직 공정으로 만들 수 있습니다. 더 정교한 메모리 컨트롤러와 높은 PHY 속도가 가능해지는 &#x27;커스텀 HBM&#x27; 시대가 열리는 셈입니다. 삼성과 SK가 빠르게 HBM4E 샘플 공급에 나서면서, 핵심 장비인 하이브리드 본더 시장의 경쟁도 본격화되고 있습니다.</p>
+<p>글로벌 구도도 분주합니다. TSMC가 첨단 패키징을 사실상 주도하는 가운데, 인텔은 Foveros와 EMIB로, 삼성은 Cube 포트폴리오로 도전합니다. Amkor와 ASE 같은 외주 패키징 업체의 역할도 커지고 있습니다.</p>
+<hr>
+<h2>기대와 한계를 함께 봅니다</h2>
+<p>전망은 밝습니다. Yole는 첨단 패키징 시장이 2024년 약 450억 달러에서 2030년 약 794억 달러로, 연평균 9% 안팎 성장할 것으로 추정합니다. 유리 기판, 패널레벨 패키징, 공동 패키지 광학(CPO) 같은 차세대 기술도 줄을 잇습니다.</p>
+<figure><img src="./images/body-3.png" alt="첨단 패키징의 기대효과와 남은 과제"><figcaption>첨단 패키징의 기대효과와 남은 과제</figcaption></figure>
+<p>그러나 그늘도 분명합니다. 다이를 수직으로 쌓을수록 발열이 집중되는 열 관리 문제는 3D 적층의 근본 난제입니다. 거대 실리콘 인터포저는 비싸고 결함에 취약하며, CoWoS 패키징 비용은 칩당 약 750~1,100달러 수준입니다. ABF 필름의 아지노모토 의존처럼 핵심 소재가 소수에 집중된 점, 엔비디아 같은 소수 고객이 캐파를 선점해 후발 주자의 접근이 제약되는 점도 남은 과제입니다.</p>
+<div class="tablewrap"><table><thead><tr><th>구분</th><th>기대효과</th><th>남은 과제</th></tr></thead><tbody><tr><td>시장</td><td>2030년 약 794억 달러 전망</td><td>기관별 시장 규모 추정 편차</td></tr><tr><td>기술</td><td>유리 기판·CPO 등 차세대 등장</td><td>수직 적층의 발열 집중</td></tr><tr><td>공급</td><td>캐파 증설 지속</td><td>소재 단일 의존·소수 고객 선점</td></tr></tbody></table></div>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다. 2026년의 반도체 경쟁은 더 작게 새기는 싸움에서 더 잘 쌓고 잇는 싸움으로 옮겨갔습니다.</p>
+<p><strong>&quot;이제 칩의 운명은 어떻게 만드느냐가 아니라 어떻게 잇느냐에 달려 있습니다.&quot;</strong></p>
+<p>병목이 다음 어디로 옮겨갈지 묻는다면, 그 답을 가장 먼저 풀어내는 쪽이 시장을 쥐게 될 것이라 생각합니다.</p>
+<div class="tags"><span>#첨단패키징</span> <span>#반도체</span> <span>#HBM</span> <span>#CoWoS</span> <span>#칩렛</span> <span>#하이브리드본딩</span> <span>#ABF기판</span> <span>#TSMC</span> <span>#SK하이닉스</span> <span>#AI반도체</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>
