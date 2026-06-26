@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 팩토리 2026, GPU·HBM 너머의 인프라 경쟁</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#4f8cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#4f8cff;border-color:#4f8cff">IT</div>
+<h1>AI 팩토리 2026, GPU·HBM 너머의 인프라 경쟁</h1>
+<p class="subtitle">데이터센터가 &#x27;지능 공장&#x27;으로 바뀌는 이유</p>
+<figure><img src="./images/thumbnail.png" alt="대표 이미지"><figcaption>대표 이미지</figcaption></figure>
+<p>이번 글에서는 2026년 AI 인프라의 새 화두인 &#x27;AI 팩토리&#x27;를 정리해 보겠습니다.</p>
+<p>핵심을 먼저 세 줄로 추립니다.</p>
+<ul><li>AI 팩토리는 전기와 데이터를 받아 &#x27;토큰&#x27;이라는 지능을 산업적 규모로 찍어내는 데이터센터입니다.</li><li>경쟁의 무게중심은 GPU 단품에서 전력·냉각·네트워킹·메모리를 묶은 생태계로 옮겨갔습니다.</li><li>2026년의 진짜 제약은 컴퓨팅 성능이 아니라 전력과 열입니다.</li></ul>
+<hr>
+<h2>&#x27;데이터센터&#x27;가 아니라 &#x27;공장&#x27;입니다</h2>
+<p>예전의 데이터센터는 데이터를 저장하고 꺼내 쓰는 시설이었습니다.</p>
+<p>지금의 AI 팩토리는 다릅니다.</p>
+<p>전기와 데이터를 원자재로 받아, &#x27;토큰&#x27;이라는 지능을 끊임없이 생산하는 공장입니다.</p>
+<p>토큰은 AI 출력의 기본 단위입니다. 단어 조각 하나, 이미지의 픽셀 하나, 생성된 코드 한 줄이 모두 토큰입니다.</p>
+<p>그래서 측정 기준도 바뀌었습니다.</p>
+<p>저장 용량이 아니라 초당 토큰 수, 와트당 토큰 수, 토큰당 비용으로 시설을 평가합니다.</p>
+<p>&quot;에너지를 토큰으로 얼마나 효율적으로 바꾸느냐&quot;가 경쟁의 잣대가 된 셈입니다.</p>
+<p>규모도 다른 차원입니다.</p>
+<p>일부 사업자와 국가는 1기가와트(1GW)급 AI 팩토리를 짓고 있습니다.</p>
+<p>한 분석은 이런 시설 하나의 건설비를 1,000억 달러, 연 매출을 1,500억 달러 수준으로 추정합니다. 다만 단일 출처의 전망치인 만큼 어디까지나 추정으로 봐야 합니다.</p>
+<figure><img src="./images/body-1.png" alt="AI 팩토리 핵심 4가지"><figcaption>AI 팩토리 핵심 4가지</figcaption></figure>
+<hr>
+<h2>엔비디아의 &#x27;랙 규모&#x27; 전략과 추론 시대</h2>
+<p>엔비디아는 GTC 2026(3월, 미국 산호세)에서 &#x27;Rubin(루빈)&#x27; 아키텍처를 공개했습니다.</p>
+<p>젠슨 황은 이 자리에서 &quot;훈련 시대의 종말, 추론 시대로의 진입&quot;을 선언했습니다.</p>
+<p>핵심 메시지는 분명합니다.</p>
+<p>이제 GPU 한 칩이 아니라, 랙 전체를 통째로 묶은 AI 팩토리 시스템을 판다는 것입니다.</p>
+<p>Vera Rubin NVL144는 2026년 하반기 출시 예정입니다.</p>
+<p>HBM4 메모리 288GB를 얹고, 랙 1대로 추론 최대 3.6 NVFP4 엑사플롭스를 냅니다.</p>
+<p>토큰 1개를 만드는 비용을 이전 Blackwell의 약 10분의 1로 낮추는 것을 목표로 합니다.</p>
+<p>흐름은 추론 쪽으로 기울고 있습니다.</p>
+<p>추론 워크로드 비중은 2023년 약 3분의 1에서 2025년 절반, 2026년 약 3분의 2로 커졌습니다.</p>
+<p>그렇다고 전체 컴퓨팅 수요가 주는 것은 아닙니다.</p>
+<p>사용자가 더 자주, 더 많이 묻기 때문입니다.</p>
+<p>총 컴퓨팅 수요는 2030년까지 해마다 4~5배씩 늘 것으로 전망됩니다.</p>
+<hr>
+<h2>기존 데이터센터와 무엇이 다른가</h2>
+<figure><img src="./images/body-2.png" alt="기존 데이터센터 vs AI 팩토리"><figcaption>기존 데이터센터 vs AI 팩토리</figcaption></figure>
+<p>가장 두드러진 차이는 전력 밀도입니다.</p>
+<p>평균 랙 전력밀도는 2021년 8kW에서 2024년 17kW로 올랐습니다.</p>
+<p>2026년 초 AI 랙은 흔히 50kW를 넘깁니다.</p>
+<p>이 정도 밀도는 공랭으로 감당하기 어렵습니다.</p>
+<p>그래서 액체 냉각이 사실상 표준이 되고 있습니다.</p>
+<p>병목도 옮겨갔습니다.</p>
+<p>예전엔 컴퓨팅 성능이 문제였습니다. 지금은 칩과 칩을 잇는 &#x27;연결성&#x27;이 관건입니다.</p>
+<p>네트워킹 장비의 비용과 전력이 GPU 자체에 맞먹는 수준까지 올라왔습니다.</p>
+<p>생태계 구조도 넓어졌습니다.</p>
+<p>하이퍼스케일러들이 엔비디아 의존을 줄이려 맞춤형 ASIC을 채택하고 있습니다.</p>
+<p>브로드컴은 2026 회계연도 1분기 AI 반도체 매출 84억 달러를 기록했고, OpenAI와 추론 칩을 함께 개발하고 있습니다.</p>
+<p>가장 빡빡한 압박점은 메모리입니다.</p>
+<p>HBM과 DRAM이 지금 시장에서 공급이 가장 부족한 지점으로 꼽힙니다.</p>
+<p>HBM 시장은 SK하이닉스가 선두입니다. 다만 점유율 수치는 분기·집계 기준에 따라 편차가 큽니다.</p>
+<p>전 세계 HBM 시장은 2025년 380억 달러에서 2026년 580억 달러로 커질 전망입니다.</p>
+<hr>
+<h2>한국의 자리 — 소버린 AI와 국산 NPU</h2>
+<p>한국은 2026년 국가 AI 생태계 구축에 본격 착수했습니다.</p>
+<p>정부는 민관 공동으로 2028년까지 고성능 GPU 5만 2,000개, 2030년까지 26만 개 확보를 목표로 합니다.</p>
+<p>국산 칩 진영도 움직입니다.</p>
+<p>리벨리온은 2026년 3월 IPO 직전 라운드에서 4억 달러를 조달해 기업가치 약 23억 4,000만 달러로 평가받았습니다. 추론에 특화된 NPU를 만드는 회사입니다.</p>
+<p>퓨리오사AI는 2세대 칩 &#x27;RNGD(레니게이드)&#x27;를 삼성 파운드리에서 양산하고 있습니다.</p>
+<p>삼성SDS는 이 칩을 기반으로 한국 최초의 &#x27;NPU-as-a-Service&#x27;를 발표했습니다.</p>
+<p>회사 측은 엔비디아 H100의 절반 성능을 4분의 1 전력으로 낸다고 밝혔습니다. 독립 벤치마크로 확정된 수치는 아니어서, 아직은 주장으로 받아들이는 편이 안전합니다.</p>
+<p>추론 시장이 열리면서 이런 국산 칩에 진입 기회가 생겼습니다.</p>
+<p>물론 한계도 분명합니다.</p>
+<p>공공 입찰이 두 차례 무산되며 국산 NPU 의무 조항이 빠지는 등 정책 추진에는 마찰이 있었습니다.</p>
+<figure><img src="./images/body-3.png" alt="기대효과와 남은 과제"><figcaption>기대효과와 남은 과제</figcaption></figure>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>AI 팩토리의 승부처는 결국 하나로 모입니다.</p>
+<p>&quot;누가 가장 적은 전기로 가장 많은 토큰을 찍어내느냐.&quot;</p>
+<p>칩의 성능 경쟁은 오래된 이야기가 됐습니다.</p>
+<p>이제는 전력과 열, 그리고 그 모두를 묶어내는 생태계가 진짜 무대입니다.</p>
+<p>2026년의 AI 인프라를 지켜보실 때, 이 한 가지 잣대를 손에 쥐고 보신다면 흐름이 한결 또렷하게 보이실 것입니다.</p>
+<div class="tags"><span>#AI팩토리</span> <span>#AI인프라</span> <span>#엔비디아</span> <span>#VeraRubin</span> <span>#HBM</span> <span>#추론칩</span> <span>#국산NPU</span> <span>#리벨리온</span> <span>#퓨리오사AI</span> <span>#소버린AI</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>
