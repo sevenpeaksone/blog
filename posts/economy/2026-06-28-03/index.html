@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기준금리 전망 2026 하반기 — 인하 기대와 인상론 사이</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --sub: #555;
+    --line: #e5e5e5;
+    --accent: #1f6feb;
+    --quote-bg: #f6f8fa;
+    --tag: #1f6feb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    background: #ffffff;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.4;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: #1a1a1a;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #1a1a1a;
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    word-break: keep-all;
+  }
+  ul {
+    font-size: 17px;
+    line-height: 1.85;
+    margin: 0 0 22px;
+    padding-left: 22px;
+  }
+  li { margin-bottom: 8px; word-break: keep-all; }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 8px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 26px;
+    font-size: 16px;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    text-align: center;
+  }
+  th {
+    background: var(--quote-bg);
+    font-weight: 700;
+  }
+  blockquote {
+    margin: 28px 0;
+    padding: 16px 20px;
+    background: var(--quote-bg);
+    border-left: 4px solid #c8c8c8;
+    color: var(--sub);
+    font-size: 16px;
+    line-height: 1.8;
+    border-radius: 4px;
+  }
+  blockquote p { margin: 0; font-size: 16px; }
+  .tags {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    line-height: 2;
+  }
+  .tags span {
+    display: inline-block;
+    color: var(--tag);
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/economy/index.html">경제 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>기준금리 전망 2026 하반기 — 인하 기대와 인상론 사이</h1>
+
+  <img src="./images/thumbnail.png" alt="기준금리 2026 하반기 — 인하 기대와 인상론 사이">
+
+  <p>이번 글에서는 2026년 하반기 기준금리가 어디로 향할지를 정리해 보겠습니다. 현재 한국은행 기준금리는 연 2.50%, 여덟 번 연속 동결된 상태입니다. 한쪽에서는 인하를 기대하고, 다른 쪽에서는 하반기 인상을 말합니다. 어느 한 방향으로 단정하기보다, 양쪽의 근거를 나란히 놓고 판단 재료를 드리려 합니다.</p>
+
+  <hr>
+
+  <h2>지금 기준금리는 어디에 서 있나</h2>
+
+  <p>먼저 현재 위치부터 확인하겠습니다.</p>
+
+  <p>한국은행은 2026년 5월 28일 금융통화위원회에서 기준금리를 연 2.50%로 동결했습니다. 이로써 여덟 번 연속 동결입니다. 직전 4월 회의에서도 2.5%를 만장일치로 유지했습니다.</p>
+
+  <p>5월 회의는 신현송 신임 총재가 주재한 첫 회의였습니다. 동결의 배경에는 세 가지 압력이 함께 놓여 있었습니다. 중동 전쟁이라는 지정학적 위험, 약세를 보이는 원화, 그리고 다시 고개를 든 물가입니다.</p>
+
+  <p>같은 날 발표된 전망치도 눈여겨볼 만합니다.</p>
+
+  <ul>
+    <li>2026년 실질 GDP 성장률 전망: 2.0% → 2.6%로 상향 (반도체 수출 호조 반영)</li>
+    <li>2027년 GDP 성장률 전망: 2.1%</li>
+    <li>2026년 소비자물가 상승률 전망: 2.7%</li>
+    <li>4월 소비자물가 상승률(실적): 2.6% (2024년 7월 이후 최고치)</li>
+  </ul>
+
+  <p>성장 전망은 올라갔고, 물가는 좀처럼 잡히지 않습니다. 동결이라는 한 줄 결정 뒤에, 서로 다른 신호가 섞여 있는 셈입니다.</p>
+
+  <img src="./images/body-1.png" alt="지금 기준금리는 어디에 서 있나 — 2.50% 8회 연속 동결 현황">
+
+  <hr>
+
+  <h2>전망이 갈리는 이유 — 네 가지 변수</h2>
+
+  <p>방향이 엇갈리는 데에는 분명한 이유가 있습니다. 네 가지 변수가 서로 다른 쪽을 가리키고 있기 때문입니다.</p>
+
+  <p>첫째, 물가와 유가입니다. 중동 전쟁발 유가 충격이 시차를 두고 국내 물가로 번질 수 있습니다. 한은은 호르무즈 해협 통과 원유량이 연말까지 전쟁 전의 60% 수준에 이를 것이라는 전제로 물가를 전망했습니다. 신현송 총재는 "고물가가 상당 기간 지속될 수 있다"고 밝혔습니다.</p>
+
+  <p>둘째, 환율입니다. 원·달러 환율이 다시 1,400원대 중후반으로 올라섰습니다. 한미 금리 격차가 유지되면 달러 자산의 매력이 커져, 환율은 추가 상승 압력을 받습니다.</p>
+
+  <p>셋째, 가계부채와 집값입니다. 수도권 주택시장 가격 상승률이 연 10% 수준으로 높습니다. 한은은 추가 인하 여부와 시기를 집값·가계부채·환율 변동성을 고려해 신중히 결정하겠다고 했습니다.</p>
+
+  <p>넷째, 반도체 수출입니다. 반도체 강세에 힘입어 성장 전망이 2.0%에서 2.6%로 올라갔습니다. 경기 둔화 우려가 약해진 만큼, 금리를 내릴 명분도 그만큼 줄었습니다.</p>
+
+  <img src="./images/body-2.png" alt="전망이 갈리는 네 가지 변수 — 물가·환율·가계부채·반도체 수출">
+
+  <hr>
+
+  <h2>인상 시나리오 — 하반기 한은 신호의 무게중심</h2>
+
+  <p>먼저 인상 쪽 근거입니다.</p>
+
+  <p>2026년 5~6월 들어 한은의 공식 신호는 인상 쪽으로 기울었습니다. 신현송 총재는 취임 후 첫 회의 직후 "향후 적절한 시기에 기준금리를 인상할 필요가 있다"고 말했습니다. 이어 "성장, 물가, 금융안정 상황은 통화정책 측면에서 명확하게 한 방향을 가리키고 있다"며 늦지 않게 금리를 인상해 나갈 필요가 있다고 했습니다.</p>
+
+  <p>구체적 경로도 거론됩니다. 올 하반기 2차례 인상해 2.50%에서 3.00%로, 내년 상반기 중 2차례 더 올려 최종금리가 3.50%에 이를 것이라는 전망입니다.</p>
+
+  <p>금통위원들의 시각도 인상 쪽에 무게가 실립니다.</p>
+
+  <table>
+    <thead>
+      <tr><th>6개월 후 기준금리 전망</th><th>응답 위원 수</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2.75%</td><td>7명</td></tr>
+      <tr><td>3.00%</td><td>10명</td></tr>
+      <tr><td>3.25%</td><td>2명</td></tr>
+    </tbody>
+  </table>
+
+  <p>다만 한 번에 0.5%p를 올리는 빅스텝 가능성에는 총재가 선을 그었습니다. 인상하더라도 점진적으로 가겠다는 뜻으로 읽힙니다.</p>
+
+  <hr>
+
+  <h2>인하·동결 시나리오 — 잔존하는 기대</h2>
+
+  <p>반대쪽 근거도 함께 보겠습니다.</p>
+
+  <p>시점을 조금 거슬러 올라가면 그림이 달라집니다. 2025년 말에서 2026년 초까지의 자료에서는 동결 기조 유지 전망이 우세했습니다. 원화 약세와 집값 상승 탓에 인하에 신중할 수밖에 없다는 진단이었습니다.</p>
+
+  <p>일부 분석은 2026년 통화정책을 인하 시나리오와 금융 안정이 얽힌 복합 방정식으로 봅니다. 인하의 여지를 완전히 닫지는 않은 것입니다.</p>
+
+  <p>현재로서는 단기적으로 동결 가능성이 가장 높게 점쳐집니다. 다만 예상치 못한 충격은 변수입니다. 경기 침체가 심해지거나 금융시장에 충격이 오면, 연내 1회 인하 가능성도 열려 있습니다.</p>
+
+  <p>예전엔 인하 기대가 시장의 중심이었습니다. 지금은 한은의 공식 신호가 인상 쪽으로 옮겨 갔습니다. 그러나 시장 일각의 인하 기대는 아직 사라지지 않았습니다.</p>
+
+  <p>여기서 한 가지는 짚어 둘 필요가 있습니다. 방향이 엇갈리는 가장 큰 까닭은 시점의 차이입니다. 5월 신임 총재 취임과 중동 유가 충격을 계기로 한은의 기조가 인상 쪽으로 선회한 것으로 보입니다.</p>
+
+  <hr>
+
+  <h2>한미 금리차와 연준이라는 외부 변수</h2>
+
+  <p>국내 변수만으로는 그림이 완성되지 않습니다. 바깥, 즉 미국을 함께 봐야 합니다.</p>
+
+  <p>미국 연방기금금리는 3.50~3.75%입니다. 연준은 2025년 12월 이 수준으로 내린 뒤, 2026년 6월 회의까지 네 차례 연속 동결했습니다.</p>
+
+  <p>한국 2.50%, 미국 3.50~3.75%. 한국이 약 1.00~1.25%p 낮은 역전 상태입니다.</p>
+
+  <p>연준 내부도 의견이 갈립니다. 2026년 점도표에서 9명은 연내 최소 1회 인상, 6명은 최소 2회 인상, 또 다른 9명은 동결 또는 인하를 예상했습니다. 호르무즈 해협 봉쇄로 물가 상승 위험이 커진 점이 연준의 운신 폭도 좁히고 있습니다.</p>
+
+  <p>함의는 분명합니다. 한미 금리차가 유지되거나 벌어지면 원화 약세 압력이 커집니다. 이는 한은이 금리를 내리기 어렵게 만들고, 인상 명분을 거듭니다.</p>
+
+  <img src="./images/body-3.png" alt="한미 기준금리와 금리차 — 한국 2.50% vs 미국 3.50~3.75%">
+
+  <hr>
+
+  <h2>내 지갑에는 어떻게 닿나 — 주담대·예금·대출</h2>
+
+  <p>결국 가장 궁금한 것은 내 가계에 미치는 영향일 것입니다.</p>
+
+  <p>주택담보대출 금리부터 보겠습니다. 2026년 5월 신규취급액 기준 예금은행 주담대 금리는 연 4.32%입니다. 전월 4.31%에서 0.01%p 올랐습니다.</p>
+
+  <p>안을 들여다보면 방향이 엇갈립니다.</p>
+
+  <ul>
+    <li>고정금리: 4.34% → 4.44% (+0.10%p), 2025년 10월부터 8개월 연속 상승</li>
+    <li>변동금리: 4.28% → 4.23% (−0.05%p), 하락</li>
+  </ul>
+
+  <p>흥미로운 변화가 한 가지 더 있습니다. 차주들이 고정금리를 외면하고 변동금리로 이동하고 있습니다. 신규취급 가계대출 중 고정금리 비중은 전월보다 3.2%p 낮아진 24.6%입니다. 2025년 8월 62.2%에서 10개월 연속 떨어진 수치입니다.</p>
+
+  <p>여기에는 조심해야 할 대목이 있습니다. 변동금리 비중이 높아진 상태에서 하반기 인상이 현실화되면, 이자 부담이 빠르게 불어날 수 있습니다. 지금 낮아 보이는 변동금리가, 인상 국면에서는 가장 먼저 오르는 금리이기 때문입니다.</p>
+
+  <p>예금 쪽도 짚어 두겠습니다. 비은행금융기관 1년 만기 정기예금 기준으로, 상호저축은행·신용협동조합·상호금융은 각 0.05%p, 새마을금고는 0.02%p 올랐습니다.</p>
+
+  <p>끝으로 제도 변화 하나를 덧붙이겠습니다. 2026년 7월 1일부터 은행 주담대 금리 산정 방식이 바뀝니다. 기존 가산금리에 포함되던 보증기금 출연금 등 법적 비용을 가산금리에 반영하는 것이 금지됩니다.</p>
+
+  <img src="./images/body-4.png" alt="주담대 금리 추이 — 고정 4.44%·변동 4.23%, 고정 비중 24.6%">
+
+  <hr>
+
+  <h2>정리하며</h2>
+
+  <p>정리하면 이렇습니다.</p>
+
+  <p>2026년 5~6월 한은의 공식 신호는 하반기 인상으로 무게가 옮겨 갔고, 최종금리 3.50% 전망까지 거론됩니다. 반면 시장 일각에는 동결 지속과, 충격 시 연내 인하 기대가 여전히 남아 있습니다.</p>
+
+  <p>— 방향을 단정하기보다, 물가·환율·집값·연준이라는 네 개의 눈금을 함께 지켜보는 편이 안전합니다.</p>
+
+  <p>하반기 기준금리가 어디로 갈지 묻는다면, 지금으로서는 양쪽 가능성을 모두 열어 두고 본인의 대출·예금 구조부터 점검하시길 권합니다.</p>
+
+  <blockquote>
+    <p>본 글은 특정 방향의 투자나 금융 판단을 권유하지 않으며, 판단의 재료를 정리한 참고용 글입니다.</p>
+  </blockquote>
+
+  <div class="tags">
+    <span>#기준금리</span><span>#기준금리전망</span><span>#2026하반기금리</span><span>#한국은행</span><span>#금리인상</span><span>#주택담보대출금리</span><span>#한미금리차</span><span>#환율전망</span><span>#가계대출</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

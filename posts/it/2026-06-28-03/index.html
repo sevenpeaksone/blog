@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[IT] AI 추론칩 ASIC 2026 — 엔비디아 GPU 독점에 맞선 맞춤형 칩 전쟁</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --text-soft: #444;
+    --accent: #1a73e8;
+    --line: #e3e6ea;
+    --bg: #ffffff;
+    --tag: #1a73e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6f8;
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 56px 30px 80px;
+  }
+  .post h1 {
+    font-size: 28px;
+    line-height: 1.45;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 32px;
+    color: #111;
+  }
+  .post h2 {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin: 52px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #111;
+  }
+  .post h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 32px 0 12px;
+    color: #1a1a1a;
+  }
+  .post p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin: 0 0 20px;
+    color: var(--text-soft);
+    word-break: keep-all;
+  }
+  .lead {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+  }
+  .summary {
+    margin: 0 0 28px;
+    padding: 22px 24px;
+    background: #f7f9fc;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .summary .summary-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 12px;
+  }
+  .summary ol {
+    margin: 0;
+    padding-left: 22px;
+  }
+  .summary li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    color: var(--text-soft);
+    word-break: keep-all;
+  }
+  .post img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 10px;
+  }
+  .post hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 44px 0;
+  }
+  .post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .post th, .post td {
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    word-break: keep-all;
+  }
+  .post th {
+    background: #f2f5f9;
+    font-weight: 700;
+    color: #111;
+  }
+  .post td:first-child, .post th:first-child {
+    background: #fafbfc;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .tags {
+    margin-top: 16px;
+    line-height: 2.2;
+  }
+  .tags span {
+    display: inline-block;
+    color: var(--tag);
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  @media (max-width: 720px) {
+    .post { padding: 36px 18px 60px; }
+    .post h1 { font-size: 24px; }
+    .post h2 { font-size: 20px; }
+    .post p, .lead { font-size: 16px; }
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>[IT] AI 추론칩 ASIC 2026 — 엔비디아 GPU 독점에 맞선 맞춤형 칩 전쟁</h1>
+
+  <p class="lead">이번 글에서는 2026년 AI 추론칩 ASIC 시장의 판도를 정리해 보겠습니다.</p>
+
+  <div class="summary">
+    <p class="summary-title">세 줄 요약을 먼저 드립니다.</p>
+    <ol>
+      <li>AI 연산의 무게중심이 학습에서 추론으로 넘어가면서 범용 GPU 대신 맞춤형 ASIC이 떠오르고 있습니다.</li>
+      <li>구글·아마존·마이크로소프트·메타·오픈AI가 저마다 자체 칩을 내놓으며 엔비디아의 독점에 균열을 내는 중입니다.</li>
+      <li>어느 칩이 이기든 HBM을 쥔 삼성·SK하이닉스는 구조적으로 수혜를 봅니다.</li>
+    </ol>
+  </div>
+
+  <img src="./images/thumbnail.png" alt="AI 추론칩 ASIC 2026 — 엔비디아 GPU 독점에 맞선 맞춤형 칩 전쟁">
+
+  <hr>
+
+  <h2>학습의 시대에서 추론의 시대로</h2>
+  <p>AI 칩 전쟁의 뿌리는 한 가지 변화에 있습니다. 연산 수요의 중심이 학습에서 추론으로 옮겨갔다는 점입니다.</p>
+  <p>예전엔 대량의 데이터로 모델을 키우는 학습이 연산의 주인공이었습니다. 지금은 다 키운 모델로 매일 수십억 번 질문에 답하는 추론이 그 자리를 차지하는 흐름입니다.</p>
+  <p>딜로이트는 추론 워크로드가 2023년 약 1/3에서 2025년 절반을 거쳐 2026년 약 2/3 수준에 이른다고 전망합니다. 추론 최적화 칩 시장은 2026년 500억 달러를 넘어설 것으로 봅니다.</p>
+  <p>수치는 출처마다 조금씩 다릅니다. 레노버는 연산의 80%가 추론이라 보고, 다른 분석은 모델 수명 전체로 따지면 추론이 총 연산 비용의 80~90%를 차지한다고도 합니다. 숫자는 갈려도 방향은 하나입니다 — 추론 비중이 빠르게 커지고 있다는 것.</p>
+  <p>추론은 한 번 쓰고 끝나지 않습니다. 비용·전력·지연시간이 끊임없이 발생하는 '상시 운영비'에 가깝습니다. 그래서 구매 기준이 최대 처리량에서 토큰당 비용과 총소유비용(TCO)으로 옮겨갑니다. 바로 이 지점에서 맞춤형 ASIC이 비집고 들어옵니다.</p>
+
+  <hr>
+
+  <h2>GPU와 ASIC, 무엇이 다른가</h2>
+  <p>GPU는 범용 선수입니다. 학습·추론·그래픽까지 두루 해냅니다. ASIC은 특정 작업 하나에 맞춰 깎아낸 전용 칩입니다.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>구분</th>
+        <th>GPU (엔비디아 등)</th>
+        <th>ASIC (맞춤형 칩)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>성격</td>
+        <td>범용 — 학습·추론·그래픽 등</td>
+        <td>특정 작업 추론 등에 최적화</td>
+      </tr>
+      <tr>
+        <td>강점</td>
+        <td>CUDA 생태계, 높은 호환성, 검증된 대규모 배포</td>
+        <td>처리량·전력효율·지연시간 우위, 낮은 단가</td>
+      </tr>
+      <tr>
+        <td>약점</td>
+        <td>전력 소모 큼, 효율 낮음, 단가 높음</td>
+        <td>초기 개발비 큼, 전용 SW 스택 필요, 유연성 낮음</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>ASIC은 특정 모델군을 와트당 3~5배 더 좋은 성능으로 돌릴 수 있다고 합니다. 맞춤형 칩이 GPU 클러스터 대비 추론을 40~60% 더 저렴하게 처리한다는 분석도 있습니다. 특히 작업이 예측 가능하고 지연에 민감한 대량 정상상태 환경에서 강점이 두드러집니다.</p>
+  <p>다만 ASIC이 만능은 아닙니다. 초기 개발비가 크고 전용 컴파일러와 소프트웨어 스택이 필요합니다. 모델이 자주 바뀌는 환경이라면 오히려 GPU의 유연성이 낫습니다.</p>
+  <p>엔비디아의 해자도 여전히 단단합니다. 학습 시장에서는 CUDA의 유연성과 NVLink 확장성이 분명한 우위로 남아 있습니다.</p>
+
+  <img src="./images/body-1.png" alt="GPU와 ASIC의 성격·강점·약점 비교 표">
+
+  <hr>
+
+  <h2>'학습은 GPU, 추론은 ASIC'이라는 새 공식</h2>
+  <p>요즘 자리잡는 모범 사례는 멀티가속기 구도입니다. 학습은 성숙한 엔비디아 GPU에서, 추론은 비용이 약 65% 저렴한 TPU·ASIC에서 돌리는 방식입니다.</p>
+  <p>이 그림이 가능한 건 추상화 계층 덕분입니다. 쿠버네티스, vLLM, TensorRT 같은 도구가 이식성을 제공해 특정 하드웨어에 묶이지 않게 해 줍니다.</p>
+  <p>전망 수치도 같은 방향을 가리킵니다. 뉴스트리트리서치는 하이퍼스케일러 ASIC이 양산 규모에 오르면 엔비디아의 추론 특화 연산 점유율이 2028년 20~30%로 내려갈 수 있다고 봅니다. 현재 엔비디아가 AI 가속기 시장의 90% 이상을 쥐고 있는 점을 떠올리면 적지 않은 변화입니다. 다만 이는 애널리스트의 전망일 뿐, 실현 여부는 지켜봐야 합니다.</p>
+  <p>출하량 흐름도 눈에 띕니다. 2026년 맞춤형 ASIC 출하는 약 +44.6% YoY로, 머천트 GPU의 +16.1%를 크게 앞섭니다. ASIC 기반 서버는 2026년 가속기 서버 출하의 약 27.8%를 차지할 전망입니다. 2028년에는 ASIC 출하량이 역사상 처음으로 GPU를 넘어설 것이라는 예측도 나옵니다.</p>
+
+  <img src="./images/body-2.png" alt="2026~2028년 ASIC 출하 성장률과 엔비디아 추론 점유율 전망 핵심 수치">
+
+  <hr>
+
+  <h2>빅테크의 자체 칩, 어디까지 왔나</h2>
+  <p>자체 칩 경쟁의 현주소를 회사별로 짚어 보겠습니다.</p>
+  <p>먼저 짚어둘 점이 있습니다. 구글의 추론 특화 칩 Ironwood는 8세대가 아니라 7세대 TPU(TPU v7)입니다. 2025년 11월 공개되며 "추론 시대를 위해 처음부터 설계한 첫 TPU"로 소개됐습니다.</p>
+
+  <h3>구글 — Ironwood (7세대 TPU)</h3>
+  <p>칩당 FP8 4,614 TFLOPS, HBM 192GB(Trillium의 6배), 대역폭 7.37 TB/s를 갖췄습니다. 슈퍼팟은 최대 9,216개 칩을 묶어 총 42.5 FP8 ExaFLOPS에 이릅니다. 칩당 192GB이면 70B 모델을 단일 칩에 올리고, 405B급도 칩 몇 개로 서빙할 수 있습니다.</p>
+
+  <h3>아마존 — Trainium / Inferentia</h3>
+  <p>Trainium3는 3nm 공정으로, 이전 세대 대비 약 4배 성능과 40% 더 높은 전력효율을 냅니다. 칩당 FP8 2.52 PFLOPS, HBM3e 144GB를 담았습니다. 주목할 변화는 노선 정리입니다 — 추론·학습을 모두 Trainium으로 모으고 Inferentia는 신규 개발을 사실상 멈췄습니다.</p>
+
+  <h3>마이크로소프트 — Maia 200</h3>
+  <p>TSMC 3nm, HBM3e 216GB, TDP 약 750W의 추론용 칩입니다. 현재 GPT-5.2를 프로덕션에서 구동 중입니다. 다만 Azure 고객이 직접 빌려 쓸 수 있는 인스턴스로는 풀지 않은, 내부 효율용 칩입니다.</p>
+
+  <h3>메타 — MTIA</h3>
+  <p>MTIA 300·400·450·500의 4세대 라인업을 발표하고 2년에 걸쳐 순차 배포합니다. MTIA 300은 이미 랭킹·추천 워크로드용으로 양산 중입니다. 이 역시 외부 판매 없이 내부에서만 씁니다.</p>
+
+  <h3>오픈AI × 브로드컴 — 첫 칩 Jalapeño</h3>
+  <p>2025년 10월 두 회사는 10기가와트 규모의 오픈AI 설계 가속기를 공동 개발한다고 발표했습니다. 오픈AI가 LLM 워크로드 이해를 칩 설계에 녹이고, 브로드컴이 제조·배포와 네트워킹을 맡는 구조입니다. 그리고 2026년 6월 24일, 첫 칩 Jalapeño가 공개됐습니다. ChatGPT와 코딩 에이전트 Codex의 연산을 더 효율적으로 처리하도록 다듬은 칩으로, 초기 배포 목표는 2026년 말입니다.</p>
+
+  <img src="./images/body-3.png" alt="구글 Ironwood, 아마존 Trainium3, MS Maia 200, 메타 MTIA, 오픈AI Jalapeño의 공정·메모리·용도 빅테크 자체 칩 비교 표">
+
+  <hr>
+
+  <h2>전쟁의 무기 공급상 — 브로드컴과 마벨</h2>
+  <p>빅테크가 칩을 '설계'한다지만 실제 양산 실리콘으로 옮기는 손은 따로 있습니다. 브로드컴과 마벨입니다. 둘이 합쳐 맞춤형 AI ASIC 공동설계 시장의 약 95%를 통제한다고 합니다.</p>
+  <p>브로드컴의 AI 반도체 매출은 한 분기 108억 달러, 전년 대비 143% 늘었습니다. 다음 분기에는 200%가 넘는 성장과 함께 160억 달러를 내다봅니다. AI 칩 매출이 FY2025 200억 달러에서 FY2027 1,000억 달러로 커진다는 전망도 있습니다.</p>
+  <p>마벨도 FY2026 연매출 81.95억 달러로 42% 성장했습니다. AI ASIC 매출은 2026년 110억 달러에 이를 전망입니다.</p>
+  <p>칩 전쟁이 길어질수록, 총칼을 파는 쪽이 먼저 웃는 형국입니다.</p>
+
+  <hr>
+
+  <h2>한국 반도체에는 위기인가 기회인가</h2>
+  <p>맞춤형 칩이 늘면 한국 메모리 업계가 손해를 볼까요. 오히려 반대입니다.</p>
+  <p>GPU든 ASIC든 모두 대용량 HBM을 필요로 합니다. Ironwood 192GB, Maia 200 216GB, Trainium3 144GB — 하나같이 메모리를 잔뜩 싣습니다. 골드만삭스는 맞춤형 ASIC용 HBM 수요가 82% 급증해 전체 시장의 1/3을 차지할 것으로 봅니다.</p>
+  <p>증설도 빠릅니다. 삼성은 2026년 메모리 생산능력을 약 50% 늘리고, SK하이닉스는 인프라 투자를 기존 발표 대비 4배 이상 확대합니다.</p>
+  <p>국산 NPU의 도전도 살아 있습니다. 리벨리온은 2024년 6월 사피온코리아와 합병해 몸집을 키웠습니다. 삼성 파운드리와 SK하이닉스의 후원으로 독립 벤더가 얻기 힘든 메모리 물량을 확보하고 있습니다. 2025년 8월 내놓은 REBEL-Quad는 삼성 4nm에 HBM3E 144GB를 담아 300W에서 FP16 1 POPS를 냅니다. IPO를 앞두고 4억 달러를 조달했고, 한국 정부의 'K-Nvidia' 구상 중심에도 서 있습니다.</p>
+  <p>물론 갈 길은 멉니다. 빅테크의 자체 ASIC, 그리고 브로드컴·마벨 생태계와 정면으로 겨뤄야 합니다. 아직 모든 답이 나온 것은 아닙니다.</p>
+
+  <img src="./images/body-4.png" alt="ASIC 붐이 HBM 수요와 한국 메모리·NPU 업계에 미치는 영향">
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다.</p>
+  <p>이 전쟁의 진짜 승부처는 '누구의 칩이 가장 빠른가'가 아니라 '누가 더 싸게, 더 적은 전력으로 매일의 추론을 감당하는가'로 옮겨가고 있습니다.</p>
+  <p>엔비디아의 독점은 여전히 견고합니다만, 추론이라는 새 전장에서는 빈틈이 보이기 시작했습니다. 그리고 그 빈틈을 누가 메우든, 그 안에는 한국이 만든 메모리가 들어갑니다.</p>
+  <p>지금 칩 전쟁을 지켜볼 가치가 있느냐고 물으신다면, 망설임 없이 그렇다고 답하겠습니다.</p>
+
+  <hr>
+
+  <div class="tags">
+    <span>#AI추론칩</span><span>#ASIC</span><span>#엔비디아</span><span>#맞춤형AI칩</span><span>#구글TPU</span><span>#브로드컴</span><span>#HBM</span><span>#삼성전자</span><span>#SK하이닉스</span><span>#리벨리온</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

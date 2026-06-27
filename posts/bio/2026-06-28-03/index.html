@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[바이오] AI 신약개발 2026 — 알파폴드 이후, 임상이 증명할 차례</title>
+<style>
+  :root {
+    --text: #2b2b2b;
+    --text-soft: #555;
+    --accent: #1a7f5a;
+    --line: #e3e3e3;
+    --bg: #ffffff;
+    --note-bg: #f6f8f7;
+    --tag-bg: #eef4f1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 16px 80px;
+    background: #fafafa;
+    font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .post {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 48px 44px 56px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+  h1 {
+    font-size: 28px;
+    line-height: 1.45;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 28px;
+    color: #1c1c1c;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin: 48px 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    color: #1c1c1c;
+    line-height: 1.5;
+  }
+  p {
+    font-size: 16.5px;
+    margin: 0 0 18px;
+    color: var(--text);
+    word-break: keep-all;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 28px auto;
+    border-radius: 4px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-soft);
+    margin: 0 0 8px;
+  }
+  blockquote {
+    margin: 28px 0;
+    padding: 18px 22px;
+    background: var(--note-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    font-style: italic;
+  }
+  blockquote p { margin: 0; }
+  .tags {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tags span {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 16px;
+  }
+  @media (max-width: 600px) {
+    .post { padding: 32px 20px 40px; }
+    h1 { font-size: 23px; }
+    h2 { font-size: 19px; }
+    p { font-size: 16px; }
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/bio/index.html">바이오 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<article class="post">
+
+  <h1>[바이오] AI 신약개발 2026 — 알파폴드 이후, 임상이 증명할 차례</h1>
+
+  <p>이번 글에서는 2026년 현재 AI 신약개발이 어디까지 왔는지 정리해 보겠습니다. 알파폴드가 단백질 구조 예측의 난제를 푼 뒤, 무대는 실험실에서 임상시험으로 옮겨가고 있습니다. 성과와 한계를 균형 있게 짚겠습니다.</p>
+
+  <img src="./images/thumbnail.png" alt="AI 신약개발 2026 — 알파폴드 이후, 임상이 증명할 차례">
+
+  <p class="note">※ 이 글은 일반적인 정보를 정리한 것으로, 의학적 자문이나 진단·치료 권고가 아닙니다. 건강과 치료에 관한 판단은 반드시 전문 의료진과 상의하시길 권합니다.</p>
+
+  <hr>
+
+  <h2>3줄 요약 먼저</h2>
+  <p>알파폴드는 단백질 구조 예측을 사람의 실험 수준까지 끌어올렸고, 알파폴드3는 약물 설계로 가는 길을 열었습니다.</p>
+  <p>인실리코 메디슨의 렌토세르티브는 AI 신약개발의 첫 임상 검증을 보여줬고, 이소모픽 랩스는 2026년 말 임상 진입을 목표로 합니다.</p>
+  <p>다만 2025년 말 기준 FDA 승인을 받은 AI 발굴 신약은 아직 한 건도 없습니다.</p>
+
+  <hr>
+
+  <h2>왜 모두가 AI 신약개발을 말하는가</h2>
+  <p>전통적인 신약개발은 오래 걸리고 비쌉니다. 평균 10~15년, 비용은 1~2조원 이상이 듭니다. 더 넓게 잡으면 실험실에서 환자 처방까지 평균 15~17년, 비용 약 30억 달러(약 4조원)에 이른다는 추정도 있습니다.</p>
+  <p>확률도 가혹합니다. 후보물질 약 1만 개 중 단 1개, 곧 0.01%만이 신약으로 출시됩니다. 임상 단계 전체 실패율은 업계 전반에서 약 90%에 달합니다.</p>
+  <p>AI는 이 '10년·1조원 공식'을 깨겠다고 말합니다. 한 견해는 개발 기간을 최대 2년 단축하고 비용을 6,500억원까지 절감할 수 있다고 봅니다. 다른 견해는 1~2년, 7,000억원 수준의 절감을 이야기합니다.</p>
+  <p>예전엔 후보물질 탐색에만 4~5년이 걸렸습니다. 지금은 그 기간이 1년 수준으로 줄었다는 성과가 보고됩니다. 일부 선도 기업은 타깃 발굴부터 임상 1상 진입까지 30개월 만에 도달하기도 했습니다.</p>
+  <p>AI는 화합물 구조와 생체 데이터를 결합해 체내 흡수·대사·독성(ADMET)을 미리 예측합니다. 임상 실패의 위험을 앞단에서 낮추려는 시도입니다.</p>
+  <p>다만 한 가지는 분명히 해두는 편이 좋겠습니다. 이 단축·절감 수치는 주로 초기 탐색과 전임상 단계의 이야기입니다. 임상시험 기간, 규제 심사, 생산 스케일업은 여전히 생물학과 규제에 묶여 있어 AI로 쉽게 줄지 않습니다.</p>
+  <p>참고로 전 세계 AI 신약개발 시장은 2023년 약 9억 달러(약 1.3조원)에서 2028년 49.9억 달러(약 7.2조원)로 성장할 것으로 전망됩니다.</p>
+
+  <img src="./images/body-1.png" alt="전통적 신약개발과 AI 활용 신약개발의 기간·비용·성공률 비교">
+
+  <hr>
+
+  <h2>알파폴드2에서 알파폴드3로</h2>
+  <p>2020년 11월, 딥마인드의 알파폴드2가 단백질 구조 예측 대회 CASP14에서 우승했습니다. 까다로운 타깃에서도 GDT 점수 약 90%를 기록하며, 실험으로 구조를 규명하는 방법과 대등한 수준에 올라섰습니다. 50년 가까이 풀리지 않던 난제였습니다. 학계는 이를 "경이적", "변혁적"이라 평했습니다.</p>
+  <p>그 공로는 노벨상으로 이어졌습니다. 2024년, 데미스 허사비스와 존 점퍼가 단백질 구조 예측 공로로 노벨 화학상의 절반을 받았습니다. 나머지 절반은 계산 단백질 설계의 데이비드 베이커에게 돌아갔습니다.</p>
+  <p>2024년 5월 8일에는 알파폴드3가 발표됐습니다. 구글 딥마인드와 이소모픽 랩스가 함께 만든 모델입니다.</p>
+  <p>알파폴드2가 주로 단일 단백질 구조에 집중했다면, 알파폴드3는 확산(diffusion) 기반 구조로 원자 좌표를 직접 예측합니다. 이를 통해 단백질-DNA, 단백질-RNA, 단백질-리간드, 이온까지 생명의 거의 모든 분자 복합체를 모델링합니다. 단백질과 다른 분자 간 상호작용 예측에서는 기존 방법보다 정확도가 최소 50% 높아졌습니다.</p>
+  <p>여기서 의미가 갈립니다. 약물, 즉 리간드가 표적 단백질에 어떻게 결합하는지 예측하는 것은 신약 설계의 핵심입니다. 알파폴드3가 리간드 상호작용까지 다루면서, '구조 예측'이 '약물 설계'로 직접 이어지는 길이 열린 셈입니다.</p>
+
+  <img src="./images/body-2.png" alt="알파폴드2와 알파폴드3의 차이 — 단일 단백질 구조 예측 대 복합체 예측">
+
+  <hr>
+
+  <h2>처음으로 임상 문턱을 넘은 약 — 인실리코 메디슨</h2>
+  <p>구조 예측이 아무리 정교해도, 결국 증명은 사람의 몸에서 이뤄집니다. 그 첫 신호를 보여준 약이 렌토세르티브(Rentosertib, 구 ISM001-055)입니다.</p>
+  <p>인실리코 메디슨이 생성형 AI 플랫폼 Pharma.AI로 발굴·설계한 TNIK 저해제이고, 적응증은 특발성 폐섬유증(IPF)입니다.</p>
+  <p>2025년 6월 3일, 이 약의 임상 2a상 결과가 국제 학술지 Nature Medicine에 게재됐습니다. 업계 최초의 'AI 주도 신약개발 개념증명 임상 검증'으로 평가됩니다.</p>
+  <p>시험은 다기관·이중맹검·무작위·위약대조 방식으로 설계됐습니다. 환자를 12주간 30mg 1일 1회(n=18), 30mg 1일 2회(n=18), 60mg 1일 1회(n=18), 위약(n=17) 군으로 무작위 배정했습니다.</p>
+  <p>결과는 관리 가능한 안전성·내약성 프로파일을 보였습니다. 바이오마커 탐색 분석은 TNIK 저해의 생물학적 기전, 곧 항섬유화와 항염증 작용을 뒷받침했습니다. 연구진은 더 큰 규모의 임상으로 나아갈 근거가 충분하다고 결론지었습니다.</p>
+  <p>알파폴드3가 '구조'라면, 렌토세르티브는 AI가 발굴한 약이 실제 사람 몸에서 의미 있는 신호를 낸 첫 동료심사 임상 근거입니다. 다만 짚어둘 점이 있습니다. 이것은 2a상이며, 효능 입증의 결정 단계인 3상은 아닙니다.</p>
+
+  <img src="./images/body-3.png" alt="렌토세르티브 임상 2a상 시험 설계 — 투여군 구성과 12주 이중맹검 위약대조">
+
+  <hr>
+
+  <h2>임상을 향하는 또 하나 — 이소모픽 랩스</h2>
+  <p>이소모픽 랩스는 알파벳 산하의 'AI 우선' 신약 설계·개발 기업입니다. 알파폴드 기술을 신약 개발에 적용하기 위해 세워졌습니다.</p>
+  <p>2026년 5월 12일, 이 회사는 시리즈B로 21억 달러를 조달했다고 발표했습니다. Thrive Capital이 주도했고, Alphabet·GV 같은 기존 투자자와 MGX·Temasek·CapitalG 등 신규 투자자가 참여했습니다. 누적 조달액은 약 26억 달러입니다. 자금은 자체 신약 설계 엔진 IsoDDE의 개발·확장과 파이프라인의 임상 진입 가속에 쓰입니다.</p>
+  <p>빅파마와의 협업도 이어집니다. 2024년 1월, 일라이 릴리와는 선급금 4,500만 달러에 최대 17억 달러 규모의 마일스톤 계약을, 노바티스와는 선급금 3,750만 달러에 최대 12억 달러 규모의 마일스톤 계약을 맺었습니다. 두 딜의 잠재 가치는 약 30억 달러에 이릅니다. 이후 존슨앤드존슨과도 공동 신약 설계 프로그램을 진행 중입니다.</p>
+  <p>회사는 2026년 말까지 자사 내부 파이프라인의 후보물질을 임상 1상에 올리겠다고 밝혔습니다. 성공한다면, 자체 파이프라인에서 AI 설계 약물을 1상에 올린 첫 'AI 네이티브' 기업이 됩니다.</p>
+  <p>물론 이것은 아직 계획입니다. '2026년 말 임상 진입'은 발표 기준이며, 실제 진입과 결과는 확인되지 않았습니다.</p>
+
+  <hr>
+
+  <h2>그럼에도, 아직 증명되지 않았다</h2>
+  <p>좋은 소식만 늘어놓으면 균형이 무너집니다. 한계도 분명히 봐야 합니다.</p>
+  <p>가장 큰 사실은 이것입니다. 2025년 12월 기준, FDA 승인을 받은 AI 발굴 신약은 아직 한 건도 없습니다.</p>
+  <p>성공률도 기대만큼은 아닙니다. AI는 업계의 약 90% 임상 실패율을 입증 가능하게 개선하지 못했습니다. AI 발굴 화합물의 단계 진행률은 전통적 화합물과 비슷한 수준입니다.</p>
+  <p>여러 AI 설계 약물이 2상 이후 우선순위에서 밀리거나, 선반에 올라가거나, 효능 신호를 내지 못했습니다. 벤치마크 성능과 실제 임상 결과 사이의 간극도 꾸준한 숙제로 남아 있습니다.</p>
+  <p>앞서 말한 시간·비용 단축이 초기 단계에 국한된다는 점도 다시 떠올릴 만합니다. AI가 초기 발굴 기간을 30~40% 압축할 수는 있어도, 임상시험 기간·규제 심사·생산 스케일업은 생물학과 환자 모집, 규제 요건에 묶여 좀처럼 줄지 않습니다.</p>
+  <p>그래서 2026년이 분수령으로 꼽힙니다. 보도에 따르면 이미 임상 3상에 있는 AI 설계 후보가 있고, 2026년 중 여러 AI 설계 약물이 3상에 진입할 것으로 전해집니다. '약속이 진짜였는지'를 가르는 해라는 평가입니다.</p>
+  <p>다만 3상 진입 약물의 정확한 명칭과 개수는 매체마다 차이가 있어 단정하지 않겠습니다. 교차 확인되는 확실한 사실은 하나입니다 — 2025년 말 기준 FDA 승인 AI 신약은 0건이라는 것.</p>
+
+  <img src="./images/body-4.png" alt="AI 신약개발 단계별 현황 타임라인 — 발굴·전임상부터 FDA 승인까지">
+
+  <hr>
+
+  <h2>한국은 어디쯤 와 있나</h2>
+  <p>국내에서도 움직임이 활발합니다. 파로스아이바이오, 신테카바이오, 온코크로스, 스탠다임, 디어젠 등이 자체 AI 플랫폼을 기반으로 후보물질 발굴과 글로벌 기술이전을 추진하는 핵심 플레이어로 꼽힙니다.</p>
+  <p>특히 온코크로스는 'BIO USA 2026'에서 실제 암 환자 데이터(약 1만 명)와 자동화 랩 기반 멀티오믹스 분석을 결합한 차세대 플랫폼 'RAPTOR AI 2.0'을 공개하며 글로벌 제약사 파트너십에 본격적으로 나섰습니다.</p>
+  <p>생태계 차원의 시도도 있습니다. 한국제약바이오협회는 유럽 MELLODDY 프로젝트를 벤치마킹해, 기업 간 데이터를 직접 공유하지 않고도 AI 모델을 함께 학습하는 연합학습 기반 플랫폼 'K-MELLODDY'를 추진하고 있습니다.</p>
+  <p>제도도 따라 움직입니다. 디지털의료제품법(2025)이 본격 시행됐고, 인공지능 기본법(2026)과 고영향 AI 관리 체계, 식약처의 'AI 심사관' 로드맵이 준비되고 있습니다. 엔비디아 같은 글로벌 AI 인프라 기업도 신약개발 생태계로 영향력을 넓히는 중입니다.</p>
+
+  <img src="./images/body-5.png" alt="국내 AI 신약개발 생태계 — 주요 기업과 K-MELLODDY, 정부 제도">
+
+  <hr>
+
+  <p>정리하면 이렇습니다. 알파폴드는 구조를 풀었고, 렌토세르티브는 사람 몸에서 첫 신호를 냈고, 이소모픽 랩스는 다음 문을 두드리고 있습니다. 하지만 승인이라는 마지막 관문은 아직 누구도 통과하지 못했습니다.</p>
+
+  <blockquote><p>"AI는 신약을 더 빨리 설계하게 되었지만, 그 약이 효과 있다는 증명은 여전히 임상의 몫이다."</p></blockquote>
+
+  <p>2026년이 끝날 무렵 그 약속이 진짜였느냐고 물으신다면, 지금으로선 "지켜봐야 한다"고 답하는 것이 가장 정직한 대답이겠습니다.</p>
+
+  <div class="tags">
+    <span>#AI신약개발</span>
+    <span>#알파폴드</span>
+    <span>#이소모픽랩스</span>
+    <span>#인실리코메디슨</span>
+    <span>#렌토세르티브</span>
+    <span>#신약개발</span>
+    <span>#제약바이오</span>
+    <span>#임상시험</span>
+    <span>#바이오</span>
+    <span>#TechBio</span>
+  </div>
+
+</article>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
