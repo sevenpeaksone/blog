@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HBF 고대역폭 플래시, HBM 다음 AI 추론 메모리의 주인공</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#4f8cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#4f8cff;border-color:#4f8cff">IT</div>
+<h1>HBF 고대역폭 플래시, HBM 다음 AI 추론 메모리의 주인공</h1>
+<figure><img src="./images/thumbnail.png" alt="대표 이미지 - HBF 추론 메모리"><figcaption>대표 이미지 - HBF 추론 메모리</figcaption></figure>
+<blockquote><p><strong>3줄 요약</strong></p><p>- HBF는 3D NAND를 쌓아 HBM에 버금가는 대역폭(약 1.6TB/s)을 내면서 용량은 8~16배로 키운 차세대 메모리입니다.</p><p>- 가중치와 KV 캐시처럼 읽기 전용 데이터가 많은 AI 추론에 맞춰 설계됐고, HBM을 대체하지 않고 보완합니다.</p><p>- SanDisk와 SK하이닉스가 OCP를 통해 표준화에 착수했으며, 첫 샘플은 2026년 하반기를 목표로 합니다.</p></blockquote>
+<p>이번 글에서는 요즘 반도체 업계에서 조용히 떠오르는 HBF(High Bandwidth Flash, 고대역폭 플래시)를 정리해 보겠습니다. HBM 다음을 잇는 AI 추론 시대의 메모리로 거론되는 기술입니다. 무엇이고, 왜 필요하며, 어디까지 와 있는지 차근히 살펴보겠습니다.</p>
+<figure><img src="./images/body-1.png" alt="핵심 포인트 카드 4개 - HBF 핵심 4가지"><figcaption>핵심 포인트 카드 4개 - HBF 핵심 4가지</figcaption></figure>
+<hr>
+<h2>HBF란 무엇인가</h2>
+<p>HBF는 3D NAND 플래시를 여러 층으로 쌓아 만든 메모리입니다.</p>
+<p>기존 NAND는 보통 SSD라는 저장장치로 쓰였습니다. 지금의 HBF는 GPU 옆에 붙는 &#x27;메모리&#x27;로 동작하는 것을 목표로 합니다.</p>
+<p>구조는 HBM과 닮았습니다. 같은 풋프린트에 16장의 BiCS8 다이를 TSV로 적층하고, 로직 레이어가 메모리에 병렬로 접근합니다. 1세대 기준 다이당 용량은 256Gb, 16-다이 스택이면 512GB에 이릅니다.</p>
+<p>읽기 대역폭은 약 1.6TB/s입니다. SanDisk는 이를 최상위 PCIe 5.0 SSD 대비 50배 이상 빠른 수준이라고 설명합니다. GPU 한 장에 최대 4TB의 VRAM을 붙일 수 있다는 시연도 함께 공개됐습니다.</p>
+<p>위치는 분명합니다. HBF는 HBM과 기존 SSD 스토리지 사이의 새로운 계층입니다. 둘 중 무엇을 대체하려는 것이 아니라, AI 시스템의 병목을 잇는 가교에 가깝습니다.</p>
+<hr>
+<h2>HBM과 무엇이 다른가</h2>
+<p>HBM이 DRAM을 쌓아 대역폭을 끌어올린다면, HBF는 NAND를 쌓아 용량을 끌어올립니다.</p>
+<figure><img src="./images/body-2.png" alt="비교 표 - HBM과 HBF 비교"><figcaption>비교 표 - HBM과 HBF 비교</figcaption></figure>
+<p>핵심은 트레이드오프입니다. 같은 대역폭을 내면서 용량은 약 10배 크지만, 그 대가로 지연시간을 내줍니다. HBM4의 읽기 지연이 10~100ns 수준이라면, HBF는 수천 ns에 이릅니다.</p>
+<p>약점은 더 있습니다. 긴 접근 지연, 낮은 쓰기 내구성, 그리고 워크로드에 따라 달라지는 전력입니다. 관련 자료들은 이 세 가지를 분명한 단점으로 꼽습니다.</p>
+<p>그래서 HBF는 &#x27;HBM 대체&#x27;가 아니라 &#x27;HBM 보완&#x27;으로 자리를 잡습니다. 용량 대 비용을 공략하되, 빠른 응답이 필요한 자리는 HBM에 맡기는 방식입니다.</p>
+<hr>
+<h2>왜 하필 AI 추론인가</h2>
+<p>LLM이 토큰을 만들어내는 단계는 연산보다 메모리 대역폭에 묶여 있습니다. GPU가 가중치와 KV 캐시를 메모리에서 연산 유닛으로 옮기는 속도가 따라가지 못하면 병목이 생깁니다. 이른바 메모리 월(Memory Wall) 문제입니다.</p>
+<p>여기서 한 가지 성질이 중요합니다. 모델 가중치는 학습이 끝나면 고정된 정적 데이터입니다. 공유된 사전계산 KV 캐시도 본질적으로 읽기 전용입니다. 이렇게 &#x27;거대한 읽기 전용&#x27; 데이터야말로 HBF가 노리는 자리입니다.</p>
+<p>쓰기가 느린 NAND의 약점이 추론에서는 덜 드러난다는 뜻이기도 합니다. 그래서 HBF는 학습이 아니라 읽기 집약적 추론을 겨냥합니다. SanDisk의 기술 책임자도 HBF가 지연에 민감한 작업이 아닌 읽기 집약 추론을 향한다고 못 박았습니다.</p>
+<p>운용 방식도 영리합니다. 읽기 전용 데이터는 HBF에, 나머지는 HBM에 두는 하이브리드입니다. SK하이닉스는 2026년 2월 HBM과 HBF를 함께 쓰는 구상을 제시했습니다. 같은 수의 GPU로 더 많은 요청을 처리할 수 있다는 것이 핵심입니다.</p>
+<hr>
+<h2>표준화와 경쟁 구도</h2>
+<p>SanDisk와 SK하이닉스는 2025년 8월 협력을 발표한 뒤, 2026년 2월 공동 런치 이벤트를 열고 글로벌 표준화에 착수했습니다.</p>
+<p>흥미로운 점은 표준화 경로입니다. HBM 계열은 대개 JEDEC에서 표준이 나오지만, HBF는 OCP(Open Compute Project) 안의 전용 워크스트림을 통해 정의됩니다. 통상적인 길과 다른 셈입니다.</p>
+<p>경쟁자도 등장했습니다. Kioxia는 2025년 8월 5TB·64GB/s 모듈 프로토타입을 40W 미만 전력으로 선보였습니다. 다만 익숙한 SSD 폼팩터를 택했다는 점에서 접근이 다릅니다. 단위와 방식이 달라 SanDisk의 스택과 직접 비교하긴 어렵습니다.</p>
+<p>삼성은 후발이지만 결코 가볍지 않습니다. 최대 NAND 점유율, 완전한 HBM 라인업, 이를 융합할 첨단 패키징을 모두 사내에 가진 유일한 회사로 평가됩니다. 삼성과 SK하이닉스 모두 2027년 상용 제품을 목표로 둡니다.</p>
+<hr>
+<h2>기대와 남은 과제</h2>
+<figure><img src="./images/body-3.png" alt="강조 박스 - HBF의 기대와 남은 과제"><figcaption>강조 박스 - HBF의 기대와 남은 과제</figcaption></figure>
+<p>장기 전망은 큽니다. 한 전문가는 HBF가 2027~28년경 NVIDIA GPU에 탑재되고, 2038년경에는 HBF 시장이 HBM 시장을 추월할 수 있다고 내다봤습니다.</p>
+<p>다만 과제도 또렷합니다. 가장 큰 난제는 NAND 고유의 쓰기 내구성입니다. SanDisk는 아직 구체적 해법을 공개하지 않았습니다. 높은 지연 탓에 적용 영역이 읽기 집약 추론으로 제한된다는 점, 표준이 2026년 2월에야 시작돼 아직 진행 중이라는 점도 남아 있습니다.</p>
+<p>기술이 완성된 것은 아닙니다. 샘플과 상용, 대량 채택의 시점은 자료마다 조금씩 다릅니다.</p>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>HBF는 모든 메모리를 대신하려는 기술이 아닙니다. 그것이 오히려 강점입니다.</p>
+<p>— &quot;더 빠른 메모리가 아니라, 더 큰 읽기 전용 메모리.&quot; 이 한 줄이 HBF의 정체입니다.</p>
+<p>HBM 다음을 묻는다면, 지금으로선 이 조용한 플래시를 지켜보시길 권합니다.</p>
+<hr>
+<div class="tags"><span>#HBF</span> <span>#고대역폭플래시</span> <span>#AI반도체</span> <span>#HBM</span> <span>#AI추론</span> <span>#SK하이닉스</span> <span>#샌디스크</span> <span>#차세대메모리</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>

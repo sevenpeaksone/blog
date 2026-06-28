@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADC 항체약물접합체 원리와 2026 K바이오 항암 신약 동향</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#ff7676;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/bio/index.html">바이오 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#ff7676;border-color:#ff7676">바이오</div>
+<h1>ADC 항체약물접합체 원리와 2026 K바이오 항암 신약 동향</h1>
+<figure><img src="./images/thumbnail.png" alt="대표 이미지 - ADC 항체약물접합체 2026"><figcaption>대표 이미지 - ADC 항체약물접합체 2026</figcaption></figure>
+<blockquote><p><strong>3줄 요약</strong></p><p>- ADC는 항체·링커·페이로드 세 부품으로 암세포만 정밀 타격하는 &quot;유도 미사일&quot;형 항암제입니다.</p><p>- 엔허투·트로델비·다트로웨이 등 승인 약물이 늘며 2026년 시장은 고성장 국면에 들어섰습니다.</p><p>- 리가켐바이오가 누적 약 10조 원 기술수출을 이끌며 K바이오가 ADC 2.0 경쟁에 합류했습니다.</p></blockquote>
+<p>오늘은 ADC, 즉 항체-약물접합체에 대해 정리해 보려 합니다.</p>
+<p>원리부터 대표 약물, 그리고 2026년 K바이오의 움직임까지 차근히 짚겠습니다.</p>
+<figure><img src="./images/body-1.png" alt="핵심 포인트 카드 4개 - ADC 핵심 4가지"><figcaption>핵심 포인트 카드 4개 - ADC 핵심 4가지</figcaption></figure>
+<hr>
+<h2>ADC는 무엇인가</h2>
+<p>ADC는 세 가지 부품으로 이루어진 항암제입니다.</p>
+<p>암세포를 찾아가는 단일클론항체, 암세포를 죽이는 세포독성 페이로드, 그리고 둘을 잇는 화학 링커입니다.</p>
+<p>이 셋을 하나의 분자로 결합합니다.</p>
+<p>흔히 &quot;유도 미사일&quot;이나 &quot;스마트 폭탄&quot;에 비유됩니다.</p>
+<p>항체가 표적을 정밀하게 찾아가고, 실려 있던 강력한 약물이 그 안에서 방출되어 암세포를 무너뜨립니다.</p>
+<p>작동은 네 단계로 이어집니다.</p>
+<p>항체가 암세포 표면 항원에 결합하고, ADC가 세포 안으로 흡수되며, 링커가 약물을 방출하고, 페이로드가 미세소관이나 DNA를 공격해 세포를 죽입니다.</p>
+<p>링커는 혈류에서는 안정적이다가 세포 안의 산성 환경에서 절단되도록 설계됩니다.</p>
+<p>항체 하나에 페이로드가 몇 개 붙는지를 DAR이라 부릅니다.</p>
+<p>엔허투의 DAR은 8:1, 트로델비는 항체당 평균 7~8개의 SN-38이 붙어 있습니다.</p>
+<hr>
+<h2>기존 항암제와 무엇이 다른가</h2>
+<p>예전의 전통 화학요법은 빠르게 분열하는 세포를 암세포와 정상세포 가리지 않고 공격했습니다.</p>
+<p>탈모, 면역억제, 위장관 손상 같은 부작용이 따라왔습니다.</p>
+<p>지금의 ADC는 표적 항원을 가진 세포에만 약물을 제한적으로 전달합니다.</p>
+<p>건강한 조직 손상을 줄이고 치료지수를 높이는 셈입니다.</p>
+<figure><img src="./images/body-2.png" alt="비교 표 - 기존 항암제와 ADC 비교"><figcaption>비교 표 - 기존 항암제와 ADC 비교</figcaption></figure>
+<p>장점은 분명합니다.</p>
+<p>정밀 전달 덕분에 ADC는 표준 화학요법보다 100~1,000배 강력한 페이로드까지 쓸 수 있습니다.</p>
+<p>단독으로는 독성이 너무 강해 못 쓰던 약물도 ADC에 실으면 활용 가능합니다.</p>
+<p>방관자 효과도 있습니다.</p>
+<p>방출된 페이로드가 주변으로 퍼져 표적 항원이 없는 인접 암세포까지 죽이는 현상입니다.</p>
+<p>다만 이 효과는 양면적입니다. 효능을 넓히지만 정상세포 손상의 원인이 되기도 합니다.</p>
+<hr>
+<h2>대표 약물과 글로벌 동향</h2>
+<p>2025년 기준 FDA 승인 ADC는 15종이 넘습니다.</p>
+<p>대표 약물 몇 가지만 짚겠습니다.</p>
+<p>캐싸일라는 HER2를 표적하는 1세대 대표 약물입니다.</p>
+<p>엔허투(트라스투주맙 데룩스테칸)는 HER2 저발현·초저발현 유방암까지 적응증을 넓히며 시장을 주도합니다. 2024년 매출은 약 37.5억 달러였습니다.</p>
+<p>트로델비(사시투주맙 고비테칸)는 TROP-2를 겨냥하는 first-in-class 약물로, 2026년 전이성 삼중음성 유방암 1차 치료로 승인됐습니다.</p>
+<p>여기서 한 가지 짚고 넘어가겠습니다.</p>
+<p>다트로웨이(다토포타맙 데룩스테칸)는 엔허투와 이름이 비슷하지만 별개의 약물입니다.</p>
+<p>다트로웨이는 TROP-2를 표적하며, 2026년 5월 면역항암제 비적격 전이성 삼중음성 유방암으로 추가 승인됐습니다.</p>
+<p>시장 규모 전망은 조사기관마다 편차가 큽니다.</p>
+<p>2030년 160억 달러부터 647억 달러까지 폭넓게 제시됩니다.</p>
+<p>다만 모든 기관이 고성장 산업이라는 데에는 입을 모읍니다.</p>
+<hr>
+<h2>2026 K바이오의 움직임</h2>
+<p>업계는 ADC가 K바이오의 &quot;퀀텀 점프&quot;를 이끌었다고 평가합니다.</p>
+<p>중심에 리가켐바이오가 있습니다.</p>
+<p>리가켐바이오는 자체 링커-페이로드 플랫폼 ConjuAll™을 앞세워 누적 약 10조 원 규모의 기술수출을 체결했습니다.</p>
+<p>2023년 12월 얀센에 TROP2-ADC인 LCB84를 총 2조 2,400억 원 규모로 기술이전했습니다.</p>
+<p>국내 단일 파이프라인 기술이전 사상 최대 규모였습니다.</p>
+<p>2024년 10월에는 일본 오노약품과 두 건의 계약을 맺었고, 2025년 8월까지 네 번째 단기 마일스톤을 받았습니다.</p>
+<p>다른 기업도 분주합니다.</p>
+<p>에임드바이오는 베링거인겔하임에 1.4조 원 규모로 기술이전했고, 미국 바이오헤이븐에 FGFR3 표적 ADC를 라이선스아웃했습니다.</p>
+<p>인투셀의 B7-H3 ADC는 2026년 3월 첫 환자 투약을 마쳤습니다.</p>
+<p>셀트리온, 동아에스티가 인수한 앱티스, 피노바이오, 삼성 계열까지 라인업을 넓히고 있습니다.</p>
+<p>업계는 2026년을 정교한 링커와 이중항체 경쟁이 본격화하는 &quot;ADC 2.0 시대&quot;로 봅니다.</p>
+<hr>
+<h2>남은 과제</h2>
+<p>빛이 밝은 만큼 그늘도 있습니다.</p>
+<p>주요 부작용으로 전신 독성, 약물 내성, 종양 이질성, 복잡한 제조 공정이 꼽힙니다.</p>
+<p>특히 간질성 폐질환이 고유한 우려로 지목됩니다.</p>
+<p>엔허투는 이 폐질환에 대한 블랙박스 경고를 보유하고 있습니다.</p>
+<p>표적과 무관한 정상세포가 페이로드를 흡수하면서 생기는 표적 외 독성도 과제입니다.</p>
+<p>내성을 넘기 위한 시도도 이어집니다.</p>
+<p>같은 항원의 서로 다른 두 부위에 동시 결합하는 이중에피토프 ADC가 한 방향으로 연구됩니다.</p>
+<p>종양 선택적으로만 절단되는 안정화 링커, 폐 손상 위험을 줄이는 항체 설계도 함께 다듬어지고 있습니다.</p>
+<p>아직 완벽하지는 않습니다.</p>
+<figure><img src="./images/body-3.png" alt="강조 박스 - ADC의 희망과 남은 과제"><figcaption>강조 박스 - ADC의 희망과 남은 과제</figcaption></figure>
+<hr>
+<p>정리하면 이렇습니다.</p>
+<p>ADC는 정밀함과 강력함을 한 분자에 담은 항암제이고, 2026년 K바이오는 기술수출을 넘어 실제 임상 데이터로 자신을 증명하는 단계에 들어섰습니다.</p>
+<p>&quot;정밀하게 찾아가, 강하게 친다.&quot; ADC가 품은 약속은 이 한 줄로 모입니다.</p>
+<p>남은 과제가 풀려갈 2026년의 성적표를, 차분히 지켜봐도 좋겠습니다.</p>
+<hr>
+<p>이 글은 일반적 정보 제공이며 의학적 진단·치료를 대체하지 않습니다.</p>
+<div class="tags"><span>#ADC</span> <span>#항체약물접합체</span> <span>#항암신약</span> <span>#K바이오</span> <span>#리가켐바이오</span> <span>#엔허투</span> <span>#표적항암치료</span> <span>#2026바이오</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body></html>
