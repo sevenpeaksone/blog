@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[뉴스 해설] 6·3 지방선거 투표용지 부족 사태, 무슨 일이 있었나</title>
+<style>
+  :root {
+    --ink: #1f2430;
+    --sub: #4b5563;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #4f46e5;
+    --accent-soft: #eef2ff;
+    --bg: #f5f6f8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: var(--ink);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 0 0 64px;
+    min-height: 100vh;
+    box-shadow: 0 0 40px rgba(0,0,0,0.04);
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 34px 40px 0;
+    flex-wrap: wrap;
+  }
+  .cat {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .date { font-size: 14px; color: var(--muted); }
+  h1 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.42;
+    letter-spacing: -0.4px;
+    margin: 22px 40px 8px;
+    word-break: keep-all;
+  }
+  .lead-rule {
+    margin: 22px 40px 0;
+    height: 3px; width: 56px;
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .content { padding: 8px 40px 0; }
+  .content p {
+    font-size: 16.5px;
+    color: var(--sub);
+    margin: 22px 0;
+    word-break: keep-all;
+  }
+  .content h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 50px 0 6px;
+    padding-left: 14px;
+    border-left: 5px solid var(--accent);
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .content ul {
+    margin: 22px 0;
+    padding: 22px 24px 22px 40px;
+    background: #f8f9fb;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .content li {
+    font-size: 16px;
+    color: var(--sub);
+    margin: 10px 0;
+    word-break: keep-all;
+  }
+  .content li::marker { color: var(--accent); }
+  img { max-width: 100%; height: auto; display: block; border-radius: 14px; }
+  .thumb { margin: 0; border-radius: 0; }
+  .thumb img { border-radius: 0; width: 100%; }
+  figure { margin: 34px 0; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 44px 0;
+  }
+  blockquote {
+    margin: 30px 0;
+    padding: 18px 22px;
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    color: #3730a3;
+    font-size: 15.5px;
+    font-weight: 500;
+    word-break: keep-all;
+  }
+  .tags {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tags span {
+    font-size: 13.5px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 6px 12px;
+    border-radius: 16px;
+  }
+  @media (max-width: 720px) {
+    .meta, h1, .lead-rule, .content { padding-left: 22px; padding-right: 22px; }
+    h1, .lead-rule { margin-left: 22px; margin-right: 22px; }
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/news/politics/index.html">정치/사회 뉴스</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+  <div class="wrap">
+
+    <figure class="thumb">
+      <img src="./images/thumbnail.png" alt="6·3 지방선거 투표용지 부족 사태 — 뉴스 해설">
+    </figure>
+
+    <div class="meta">
+      <span class="cat">정치/사회 뉴스</span>
+      <span class="date">2026년 6월 30일</span>
+    </div>
+
+    <h1>[뉴스 해설] 6·3 지방선거 투표용지 부족 사태, 무슨 일이 있었나</h1>
+    <div class="lead-rule"></div>
+
+    <div class="content">
+      <p>이번 글에서는 6·3 지방선거에서 불거진 투표용지 부족 사태를 정리해 보겠습니다. 선거 결과 못지않게 '투표 과정' 자체가 논란이 된 사안입니다. 무슨 일이 있었는지, 왜 중요한지, 앞으로 무엇이 과제로 남았는지 차례로 짚겠습니다.</p>
+
+      <p>먼저 핵심부터 세 줄로 요약합니다.</p>
+
+      <ul>
+        <li>첫째, 2026년 6월 3일 제9회 전국동시지방선거가 치러졌고 투표율은 약 61%로 역대 두 번째로 높았습니다.</li>
+        <li>둘째, 본투표 당일 일부 투표소에서 용지가 모자라 투표가 잠시 멈추는 일이 있었습니다.</li>
+        <li>셋째, 그 배경에는 인쇄량을 줄인 선관위 지침 변경이 있었고, 사후 기록과 책임 문제로 논란이 이어졌습니다.</li>
+      </ul>
+
+      <figure><img src="./images/body-1.png" alt="6·3 지방선거 핵심 3줄 요약 — 투표율 61%, 용지 부족, 인쇄 지침 변경"></figure>
+
+      <hr>
+
+      <h2>무슨 일이 있었나 — 선거 결과부터</h2>
+      <p>제9회 전국동시지방선거는 2026년 6월 3일에 실시됐습니다. 사전투표율은 23.5%로 지방선거 사상 가장 높았습니다. 최종 투표율은 약 61%, 제1회 지방선거에 이어 두 번째로 높은 기록입니다.</p>
+      <p>광역자치단체장은 16곳을 뽑았습니다. 이 가운데 더불어민주당이 12곳, 국민의힘이 4곳을 차지했습니다. 다만 민주당은 서울시장 선거에서는 패했습니다.</p>
+      <p>그래서 여러 매체가 이 결과를 '절반의 승리'라고 불렀습니다. 한쪽은 광역 단위에서 크게 앞섰지만, 상징적인 서울을 내준 셈입니다. 승패가 한 방향으로만 흐르지 않았다는 뜻입니다.</p>
+
+      <figure><img src="./images/body-2.png" alt="광역단체장 16곳 결과 — 더불어민주당 12곳, 국민의힘 4곳"></figure>
+
+      <p>작은 변화도 있었습니다. 녹색당이 2012년 창당 이후 처음으로 기초의원 당선인을 냈습니다. 큰 흐름 옆에서 조용히 일어난 변화입니다.</p>
+
+      <hr>
+
+      <h2>진짜 논란은 따로 있었다 — 투표용지 부족</h2>
+      <p>이번 선거에서 더 크게 번진 이야기는 결과가 아니었습니다. 본투표 당일, 일부 투표소에서 투표용지가 모자랐습니다. 수십 곳에서 부족 현상이 나타났고, 그중 일부 투표소는 투표가 잠시 멈췄다가 다시 시작됐습니다.</p>
+
+      <figure><img src="./images/body-3.png" alt="본투표 당일 일부 투표소 용지 부족으로 투표가 잠시 멈췄다 재개된 상황"></figure>
+
+      <p>지역도 여러 곳이었습니다. 서울 송파·강남·광진·서초·동작구, 인천 연수구, 경기 화성 동탄 등에서 보고됐습니다. 사람이 몰린 곳에서 준비된 용지가 먼저 동이 난 형태입니다.</p>
+      <p>집계 수치는 소스에 따라 조금씩 다릅니다. 한 보도는 실제 부족이 약 50곳, 투표가 멈췄다 재개된 곳이 22곳이라고 전했습니다. 다른 집계는 긴급 추가 공급이 필요했던 곳을 더 넓게 잡기도 했습니다. 기준이 '부족 신고'냐 '실제 추가 인쇄·사용'이냐에 따라 숫자가 갈립니다.</p>
+
+      <hr>
+
+      <h2>왜 모자랐나 — 인쇄량을 줄인 지침</h2>
+      <p>원인의 핵심으로 지목된 것은 본투표용지 인쇄 비율입니다. 예전에는 선거인 수의 60~70%만큼 인쇄했습니다. 이번에는 50%까지 낮춰 인쇄할 수 있도록 중앙선관위 지침이 바뀌었습니다.</p>
+      <p>선관위는 두 가지 이유를 들었습니다. 사전투표율이 높아지면 본투표 수요가 줄어든다는 점이 하나입니다. 남는 용지가 '부정선거' 음모론에 악용되는 것을 막으려 했다는 점이 다른 하나입니다.</p>
+
+      <figure><img src="./images/body-4.png" alt="본투표용지 인쇄 비율 변화 — 기존 60~70%에서 50%로 축소"></figure>
+
+      <p>문제는 예측이 빗나갔을 때입니다. 일부 지역 선관위가 명확한 근거 없이 최소 수량만 인쇄했습니다. 용지 배분도 매끄럽지 않았고, 현장에서 부족을 알리고 대응하는 절차도 충분히 준비돼 있지 않았습니다. 여러 요인이 겹쳐 한 번에 드러난 셈입니다.</p>
+      <p>여기에 또 하나의 논란이 더해졌습니다. 선관위가 이 사태를 공식적인 '사건·사고'로 분류해 기록하지 않았다는 보도가 나왔습니다. 사후 검증과 재발 방지 자료가 제대로 남지 않을 수 있다는 우려가 따라붙었습니다.</p>
+
+      <hr>
+
+      <h2>두 갈래의 시선 — 효율이냐, 투표권이냐</h2>
+      <p>이 사안은 입장이 갈립니다. 어느 쪽도 가볍게 넘길 수 없는 논리를 갖고 있습니다.</p>
+      <p>지침 변경을 옹호하는 쪽은 효율과 신뢰를 말합니다. 사전투표가 늘면 본투표 수요는 줄고, 남는 용지를 줄이면 음모론의 빌미도 함께 줄어든다는 것입니다. 자원 낭비를 막자는 취지도 담겨 있었습니다.</p>
+      <p>비판하는 쪽은 투표권을 앞세웁니다. 효율보다 먼저인 것은 '모두가 빠짐없이 투표할 수 있는가'라는 원칙입니다. 단 한 명이라도 용지가 없어 투표를 못 한다면, 그 자체로 선거의 근간이 흔들린다는 지적입니다.</p>
+
+      <figure><img src="./images/body-5.png" alt="효율 vs 투표권 — 지침 변경 옹호와 비판, 두 입장의 핵심 논리 비교"></figure>
+
+      <p>개표 국면에서도 진통이 있었습니다. 일부 박빙 지역에서는 개표와 투표함 이송을 둘러싼 항의와 충돌이 있었다는 보도가 나왔습니다. 이 부분은 주장이 엇갈리고 사실관계가 계속 정리되는 단계입니다. 그래서 여기서는 어느 한쪽이 옳다고 단정하지 않겠습니다.</p>
+
+      <hr>
+
+      <h2>무엇이 남았나 — 앞으로의 과제</h2>
+      <p>이 사태가 던지는 질문은 분명합니다. 승패의 문제가 아니라 절차의 문제입니다. "누가 이겼느냐"가 아니라 "모두가 제대로 투표할 수 있었느냐"는 물음입니다.</p>
+      <p>사전투표율은 구조적으로 계속 높아지는 흐름입니다. 그렇다면 본투표용지를 얼마나, 어떻게 인쇄하고 배분할지 기준을 다시 짜야 합니다. 수요 예측이 빗나가도 유권자가 피해를 보지 않도록 안전장치를 두는 일이 핵심입니다.</p>
+      <p>기록의 문제도 남습니다. 사태를 투명하게 남기고 검증해야 같은 일이 반복되지 않습니다. 이번 논란이 선거 제도 개선 논의의 계기가 될 수 있을지가 관건입니다.</p>
+
+      <hr>
+
+      <p>끝으로 한 가지만 짚겠습니다.</p>
+      <p>선거의 신뢰는 결과가 아니라 과정에서 쌓입니다. "이긴 사람보다, 빠짐없이 투표한 유권자"가 더 중요하다는 원칙이 흔들리지 않아야 합니다. 이번 사태를 효율의 실수로만 덮을지, 제도를 가다듬는 출발점으로 삼을지는 앞으로의 선택에 달렸습니다.</p>
+
+      <blockquote>이 글은 여러 관점이 존재하는 사안이며 균형 잡힌 이해를 돕기 위한 해설입니다.</blockquote>
+
+      <div class="tags">
+        <span>#6·3지방선거</span>
+        <span>#제9회지방선거</span>
+        <span>#투표용지부족</span>
+        <span>#선관위</span>
+        <span>#지방선거결과</span>
+        <span>#선거제도</span>
+        <span>#뉴스해설</span>
+        <span>#정치사회</span>
+      </div>
+    </div>
+
+  </div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

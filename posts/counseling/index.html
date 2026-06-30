@@ -8,7 +8,8 @@
 <style>
   :root { --bg:#0f1117; --card:#1a1d27; --line:#2a2e3a; --text:#e8eaf0; --muted:#9aa0ad;
     --it:#4f8cff; --philosophy:#b07cff; --economy:#2bb673; --bio:#ff7c7c; --counseling:#f0a532;
-    --science:#20c4cf; --world:#c2883f; --religion:#6f86d6; }
+    --science:#20c4cf; --world:#c2883f; --religion:#6f86d6;
+    --politics:#e0667a; --industry:#3fb6a8; }
   * { box-sizing:border-box; }
   body { margin:0; font-family:'Pretendard','Pretendard Variable','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
     background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
@@ -33,6 +34,8 @@
   .cat-head[data-cat=science]{background:var(--science);}
   .cat-head[data-cat=world]{background:var(--world);}
   .cat-head[data-cat=religion]{background:var(--religion);}
+  .cat-head[data-cat=politics]{background:var(--politics);}
+  .cat-head[data-cat=industry]{background:var(--industry);}
   .more-link { font-size:13px; color:var(--muted); text-decoration:none; white-space:nowrap; }
   .more-link:hover { color:var(--text); }
   .back { display:inline-block; margin-bottom:22px; color:var(--muted); text-decoration:none; font-size:14px; }
@@ -55,6 +58,8 @@
   .thumb.ph[data-cat=science]{background:linear-gradient(135deg,#10302f,var(--science));}
   .thumb.ph[data-cat=world]{background:linear-gradient(135deg,#2e2410,var(--world));}
   .thumb.ph[data-cat=religion]{background:linear-gradient(135deg,#191f3a,var(--religion));}
+  .thumb.ph[data-cat=politics]{background:linear-gradient(135deg,#3a1820,var(--politics));}
+  .thumb.ph[data-cat=industry]{background:linear-gradient(135deg,#10302c,var(--industry));}
   .card-body { padding:13px 15px 15px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .badge { align-self:flex-start; font-size:11px; font-weight:700; color:#fff; padding:3px 10px; border-radius:20px; }
   .badge[data-cat=it]{background:var(--it);}
@@ -65,6 +70,8 @@
   .badge[data-cat=science]{background:var(--science);}
   .badge[data-cat=world]{background:var(--world);}
   .badge[data-cat=religion]{background:var(--religion);}
+  .badge[data-cat=politics]{background:var(--politics);}
+  .badge[data-cat=industry]{background:var(--industry);}
   .card-title { margin:0; font-size:15px; font-weight:600; line-height:1.45;
     display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
   .card-date { margin-top:auto; font-size:12px; color:var(--muted); }
@@ -146,6 +153,7 @@
       <a href="/blog/posts/counseling/index.html" data-cat="counseling">상담</a>
       <a href="/blog/posts/world/index.html" data-cat="world">세계</a>
       <a href="/blog/posts/religion/index.html" data-cat="religion">종교</a>
+      <a href="/blog/news/index.html">뉴스</a>
       <a href="/blog/favorites.html">★ 즐겨찾기</a>
     </div>
     <input id="site-search" type="search" placeholder="제목·카테고리 검색…" autocomplete="off" aria-label="검색">
@@ -504,7 +512,7 @@
   function card(it){
     var cover = it.thumb ? '<img class="thumb" src="'+BASE+it.thumb+'" alt="" loading="lazy">'
       : '<div class="thumb ph" data-cat="'+it.cslug+'"><span>'+esc(it.cat)+'</span></div>';
-    var star = window.__starMarkup ? window.__starMarkup(it.cslug+'/'+it.slot) : '';
+    var star = window.__starMarkup ? window.__starMarkup(it.fid||(it.cslug+'/'+it.slot)) : '';
     return '<a class="card" href="'+BASE+it.url+'">'+star+cover+
       '<div class="card-body"><span class="badge" data-cat="'+it.cslug+'">'+esc(it.cat)+'</span>'+
       '<h3 class="card-title">'+esc(it.title)+'</h3><span class="card-date">'+esc(it.label)+'</span></div></a>';

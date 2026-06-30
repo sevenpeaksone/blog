@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원달러 환율 1,550원 돌파, 수출은 사상 최대인데 왜 원화는 약할까</title>
+<style>
+  :root { --ink:#1f2329; --sub:#5a6270; --line:#e6e8ec; --accent:#d4365a; --bg:#ffffff; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:#f4f5f7; color:var(--ink);
+    font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:700px; margin:0 auto; background:var(--bg); padding:54px 40px 70px;
+    min-height:100vh; }
+  .meta { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+  .cat { background:var(--accent); color:#fff; font-size:13px; font-weight:700;
+    padding:6px 14px; border-radius:20px; letter-spacing:0.5px; }
+  .date { color:var(--sub); font-size:14px; }
+  h1 { font-size:30px; font-weight:800; line-height:1.4; letter-spacing:-0.5px;
+    margin:0 0 28px; }
+  .lead-img { margin:0 0 34px; }
+  .lead-img img { width:100%; height:auto; border-radius:14px; display:block; }
+  p { font-size:16.5px; line-height:1.85; margin:0 0 20px; color:#272b33; }
+  h2 { font-size:22px; font-weight:800; line-height:1.45; margin:46px 0 20px;
+    padding-left:14px; border-left:5px solid var(--accent); letter-spacing:-0.3px; }
+  .summary { background:#fbf3f5; border:1px solid #f1d9e0; border-radius:12px;
+    padding:24px 26px; margin:0 0 34px; }
+  .summary .stitle { font-weight:800; font-size:16px; color:var(--accent); margin-bottom:12px; }
+  .summary ul { margin:0; padding-left:20px; }
+  .summary li { font-size:15.5px; line-height:1.8; margin-bottom:8px; color:#3a3f47; }
+  figure { margin:34px 0; text-align:center; }
+  figure img { max-width:100%; height:auto; border-radius:12px; display:block; margin:0 auto;
+    box-shadow:0 4px 18px rgba(0,0,0,0.08); }
+  hr { border:0; border-top:1px solid var(--line); margin:42px 0; }
+  blockquote { margin:30px 0; padding:18px 24px; background:#f7f8fa;
+    border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+    font-size:16.5px; line-height:1.8; color:#33373f; font-weight:600; }
+  .disclaimer { font-size:14px; color:var(--sub); background:#f7f8fa;
+    border-radius:8px; padding:14px 18px; margin:30px 0 24px; line-height:1.7; }
+  .tags { margin-top:30px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tags span { font-size:13.5px; color:#3d6fd1; background:#eef3fc;
+    padding:6px 13px; border-radius:16px; }
+  strong { font-weight:700; }
+  @media (max-width:520px){
+    .wrap{ padding:36px 20px 56px; } h1{ font-size:25px; } h2{ font-size:20px; }
+    p{ font-size:16px; }
+  }
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/news/economy/index.html">경제 뉴스</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="wrap">
+
+  <div class="meta">
+    <span class="cat">경제 뉴스</span>
+    <span class="date">2026년 6월 30일</span>
+  </div>
+
+  <h1>원달러 환율 1,550원 돌파, 수출은 사상 최대인데 왜 원화는 약할까</h1>
+
+  <div class="lead-img">
+    <img src="./images/thumbnail.png" alt="원달러 환율 1,550원 돌파 - 수출은 사상 최대인데 왜 원화는 약할까, 17년 3개월 만의 최고">
+  </div>
+
+  <p>이번 글에서는 원달러 환율이 다시 1,550원선을 넘어선 일을 풀어 보겠습니다. 6월 30일 장중에 벌어진 일이고, 17년 3개월 만의 최고 수준입니다. 무슨 일이 있었는지, 왜 중요한지, 앞으로 어떻게 될지 순서대로 짚어 드리겠습니다.</p>
+
+  <div class="summary">
+    <div class="stitle">세 줄 요약</div>
+    <ul>
+      <li>6월 30일 원달러 환율이 장중 1,550원선을 다시 뚫고 1,549원대에 마감했습니다. 2009년 3월 이후 최고치입니다.</li>
+      <li>그런데 5월 수출과 누적 무역흑자는 모두 사상 최대였습니다. "경제는 좋은데 돈값은 약한" 역설이 핵심입니다.</li>
+      <li>한·미 금리차, 외국인 자금 이탈, 글로벌 강달러가 겹쳤습니다. 추가 상승론과 진정론이 함께 나옵니다.</li>
+    </ul>
+  </div>
+
+  <figure>
+    <img src="./images/body-1.png" alt="2026년 상반기 원달러 환율 추이 그래프 - 3월 1,530원에서 6월 5일 야간 1,562원까지 급등 후 6월 30일 1,550원, 2009년 금융위기 고점 기준선 표시">
+  </figure>
+
+  <hr>
+
+  <h2>6월 30일, 무슨 일이 있었나</h2>
+  <p>6월 30일 서울외환시장에서 원달러 환율은 1,549.4원에 주간거래를 마쳤습니다. 장중 한때는 1,550.4원까지 올랐습니다.</p>
+  <p>기준점을 하나 짚겠습니다. 직전에 이 수준을 봤던 때가 2009년 3월, 글로벌 금융위기 직후입니다. 당시 고점이 1,549원이었으니, 약 17년 3개월 만에 그 자리에 다시 선 셈입니다.</p>
+  <p>이번이 처음도 아닙니다. 6월 5일에는 야간시장에서 1,562원까지 튀었고, 6월 26일에도 1,550원선을 건드렸습니다. 한 달 사이 1,550원이 여러 번 뚫린 것입니다.</p>
+
+  <figure>
+    <img src="./images/body-2.png" alt="원달러 환율 1,550원, 2009년 3월 이후 17년 3개월 만의 최고치임을 강조한 카드뉴스">
+  </figure>
+
+  <hr>
+
+  <h2>진짜 이상한 점 — 수출은 사상 최대였습니다</h2>
+  <p>여기서부터가 이번 뉴스의 핵심입니다. 환율이 약하다는 건 보통 경제가 흔들린다는 신호로 읽힙니다. 그런데 실물 지표는 정반대였습니다.</p>
+  <p>2026년 5월 수출은 877억 5천만 달러였습니다. 전년 같은 달보다 53.2% 늘어난, 월 기준 역대 최대 기록입니다. 반도체 수출이 169.4% 뛰면서 전체를 끌어올렸습니다.</p>
+  <p>무역흑자는 더 놀랍습니다. 1월부터 5월까지 누적 흑자가 1,019억 달러였습니다. 기존 연간 최대였던 2017년 952억 달러를, 다섯 달 만에 넘어선 것입니다.</p>
+  <p>상식대로라면 흑자가 크면 달러가 들어와 원화가 강해져야 합니다. 그런데 반대로 움직였습니다. "수출은 잘되는데, 원화는 약하다." 이 괴리가 이번 사태의 진짜 얼굴입니다.</p>
+
+  <figure>
+    <img src="./images/body-3.png" alt="사상 최대 무역흑자(1~5월 1,019억 달러)와 약세인 원화 환율을 나란히 비교한 대비형 인포그래픽, 강한 펀더멘털 vs 약한 원화">
+  </figure>
+
+  <hr>
+
+  <h2>그럼 왜 올랐나 — 세 가지가 겹쳤습니다</h2>
+  <p>원화가 약해진 이유는 한 가지가 아닙니다. 여러 분석이 공통으로 꼽는 요인은 세 가지입니다.</p>
+  <p><strong>첫째, 한·미 금리 격차입니다.</strong> 한국 기준금리는 5월까지 여덟 번 연속 2.5%로 묶여 있습니다. 미국 금리가 더 높으면 돈은 이자를 더 주는 달러 쪽으로 흐릅니다.</p>
+  <p><strong>둘째, 외국인 자금 이탈입니다.</strong> 외국인이 우리 주식을 팔고 원화를 달러로 바꾸면, 그만큼 달러 수요가 늘어 환율을 밀어 올립니다.</p>
+  <p><strong>셋째, 글로벌 강달러입니다.</strong> 중동발 지정학 불안으로 안전자산인 달러가 강해졌습니다. 한국만의 문제가 아니라, 이웃한 중국·일본 통화도 함께 약해졌습니다.</p>
+  <p>다만 모두가 위기로 보는 것은 아닙니다. 일부 분석은 이를 대외 강달러와 단기 수급이 겹친 "단기 오버슈팅"으로 봅니다. 구조적 위기가 아니라 일시적 과열이라는 시각도 분명히 있습니다.</p>
+
+  <figure>
+    <img src="./images/body-4.png" alt="한미 금리차, 외국인 주식 매도, 글로벌 강달러 세 요인이 원화 약세로 모이는 도식도">
+  </figure>
+
+  <hr>
+
+  <h2>우리 지갑에는 어떤 영향이 있나</h2>
+  <p>환율은 멀리 있는 숫자가 아닙니다. 오르면 수입품 가격이 따라 오르고, 결국 물가로 옮겨붙습니다.</p>
+  <p>KDI 분석을 보면, 환율이 1,500원 수준일 때 물가상승률을 최대 0.24%p까지 끌어올릴 수 있습니다. 실제로 5월 소비자물가는 3.1% 올랐습니다. 전월 2.6%보다 0.5%p 높아진, 2024년 3월 이후 가장 높은 수치입니다.</p>
+  <p>체감은 더 직접적입니다. 수입 원자재가 비싸지며 자영업자의 원가 부담이 커졌습니다. 해외 직구 비용도 올라 가계의 시름이 깊어졌습니다.</p>
+  <p>물론 환율과 물가의 관계가 한 방향만은 아닙니다. KDI는 국내 요인에 의한 환율 상승이라면 오히려 물가에 하방 압력이 될 수 있다고도 봅니다. 숫자 하나로 단정하기는 어렵다는 뜻입니다.</p>
+
+  <figure>
+    <img src="./images/body-5.png" alt="장바구니 물가, 주유 연료비, 해외 직구를 아이콘 카드로 정리한 일상 체감형 일러스트, 환율이 오르면 같이 오르는 것들">
+  </figure>
+
+  <hr>
+
+  <h2>정부는 무엇을 하고 있나, 앞으로는</h2>
+  <p>외환당국도 손을 놓고 있던 것은 아닙니다. 한국은행 자료를 보면, 2026년 1분기에만 시장 안정을 위해 136억 달러어치 달러를 순매도했습니다. 1월에는 구두개입으로 환율을 잠시 끌어내리기도 했습니다. 다만 약세 흐름 자체를 꺾지는 못했습니다.</p>
+  <p>앞으로의 길은 두 갈래로 갈립니다. 한쪽에서는 1,550원대에 자리 잡으면 1,600원선까지 열어둬야 한다고 봅니다. 다른 한쪽에서는 강달러와 중동 리스크가 풀리면 되돌려질 수 있다고 봅니다.</p>
+  <p>다음 분기점은 7월 16일 금융통화위원회입니다. 금리를 올리면 환율 방어에는 도움이 되지만, 가계와 기업의 이자 부담은 커집니다. 당국으로서는 어느 쪽도 쉽지 않은 선택입니다.</p>
+
+  <hr>
+
+  <p>정리하면 이렇습니다. 이번 1,550원은 경제가 무너져서가 아니라, 안은 튼튼한데 밖의 바람이 거세서 생긴 약세에 가깝습니다.</p>
+
+  <blockquote>"수출은 사상 최대, 그런데 원화는 17년 만의 최저." 이 한 줄이 지금의 한국 경제를 압축합니다.</blockquote>
+
+  <p>환율판의 숫자가 다시 우리 일상을 흔들고 있습니다. 다음 달 금통위가 이 바람의 방향을 조금이라도 돌려세울 수 있을지, 차분히 지켜볼 일입니다.</p>
+
+  <div class="disclaimer">본 글은 공개 정보를 바탕으로 한 해설이며 투자 권유가 아닙니다.</div>
+
+  <div class="tags">
+    <span>#원달러환율</span><span>#환율1550원</span><span>#고환율</span><span>#원화약세</span>
+    <span>#무역흑자</span><span>#수출사상최대</span><span>#경제뉴스</span><span>#금리</span>
+    <span>#물가</span><span>#금통위</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

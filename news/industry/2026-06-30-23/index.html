@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HBM4 양산 시작, 삼성·SK하이닉스 메모리 대전 총정리</title>
+<style>
+  :root{
+    --ink:#1a1d29; --sub:#4a5168; --muted:#8089a0; --line:#e6e8ef;
+    --accent:#3a56c8; --accent2:#2d8a5a; --bg:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#f4f5f8;
+    font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:700px;margin:0 auto;background:var(--bg);
+    padding:48px 40px 64px;min-height:100vh;
+    box-shadow:0 0 40px rgba(20,25,50,.05);}
+  .cat-row{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .cat{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1px;
+    color:#fff;background:linear-gradient(135deg,#3a56c8,#2d8a5a);
+    padding:6px 16px;border-radius:20px;}
+  .date{font-size:14px;color:var(--muted);}
+  h1{font-size:30px;line-height:1.34;font-weight:800;letter-spacing:-.5px;
+    margin:0 0 28px;color:var(--ink);}
+  p{font-size:16.5px;line-height:1.85;color:var(--sub);margin:0 0 18px;}
+  h2{font-size:22px;font-weight:800;line-height:1.4;margin:46px 0 18px;
+    padding-left:14px;border-left:5px solid var(--accent);color:var(--ink);}
+  img{display:block;max-width:100%;height:auto;border-radius:14px;
+    margin:26px auto;box-shadow:0 6px 24px rgba(20,25,50,.10);}
+  hr{border:none;border-top:1px solid var(--line);margin:38px 0;}
+  table{width:100%;border-collapse:collapse;margin:24px 0;font-size:16px;
+    border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(20,25,50,.06);}
+  thead th{background:#2a3358;color:#fff;font-weight:700;padding:13px 16px;text-align:left;}
+  tbody td{padding:12px 16px;border-top:1px solid var(--line);color:var(--sub);}
+  tbody tr:nth-child(even){background:#f7f8fb;}
+  blockquote{margin:30px 0;padding:22px 26px;
+    background:linear-gradient(135deg,#f0f3ff,#eafaf1);
+    border-left:5px solid var(--accent);border-radius:0 12px 12px 0;}
+  blockquote p{margin:0;font-size:20px;font-weight:700;color:var(--ink);line-height:1.6;}
+  .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tags span{font-size:14px;color:var(--accent);background:#eef1ff;
+    padding:6px 13px;border-radius:16px;font-weight:600;}
+  .lead{font-size:17px;color:var(--ink);font-weight:500;}
+</style>
+<style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/news/industry/index.html">산업·IT/과학 뉴스</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav>
+<div class="wrap">
+
+  <div class="cat-row">
+    <span class="cat">산업·IT 뉴스</span>
+    <span class="date">2026년 6월 30일</span>
+  </div>
+
+  <h1>HBM4 양산 시작, 삼성·SK하이닉스 메모리 대전 총정리</h1>
+
+  <img src="./images/thumbnail.png" alt="HBM4 양산 시작 - 삼성·SK하이닉스 메모리 대전 대표 이미지">
+
+  <p class="lead">이번 글에서는 2026년 상반기 반도체 업계를 달군 HBM4 경쟁을 정리해 보겠습니다. 한 줄로 먼저 말씀드립니다. 삼성전자가 6세대 메모리 HBM4를 세계 최초로 양산 출하했고, 그동안 앞서 있던 SK하이닉스를 추격하는 구도가 시작됐습니다. 무슨 일이 있었는지, 왜 중요한지, 앞으로 어떻게 될지 차례로 풀어 보겠습니다.</p>
+
+  <hr>
+
+  <h2>HBM4가 대체 무엇인가요</h2>
+  <p>먼저 용어부터 풀겠습니다. HBM은 '고대역폭메모리'의 줄임말입니다. 메모리 반도체(D램)를 위로 여러 층 쌓아, 데이터가 오가는 통로를 크게 넓힌 제품입니다.</p>
+  <p>AI 반도체를 사람에 비유하면 이렇습니다. GPU가 '머리'라면, HBM은 그 머리에 정보를 끊임없이 날라주는 '혈관'입니다. 혈관이 좁으면 아무리 머리가 좋아도 일을 빨리 처리하지 못합니다.</p>
+  <p>HBM4는 이 메모리의 6세대 제품입니다. 엔비디아의 차세대 AI 가속기 '베라 루빈(Vera Rubin)'에 들어갑니다. 숫자로 보면 차이가 분명합니다. 루빈 GPU 한 개에 HBM4 288GB가 붙고, 합산 대역폭은 22TB/s에 이릅니다. 직전 세대인 블랙웰의 8TB/s와 견주면 약 2.8배 넓어진 통로입니다.</p>
+
+  <img src="./images/body-1.png" alt="GPU는 머리, HBM은 혈관 - AI 반도체 비유 인포그래픽">
+
+  <hr>
+
+  <h2>무슨 일이 있었나 — 삼성의 '세계 최초' 선공</h2>
+  <p>핵심 사건은 두 가지입니다.</p>
+  <p>첫째, 삼성전자가 2026년 2월 HBM4를 세계 최초로 양산 출하했습니다. 엔비디아 '베라 루빈'용 최종 검증을 통과했고, 6월부터 양산 제품 공급에 들어갔습니다.</p>
+  <p>성능 수치도 함께 공개됐습니다. 업계 표준(JEDEC) 동작속도가 8.0Gbps인데, 삼성 제품은 11.7Gbps입니다. 표준보다 약 46% 빠른 속도입니다. 스택당 대역폭은 최대 3.3TB/s로, 직전 세대 대비 약 2.7배 수준입니다.</p>
+  <p>둘째, 삼성은 엔비디아와 AMD를 동시에 잡았습니다. AMD의 차세대 AI 가속기 'MI400' 시리즈에 HBM4 주공급사로 지명됐습니다. 한 곳이 아니라 두 큰손에 공급선을 확보한 셈입니다.</p>
+
+  <img src="./images/body-2.png" alt="삼성전자 HBM4 성능 수치 - 동작속도 11.7Gbps, 표준 대비 46% 빠름, 스택당 대역폭 3.3TB/s">
+
+  <hr>
+
+  <h2>그런데 시장 1위는 여전히 SK하이닉스입니다</h2>
+  <p>여기서 한 가지 짚어야 할 점이 있습니다. '세계 최초 양산'이 곧 '시장 1위'를 뜻하지는 않습니다.</p>
+  <p>SK하이닉스는 직전 HBM3E 세대에서 엔비디아 공급망을 먼저 잡으며 선두에 올랐습니다. 전체 HBM 시장의 약 62%를 차지했습니다.</p>
+  <p>2026년 HBM4 시장 점유율 전망도 SK하이닉스가 앞섭니다. 시장조사기관 카운터포인트리서치 등은 이렇게 봅니다.</p>
+
+  <table>
+    <thead><tr><th>기업</th><th>2026년 HBM4 점유율 전망</th></tr></thead>
+    <tbody>
+      <tr><td>SK하이닉스</td><td>54~55%</td></tr>
+      <tr><td>삼성전자</td><td>28~29%</td></tr>
+      <tr><td>마이크론</td><td>17~18%</td></tr>
+    </tbody>
+  </table>
+
+  <p>다만 측정 대상에 따라 숫자가 달라집니다. 엔비디아 '루빈'용 물량에만 한정하면, SK하이닉스 점유율을 약 70%로 보는 전망(UBS)도 있습니다. 시장 평균 예상치(50~54%)를 크게 웃도는 수준입니다.</p>
+  <p>정리하면 이렇습니다. 예전엔 SK하이닉스의 독주였습니다. 지금은 삼성이 균열을 내기 시작한 추격전입니다.</p>
+
+  <img src="./images/body-3.png" alt="2026년 HBM4 시장 점유율 전망 - SK하이닉스 54~55%, 삼성전자 28~29%, 마이크론 17~18%">
+
+  <hr>
+
+  <h2>왜 중요한가 — AI 시대의 진짜 병목</h2>
+  <p>이 경쟁이 왜 중요한지 한 발 물러서서 보겠습니다.</p>
+  <p>반도체산업협회(SIA) 보고서에 따르면, AI 데이터 서버 랙 가치의 95%가 반도체에서 나옵니다. 그중에서도 HBM은 AI 성능을 좌우하는 병목 부품입니다. GPU 성능이 아무리 좋아도, 데이터를 빨리 날라줄 메모리가 없으면 제 속도를 못 냅니다.</p>
+  <p>수요도 공급을 앞지르고 있습니다. SK하이닉스는 "향후 3년 수요가 생산능력을 상회한다"고 밝혔습니다. 시장 규모 자체가 커지고 있습니다. 2026년 HBM 시장은 약 546억 달러로, 전년 대비 58% 늘어날 것으로 추산됩니다(BofA).</p>
+  <p>그래서 이 싸움은 단순한 기업 순위 다툼이 아닙니다. AI 인프라 전체의 속도를 누가 쥐느냐의 문제입니다.</p>
+
+  <hr>
+
+  <h2>앞으로 전망 — 다음 분수령은 '16단' 경쟁</h2>
+  <p>남은 관전 포인트를 정리하겠습니다.</p>
+  <p>첫째, 2026년 하반기 16단(16-Hi) HBM4 경쟁입니다. 엔비디아가 SK하이닉스·삼성·마이크론에 4분기까지 16단 제품 공급을 요청했습니다. 메모리를 더 높이 쌓는 적층 기술이 다음 승부처가 됩니다.</p>
+  <p>둘째, 삼성의 점유율 회복 여부입니다. 카운터포인트리서치는 삼성의 2026년 점유율이 30%대로 회복될 수 있다고 봅니다. 다만 SK하이닉스의 '수율 안정'이라는 강점도 만만치 않습니다. 최상위급 HBM4 납품 향배는 연말께 가려질 전망입니다.</p>
+  <p>셋째, 변동성도 함께 봐야 합니다. 6월 5일에는 브로드컴의 AI 매출 전망 부진으로 반도체주가 하루 만에 1.3조 달러 넘게 증발했습니다. 기대가 큰 만큼 출렁임도 큽니다. 장밋빛만 그리기엔 아직 이른 시장이기도 합니다.</p>
+
+  <img src="./images/body-4.png" alt="12단에서 16단으로, HBM 적층 경쟁 - 메모리를 더 높이 쌓는 기술 경쟁">
+
+  <hr>
+
+  <p>끝으로 한 마디만 더 드리겠습니다. 이번 HBM4 경쟁의 본질은 결국 하나로 모입니다.</p>
+
+  <blockquote><p>"AI의 속도는, 메모리의 속도에서 갈린다."</p></blockquote>
+
+  <p>머리 좋은 GPU는 늘 화제의 중심에 섭니다. 그러나 그 머리에 피를 돌리는 메모리가 없다면, 어떤 AI도 제 실력을 내지 못합니다. 삼성과 SK하이닉스 중 누가 그 혈관을 쥐게 될지, 올해 말 다시 짚어 보면 어떨까 합니다.</p>
+
+  <hr>
+
+  <div class="tags">
+    <span>#HBM4</span><span>#삼성전자</span><span>#SK하이닉스</span><span>#반도체뉴스</span>
+    <span>#엔비디아</span><span>#AI반도체</span><span>#메모리반도체</span><span>#베라루빈</span>
+  </div>
+
+</div>
+<button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
