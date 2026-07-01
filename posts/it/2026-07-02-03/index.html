@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실리콘 포토닉스·광 인터커넥트 2026</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#4f8cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/reads/index.html">← SevenPeaks Reads</a><a class="nav-list" href="/reads/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#4f8cff;border-color:#4f8cff">IT</div>
+<h1>실리콘 포토닉스·광 인터커넥트 2026</h1>
+<p class="subtitle">HBM·CXL 다음, 데이터를 &#x27;빛&#x27;으로 나르는 CPO</p>
+<figure><img src="./images/thumbnail.png" alt="어두운 데이터센터 위로 GPU 칩에서 광섬유를 따라 흐르는 푸른 빛줄기, 미래적이고 차분한 분위기, 키워…"><figcaption>어두운 데이터센터 위로 GPU 칩에서 광섬유를 따라 흐르는 푸른 빛줄기, 미래적이고 차분한 분위기, 키워…</figcaption></figure>
+<hr>
+<p>AI 데이터센터의 진짜 병목은 이제 연산이 아니라 &#x27;데이터를 옮기는 일&#x27;로 옮겨가고 있습니다. GPU는 빨라졌지만, 칩과 칩, 서버와 서버 사이에서 신호를 나르는 구리 배선이 전력과 대역폭의 한계에 부딪혔습니다. 그 대안으로 빛을 쓰는 실리콘 포토닉스와 CPO가 2026년 가장 뜨거운 인터커넥트 기술로 떠올랐습니다.</p>
+<h2>CPO는 무엇이고, 왜 &#x27;빛&#x27;인가</h2>
+<p>실리콘 포토닉스는 실리콘 반도체 위에 빛의 길(도파로)과 변조기, 검출기를 새겨 넣어 전기 대신 빛으로 신호를 처리하는 기술입니다. CPO(Co-Packaged Optics)는 여기서 한 걸음 더 나아갑니다. 그동안 광 모듈은 스위치 앞면에 &#x27;꽂아 쓰는&#x27; 플러거블 방식이 표준이었습니다. CPO는 이 광 엔진을 아예 스위치 칩과 같은 패키지 안으로 끌어들입니다. 전기신호가 구리를 타고 달리는 구간을 최소화하고, 그 자리에서 바로 빛으로 바꿔 광섬유로 내보내는 것입니다.</p>
+<figure><img src="./images/body-1.png" alt="CPO의 세 가지 핵심 특징을 정리한 카드형 인포그래픽 - 패키지 일체화, 전력 절감, 대역폭 밀도"><figcaption>CPO의 세 가지 핵심 특징을 정리한 카드형 인포그래픽 - 패키지 일체화, 전력 절감, 대역폭 밀도</figcaption></figure>
+<h2>왜 지금인가 — 전력과 구리의 한계</h2>
+<p>이유는 단순합니다. 전력과 거리입니다. 플러거블 광 모듈은 대략 1비트를 옮기는 데 15피코줄(pJ) 안팎을 씁니다. CPO는 이를 5pJ 수준으로 낮추고, 장기적으로 1pJ 이하를 목표로 합니다. 수만 개 GPU가 쉬지 않고 데이터를 주고받는 AI 팩토리에서 이 차이는 곧 전기요금이자 냉각 부담입니다.</p>
+<p>거리도 문제입니다. 대역폭이 올라갈수록 구리는 신호 무결성이 급격히 나빠져, 유효 전송 거리가 짧아집니다.</p>
+<blockquote><p>엔비디아의 NVLink 구리 케이블조차 도달 거리가 약 2미터 안팎에 그칩니다. 랙이 커지고 속도가 오를수록, 구리는 물리 법칙의 벽에 부딪힙니다.</p></blockquote>
+<figure><img src="./images/body-2.png" alt="구리 전기 배선과 광 인터커넥트를 비교하는 대비형 인포그래픽 - 전력, 거리 관점"><figcaption>구리 전기 배선과 광 인터커넥트를 비교하는 대비형 인포그래픽 - 전력, 거리 관점</figcaption></figure>
+<h2>누가 뛰는가 — 엔비디아·브로드컴·TSMC</h2>
+<p>선두는 엔비디아입니다. 2025년 GTC에서 Spectrum-X Photonics(이더넷)와 Quantum-X Photonics(인피니밴드) CPO 스위치를 공개했습니다. Spectrum-X Photonics는 포트당 1.6Tb/s를 제공하며, 전통 방식 대비 전력 효율 3.5배, 레이저 수 4배 감소, 네트워크 복원력 10배를 내세웁니다. Quantum-X는 2025년 하반기, Spectrum-X는 2026년 공급 예정입니다.</p>
+<p>브로드컴은 2025년 5월 3세대 200G/lane CPO를 공개했습니다. 앞서 2세대 &#x27;Tomahawk 5-Bailly&#x27;는 업계 최초의 양산 CPO로 꼽히며, 패키지 안에 6.4Tb/s 광 엔진을 집적했습니다. 이 모든 것을 파운드리에서 받치는 곳이 TSMC입니다. TSMC의 COUPE 공정은 전자 다이(EIC)를 광 다이(PIC) 위에 3D로 접합해 광 엔진을 만들며, 엔비디아·브로드컴이 채택했습니다. 스타트업 Ayar Labs는 TeraPHY 광 I/O 칩렛으로 이 판에 합류했습니다.</p>
+<div class="tablewrap"><table><thead><tr><th>구분</th><th>플러거블 광 모듈</th><th>CPO</th></tr></thead><tbody><tr><td>광 엔진 위치</td><td>스위치 앞면에 장착</td><td>스위치 패키지 내부</td></tr><tr><td>전력</td><td>약 15 pJ/bit</td><td>약 5 pJ/bit</td></tr><tr><td>서비스성</td><td>개별 교체 쉬움</td><td>교체 어려움(과제)</td></tr></tbody></table></div>
+<figure><img src="./images/body-3.png" alt="실리콘 포토닉스 상용화 로드맵 단계 인포그래픽 - 초기 배치에서 대규모 확산까지"><figcaption>실리콘 포토닉스 상용화 로드맵 단계 인포그래픽 - 초기 배치에서 대규모 확산까지</figcaption></figure>
+<h2>한계와 전망 — 아직 넘을 벽이 있다</h2>
+<p>빛이 만능은 아닙니다. 가장 큰 숙제는 레이저입니다. 레이저는 CPO의 대표적 고장 지점인데, 패키지 안에 넣으면 하나만 고장 나도 값비싼 패키지 전체를 갈아야 합니다. 그래서 레이저를 앞면 핫스왑 모듈(ELSFP)로 분리하는 설계가 유력합니다. 고발열 스위치 옆에 온도에 민감한 광 부품을 두는 열 관리, 미크론 단위 정렬을 요구하는 대량 테스트도 만만치 않은 벽입니다.</p>
+<p>그럼에도 방향은 분명합니다. 업계는 2026~2027년 하이퍼스케일에서 플러거블과 공존하며 초기 배치를 시작하고, 2028~2030년 대규모 확산을 내다봅니다. 랙 안은 구리로 버티되, 랙 밖은 빛으로 넘어가는 과도기가 지금입니다. HBM이 메모리 대역폭을, CXL이 메모리 확장을 풀었다면, 광 인터커넥트는 데이터를 나르는 그 마지막 관문을 여는 열쇠가 될 것입니다.</p>
+<div class="tags"><span>#실리콘포토닉스</span> <span>#광인터커넥트</span> <span>#CPO</span> <span>#AI반도체</span> <span>#데이터센터</span> <span>#2026</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
