@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스토아 철학, 통제할 수 있는 것과 없는 것</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#a096ff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#a096ff;border-color:#a096ff">철학/인문</div>
+<h1>스토아 철학, 통제할 수 있는 것과 없는 것</h1>
+<p class="subtitle">에픽테토스와 마르쿠스가 건네는 마음의 평정</p>
+<figure><img src="./images/thumbnail.png" alt="스토아 철학 대표 이미지"><figcaption>스토아 철학 대표 이미지</figcaption></figure>
+<p>오늘은 스토아 철학을 이야기해 보겠습니다. 노예로 태어난 에픽테토스와 로마 황제였던 마르쿠스 아우렐리우스가 공유한 한 가지 구분, 곧 통제할 수 있는 것과 없는 것을 나누는 지혜가 중심입니다. 불안이 흔해진 오늘, 이 오래된 가르침이 왜 다시 읽히는지 함께 짚어보겠습니다.</p>
+<hr>
+<h2>스토아 철학은 어떤 철학인가</h2>
+<p>스토아 철학은 기원전 300년경 키티온의 제논이 아테네에서 시작했습니다. 그가 강연하던 채색 주랑, 곧 &#x27;스토아&#x27;가 학파의 이름이 되었습니다.</p>
+<p>이들은 우주를 관통하는 이성인 로고스를 믿었습니다. 그래서 &#x27;자연에 따라 사는 삶&#x27;을 이상으로 삼았습니다.</p>
+<p>스토아는 머릿속 사변이 아니라 삶의 태도를 다룹니다. 어떻게 흔들리지 않고 살 것인가, 이 물음이 중심에 놓입니다.</p>
+<p>후기에 이르러 노예 출신 에픽테토스, 정치가 세네카, 철인 황제 마르쿠스 아우렐리우스가 그 정점을 이룹니다. 한 사람은 사슬에 묶인 노예였고, 한 사람은 제국을 다스린 황제였습니다. 신분은 극과 극이었지만, 이들이 도달한 결론은 놀랄 만큼 닮아 있었습니다. 밖의 조건이 아무리 달라도, 마음의 문제는 결국 같은 곳에서 갈린다는 것입니다.</p>
+<figure><img src="./images/body-1.png" alt="스토아 철학 통제 이분법 핵심 정리 카드 - 세 가지 핵심 개념을 아이콘과 함께 정리"><figcaption>스토아 철학 통제 이분법 핵심 정리 카드 - 세 가지 핵심 개념을 아이콘과 함께 정리</figcaption></figure>
+<hr>
+<h2>우리에게 달린 것과 달리지 않은 것</h2>
+<p>에픽테토스의 『엥케이리디온』은 이렇게 시작합니다. &quot;어떤 것은 우리에게 달려 있고, 어떤 것은 달려 있지 않다.&quot;</p>
+<p>우리에게 달린 것은 판단, 욕구, 회피처럼 내 안에서 일어나는 일입니다. 달리지 않은 것은 몸, 재산, 평판, 지위입니다. 여기에 타인의 마음과 날씨, 경제까지 들어갑니다.</p>
+<p>에픽테토스는 노예였습니다. 몸도 자유도 그의 것이 아니었습니다. 그럼에도 그는 말했습니다. 누구도 나의 의지만은 빼앗지 못한다고.</p>
+<p>처방은 단순합니다. 바꿀 수 있는 것에 힘을 쏟고, 바꿀 수 없는 것은 받아들이는 것입니다. 그 경계를 아는 순간 마음은 흔들림을 멈춥니다.</p>
+<figure><img src="./images/body-2.png" alt="통제할 수 있는 것과 없는 것 비교 표 - 상황별로 통제 가능 영역과 불가능 영역을 나눈 표"><figcaption>통제할 수 있는 것과 없는 것 비교 표 - 상황별로 통제 가능 영역과 불가능 영역을 나눈 표</figcaption></figure>
+<hr>
+<h2>우리를 괴롭히는 건 사건이 아니다</h2>
+<p>같은 책 5장에는 더 날카로운 통찰이 있습니다. &quot;사람을 괴롭히는 것은 사건이 아니라, 그 사건에 대해 우리가 취하는 견해다.&quot;</p>
+<p>죽음이 그 자체로 끔찍한 것이라면 소크라테스에게도 끔찍했을 것입니다. 두려움은 죽음이 아니라 &#x27;죽음은 끔찍하다&#x27;는 우리의 생각 속에 있습니다.</p>
+<p>마르쿠스 아우렐리우스도 『명상록』에서 같은 말을 되풀이합니다. 인간은 대상이 아니라 그 대상을 보는 시각 때문에 불행해진다고요.</p>
+<p>놀랍게도 이 통찰은 현대 심리학의 뿌리가 됩니다. 인지행동치료의 선구자 앨버트 엘리스는 에픽테토스의 이 문장을 내담자에게 즐겨 가르쳤습니다. 오늘날 널리 쓰이는 인지행동치료의 철학적 기원이 스토아까지 거슬러 올라가는 셈입니다.</p>
+<p>사건을 바꿀 수 없어도, 그 사건을 보는 해석은 바꿀 수 있습니다. 예전에는 나쁜 일이 곧 나쁜 감정을 만든다고 여겼습니다. 지금은 그 사이에 &#x27;나의 해석&#x27;이라는 자리가 있다는 것을 압니다. 바로 그 자리가 우리에게 달린 영역입니다.</p>
+<hr>
+<h2>오늘의 우리에게</h2>
+<p>스토아가 말하는 아파테이아는 감정을 없앤 무감각이 아닙니다. 흔들려도 무너지지 않는 내면의 평온입니다. 감정을 억누르는 대신 관찰하고, 그것에 끌려다니지 않는 훈련입니다.</p>
+<p>최근 몇 년, 스토아 철학은 다시 크게 주목받고 있습니다. 라이언 홀리데이는 스토아를 다룬 책을 200만 부 넘게 팔았습니다. 기후 위기와 전쟁, 깊어진 분열 속에서 사람들은 흔들리지 않을 중심을 찾고 있습니다.</p>
+<p>물론 한계도 있습니다. &quot;받아들이라&quot;는 조언이 부당한 현실 앞에서 체념으로 오해되기도 합니다. 노력으로 바꿀 수 있는 일까지 지레 포기하는 핑계가 될 수도 있습니다. 스토아는 불의를 견디라는 것이 아니라, 바꿀 수 없는 것에 삶을 소진하지 말라는 뜻에 가깝습니다. 무엇이 내 몫인지부터 정직하게 가려야 하는 이유입니다.</p>
+<figure><img src="./images/body-3.png" alt="흔한 태도와 스토아적 태도의 대비 - 통제 밖의 일에 매달리는 태도 vs 통제 안에 집중하는 태도"><figcaption>흔한 태도와 스토아적 태도의 대비 - 통제 밖의 일에 매달리는 태도 vs 통제 안에 집중하는 태도</figcaption></figure>
+<hr>
+<p>정리하면 이렇습니다. 세상은 대부분 내 뜻대로 되지 않습니다. 그러나 그것을 어떻게 받아들일지는 언제나 내 몫으로 남습니다.</p>
+<p>&quot;바꿀 수 없는 것은 받아들이고, 바꿀 수 있는 것에 나를 쓴다.&quot;</p>
+<p>오늘 하루, 당신을 흔든 것은 사건이었을까요, 아니면 그 사건에 대한 당신의 해석이었을까요.</p>
+<div class="tags"><span>#스토아철학</span> <span>#에픽테토스</span> <span>#마르쿠스아우렐리우스</span> <span>#명상록</span> <span>#통제이분법</span> <span>#아파테이아</span> <span>#인지행동치료</span> <span>#마음의평정</span> <span>#철학인문</span> <span>#라이언홀리데이</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>

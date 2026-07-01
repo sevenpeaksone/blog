@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사춘기 자녀와의 대화법</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#34b39e;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/blog/index.html">← SevenPeaks 블로그</a><a class="nav-list" href="/blog/posts/counseling/index.html">상담 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#34b39e;border-color:#34b39e">상담</div>
+<h1>사춘기 자녀와의 대화법</h1>
+<p class="subtitle">갈등을 줄이는 소통의 원칙</p>
+<figure><img src="./images/thumbnail.png" alt="사춘기 자녀와 부모가 식탁에 마주 앉아 차분히 대화하는 따뜻한 분위기의 대표 이미지, 부드러운 색감"><figcaption>사춘기 자녀와 부모가 식탁에 마주 앉아 차분히 대화하는 따뜻한 분위기의 대표 이미지, 부드러운 색감</figcaption></figure>
+<p>이번 글에서는 사춘기 자녀와의 대화를 두고, 청소년·가족상담의 관점에서 갈등을 줄이는 소통법을 정리해 보겠습니다. 결론부터 말씀드리면 방법은 세 가지입니다. 감정을 먼저 인정하고, 나를 주어로 말하며, 지시 대신 부탁으로 청하는 것입니다. 이 글은 일반적인 정보이며 전문 상담을 대체하지 않는다는 점을 먼저 밝혀 둡니다.</p>
+<hr>
+<h2>반항이 아니라 발달입니다</h2>
+<p>문을 쾅 닫고, 말수가 줄고, 사소한 말에 예민해집니다. 부모 눈에는 갑작스러운 반항처럼 보입니다.</p>
+<p>그러나 청소년 뇌를 보면 이야기가 달라집니다. 감정과 보상을 담당하는 변연계는 10~12세 무렵 거의 성숙합니다. 반면 충동을 조절하고 판단하는 전두엽의 성숙은 훨씬 뒤늦게, 성인 초기까지 이어집니다.</p>
+<p>이 시차 때문에 청소년은 감정이 앞서고 충동에 끌리기 쉽습니다. 버릇의 문제가 아니라 발달의 과정인 셈입니다.</p>
+<p>여기에 &quot;나는 누구인가&quot;를 묻는 정체성 형성기가 겹칩니다. 부모와 거리를 두려는 행동은 애정이 식어서가 아니라, 독립된 자기를 세우려는 자연스러운 욕구입니다.</p>
+<p>이 흐름을 이해하면 대화의 방향이 잡힙니다. 감정을 먼저 인정하고, 나를 주어로 말하며, 지시가 아니라 부탁으로 청하는 것입니다.</p>
+<figure><img src="./images/body-1.png" alt="사춘기 대화의 핵심 원칙 세 가지를 카드 형태로 정리한 이미지 - 감정 인정, 나 전달법, 부탁하기"><figcaption>사춘기 대화의 핵심 원칙 세 가지를 카드 형태로 정리한 이미지 - 감정 인정, 나 전달법, 부탁하기</figcaption></figure>
+<hr>
+<h2>말투 하나가 대화를 가릅니다</h2>
+<p>같은 상황도 첫마디에서 갈립니다.</p>
+<p>&quot;너 왜 또 늦었어.&quot; 이렇게 시작하면 자녀는 방어부터 합니다. 심리학자 토머스 고든은 이를 &#x27;너 전달법&#x27;이라 불렀습니다. 상대를 주어로 세워 비난이 되기 쉬운 화법입니다.</p>
+<p>대신 &#x27;나 전달법&#x27;을 권합니다. 자녀의 행동을 판단 없이 서술하고, 그것이 내게 준 영향과 내 감정을 담습니다. &quot;네가 연락 없이 늦으면 무슨 일이 생겼나 싶어 걱정이 돼.&quot; 같은 상황이지만 문이 닫히지 않습니다.</p>
+<p>여기에 적극적 경청을 더합니다. 비판이나 조언을 앞세우지 않고, 자녀의 말을 끝까지 듣고 그 감정을 이해하려는 태도입니다.</p>
+<figure><img src="./images/body-2.png" alt="왼쪽에는 비난형 너 전달법 말풍선, 오른쪽에는 나 전달법 말풍선을 화살표로 대비시킨 말투 비교 이미지"><figcaption>왼쪽에는 비난형 너 전달법 말풍선, 오른쪽에는 나 전달법 말풍선을 화살표로 대비시킨 말투 비교 이미지</figcaption></figure>
+<hr>
+<h2>감정은 받아주되 행동엔 선을 둡니다</h2>
+<p>가트맨의 감정코칭은 다섯 단계로 요약됩니다.</p>
+<p>자녀의 감정을 알아차리고, 그 순간을 가까워질 기회로 여기며, 공감하며 듣고 감정을 인정합니다. 이어 자녀가 그 감정에 이름을 붙이도록 돕고, 마지막으로 문제 해결을 도우며 필요한 한계를 정합니다.</p>
+<p>핵심은 감정과 행동을 나누는 데 있습니다. &quot;화나는 건 당연해. 다만 물건을 던지는 건 안 돼.&quot; 감정은 모두 받아주되, 행동에는 선을 둡니다.</p>
+<p>이때 훈계나 정답 제시는 잠시 미루는 편이 낫습니다. 미성숙한 전두엽 탓에 청소년은 긴 설교를 받아들이기 어렵습니다. 답을 주기보다 질문하고, 대안을 조심스레 건네는 것이 닿습니다.</p>
+<hr>
+<h2>관찰과 평가를 구분합니다</h2>
+<p>마셜 로젠버그의 비폭력대화는 네 단계를 제안합니다. 관찰, 느낌, 욕구, 부탁입니다.</p>
+<p>가장 어려운 것은 첫 단계입니다. &quot;너는 게으르다&quot;는 평가입니다. &quot;이번 주에 숙제를 세 번 안 했다&quot;는 관찰입니다. 평가로 시작하면 대화는 다툼이 되고, 관찰로 시작하면 대화가 이어집니다.</p>
+<p>그다음 내 느낌을 말하고, 그 느낌 뒤에 있는 나의 욕구를 밝힙니다. 끝으로 구체적인 행동을 부탁합니다. 명령이 아니라 부탁입니다.</p>
+<figure><img src="./images/body-3.png" alt="관찰-느낌-욕구-부탁으로 이어지는 비폭력대화 4단계를 순서대로 보여주는 단계 흐름 이미지"><figcaption>관찰-느낌-욕구-부탁으로 이어지는 비폭력대화 4단계를 순서대로 보여주는 단계 흐름 이미지</figcaption></figure>
+<hr>
+<h2>기다림도 대화입니다</h2>
+<p>우리 청소년이 부모와 부딪히는 지점은 대체로 진로와 성적입니다. 여기에 스마트폰과 SNS가 더해져 마찰이 늘었습니다.</p>
+<p>이럴 때 추궁은 문을 닫습니다. &quot;왜 그랬어&quot; 대신 &quot;무슨 일이 있었는지 이야기해줄래&quot;가 낫습니다.</p>
+<p>그리고 기다립니다. 자녀가 말할 준비가 될 때까지 기다려 주는 것도 엄연한 대화입니다. 예전엔 빨리 바로잡으려 했다면, 이제는 잠시 멈춰 곁을 지키는 편이 멀리 갑니다.</p>
+<p>물론 이 모든 방법이 늘 통하지는 않습니다. 완벽한 대화법은 없습니다. 다만 방향을 아는 것과 모르는 것의 차이는 큽니다.</p>
+<hr>
+<h2>혼자 감당하기 버거울 때</h2>
+<p>위기 신호가 이어지거나 가족이 함께 지칠 때가 있습니다. 그럴 때는 전문 상담의 도움을 받으시길 권합니다.</p>
+<p>청소년전화 1388은 청소년뿐 아니라 부모도 이용할 수 있습니다. 365일 24시간, 전화와 문자, 사이버상담으로 무료로 열려 있습니다. 이 글의 방법은 출발점일 뿐, 전문 상담을 대신하지는 않습니다.</p>
+<hr>
+<p>끝으로 한 마디만 더 드리겠습니다.</p>
+<p>사춘기 대화의 목표는 자녀를 이기는 것이 아닙니다.</p>
+<p>&quot;옳은 말을 이기려 하기보다, 마음이 닿는 말을 건네는 것.&quot;</p>
+<p>자녀가 문을 닫은 듯 보여도, 그 문 앞을 조용히 지키는 부모의 말은 언젠가 안으로 스며듭니다.</p>
+<div class="tags"><span>#사춘기자녀</span> <span>#사춘기대화법</span> <span>#청소년상담</span> <span>#가족상담</span> <span>#부모교육</span> <span>#나전달법</span> <span>#감정코칭</span> <span>#비폭력대화</span> <span>#자녀소통</span> <span>#청소년1388</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
