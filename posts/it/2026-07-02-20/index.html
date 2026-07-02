@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 에이전트, 이제는 표준으로 대화합니다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#4f8cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/reads/index.html">← SevenPeaks Reads</a><a class="nav-list" href="/reads/posts/it/index.html">IT 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#4f8cff;border-color:#4f8cff">IT</div>
+<h1>AI 에이전트, 이제는 표준으로 대화합니다</h1>
+<p class="subtitle">MCP와 A2A로 보는 2026년 상호운용의 지형</p>
+<figure><img src="./images/thumbnail.png" alt="두 개의 육각형 노드가 선으로 연결되고, 그 사이를 데이터 화살표가 오가는 차분한 파란 톤의 개념도"><figcaption>두 개의 육각형 노드가 선으로 연결되고, 그 사이를 데이터 화살표가 오가는 차분한 파란 톤의 개념도</figcaption></figure>
+<hr>
+<p>에이전트를 하나 만들어 보신 분이라면 곧 같은 벽에 부딪히셨을 겁니다. 모델은 똑똑한데, 정작 사내 데이터베이스나 사내 API에 붙이려면 매번 커스텀 연동 코드를 새로 짜야 합니다. 도구가 열 개면 연동 방식도 열 가지입니다. 여기에 &quot;에이전트 여러 개가 서로 협업하게 하자&quot;는 요구까지 더해지면, 조합의 수는 걷잡을 수 없이 늘어납니다. 2026년 현재, 이 혼란을 정리하는 두 개의 표준이 사실상의 기본값으로 자리 잡았습니다. 바로 MCP와 A2A입니다.</p>
+<h2>왜 표준이 필요했을까요</h2>
+<p>에이전트가 실제로 일을 하려면 세 가지와 소통해야 합니다. <strong>도구</strong>(함수·API), <strong>데이터</strong>(문서·DB), 그리고 <strong>다른 에이전트</strong>입니다. 표준이 없던 시절에는 이 연결 하나하나가 일회성 접착제 코드였습니다. 도구 하나를 바꾸면 붙어 있던 에이전트도 손봐야 했고, 벤더가 다르면 협업은 아예 불가능에 가까웠습니다.</p>
+<blockquote><p>문제의 본질은 지능이 아니라 연결이었습니다. 표준은 이 연결을 재사용 가능한 규격으로 바꿉니다.</p></blockquote>
+<figure><img src="./images/body-1.png" alt="에이전트가 도구, 데이터, 다른 에이전트 세 대상과 각각 연결되는 관계를 보여주는 카드형 도식"><figcaption>에이전트가 도구, 데이터, 다른 에이전트 세 대상과 각각 연결되는 관계를 보여주는 카드형 도식</figcaption></figure>
+<h2>MCP — 모델과 도구·데이터를 잇는 표준</h2>
+<p>MCP(Model Context Protocol)는 앤스로픽이 2024년 11월에 공개한 오픈 표준입니다. 목적은 명확합니다. AI 모델이 외부 도구·데이터·API에 붙는 방식을 하나의 규격으로 통일하는 것입니다. USB-C가 기기마다 다르던 충전 방식을 정리했듯, MCP는 모델과 도구 사이의 연결 방식을 정리합니다.</p>
+<p>채택 속도는 이례적이었습니다. 2025년 3월 OpenAI가 Agents SDK와 ChatGPT 데스크톱에 MCP를 도입했고, 4월에는 구글 딥마인드가 Gemini 지원을 확인했으며, 5월에는 마이크로소프트와 깃허브가 운영위원회에 합류했습니다. 2025년 말 기준 공개 MCP 서버는 1만 개를 넘겼고, 서버 다운로드는 출시 초기 약 10만에서 800만 이상으로 늘었습니다. 그리고 2025년 12월, 앤스로픽은 MCP를 리눅스 재단 산하의 <strong>Agentic AI Foundation(AAIF)</strong>에 기증해 중립적 거버넌스로 넘겼습니다.</p>
+<figure><img src="./images/body-2.png" alt="앤스로픽 발 MCP와 구글 발 A2A를 좌우로 나눠 역할을 대비시킨 대조형 도식"><figcaption>앤스로픽 발 MCP와 구글 발 A2A를 좌우로 나눠 역할을 대비시킨 대조형 도식</figcaption></figure>
+<h2>A2A — 에이전트끼리 협업하는 표준</h2>
+<p>A2A(Agent2Agent)는 구글이 2025년 4월 9일에 공개한 표준입니다. MCP가 &#x27;에이전트-도구&#x27;의 수직 연결이라면, A2A는 &#x27;에이전트-에이전트&#x27;의 수평 연결을 담당합니다. 서로 다른 프레임워크에서 만들어진 에이전트가 상대를 발견하고, 인증하고, 작업을 위임할 수 있게 하는 공통 언어입니다.</p>
+<p>핵심 장치는 <strong>Agent Card</strong>입니다. 잘 알려진 URL에 게시되는 JSON 문서로, &quot;나는 무엇을 할 수 있고 어떻게 나에게 요청하면 되는지&quot;를 기술합니다. 클라이언트 에이전트는 상대와 대화하기 전에 이 카드를 먼저 읽습니다. 출범 당시 Atlassian, Box, Salesforce, SAP, ServiceNow 등 50곳 넘는 파트너가 함께했고, 2025년 6월 구글은 A2A를 리눅스 재단에 기증했습니다. 1년 뒤인 2026년에는 150개 이상의 조직이 참여하고, v1.0에서 <strong>서명된 Agent Card</strong>가 도입되었습니다.</p>
+<h2>둘의 차이, 그리고 상호보완</h2>
+<p>혼동하기 쉽지만 둘은 경쟁 관계가 아닙니다. 앤스로픽과 구글 모두 MCP와 A2A를 상호보완적이라고 설명합니다. MCP가 개별 에이전트에게 풍부한 맥락과 도구를 제공한다면, A2A는 그렇게 강화된 에이전트들이 안전하고 확장 가능하게 협업하도록 돕습니다.</p>
+<div class="tablewrap"><table><thead><tr><th>구분</th><th>MCP</th><th>A2A</th></tr></thead><tbody><tr><td>발표 주체</td><td>앤스로픽</td><td>구글</td></tr><tr><td>연결 방향</td><td>모델-도구/데이터(수직)</td><td>에이전트-에이전트(수평)</td></tr><tr><td>핵심 개념</td><td>도구·리소스</td><td>Agent Card</td></tr><tr><td>거버넌스</td><td>리눅스 재단(AAIF)</td><td>리눅스 재단</td></tr></tbody></table></div>
+<figure><img src="./images/body-3.png" alt="안전한 에이전트 연동을 위한 3단계(신원 인증, 최소 권한, 행위 감사) 절차형 도식"><figcaption>안전한 에이전트 연동을 위한 3단계(신원 인증, 최소 권한, 행위 감사) 절차형 도식</figcaption></figure>
+<h2>보안과 거버넌스, 놓치면 안 되는 부분</h2>
+<p>표준이 문을 열면, 그 문으로 위협도 들어옵니다. MCP에서 가장 흔한 위협은 <strong>툴 포이즈닝(tool poisoning)</strong>입니다. 도구의 메타데이터·설명에 악성 지시를 숨겨 모델을 조종하는 방식입니다. A2A 쪽에서는 공격자가 Agent Card에 능력을 과장해 등록해 두고, 호스트 에이전트가 그 에이전트에 민감 데이터를 몰아주게 유도하는 시나리오가 지적됩니다. 프롬프트 인젝션은 양쪽 모두에 걸쳐 있습니다.</p>
+<p>방어의 방향은 정해져 있습니다. <strong>OAuth 2.1(PKCE)</strong>을 공통 인증 기반으로 삼고, A2A는 v0.3부터 스푸핑을 막기 위해 Agent Card에 서명을 도입했습니다. 실무에서는 신원 검증, 최소 권한, 행위 감사라는 다층 방어가 기본입니다. 2026년 초의 가장 큰 구조적 변화는 MCP·A2A·ACP가 모두 리눅스 재단 아래로 모이며 거버넌스가 수렴한 점입니다.</p>
+<h2>2026년, 어떻게 접근하면 좋을까요</h2>
+<p>실무 권고는 비교적 단순합니다. <strong>도구 접근은 MCP로 통일</strong>하고, 벤더나 조직 경계를 넘는 에이전트 협업이 필요할 때 <strong>A2A를 더하는</strong> 방식입니다. MCP가 가장 성숙하고 지원 범위가 넓기 때문입니다. 두 표준은 이제 하나의 2계층 스택으로 이해되고, 이는 엔터프라이즈 에이전트 배치의 사실상 기본 아키텍처가 되었습니다.</p>
+<p>정리하면, 2026년의 상호운용은 더 이상 &quot;붙일 수 있는가&quot;의 문제가 아니라 &quot;어떤 규격으로 안전하게 붙일 것인가&quot;의 문제로 옮겨갔습니다. MCP로 도구를, A2A로 협업을 규격화하고, 그 위에 인증과 감사를 얹는 것. 지금 만드는 에이전트가 내년에도 살아남게 하는 가장 확실한 방법일지 모릅니다.</p>
+<div class="tags"><span>#AI에이전트</span> <span>#MCP</span> <span>#A2A</span> <span>#상호운용표준</span> <span>#에이전트보안</span> <span>#2026</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>

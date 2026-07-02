@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>농어촌 의료공백과 공보의 감소, 보건진료전담공무원이 메울 수 있을까</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#e0667a;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/reads/index.html">← SevenPeaks Reads</a><a class="nav-list" href="/reads/news/politics/index.html">정치/사회 뉴스</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#e0667a;border-color:#e0667a">사회 뉴스 해설</div>
+<h1>농어촌 의료공백과 공보의 감소, 보건진료전담공무원이 메울 수 있을까</h1>
+<figure><img src="./images/thumbnail.png" alt="텅 빈 농촌 보건지소 진료실과 감소하는 인원 그래프를 상징하는 차분한 이미지"><figcaption>텅 빈 농촌 보건지소 진료실과 감소하는 인원 그래프를 상징하는 차분한 이미지</figcaption></figure>
+<p>농어촌과 도서·벽지 주민들의 1차 의료를 오랫동안 떠받쳐 온 공중보건의사(공보의)가 빠르게 줄고 있습니다. 정부는 부족한 인력을 간호 인력과 제도 개편으로 메우겠다는 대책을 내놓았습니다. 무슨 일이 벌어지고 있는지, 왜 중요한지, 그리고 어떤 대안이 논의되는지 차분히 짚어 보겠습니다.</p>
+<h2>무슨 일이 벌어지고 있나</h2>
+<p>보건복지부 등에 따르면 2026년 의과 공보의 인원은 <strong>593명</strong>으로, 지난해 945명보다 352명 줄었습니다. 감소율은 약 <strong>37%</strong>에 이릅니다. 올해 신규 편입은 98명에 그친 반면 복무를 마치고 떠나는 인원은 450명에 달해, 나가는 인원을 채우는 비율이 약 22% 수준에 머물렀습니다.</p>
+<blockquote><p>공보의가 배치되지 못한 보건지소는 2025년 730곳에서 2026년 1023곳으로 늘고, 2027년에는 전체의 약 87%(1083곳)에 이를 것으로 정부는 전망합니다.</p></blockquote>
+<figure><img src="./images/body-1.png" alt="2025년부터 2027년까지 공보의 인원과 미배치 보건지소가 늘어나는 추세를 보여주는 표"><figcaption>2025년부터 2027년까지 공보의 인원과 미배치 보건지소가 늘어나는 추세를 보여주는 표</figcaption></figure>
+<h2>왜 이런 감소가 나타났나</h2>
+<p>감소의 배경으로는 여러 요인이 함께 지목됩니다. 2024~2025년 이어진 의정 갈등의 여파로 군의관·공보의로 편입되는 의무사관후보생 규모 자체가 줄었고, 복무 기간 격차도 큽니다. 공보의·군의관 복무는 기초군사훈련을 포함해 각각 37개월, 38개월인 반면 육군 현역병은 18개월입니다. 이 때문에 상당수 의대생이 상대적으로 복무가 짧은 현역 입대를 택하는 흐름이 강해졌습니다.</p>
+<figure><img src="./images/body-2.png" alt="공보의 감소를 부른 세 가지 원인(의정 갈등 여파, 복무기간 격차, 현역 선호)을 정리한 카드"><figcaption>공보의 감소를 부른 세 가지 원인(의정 갈등 여파, 복무기간 격차, 현역 선호)을 정리한 카드</figcaption></figure>
+<h2>정부는 무엇을 준비하나</h2>
+<p>정부는 한정된 공보의를 의료취약지에 우선 배치하는 한편, 간호 인력과 제도로 공백을 보완하려 합니다. 민간 의료기관 접근성이 특히 낮은 도서·벽지 등 <strong>139개 보건지소</strong>에는 공보의를 우선 배치합니다. 또 진료가 가능한 간호사인 <strong>보건진료전담공무원</strong>을 배치하는 통합형 보건지소(151개)를 운영하고, 일부 보건지소(42개)는 상시 진료가 가능한 보건진료소로 전환할 계획입니다. 아울러 2026년 6월부터 2028년 말까지 농어촌 보건진료 수가 시범사업을 통해 진료 기능을 유지하고 비대면 협진 수가를 신설하기로 했습니다.</p>
+<figure><img src="./images/body-3.png" alt="공보의 우선 배치 → 보건진료전담공무원 배치 → 보건진료소 전환으로 이어지는 대책 단계"><figcaption>공보의 우선 배치 → 보건진료전담공무원 배치 → 보건진료소 전환으로 이어지는 대책 단계</figcaption></figure>
+<h2>전망과 남은 과제</h2>
+<p>정부는 현 흐름이 이어질 경우 공보의 수급 불균형이 2031년 무렵까지 지속될 수 있다고 봅니다. 보건진료전담공무원 배치와 비대면 협진, 순회진료는 당장의 공백을 완화하는 현실적 대안이지만, 의사 진료를 온전히 대체하기 어렵다는 우려도 함께 제기됩니다. 고령 인구가 많은 농어촌에서 의료 접근성은 삶의 질과 직결되는 문제인 만큼, 인력 유입 구조 자체를 개선하는 중장기 방안과 지역 여건에 맞춘 세심한 설계가 함께 요구됩니다.</p>
+<div class="tags"><span>#농어촌의료</span> <span>#공중보건의</span> <span>#보건진료전담공무원</span> <span>#의료공백</span> <span>#지역의료</span> <span>#보건지소</span> <span>#2026</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>

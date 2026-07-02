@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>잘 산다는 것은 무엇일까</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+:root{--accent:#b07cff;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f5f6f8;color:#1f2330;
+ font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.8;}
+.wrap{max-width:700px;margin:0 auto;background:#fff;padding:54px 40px 70px;
+ min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.05);}
+.cat{display:inline-block;font-size:13px;font-weight:700;padding:4px 13px;
+ border:1.5px solid;border-radius:16px;margin-bottom:18px;}
+h1{font-size:30px;font-weight:800;line-height:1.4;letter-spacing:-.5px;margin:0 0 14px;}
+.subtitle{font-size:17px;color:#6b7280;font-weight:500;margin:0 0 8px;}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:13px;
+ border-left:4px solid var(--accent);letter-spacing:-.3px;}
+p{font-size:16.5px;margin:0 0 18px;}
+hr{border:0;border-top:1px solid #e8eaed;margin:34px 0;}
+figure{margin:28px 0;text-align:center;}
+img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+figcaption{font-size:13.5px;color:#9aa0ad;margin-top:10px;}
+blockquote{margin:24px 0;padding:18px 22px;background:#f7f8fa;
+ border-left:4px solid var(--accent);border-radius:0 10px 10px 0;}
+blockquote p{margin:0 0 8px;font-size:15.5px;}
+blockquote p:last-child{margin:0;}
+blockquote ul{margin:6px 0 0;}
+ul{margin:0 0 18px;padding-left:22px;}
+li{font-size:16px;margin-bottom:8px;}
+.tablewrap{overflow-x:auto;margin:24px 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;}
+th{background:var(--accent);color:#fff;font-weight:700;padding:11px 12px;text-align:left;}
+td{padding:11px 12px;border-bottom:1px solid #ebedf0;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+.tags{margin-top:40px;padding-top:22px;border-top:1px solid #e8eaed;
+ display:flex;flex-wrap:wrap;gap:8px;}
+.tags span{font-size:13.5px;color:var(--accent);background:#f1f3f7;
+ padding:5px 12px;border-radius:14px;}
+strong{font-weight:700;}
+</style><style id="site-chrome-css">
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:#2f57d6;transition:width .08s linear;}
+  #site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+    padding:11px 20px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  #site-nav a{color:#2b2b2b;text-decoration:none;font-size:14px;font-weight:600;}
+  #site-nav a:hover{color:#2f57d6;}
+  #site-nav .nav-spacer{margin-left:auto;}
+  #site-nav .nav-list{color:#555;font-weight:500;}
+  #site-nav .read-time{color:#8a8f98;font-size:13px;font-weight:500;}
+  #theme-toggle{border:1px solid #e5e7eb;background:#fff;color:#2b2b2b;border-radius:8px;
+    padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit;}
+  #theme-toggle:hover{border-color:#c7ccd6;}
+  #to-top{position:fixed;right:22px;bottom:22px;z-index:100;width:46px;height:46px;border-radius:50%;
+    border:1px solid #e5e7eb;background:#fff;color:#2f57d6;font-size:20px;line-height:1;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.14);display:none;}
+  #to-top.show{display:flex;align-items:center;justify-content:center;}
+  /* 다크 모드(본문): 글마다 클래스명이 달라도 동작하도록 컨테이너를 투명화해 어두운 body가 비치게 하고,
+     글자는 밝게 강제. 내 사이트 chrome(네비/버튼)은 id 선택자로 다시 복구한다. */
+  html.dark{background:#0f1117;}
+  html.dark body{background:#0f1117 !important;color:#d7dae2 !important;}
+  html.dark body :where(div,section,article,header,footer,main,aside,p,ul,ol,li,blockquote,figure,figcaption,table,thead,tbody,tr,td,th){
+    background-color:transparent !important; background-image:none !important; border-color:#2a2e3a !important; }
+  html.dark body :where(p,li,td,th,figcaption,blockquote,span,em){color:#ccd2dd !important;}
+  html.dark body :where(h1,h2,h3,h4,h5,strong,b){color:#f4f6fa !important;}
+  html.dark body :where(h2)::before{opacity:.9;}
+  html.dark body a{color:#7aa2ff !important;}
+  html.dark hr{border-color:#2a2e3a !important;}
+  /* 사이트 chrome 복구 (id 우선순위로 위 일반 규칙을 덮는다) */
+  html.dark #site-nav{background:rgba(18,21,29,.97) !important;border-bottom-color:#2a2e3a !important;}
+  html.dark #site-nav a{color:#e8eaf0 !important;}
+  html.dark #site-nav .nav-list,html.dark #site-nav .read-time{color:#aeb4c0 !important;}
+  html.dark #theme-toggle{background:#1a1d27 !important;color:#e8eaf0 !important;border-color:#2a2e3a !important;}
+  html.dark #to-top{background:#1a1d27 !important;color:#7aa2ff !important;border-color:#2a2e3a !important;}
+  html.dark #read-progress{background:#7aa2ff !important;}
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+<nav id="site-nav"><a class="nav-home" href="/reads/index.html">← SevenPeaks Reads</a><a class="nav-list" href="/reads/posts/philosophy/index.html">철학/인문 목록</a><span class="nav-spacer"></span><span class="read-time" id="read-time"></span><button id="theme-toggle" type="button">◐ 테마</button></nav><div class="wrap">
+<div class="cat" style="color:#b07cff;border-color:#b07cff">철학/인문</div>
+<h1>잘 산다는 것은 무엇일까</h1>
+<p class="subtitle">아리스토텔레스의 행복, 중용, 그리고 좋은 삶</p>
+<figure><img src="./images/thumbnail.png" alt="어둑한 배경 위 단정한 세리프 제목, 저울처럼 균형 잡힌 단순한 도형 하나가 중앙에 놓인 사려 깊은 분위기"><figcaption>어둑한 배경 위 단정한 세리프 제목, 저울처럼 균형 잡힌 단순한 도형 하나가 중앙에 놓인 사려 깊은 분위기</figcaption></figure>
+<hr>
+<p>우리는 종종 스스로에게 묻습니다. &quot;나는 잘 살고 있는 걸까?&quot; 통장 잔고를 확인할 때, 오랜만에 마음이 편안해질 때, 혹은 잠들기 직전 문득 천장을 바라볼 때 이 물음은 조용히 찾아옵니다. 무엇이 좋은 삶인지, 우리는 의외로 또렷하게 답하지 못합니다.</p>
+<p>약 2,400년 전, 아리스토텔레스도 같은 질문 앞에 섰습니다. 그는 이 물음을 감정이나 기분의 문제로 흘려보내지 않고, 하나하나 따져 물었습니다. 그 사유의 기록이 바로 『니코마코스 윤리학』입니다. 오늘은 이 오래된 책이 건네는 답을 어렵지 않게 풀어 보려 합니다.</p>
+<h2>행복은 기분이 아니라 &#x27;잘 삶&#x27;입니다</h2>
+<p>아리스토텔레스가 말한 행복의 원어는 <strong>에우다이모니아(eudaimonia)</strong>입니다. 흔히 &#x27;행복&#x27;으로 옮기지만, 사실 &#x27;잘 삶&#x27; 또는 &#x27;번영&#x27;에 더 가깝습니다. 여기서 중요한 구분이 하나 있습니다. 에우다이모니아는 순간의 기분이 아니라, 한 사람의 삶 전체가 온전히 펼쳐진 상태를 가리킵니다.</p>
+<p>그래서 그는 <strong>쾌락</strong>과 <strong>부</strong>를 행복 그 자체로 보지 않았습니다. 맛있는 음식이나 즐거운 여행은 분명 좋지만, 그것만으로 삶이 완성되지는 않습니다. 부(富) 역시 무언가를 하기 위한 수단일 뿐, 목적이 아닙니다. 돈을 벌려는 이유를 계속 캐물으면 결국 &quot;잘 살기 위해서&quot;라는 답에 이릅니다. 반면 &quot;왜 잘 살고 싶으냐&quot;고 물으면 더는 답할 말이 없습니다. 에우다이모니아는 그 자체로 궁극의 목적, 모든 것이 향하는 마지막 자리입니다.</p>
+<blockquote><p>행복은 느끼는 것이 아니라, 잘 살아내는 것입니다.</p></blockquote>
+<figure><img src="./images/body-1.png" alt="쾌락·부·명예가 &#x27;수단&#x27;, 잘 삶(에우다이모니아)이 &#x27;궁극 목적&#x27;임을 보여주는 대비 도식"><figcaption>쾌락·부·명예가 &#x27;수단&#x27;, 잘 삶(에우다이모니아)이 &#x27;궁극 목적&#x27;임을 보여주는 대비 도식</figcaption></figure>
+<h2>덕은 타고나는 것이 아니라 길들여지는 것입니다</h2>
+<p>그렇다면 어떻게 잘 살 수 있을까요. 아리스토텔레스는 <strong>덕(아레테, aretē)</strong>을 갖춘 삶이 잘 사는 삶이라고 답합니다. 여기서 덕이란 거창한 도덕이 아니라, 인간이 자신의 기능을 탁월하게 발휘하는 상태를 뜻합니다. 잘 드는 칼이 좋은 칼이듯, 자신의 능력을 잘 발휘하는 사람이 좋은 사람입니다.</p>
+<p>주목할 점은 그가 덕을 <strong>습관(ethos)</strong>의 결과로 보았다는 사실입니다. 우리는 용감한 행동을 반복하면서 용감해지고, 절제하는 행동을 되풀이하면서 절제하는 사람이 됩니다. 덕은 타고나는 재능이 아니라, 매일의 선택이 쌓여 만들어지는 성품입니다. 악기를 연주하며 연주자가 되듯, 우리는 행동하며 어떤 사람이 되어 갑니다.</p>
+<figure><img src="./images/body-2.png" alt="덕이 습관을 통해 성품으로 굳어지는 3단계 흐름"><figcaption>덕이 습관을 통해 성품으로 굳어지는 3단계 흐름</figcaption></figure>
+<h2>중용 — 용기는 만용과 비겁 사이에 있습니다</h2>
+<p>덕의 핵심에는 <strong>중용(메소테스, mesotēs)</strong>이 있습니다. 중용은 부족함과 지나침 사이의 알맞은 자리를 뜻합니다. 다만 이것을 산술적 평균으로 오해해서는 안 됩니다. 상황과 사람에 따라 알맞은 자리는 달라집니다.</p>
+<p>가장 유명한 예가 <strong>용기</strong>입니다. 위험 앞에서 지나치게 물러서면 <strong>비겁</strong>이 되고, 분별없이 뛰어들면 <strong>만용</strong>이 됩니다. 용기는 그 둘 사이, 두려워할 것을 두려워하되 마땅히 맞서야 할 때 맞서는 태도입니다. 무모함은 용기가 아닙니다. 두려움을 아예 모르는 것도 용기가 아닙니다.</p>
+<div class="tablewrap"><table><thead><tr><th>덕목</th><th>부족</th><th>중용</th><th>지나침</th></tr></thead><tbody><tr><td>용기</td><td>비겁</td><td>용기</td><td>만용</td></tr><tr><td>절제</td><td>무감각</td><td>절제</td><td>방종</td></tr><tr><td>관대함</td><td>인색</td><td>관대함</td><td>낭비</td></tr></tbody></table></div>
+<figure><img src="./images/body-3.png" alt="부족 / 중용 / 지나침&#x27;을 용기·절제·관대함 예시로 정리한 표"><figcaption>부족 / 중용 / 지나침&#x27;을 용기·절제·관대함 예시로 정리한 표</figcaption></figure>
+<h2>실천적 지혜, 그리고 관조하는 삶</h2>
+<p>그런데 무엇이 &#x27;알맞은 자리&#x27;인지 매번 어떻게 알까요. 여기서 아리스토텔레스는 <strong>실천적 지혜(프로네시스, phronesis)</strong>를 이야기합니다. 프로네시스는 지금 이 상황에서 무엇이 옳은지를 헤아리는 능력입니다. 원칙을 외우는 것만으로는 부족합니다. 구체적인 순간에 알맞게 판단하고 행동하는 힘, 그것이 실천적 지혜이며 다른 모든 덕을 제자리에 놓아 주는 조타수 역할을 합니다.</p>
+<p>마지막으로 그는 인간이 이를 수 있는 가장 높은 삶으로 <strong>관조적 삶(theoria)</strong>을 꼽았습니다. 이는 세계와 진리를 깊이 사유하고 음미하는 삶입니다. 다만 그가 정치적·실천적 삶을 낮게 본 것은 아닙니다. 오히려 공동체 안에서 덕을 발휘하는 삶을 &#x27;이차적 의미의 행복&#x27;으로 온전히 인정했습니다.</p>
+<p>이 오래된 통찰은 지금 우리에게도 조용히 말을 겁니다. 더 많이 갖는 것이 곧 잘 사는 것은 아니라는 것, 좋은 삶은 완성된 결과가 아니라 매일의 습관으로 빚어진다는 것. 오늘 나의 작은 선택 하나가, 결국 내가 어떤 사람이 될지를 조금씩 정해 갑니다. 잘 산다는 것은 어쩌면, 그 사실을 잊지 않고 하루를 사는 일인지도 모릅니다.</p>
+<div class="tags"><span>#아리스토텔레스</span> <span>#니코마코스윤리학</span> <span>#에우다이모니아</span> <span>#중용</span> <span>#행복</span> <span>#철학</span> <span>#2026</span></div>
+</div><button id="to-top" aria-label="맨 위로">↑</button>
+<script id="site-chrome-js">
+(function(){
+  var root=document.documentElement, KEY='spk-theme';
+  try{ if(localStorage.getItem(KEY)==='dark') root.classList.add('dark'); }catch(e){}
+  var tb=document.getElementById('theme-toggle');
+  if(tb) tb.addEventListener('click',function(){
+    root.classList.toggle('dark');
+    try{ localStorage.setItem(KEY, root.classList.contains('dark')?'dark':'light'); }catch(e){}
+  });
+  var rt=document.getElementById('read-time');
+  if(rt){ var txt=(document.body.innerText||'').replace(/\s/g,'');
+    rt.textContent='약 '+Math.max(1,Math.round(txt.length/500))+'분 읽기'; }
+  var pb=document.getElementById('read-progress'), tt=document.getElementById('to-top');
+  function onScroll(){ var h=document.documentElement;
+    var sh=h.scrollHeight-h.clientHeight, p=sh>0?(h.scrollTop/sh*100):0;
+    if(pb) pb.style.width=p+'%';
+    if(tt) tt.classList.toggle('show', h.scrollTop>400); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(tt) tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script data-goatcounter="https://sevenpeaks.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
